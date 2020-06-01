@@ -1,0 +1,6 @@
+framework module ADMobGenDeviceInfo {
+  umbrella header "ADMobGenDeviceInfo.h"
+
+  export *
+  module * { export * }
+}

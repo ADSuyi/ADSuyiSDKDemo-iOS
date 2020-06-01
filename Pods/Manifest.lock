@@ -1,0 +1,107 @@
+PODS:
+  - ADMobGenDeviceInfo (1.6.9.05261):
+    - ADSuyiKit (~> 0.2.5)
+    - ADSuyiLocationManager (~> 0.1.2)
+    - ADSuyiNetwork (~> 0.1.2)
+  - ADMobileAdSDK (3.2.4.05281):
+    - ADMobGenDeviceInfo (~> 1.6.9)
+    - ADSuyiKit (~> 0.2.5)
+    - ADSuyiNetwork (~> 0.1.2)
+  - ADSuyiAdMobile (3.2.4.05281):
+    - ADMobileAdSDK (~> 3.2.4)
+    - ADSuyiSDK (~> 3.0.3)
+  - ADSuyiBU (2.9.0.1.05281):
+    - ADSuyiSDK (~> 3.0.4)
+    - Bytedance-UnionAD (= 2.9.0.1)
+  - ADSuyiGDT (4.11.7.05292):
+    - ADSuyiSDK (~> 3.0.3)
+    - GDTMobSDK (= 4.11.7)
+  - ADSuyiInmobi (7.4.5.05261):
+    - ADSuyiSDK (~> 3.0.3)
+    - InMobiSDK-China (= 7.4.5)
+  - ADSuyiKit (0.2.5.05282)
+  - ADSuyiLocationManager (0.1.2.05261)
+  - ADSuyiMTG (6.1.2.0.05261):
+    - ADSuyiSDK (~> 3.0.3)
+    - MintegralAdSDK (= 6.1.2.0)
+    - MintegralAdSDK/BannerAd (= 6.1.2.0)
+    - MintegralAdSDK/InterstitialAd (= 6.1.2.0)
+    - MintegralAdSDK/InterstitialVideoAd (= 6.1.2.0)
+    - MintegralAdSDK/NativeAd (= 6.1.2.0)
+    - MintegralAdSDK/RewardVideoAd (= 6.1.2.0)
+    - MintegralAdSDK/SplashAd (= 6.1.2.0)
+  - ADSuyiNetwork (0.1.2.05261):
+    - ADSuyiKit (~> 0.2.5)
+  - ADSuyiSDK (3.0.4.05291):
+    - ADMobGenDeviceInfo (~> 1.6.9)
+    - ADSuyiKit (~> 0.2.5)
+    - ADSuyiNetwork (~> 0.1.2)
+  - Bytedance-UnionAD (2.9.0.1)
+  - GDTMobSDK (4.11.7):
+    - GDTMobSDK/GDTMobSDK (= 4.11.7)
+  - GDTMobSDK/GDTMobSDK (4.11.7)
+  - InMobiSDK-China (7.4.5)
+  - MintegralAdSDK (6.1.2.0):
+    - MintegralAdSDK/NativeAd (= 6.1.2.0)
+  - MintegralAdSDK/BannerAd (6.1.2.0):
+    - MintegralAdSDK/NativeAd
+  - MintegralAdSDK/InterstitialAd (6.1.2.0):
+    - MintegralAdSDK/NativeAd
+  - MintegralAdSDK/InterstitialVideoAd (6.1.2.0):
+    - MintegralAdSDK/NativeAd
+  - MintegralAdSDK/NativeAd (6.1.2.0)
+  - MintegralAdSDK/RewardVideoAd (6.1.2.0):
+    - MintegralAdSDK/NativeAd
+  - MintegralAdSDK/SplashAd (6.1.2.0):
+    - MintegralAdSDK/NativeAd
+  - MJRefresh (3.4.3)
+
+DEPENDENCIES:
+  - ADSuyiAdMobile
+  - ADSuyiBU
+  - ADSuyiGDT
+  - ADSuyiInmobi
+  - ADSuyiMTG
+  - ADSuyiSDK (~> 3.0.4)
+  - MJRefresh
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - ADMobGenDeviceInfo
+    - ADMobileAdSDK
+    - ADSuyiAdMobile
+    - ADSuyiBU
+    - ADSuyiGDT
+    - ADSuyiInmobi
+    - ADSuyiKit
+    - ADSuyiLocationManager
+    - ADSuyiMTG
+    - ADSuyiNetwork
+    - ADSuyiSDK
+    - Bytedance-UnionAD
+    - GDTMobSDK
+    - InMobiSDK-China
+    - MintegralAdSDK
+    - MJRefresh
+
+SPEC CHECKSUMS:
+  ADMobGenDeviceInfo: 8490af5470fc85d772879c8513259efed9f298ba
+  ADMobileAdSDK: ffcde117ac279584f79af18a2967fc09433eb1fb
+  ADSuyiAdMobile: 2266f4f0f28edaba833fd3eebc1bbfec2eb0128f
+  ADSuyiBU: 2c50f83f4b918e75099f1bb94f578a0077872a5f
+  ADSuyiGDT: 803da1944b35c9ea625da37f1e243f6f700c30ab
+  ADSuyiInmobi: f5a6c7a6cb3983cee88498d42b597a66bcafda1c
+  ADSuyiKit: 5828a774dfff3a928308aa0057c24c5a86f2bd06
+  ADSuyiLocationManager: 4986b8fba88412fbca5d31582bd69ebdce39e6f2
+  ADSuyiMTG: f587c62e4c6e171a230f89aba9542f5f0bc2b077
+  ADSuyiNetwork: c1143c8b73b57eaada87e4df372f17115cedb9c6
+  ADSuyiSDK: a7e019ef8f8639e099eda69dec083ba8bda366e4
+  Bytedance-UnionAD: e145f7e98e5a714332d7d31e764696e569483755
+  GDTMobSDK: edb52f3721c8c62b790b255833e423a00a3d2172
+  InMobiSDK-China: 117b4a67813323fcdcdbdf38686ba973dd1a1b0f
+  MintegralAdSDK: 5bb58fbce120e1220d926d5f71b05e9286ceabb7
+  MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
+
+PODFILE CHECKSUM: 6909cce9191bd65ac78742d23b94b8cd41d14349
+
+COCOAPODS: 1.9.1

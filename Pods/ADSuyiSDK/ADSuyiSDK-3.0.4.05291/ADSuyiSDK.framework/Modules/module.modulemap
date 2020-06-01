@@ -1,0 +1,6 @@
+framework module ADSuyiSDK {
+  umbrella header "ADSuyiSDK.h"
+
+  export *
+  module * { export * }
+}

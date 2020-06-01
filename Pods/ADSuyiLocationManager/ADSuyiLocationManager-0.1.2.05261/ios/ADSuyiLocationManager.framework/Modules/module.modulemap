@@ -1,0 +1,6 @@
+framework module ADSuyiLocationManager {
+  umbrella header "ADSuyiLocationManager.h"
+
+  export *
+  module * { export * }
+}

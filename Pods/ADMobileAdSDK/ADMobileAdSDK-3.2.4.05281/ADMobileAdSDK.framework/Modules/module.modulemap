@@ -1,0 +1,6 @@
+framework module ADMobileAdSDK {
+  umbrella header "ADMobileAdSDK.h"
+
+  export *
+  module * { export * }
+}
