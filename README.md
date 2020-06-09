@@ -51,7 +51,7 @@
 
 运行设备：iPhone （iPad上可能部分广告正常展示，但是存在填充很低或者平台不支持等问题，建议不要在iPad上展示广告）
 
-- `ADSuyiSDK Objective-C Demo地址`[[ADMobGenSDK Objective-C Demo]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS)
+- `ADSuyiSDK Objective-C Demo地址`[[ADSuyiSDK Objective-C Demo]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS)
 
 <br>
 
