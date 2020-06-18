@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		128C92C5EBD58CC366E48B48 /* Pods_ADSuyiSDKDemo_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A03A726372D89BD0B49B030F /* Pods_ADSuyiSDKDemo_iOS.framework */; };
+		BF279CDA249B134700C38704 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF279CD9249B134700C38704 /* LaunchScreen.storyboard */; };
 		BFEA086D247E4CCC001815E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA086C247E4CCC001815E3 /* AppDelegate.m */; };
 		BFEA0873247E4CCC001815E3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA0872247E4CCC001815E3 /* ViewController.m */; };
 		BFEA0876247E4CCC001815E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFEA0874247E4CCC001815E3 /* Main.storyboard */; };
 		BFEA0878247E4CCF001815E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFEA0877247E4CCF001815E3 /* Assets.xcassets */; };
-		BFEA087B247E4CCF001815E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFEA0879247E4CCF001815E3 /* LaunchScreen.storyboard */; };
 		BFEA087E247E4CCF001815E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA087D247E4CCF001815E3 /* main.m */; };
 		BFEA0886247E5383001815E3 /* ADMob_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BFEA0884247E5383001815E3 /* ADMob_Logo.png */; };
 		BFEA0887247E5383001815E3 /* 750x1334.png in Resources */ = {isa = PBXBuildFile; fileRef = BFEA0885247E5383001815E3 /* 750x1334.png */; };
@@ -30,6 +30,7 @@
 /* Begin PBXFileReference section */
 		2F224B5F4E4E0DCAE1105072 /* Pods-ADSuyiSDKDemo-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADSuyiSDKDemo-iOS.release.xcconfig"; path = "Target Support Files/Pods-ADSuyiSDKDemo-iOS/Pods-ADSuyiSDKDemo-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		A03A726372D89BD0B49B030F /* Pods_ADSuyiSDKDemo_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ADSuyiSDKDemo_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF279CD9249B134700C38704 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFEA0868247E4CCC001815E3 /* ADSuyiSDKDemo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ADSuyiSDKDemo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEA086B247E4CCC001815E3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BFEA086C247E4CCC001815E3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -37,7 +38,6 @@
 		BFEA0872247E4CCC001815E3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		BFEA0875247E4CCC001815E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BFEA0877247E4CCF001815E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BFEA087A247E4CCF001815E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFEA087C247E4CCF001815E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFEA087D247E4CCF001815E3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BFEA0884247E5383001815E3 /* ADMob_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ADMob_Logo.png; sourceTree = "<group>"; };
@@ -121,8 +121,8 @@
 				BFEA0871247E4CCC001815E3 /* ViewController.h */,
 				BFEA0872247E4CCC001815E3 /* ViewController.m */,
 				BFEA0874247E4CCC001815E3 /* Main.storyboard */,
+				BF279CD9249B134700C38704 /* LaunchScreen.storyboard */,
 				BFEA0877247E4CCF001815E3 /* Assets.xcassets */,
-				BFEA0879247E4CCF001815E3 /* LaunchScreen.storyboard */,
 				BFEA087C247E4CCF001815E3 /* Info.plist */,
 				BFEA087D247E4CCF001815E3 /* main.m */,
 			);
@@ -271,9 +271,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFEA0886247E5383001815E3 /* ADMob_Logo.png in Resources */,
-				BFEA087B247E4CCF001815E3 /* LaunchScreen.storyboard in Resources */,
 				BFEA0878247E4CCF001815E3 /* Assets.xcassets in Resources */,
 				BFEA0876247E4CCC001815E3 /* Main.storyboard in Resources */,
+				BF279CDA249B134700C38704 /* LaunchScreen.storyboard in Resources */,
 				BFEA0887247E5383001815E3 /* 750x1334.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,14 +368,6 @@
 				BFEA0875247E4CCC001815E3 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		BFEA0879247E4CCF001815E3 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BFEA087A247E4CCF001815E3 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
