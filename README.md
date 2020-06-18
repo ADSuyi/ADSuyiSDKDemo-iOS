@@ -52,6 +52,7 @@
 运行设备：iPhone （iPad上可能部分广告正常展示，但是存在填充很低或者平台不支持等问题，建议不要在iPad上展示广告）
 
 - `ADSuyiSDK Objective-C Demo地址`[[ADSuyiSDK Objective-C Demo]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS)
+- `ADSuyiSDK Swift Demo地址`[[ADSuyiSDK Swift Demo]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS-Swift.git)
 
 <br>
 
@@ -227,7 +228,9 @@ NSString *sdkVersion = [ADSuyiSDK getSDKVersion];
 
 推荐在 `AppDelegate`的 `didFinishLaunchingWithOptions`方法的 `return YES`之前调用开屏。
 
-`开屏代码示例：`[[开屏代码示例]](https://github.com/sangshenya/ADMobGenSDK)
+`OC请求开屏代码示例：`[[开屏代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS/blob/master/ADSuyiSDKDemo-iOS/AppDelegate.m)
+
+`Swift请求开屏代码示例：`[[开屏代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS-Swift/blob/master/ADSuyiSDKDemo-iOS-Swift/AppDelegate.swift)
 
 开屏广告 - ADSuyiSDKSplashAd：
 
@@ -335,7 +338,9 @@ viewControllerForPresentingModalView
 ```
 
 <div STYLE="page-break-after: always;"></div>
-开屏广告请求示例：
+Swift请求开屏广告代码示例：[[开屏代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS-Swift/blob/master/ADSuyiSDKDemo-iOS-Swift/AppDelegate.swift)
+
+OC请求开屏广告代码示例：
 
 ```obj-c
 #import <ADSuyiSDK/ADSuyiSDKSplashAd.h>
@@ -438,7 +443,9 @@ viewControllerForPresentingModalView
 <div STYLE="page-break-after: always;"></div>
 ## 4.3 banner广告 - ADSuyiSDKBannerAdView
 
-`横幅代码示例：`[[横幅代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS/blob/master/ADSuyiSDKDemo-iOS/SuyiAds/BannerAd/AdSuyiBannerViewController.m)
+`OC请求横幅代码示例：`[[横幅代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS/blob/master/ADSuyiSDKDemo-iOS/SuyiAds/BannerAd/AdSuyiBannerViewController.m)
+
+`Swift请求横幅代码示例：`[[横幅代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS-Swift/blob/master/ADSuyiSDKDemo-iOS-Swift/SuyiAds/BannerAd/ADSuyiBannerViewController.swift)
 
 横幅广告 - ADSuyiSDKBannerAdView：
 
@@ -532,7 +539,9 @@ viewControllerForPresentingModalView
 @end
 ```
 
-横幅广告请求示例：
+Swift请求横幅代码示例：[[横幅代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS-Swift/blob/master/ADSuyiSDKDemo-iOS-Swift/SuyiAds/BannerAd/ADSuyiBannerViewController.swift)
+
+OC请求横幅广告请求示例：
 
 ```obj-c
 #import <ADSuyiSDK/ADSuyiSDKBannerAdView.h>
@@ -613,7 +622,9 @@ viewControllerForPresentingModalView
 <div STYLE="page-break-after: always;"></div>
 ## 4.4 信息流广告 - ADSuyiSDKNativeAd
 
-`信息流广告代码示例：`[[信息流广告代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS/blob/master/ADSuyiSDKDemo-iOS/SuyiAds/NativeAd/AdSuyiNativeViewController.m)
+`OC请求信息流广告代码示例：`[[信息流广告代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS/blob/master/ADSuyiSDKDemo-iOS/SuyiAds/NativeAd/AdSuyiNativeViewController.m)
+
+`Swift请求信息流广告代码示例：`[[信息流广告代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS-Swift/blob/master/ADSuyiSDKDemo-iOS-Swift/SuyiAds/NativeAd/AdSuyiNativeViewController.swift)
 
 信息流广告 - ADSuyiSDKNativeAd：
 
@@ -735,7 +746,9 @@ typedef NS_ENUM(NSUInteger, ADSuyiSDKNativeAdStatus) {
 
 ```
 
-信息流广告请求示例：
+Swift请求信息流广告代码示例：[[信息流广告代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS-Swift/blob/master/ADSuyiSDKDemo-iOS-Swift/SuyiAds/NativeAd/AdSuyiNativeViewController.swift)
+
+OC请求信息流广告请求示例：
 
 ```obj-c
 #import <ADSuyiSDK/ADSuyiSDKNativeAd.h>
@@ -800,7 +813,9 @@ if(!_nativeAd) {
 <div STYLE="page-break-after: always;"></div>
 ## 4.5 激励视频广告 - ADSuyiSDKRewardvodAd
 
-`激励视频广告代码示例：`[[激励视频广告代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS/blob/master/ADSuyiSDKDemo-iOS/SuyiAds/RewardVodAd/AdSuyiRewardvodViewController.m)
+`OC请求激励视频代码示例：`[[激励视频广告代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS/blob/master/ADSuyiSDKDemo-iOS/SuyiAds/RewardVodAd/AdSuyiRewardvodViewController.m)
+
+`Swift请求激励视频代码示例：`[[激励视频广告代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS-Swift/blob/master/ADSuyiSDKDemo-iOS-Swift/SuyiAds/RewardAd/AdSuyiRewardViewController.swift)
 
 激励视频广告 - ADSuyiSDKRewardvodAd：
 
@@ -935,7 +950,9 @@ if(!_nativeAd) {
 
 ```
 
-激励视频广告 - ADSuyiSDKRewardvodAd请求示例：
+Swift请求激励视频代码示例：[[激励视频广告代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS-Swift/blob/master/ADSuyiSDKDemo-iOS-Swift/SuyiAds/RewardAd/AdSuyiRewardViewController.swift)
+
+OC请求激励视频代码示例：
 
 ```obj-c
 #import <ADSuyiSDK/ADSuyiSDKRewardvodAd.h>
@@ -990,7 +1007,9 @@ if(!_nativeAd) {
 <div STYLE="page-break-after: always;"></div>
 ## 4.6 插屏广告 - ADSuyiSDKIntertitialAd
 
-`插屏广告代码示例：`[[插屏广告代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS/blob/master/ADSuyiSDKDemo-iOS/SuyiAds/InterstitialAd/AdSuyiInterstitialViewController.m)
+`OC请求插屏广告代码示例：`[[插屏广告代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS/blob/master/ADSuyiSDKDemo-iOS/SuyiAds/InterstitialAd/AdSuyiInterstitialViewController.m)
+
+`Swift请求插屏广告代码示例：`[[插屏广告代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS-Swift/blob/master/ADSuyiSDKDemo-iOS-Swift/SuyiAds/InterstitialAd/AdSuyiInterstitialViewController.swift)
 
 插屏广告 - ADSuyiSDKIntertitialAd：
 
@@ -1091,7 +1110,9 @@ if(!_nativeAd) {
 
 ```
 
-插屏广告 - ADSuyiSDKIntertitialAd请求示例：
+Swift请求插屏代码示例：[[插屏广告代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS-Swift/blob/master/ADSuyiSDKDemo-iOS-Swift/SuyiAds/InterstitialAd/AdSuyiInterstitialViewController.swift)
+
+OC请求插屏代码示例：
 
 ```obj-c
 #import <ADSuyiSDK/ADSuyiSDKIntertitialAd.h>
@@ -1142,7 +1163,9 @@ if(!_nativeAd) {
 <div STYLE="page-break-after: always;"></div>
 ##4.7 全屏视频广告 - ADSuyiSDKFullScreenVodAd
 
-`全屏视频广告代码示例：`[[全屏视频广告代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS/blob/master/ADSuyiSDKDemo-iOS/SuyiAds/FullScreenVodAd/AdSuyiFullScreenvodViewController.m)
+`OC请求全屏视频广告代码示例：`[[全屏视频广告代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS/blob/master/ADSuyiSDKDemo-iOS/SuyiAds/FullScreenVodAd/AdSuyiFullScreenvodViewController.m)
+
+`Swift请求全屏视频广告代码示例：`[[全屏视频广告代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS-Swift/blob/master/ADSuyiSDKDemo-iOS-Swift/SuyiAds/FullScreenVodAd/AdSuyiFullScreenVodViewController.swift)
 
 全屏视频广告 - ADSuyiSDKFullScreenVodAd：
 
@@ -1261,7 +1284,9 @@ ADSuyiSDKFullScreenVodAd播放完成回调
 @end
 ```
 
-全屏视频广告 - ADSuyiSDKFullScreenVodAd请求示例：
+Swift请求全屏视频广告代码示例：[[全屏视频广告代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS-Swift/blob/master/ADSuyiSDKDemo-iOS-Swift/SuyiAds/FullScreenVodAd/AdSuyiFullScreenVodViewController.swift)
+
+OC请求全屏视频广告代码示例：
 
 ```objective-c
 #import <ADSuyiSDK/ADSuyiSDKFullScreenVodAd.h>
@@ -1320,7 +1345,9 @@ ADSuyiSDKFullScreenVodAd播放完成回调
 <div STYLE="page-break-after: always;"></div> 
 ## 4.8 沉浸式视频广告 - ADSuyiSDKDrawvodAd
 
-`沉浸式视频广告代码示例：`[[沉浸式视频广告代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS/blob/master/ADSuyiSDKDemo-iOS/SuyiAds/DrawVodAd/AdSuyiDrawvodViewController.m)
+`OC请求沉浸式视频代码示例：`[[沉浸式视频广告代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS/blob/master/ADSuyiSDKDemo-iOS/SuyiAds/DrawVodAd/AdSuyiDrawvodViewController.m)
+
+`Swift请求沉浸式视频代码示例：`[[沉浸式视频广告代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS-Swift/blob/master/ADSuyiSDKDemo-iOS-Swift/SuyiAds/DrawVodAd/AdSuyiDrawVodViewController.swift)
 
 沉浸式视频广告 - ADSuyiSDKDrawvodAd：
 
@@ -1436,7 +1463,9 @@ typedef NS_ENUM(NSUInteger, ADSuyiSDKDrawvodAdStatus) {
 @end
 ```
 
-沉浸式视频广告 - ADSuyiSDKDrawvodAd请求示例：
+Swift请求沉浸式视频代码示例：[[沉浸式视频广告代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS-Swift/blob/master/ADSuyiSDKDemo-iOS-Swift/SuyiAds/DrawVodAd/AdSuyiDrawVodViewController.swift)
+
+OC请求沉浸式视频代码示例：
 
 ```objective-c
 - (ADSuyiSDKDrawvodAd *)drawvodAd {
