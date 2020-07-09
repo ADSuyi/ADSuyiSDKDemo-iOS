@@ -33,7 +33,7 @@
     self.splashAd = [[ADSuyiSDKSplashAd alloc]init];
     self.splashAd.delegate = self;
     self.splashAd.controller = self;
-    self.splashAd.posId = @"d11c2ef29dcb7e6e62";
+    self.splashAd.posId = @"73128265daffdd6a1d";
     self.splashAd.tolerateTimeout = 4;
     self.splashAd.backgroundColor = [UIColor adsy_getColorWithImage:[UIImage imageNamed:@"750x1334.png"] withNewSize:[UIScreen mainScreen].bounds.size];
     

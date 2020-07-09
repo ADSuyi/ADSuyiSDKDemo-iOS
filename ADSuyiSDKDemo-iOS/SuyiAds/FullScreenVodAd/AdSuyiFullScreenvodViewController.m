@@ -31,7 +31,7 @@
     // 1、初始化全屏视频广告
     self.fullScreenvodAd = [ADSuyiSDKFullScreenVodAd new];
     self.fullScreenvodAd.controller = self;
-    self.fullScreenvodAd.posId = @"7206088624654025e7";
+    self.fullScreenvodAd.posId = @"f3953777bc833957d8";
     self.fullScreenvodAd.delegate = self;
     self.fullScreenvodAd.tolerateTimeout = 5;
     // 2、加载全屏视频广告

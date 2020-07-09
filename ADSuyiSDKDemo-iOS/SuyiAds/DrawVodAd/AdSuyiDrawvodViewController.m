@@ -168,7 +168,7 @@ static NSString *identifier = @"cell";
     if(!_drawvodAd) {
         // 1、初始化沉浸式视频广告，流程和信息流广告类似
         _drawvodAd = [[ADSuyiSDKDrawvodAd alloc] initWithSize:self.tableView.frame.size];
-        _drawvodAd.posId = @"16e160a112f019de2b";
+        _drawvodAd.posId = @"e60e6ad498e1be4906";
         _drawvodAd.controller = self;
         _drawvodAd.delegate = self;
     }

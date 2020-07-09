@@ -108,13 +108,13 @@
         }
         case 2: {
             AdSuyiNativeViewController *vc = [AdSuyiNativeViewController new];
-            vc.posId = @"01ab5a91baf16067cd";
+            vc.posId = @"d4366018478613f768";
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }
         case 3: {
             AdSuyiNativeViewController *vc = [AdSuyiNativeViewController new];
-            vc.posId = @"2292f78269697e0e39";
+            vc.posId = @"26fe47d8b06658ace0";
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }

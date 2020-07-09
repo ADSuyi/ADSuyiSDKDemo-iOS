@@ -32,7 +32,7 @@
     self.rewardvodAd.delegate = self;
     self.rewardvodAd.tolerateTimeout = 5;
     self.rewardvodAd.controller = self;
-    self.rewardvodAd.posId = @"e9e0f8d1fe21873695";
+    self.rewardvodAd.posId = @"47d196ffaaa92ae93c";
     
     // 2、加载激励视频广告
     [self.rewardvodAd loadRewardvodAd];

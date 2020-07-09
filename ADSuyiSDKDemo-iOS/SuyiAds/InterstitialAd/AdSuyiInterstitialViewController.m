@@ -31,7 +31,7 @@
     // 1、初始化插屏广告
     self.intertitialAd = [ADSuyiSDKIntertitialAd new];
     self.intertitialAd.controller = self;
-    self.intertitialAd.posId = @"1fbfbb9778d168e5a7";
+    self.intertitialAd.posId = @"9535af29514e548fe0";
     self.intertitialAd.delegate = self;
     self.intertitialAd.tolerateTimeout = 4;
     // 2、加载插屏广告
