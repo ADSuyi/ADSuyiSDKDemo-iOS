@@ -56,7 +56,7 @@
     self.splashAd.delegate = self;
     self.splashAd.controller = _window.rootViewController;
     // 2、设置开屏的广告位id
-    self.splashAd.posId = @"d11c2ef29dcb7e6e62";
+    self.splashAd.posId = @"73128265daffdd6a1d";
     /**
     开屏请求总超时时间:所有平台轮询的请求等待总时长（不包括图片渲染时间），单位秒，推荐设置为4s，最小值为3s
     开屏各平台分配逻辑:(目前只有开屏需要分配时间，并且理论上分配给到各平台的超时时间不会完全耗尽)
