@@ -10,7 +10,7 @@ target 'ADSuyiSDKDemo-iOS' do
 
   # Pods for ADSuyiSDKDemo-iOS
 
-  pod 'ADSuyiSDK', '~> 3.0.4'
+  pod 'ADSuyiSDK', '~> 3.0.6'
   pod 'ADSuyiAdMobile'
   pod 'ADSuyiMTG'
   pod 'ADSuyiGDT'
