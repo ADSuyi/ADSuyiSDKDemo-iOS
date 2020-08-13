@@ -1,6 +1,6 @@
 
 
-# ADSuyiSDK iOS接入文档 v3.0.4
+# ADmobile ADSuyiSDK iOS接入文档 v3.0.6
 
 
 
@@ -41,11 +41,12 @@
 | 文档版本 | 修订日期   | 修订说明                                                     |
 | -------- | ---------- | ------------------------------------------------------------ |
 | V3.0.4   | 2020-05-28 | 接入广点通、头条、百度、inmobi、汇量、快手、谷歌、Mopub、Unity广告平台，建立开屏、banner、信息流（自渲染和模板）、插屏、激励视频、全屏视频、沉浸式视频广告类型 |
+| v3.0.6   | 2020-08-12 | 支持浮窗广告，接入讯飞、芒果TV平台，修复已知问题             |
 
 <div STYLE="page-break-after: always;"></div>
 ## 1.1 概述
 
-尊敬的开发者朋友，欢迎您使用苏伊士广告SDK。通过本文档，您可以在几分钟之内轻松完成广告的集成过程。
+尊敬的开发者朋友，欢迎您使用ADmobile 苏伊士广告SDK。通过本文档，您可以在几分钟之内轻松完成广告的集成过程。
 
 操作系统： iOS 9.0 及以上版本
 
@@ -72,6 +73,9 @@ pod 'ADSuyiInmobi'
 pod 'ADSuyiMTG'
 pod 'ADSuyiGoogle'
 pod 'ADSuyiUnity'
+pod 'ADSuyiMGTV'
+pod 'ADSuyiIFLY'
+pod 'ADSuyiMopub'
 // 推荐导入，通过系统定位获取定位信息
 pod 'ADSuyiLocationManagerGPS'// 含有系统定位代码
 ```
@@ -79,7 +83,7 @@ pod 'ADSuyiLocationManagerGPS'// 含有系统定位代码
 推荐使用导入命令
 
 ```ruby
-pod 'ADSuyiSDK', '~> 3.0.4'
+pod 'ADSuyiSDK', '~> 3.0.6.0'
 pod 'ADSuyiBU'
 pod 'ADSuyiGDT'
 pod 'ADSuyiAdMobile'
@@ -87,25 +91,28 @@ pod 'ADSuyiInmobi'
 pod 'ADSuyiMTG'
 pod 'ADSuyiGoogle'
 pod 'ADSuyiUnity'
+pod 'ADSuyiMGTV'
+pod 'ADSuyiIFLY'
+pod 'ADSuyiMopub'
 ```
 
 <div STYLE="page-break-after: always;"></div>
 ## 2.2 手动导入SDK方式
 
-[点击进入SDK下载地址](http://101.37.118.54/dokuwiki/doku.php?id=admobgensdk)下载各SDK拖入到工程中
+[点击进入SDK下载地址](http://doc.admobile.top/iOSSDK/ADSuyi_SDK_iOS_3.0.6.zip)下载各SDK拖入到工程中
 
 手动方式导入,需要添加如下依赖库:
 
 ```obj-c
-AdSupport.framework 
-CoreLocation.framework 
-QuartzCore.framework 
+AdSupport.framework
+CoreLocation.framework
+QuartzCore.framework
 SystemConfiguration.framework
 CoreTelephony.framework
-libz.tbd 
+libz.tbd
 WebKit.framework (Optional)
 libxml2.tbd
-Security.framework 
+Security.framework
 StoreKit.framework
 AVFoundation.framework
 CoreMedia.framework
@@ -186,6 +193,20 @@ NSLocationAlwaysAndWhenInUseUsageDeion
         <string>koubei</string>
         <string>eleme</string>
         <string>youku</string>
+        <string>gengmei</string>
+        <string>airbnb</string>
+        <string>alipays</string>
+        <string>didicommon</string>
+        <string>OneTravel</string>
+        <string>farfetchCN</string>
+        <string>farfetch</string>
+        <string>snssdk1112</string>
+        <string>snssdk1128</string>
+        <string>miguvideo</string>
+        <string>kfcapplinkurl</string>
+        <string>iqiyi</string>
+        <string>uclink</string>
+        <string>app.soyoung</string>
     </array>
 ```
 
@@ -194,7 +215,7 @@ NSLocationAlwaysAndWhenInUseUsageDeion
 <div STYLE="page-break-after: always;"></div>
 ## 4.1 集合SDK的初始化
 
-`申请的appid和你的包名相对应`
+`申请的appid必须与您的包名一一对应`
 
 ```obj-c
 // ADSuyiSDK初始化
@@ -224,7 +245,9 @@ NSString *sdkVersion = [ADSuyiSDK getSDKVersion];
 <div STYLE="page-break-after: always;"></div>
 ## 4.2 开屏广告 - ADSuyiSDKSplashAd
 
-开屏广告会在您的应用开启时加载，拥有固定展示时间，展示完毕后自动关闭并进入您的应用主界面。
+开屏广告会在您的应用开启时加载展示，拥有固定展示时间，展示完毕后自动关闭并进入您的应用主界面。
+
+开屏广告建议在闪屏页进行展示，开屏广告的宽度和高度取决于屏幕的宽高；**开屏广告的高度必须大于等于屏幕高度（手机屏幕完整高度，包括状态栏之类）的75%**，否则可能会影响收益计费。
 
 推荐在 `AppDelegate`的 `didFinishLaunchingWithOptions`方法的 `return YES`之前调用开屏。
 
@@ -350,6 +373,7 @@ OC请求开屏广告代码示例：
 /*
  * 推荐在AppDelegate中的最后加载开屏广告
  * 其他的接入方式会有需要特殊注意的方式，遇到过的相关问题在SDK相关问题的文档中有提到
+ * 不建议在开屏展示过程中做控制器的切换（如：开屏广告关闭回调时切换当前window的根控制器或者present另外一个控制器）
  */
 
 - (void)loadSplashAd{
@@ -441,7 +465,9 @@ OC请求开屏广告代码示例：
 <br>
 
 <div STYLE="page-break-after: always;"></div>
-## 4.3 banner广告 - ADSuyiSDKBannerAdView
+## 4.3 Banner横幅广告 - ADSuyiSDKBannerAdView
+
+Banner广告(横幅广告)位于app顶部、中部、底部任意一处，横向贯穿整个app页面；当用户与app互动时，Banner广告会停留在屏幕上，并可在一段时间后自动刷新。
 
 `OC请求横幅代码示例：`[[横幅代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS/blob/master/ADSuyiSDKDemo-iOS/SuyiAds/BannerAd/AdSuyiBannerViewController.m)
 
@@ -621,6 +647,8 @@ OC请求横幅广告请求示例：
 
 <div STYLE="page-break-after: always;"></div>
 ## 4.4 信息流广告 - ADSuyiSDKNativeAd
+
+信息流广告，具备自渲染和模板两种广告样式：自渲染是SDK将返回广告标题、描述、Icon、图片、多媒体视图等信息，开发者可通过自行拼装渲染成喜欢的样式；模板样式则是返回拼装好的广告视图，开发者只需将视图添加到相应容器即可，模板样式的容器高度建议是自适应。**由于信息流广告不同广告平台支持的样式不一致，有些平台不支持自渲染，有些平台不支持模板，所以下发的广告可能是模板和自渲染混合，开发者可参考Demo适配两种类型。**
 
 `OC请求信息流广告代码示例：`[[信息流广告代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS/blob/master/ADSuyiSDKDemo-iOS/SuyiAds/NativeAd/AdSuyiNativeViewController.m)
 
@@ -812,6 +840,8 @@ if(!_nativeAd) {
 
 <div STYLE="page-break-after: always;"></div>
 ## 4.5 激励视频广告 - ADSuyiSDKRewardvodAd
+
+将短视频融入到APP场景当中，用户观看短视频广告后可以给予一些应用内奖励。常出现在游戏的复活、任务等位置，或者网服类APP的一些增值服务场景。
 
 `OC请求激励视频代码示例：`[[激励视频广告代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS/blob/master/ADSuyiSDKDemo-iOS/SuyiAds/RewardVodAd/AdSuyiRewardvodViewController.m)
 
@@ -1007,6 +1037,8 @@ OC请求激励视频代码示例：
 <div STYLE="page-break-after: always;"></div>
 ## 4.6 插屏广告 - ADSuyiSDKIntertitialAd
 
+插屏广告是移动广告的一种常见形式，在应用流程中弹出，当应用展示插屏广告时，用户可以选择点击广告，访问其目标网址，也可以将其关闭并返回应用。在应用执行流程的自然停顿点，适合投放这类广告。
+
 `OC请求插屏广告代码示例：`[[插屏广告代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS/blob/master/ADSuyiSDKDemo-iOS/SuyiAds/InterstitialAd/AdSuyiInterstitialViewController.m)
 
 `Swift请求插屏广告代码示例：`[[插屏广告代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS-Swift/blob/master/ADSuyiSDKDemo-iOS-Swift/SuyiAds/InterstitialAd/AdSuyiInterstitialViewController.swift)
@@ -1162,6 +1194,8 @@ OC请求插屏代码示例：
 
 <div STYLE="page-break-after: always;"></div>
 ##4.7 全屏视频广告 - ADSuyiSDKFullScreenVodAd
+
+类似激励视频，与激励视频不同的是，全屏视频广告在观看一定时长（通常为5s）后即可跳过广告，无需全部观看完成，有广告关闭回调，但是没有激励回调。
 
 `OC请求全屏视频广告代码示例：`[[全屏视频广告代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS/blob/master/ADSuyiSDKDemo-iOS/SuyiAds/FullScreenVodAd/AdSuyiFullScreenvodViewController.m)
 
@@ -1345,6 +1379,8 @@ OC请求全屏视频广告代码示例：
 <div STYLE="page-break-after: always;"></div> 
 ## 4.8 沉浸式视频广告 - ADSuyiSDKDrawvodAd
 
+类似抖音、快手小视频一样的视频广告，目前仅有穿山甲和快手联盟拥有该样式。
+
 `OC请求沉浸式视频代码示例：`[[沉浸式视频广告代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS/blob/master/ADSuyiSDKDemo-iOS/SuyiAds/DrawVodAd/AdSuyiDrawvodViewController.m)
 
 `Swift请求沉浸式视频代码示例：`[[沉浸式视频广告代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS-Swift/blob/master/ADSuyiSDKDemo-iOS-Swift/SuyiAds/DrawVodAd/AdSuyiDrawVodViewController.swift)
@@ -1512,9 +1548,15 @@ OC请求沉浸式视频代码示例：
 ```
 
 <div STYLE="page-break-after: always;"></div> 
+## 4.9 浮窗广告 - ADSuyiSDKNotificationAd
+
+浮窗广告正常情况下不需要手动调用任何相关代码，如果需要展示请联系媒介处理。
+
+
+<div STYLE="page-break-after: always;"></div> 
 ## 作者
 
-sangshen@admobile.top
+sangshen@admobile.top， huacai@admobile.top
 
 ## 商务合作
 
