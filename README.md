@@ -1,6 +1,6 @@
 
 
-# ADmobile ADSuyiSDK iOS接入文档 v3.0.6
+# ADmobile ADSuyiSDK iOS接入文档 v3.0.7
 
 
 
@@ -42,6 +42,7 @@
 | -------- | ---------- | ------------------------------------------------------------ |
 | V3.0.4   | 2020-05-28 | 接入广点通、头条、百度、inmobi、汇量、快手、谷歌、Mopub、Unity广告平台，建立开屏、banner、信息流（自渲染和模板）、插屏、激励视频、全屏视频、沉浸式视频广告类型 |
 | v3.0.6   | 2020-08-12 | 支持浮窗广告，接入讯飞、芒果TV平台，修复已知问题             |
+| v3.0.7   | 2020-09-21 | 支持打底广告，修复已知问题                                   |
 
 <div STYLE="page-break-after: always;"></div>
 ## 1.1 概述
@@ -64,18 +65,18 @@
 推荐使用pod命令
 
 ```ruby
-// 挑选在苏伊士托管的平台导入项目
-pod 'ADSuyiSDK'
-pod 'ADSuyiBU'
-pod 'ADSuyiGDT'
-pod 'ADSuyiAdMobile'
-pod 'ADSuyiInmobi'
-pod 'ADSuyiMTG'
-pod 'ADSuyiGoogle'
-pod 'ADSuyiUnity'
-pod 'ADSuyiMGTV'
-pod 'ADSuyiIFLY'
-pod 'ADSuyiMopub'
+// 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
+pod 'ADSuyiSDK'      # 主SDK
+pod 'ADSuyiBU'       # 穿山甲(头条)
+pod 'ADSuyiGDT'      # 广点通
+pod 'ADSuyiAdMobile' # ADMobile
+pod 'ADSuyiInmobi'   # Inmobi
+pod 'ADSuyiMTG'      # Mobvista(汇量)
+pod 'ADSuyiGoogle'   # 谷歌
+pod 'ADSuyiUnity'    # Unity
+pod 'ADSuyiMGTV'     # 芒果TV
+pod 'ADSuyiIFLY'     # 讯飞
+pod 'ADSuyiMopub'    # mopub
 // 推荐导入，通过系统定位获取定位信息
 pod 'ADSuyiLocationManagerGPS'// 含有系统定位代码
 ```
@@ -83,7 +84,7 @@ pod 'ADSuyiLocationManagerGPS'// 含有系统定位代码
 推荐使用导入命令
 
 ```ruby
-pod 'ADSuyiSDK', '~> 3.0.6.0'
+pod 'ADSuyiSDK', '~> 3.0.7.0'
 pod 'ADSuyiBU'
 pod 'ADSuyiGDT'
 pod 'ADSuyiAdMobile'
@@ -99,7 +100,7 @@ pod 'ADSuyiMopub'
 <div STYLE="page-break-after: always;"></div>
 ## 2.2 手动导入SDK方式
 
-[点击进入SDK下载地址](http://doc.admobile.top/iOSSDK/ADSuyi_SDK_iOS_3.0.6.zip)下载各SDK拖入到工程中
+[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_SDK_iOS_3.0.6.zip)下载各SDK拖入到工程中
 
 手动方式导入,需要添加如下依赖库:
 
@@ -247,7 +248,7 @@ NSString *sdkVersion = [ADSuyiSDK getSDKVersion];
 
 开屏广告会在您的应用开启时加载展示，拥有固定展示时间，展示完毕后自动关闭并进入您的应用主界面。
 
-开屏广告建议在闪屏页进行展示，开屏广告的宽度和高度取决于屏幕的宽高；**开屏广告的高度必须大于等于屏幕高度（手机屏幕完整高度，包括状态栏之类）的75%**，否则可能会影响收益计费。
+开屏广告建议在闪屏页进行展示，开屏广告的宽度和高度取决于容器的宽高，都是会撑满广告容器；**开屏广告的高度必须大于等于屏幕高度（手机屏幕完整高度，包括状态栏之类）的75%**，否则可能会影响收益计费。
 
 推荐在 `AppDelegate`的 `didFinishLaunchingWithOptions`方法的 `return YES`之前调用开屏。
 
@@ -343,7 +344,7 @@ viewControllerForPresentingModalView
 - (void)adsy_splashAdClicked:(ADSuyiSDKSplashAd *)splashAd;
 
 /**
- 开屏被关闭
+ 开屏被关闭，强烈建议不要在此回调中做切换控制器的操作。
  
  @param splashAd 广告实例
  */
@@ -648,7 +649,7 @@ OC请求横幅广告请求示例：
 <div STYLE="page-break-after: always;"></div>
 ## 4.4 信息流广告 - ADSuyiSDKNativeAd
 
-信息流广告，具备自渲染和模板两种广告样式：自渲染是SDK将返回广告标题、描述、Icon、图片、多媒体视图等信息，开发者可通过自行拼装渲染成喜欢的样式；模板样式则是返回拼装好的广告视图，开发者只需将视图添加到相应容器即可，模板样式的容器高度建议是自适应。**由于信息流广告不同广告平台支持的样式不一致，有些平台不支持自渲染，有些平台不支持模板，所以下发的广告可能是模板和自渲染混合，开发者可参考Demo适配两种类型。**
+信息流广告，具备自渲染和模板两种广告样式：自渲染是SDK将返回广告标题、描述、Icon、图片、多媒体视图等信息，开发者可通过自行拼装渲染成喜欢的样式；模板样式则是返回拼装好的广告视图，开发者只需将视图添加到相应容器即可，模板样式的容器高度建议是自适应。**由于信息流广告不同广告平台支持的样式不一致，有些平台不支持自渲染，有些平台不支持模板，所以下发的广告可能是模板和自渲染混合，强烈建议开发者参考Demo适配两种类型。**
 
 `OC请求信息流广告代码示例：`[[信息流广告代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS/blob/master/ADSuyiSDKDemo-iOS/SuyiAds/NativeAd/AdSuyiNativeViewController.m)
 
@@ -1195,7 +1196,7 @@ OC请求插屏代码示例：
 <div STYLE="page-break-after: always;"></div>
 ##4.7 全屏视频广告 - ADSuyiSDKFullScreenVodAd
 
-类似激励视频，与激励视频不同的是，全屏视频广告在观看一定时长（通常为5s）后即可跳过广告，无需全部观看完成，有广告关闭回调，但是没有激励回调。
+类似激励视频，与激励视频不同的是，全屏视频广告在观看一定时长（通常为5s）后即可跳过广告，无需全部观看完成，有视频跳过回调，但是没有激励回调。
 
 `OC请求全屏视频广告代码示例：`[[全屏视频广告代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS/blob/master/ADSuyiSDKDemo-iOS/SuyiAds/FullScreenVodAd/AdSuyiFullScreenvodViewController.m)
 
@@ -1552,11 +1553,25 @@ OC请求沉浸式视频代码示例：
 
 浮窗广告正常情况下不需要手动调用任何相关代码，如果需要展示请联系媒介处理。
 
+**浮窗广告的暂停和恢复**。
+
+```objective-c
+#import <ADSuyiSDK/ADSuyiSDK.h>
+
+// 可通过调用此方法暂停浮窗广告投放
+[ADSuyiSDKStatusManager notificationAdPause];
+
+// 可通过调用此方法恢复浮窗广告投放
+[ADSuyiSDKStatusManager notificationAdContinue];
+```
+
+
+
 
 <div STYLE="page-break-after: always;"></div> 
 ## 作者
 
-sangshen@admobile.top， huacai@admobile.top
+sangshen@admobile.top
 
 ## 商务合作
 
