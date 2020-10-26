@@ -1,6 +1,6 @@
 
 
-# ADmobile ADSuyiSDK iOS接入文档 v3.0.7
+# ADmobile ADSuyiSDK iOS接入文档 v3.0.8
 
 
 
@@ -43,6 +43,7 @@
 | V3.0.4   | 2020-05-28 | 接入广点通、头条、百度、inmobi、汇量、快手、谷歌、Mopub、Unity广告平台，建立开屏、banner、信息流（自渲染和模板）、插屏、激励视频、全屏视频、沉浸式视频广告类型 |
 | v3.0.6   | 2020-08-12 | 支持浮窗广告，接入讯飞、芒果TV平台，修复已知问题             |
 | v3.0.7   | 2020-09-21 | 支持打底广告，修复已知问题                                   |
+| v3.0.8   | 2020-10-26 | 适配iOS14，修复已知问题                                      |
 
 <div STYLE="page-break-after: always;"></div>
 ## 1.1 概述
@@ -84,7 +85,7 @@ pod 'ADSuyiLocationManagerGPS'// 含有系统定位代码
 推荐使用导入命令
 
 ```ruby
-pod 'ADSuyiSDK', '~> 3.0.7.0'
+pod 'ADSuyiSDK', '~> 3.0.8.0'
 pod 'ADSuyiBU'
 pod 'ADSuyiGDT'
 pod 'ADSuyiAdMobile'
@@ -100,7 +101,7 @@ pod 'ADSuyiMopub'
 <div STYLE="page-break-after: always;"></div>
 ## 2.2 手动导入SDK方式
 
-[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_SDK_iOS_3.0.7.zip)下载各SDK拖入到工程中
+[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_SDK_iOS_3.0.6.zip)下载各SDK拖入到工程中
 
 手动方式导入,需要添加如下依赖库:
 
@@ -213,6 +214,151 @@ NSLocationAlwaysAndWhenInUseUsageDeion
 
 <br>
 
+## 3.2 iOS14适配
+
+由于iOS14中对于权限和隐私内容有一定程度的修改，而且和广告业务关系较大，请按照如下步骤适配，如果未适配。不会导致运行异常或者崩溃等情况，但是会一定程度上影响广告收入。敬请知悉。
+
+1. 应用编译环境升级至 Xcode 12.0 及以上版本；
+2. 升级ADSuyiSDK 3.0.8及以上版本；
+3. 设置SKAdNetwork和IDFA权限；
+
+### 3.2.1 SKAdNetwork
+
+SKAdNetwork 是接收iOS端营销推广活动归因数据的一种方法。
+
+1. 将下列SKAdNetwork ID 添加到 info.plist 中，以保证 SKAdNetwork 的正确运行。根据对接平台添加相应SKAdNetworkID，若无对接平台SKNetworkID则无需添加。
+
+```xml
+<key>SKAdNetworkItems</key>
+  <array>
+    // 穿山甲广告（ADSuyiBU）
+    <dict>
+      <key>SKAdNetworkIdentifier</key>
+      <string>238da6jt44.skadnetwork</string>
+    </dict>
+    <dict>
+      <key>SKAdNetworkIdentifier</key>
+      <string>22mmun2rn5.skadnetwork</string>
+    </dict>
+    // 谷歌广告（ADSuyiGoogle）
+    <dict>
+      <key>SKAdNetworkIdentifier</key>
+      <string>cstr6suwn9.skadnetwork</string>
+    </dict>
+    // Unity广告（ADSuyiUnity）
+    <dict>
+        <key>SKAdNetworkIdentifier</key>
+        <string>4DZT52R2T5.skadnetwork</string>
+    </dict>
+    <dict>
+        <key>SKAdNetworkIdentifier</key>
+        <string>bvpn9ufa9b.skadnetwork</string>
+    </dict>
+    // 汇量广告（ADSuyiMTG）
+    <dict>
+      <key>SKAdNetworkIdentifier</key>
+      <string>KBD757YWX3.skadnetwork</string>
+    </dict>
+    // 汇量广告 合作伙伴（ADSuyiMTG）
+    <dict>
+        <key>SKAdNetworkIdentifier</key>
+        <string>wg4vff78zm.skadnetwork</string>
+    </dict>
+    <dict>
+        <key>SKAdNetworkIdentifier</key>
+        <string>737z793b9f.skadnetwork</string>
+    </dict>
+    <dict>
+        <key>SKAdNetworkIdentifier</key>
+        <string>ydx93a7ass.skadnetwork</string>
+    </dict>
+    <dict>
+        <key>SKAdNetworkIdentifier</key>
+        <string>prcb7njmu6.skadnetwork</string>
+    </dict>
+    <dict>
+        <key>SKAdNetworkIdentifier</key>
+        <string>7UG5ZH24HU.skadnetwork</string>
+    </dict>
+    <dict>
+        <key>SKAdNetworkIdentifier</key>
+        <string>44jx6755aq.skadnetwork</string>
+    </dict>
+    <dict>
+        <key>SKAdNetworkIdentifier</key>
+        <string>2U9PT9HC89.skadnetwork</string>
+    </dict>
+    <dict>
+        <key>SKAdNetworkIdentifier</key>
+        <string>W9Q455WK68.skadnetwork</string>
+    </dict>
+    <dict>
+        <key>SKAdNetworkIdentifier</key>
+        <string>YCLNXRL5PM.skadnetwork</string>
+    </dict>
+    <dict>
+        <key>SKAdNetworkIdentifier</key>
+        <string>TL55SBB4FM.skadnetwork</string>
+    </dict>
+    <dict>
+        <key>SKAdNetworkIdentifier</key>
+        <string>8s468mfl3y.skadnetwork</string>
+    </dict>
+    <dict>
+        <key>SKAdNetworkIdentifier</key>
+        <string>GLQZH8VGBY.skadnetwork</string>
+    </dict>
+    <dict>
+        <key>SKAdNetworkIdentifier</key>
+        <string>c6k4g5qg8m.skadnetwork</string>
+    </dict>
+    <dict>
+        <key>SKAdNetworkIdentifier</key>
+        <string>mlmmfzh3r3.skadnetwork</string>
+    </dict>
+    <dict>
+        <key>SKAdNetworkIdentifier</key>
+        <string>4PFYVQ9L8R.skadnetwork</string>
+    </dict>
+    <dict>
+        <key>SKAdNetworkIdentifier</key>
+        <string>av6w8kgt66.skadnetwork</string>
+    </dict>
+    <dict>
+        <key>SKAdNetworkIdentifier</key>
+        <string>6xzpu9s2p8.skadnetwork</string>
+    </dict>
+    <dict>
+        <key>SKAdNetworkIdentifier</key>
+        <string>hs6bdukanm.skadnetwork</string>
+    </dict>
+  </array>
+```
+
+### 3.2.2 IDFA
+
+从 iOS 14 开始，在应用程序调用 App Tracking Transparency 向用户提跟踪授权请求之前，IDFA 将不可用。
+
+1. 更新 Info.plist，添加 NSUserTrackingUsageDescription 字段和自定义文案描述。
+
+```objective-c
+<key>NSUserTrackingUsageDescription</key>
+<string>该标识符将用于向您投放个性化广告</string>
+```
+
+2. 向用户申请权限。
+
+```objective-c
+#import <AppTrackingTransparency/AppTrackingTransparency.h>
+#import <AdSupport/AdSupport.h>
+...
+- (void)requestIDFA {
+  [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
+    [self requestAd]
+  }];
+}
+```
+
 <div STYLE="page-break-after: always;"></div>
 ## 4.1 集合SDK的初始化
 
@@ -234,7 +380,7 @@ NSLocationAlwaysAndWhenInUseUsageDeion
 [ADSuyiSDK setLogLevel:ADSuyiKitLogLevelDebug];
 ```
 
-获取ADMobGenSDK版本号
+获取ADSuyiSDK版本号
 
 ```obj-c
 //获取SDK版本号
@@ -517,7 +663,7 @@ Banner广告(横幅广告)位于app顶部、中部、底部任意一处，横向
 /**
  拉取并展示广告
 */
-- (void)loadAndShowWithError:(NSError **)error;
+- (void)loadAndShow;
 
 @end
 ```
@@ -590,7 +736,7 @@ OC请求横幅广告请求示例：
     [self.view addSubview:self.bannerView];
     self.bannerView.backgroundColor = [UIColor redColor];
     // 5、加载并展示
-    [self.bannerView loadAndShowWithError:nil];
+    [self.bannerView loadAndShow];
 }
 
 // 5、代理回调
@@ -1572,6 +1718,8 @@ OC请求沉浸式视频代码示例：
 ## 作者
 
 sangshen@admobile.top
+
+huacai@admobile.top
 
 ## 商务合作
 
