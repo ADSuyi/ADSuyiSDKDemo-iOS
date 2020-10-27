@@ -101,7 +101,7 @@ pod 'ADSuyiMopub'
 <div STYLE="page-break-after: always;"></div>
 ## 2.2 手动导入SDK方式
 
-[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_SDK_iOS_3.0.6.zip)下载各SDK拖入到工程中
+[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_SDK_iOS_3.0.8.zip)下载各SDK拖入到工程中
 
 手动方式导入,需要添加如下依赖库:
 
