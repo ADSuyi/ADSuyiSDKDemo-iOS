@@ -30,17 +30,22 @@
     
     // 设置日志输出等级
     [ADSuyiSDK setLogLevel:ADSuyiKitLogLevelDebug];
-    // ADSuyiSDK初始化
-    [ADSuyiSDK initWithAppId:@"3437764" completionBlock:^(NSError * _Nonnull error) {
-        if (error) {
-            NSLog(@"SDK 初始化失败：%@", error.localizedDescription);
-        }
+    // 隐私合规化示例
+    UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"亲爱的用户，欢迎您信任并使用【】，我们依据相关法律制定了《用户协议》和《隐私协议》帮你你了解我们手机，使用，存储和共享个人信息情况，请你在点击之前仔细阅读并理解相关条款。\n1、在使用我们的产品和服务时，将会提供与具体功能有关的个法人信息（可能包括身份验证，位置信息，设备信息和操作日志等）\n2、我们会采用业界领先的安全技术来保护你的个人隐私，未经授权许可我们不会讲上述信息共享给任何第三方或用于未授权的其他用途。\n如你同意请点击同意按钮并继续。" preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertAction *cancle = [UIAlertAction actionWithTitle:@"不同意" style:(UIAlertActionStyleCancel) handler:nil];
+    UIAlertAction *agree = [UIAlertAction actionWithTitle:@"同意" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        // 用户同意隐私后 初始化
+        // ADSuyiSDK初始化
+        [ADSuyiSDK initWithAppId:@"3437764" completionBlock:^(NSError * _Nonnull error) {
+            if (error) {
+                NSLog(@"SDK 初始化失败：%@", error.localizedDescription);
+            }
+        }];
     }];
-    
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     _window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
     [_window makeKeyAndVisible];
-    
+    [_window.rootViewController presentViewController:alertVc animated:nil completion:nil];
     /*
      * 推荐在AppDelegate中的最后加载开屏广告
      * 其他的接入方式会有需要特殊注意的方式，遇到过的相关问题在SDK相关问题的文档中有提到
