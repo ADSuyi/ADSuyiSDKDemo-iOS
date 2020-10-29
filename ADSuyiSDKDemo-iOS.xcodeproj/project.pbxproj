@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		128C92C5EBD58CC366E48B48 /* Pods_ADSuyiSDKDemo_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A03A726372D89BD0B49B030F /* Pods_ADSuyiSDKDemo_iOS.framework */; };
+		820EC7E6254A9F77001C7C88 /* BlankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 820EC7E3254A9F77001C7C88 /* BlankViewController.m */; };
+		820EC7E7254A9F77001C7C88 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 820EC7E4254A9F77001C7C88 /* TableViewController.m */; };
 		BF279CDA249B134700C38704 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF279CD9249B134700C38704 /* LaunchScreen.storyboard */; };
 		BFEA086D247E4CCC001815E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA086C247E4CCC001815E3 /* AppDelegate.m */; };
 		BFEA0873247E4CCC001815E3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA0872247E4CCC001815E3 /* ViewController.m */; };
@@ -29,6 +31,10 @@
 
 /* Begin PBXFileReference section */
 		2F224B5F4E4E0DCAE1105072 /* Pods-ADSuyiSDKDemo-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADSuyiSDKDemo-iOS.release.xcconfig"; path = "Target Support Files/Pods-ADSuyiSDKDemo-iOS/Pods-ADSuyiSDKDemo-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		820EC7E2254A9F77001C7C88 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		820EC7E3254A9F77001C7C88 /* BlankViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlankViewController.m; sourceTree = "<group>"; };
+		820EC7E4254A9F77001C7C88 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		820EC7E5254A9F77001C7C88 /* BlankViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlankViewController.h; sourceTree = "<group>"; };
 		A03A726372D89BD0B49B030F /* Pods_ADSuyiSDKDemo_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ADSuyiSDKDemo_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF279CD9249B134700C38704 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFEA0868247E4CCC001815E3 /* ADSuyiSDKDemo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ADSuyiSDKDemo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +98,17 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		820EC7E1254A9F77001C7C88 /* Contain */ = {
+			isa = PBXGroup;
+			children = (
+				820EC7E2254A9F77001C7C88 /* TableViewController.h */,
+				820EC7E4254A9F77001C7C88 /* TableViewController.m */,
+				820EC7E3254A9F77001C7C88 /* BlankViewController.m */,
+				820EC7E5254A9F77001C7C88 /* BlankViewController.h */,
+			);
+			path = Contain;
+			sourceTree = "<group>";
+		};
 		BFEA085F247E4CCC001815E3 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +149,7 @@
 		BFEA0888247E5430001815E3 /* SuyiAds */ = {
 			isa = PBXGroup;
 			children = (
+				820EC7E1254A9F77001C7C88 /* Contain */,
 				BFEA0889247E5430001815E3 /* NativeAd */,
 				BFEA088E247E5430001815E3 /* BannerAd */,
 				BFEA0891247E5430001815E3 /* SplashAd */,
@@ -349,12 +367,14 @@
 				BFEA0873247E4CCC001815E3 /* ViewController.m in Sources */,
 				BFEA08A9247E5430001815E3 /* AdSuyiInterstitialViewController.m in Sources */,
 				BFEA086D247E4CCC001815E3 /* AppDelegate.m in Sources */,
+				820EC7E7254A9F77001C7C88 /* TableViewController.m in Sources */,
 				BFEA08AA247E5430001815E3 /* AdSuyiRewardvodViewController.m in Sources */,
 				BFEA08A4247E5430001815E3 /* AdSuyiBannerViewController.m in Sources */,
 				BFEA08A2247E5430001815E3 /* AdSuyiNativeViewController.m in Sources */,
 				BFEA087E247E4CCF001815E3 /* main.m in Sources */,
 				BFEA08A3247E5430001815E3 /* AdSuyiNativeViewCell.m in Sources */,
 				BFEA08A6247E5430001815E3 /* AdSuyiDrawvodViewController.m in Sources */,
+				820EC7E6254A9F77001C7C88 /* BlankViewController.m in Sources */,
 				BFEA08A7247E5430001815E3 /* AdSuyiDrawvodAdTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
