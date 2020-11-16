@@ -1,6 +1,6 @@
 
 
-# ADmobile ADSuyiSDK iOS接入文档 v3.0.8
+# ADmobile ADSuyiSDK iOS接入文档 v3.0.9
 
 
 
@@ -44,6 +44,7 @@
 | v3.0.6   | 2020-08-12 | 支持浮窗广告，接入讯飞、芒果TV平台，修复已知问题             |
 | v3.0.7   | 2020-09-21 | 支持打底广告，修复已知问题                                   |
 | v3.0.8   | 2020-10-26 | 适配iOS14，修复已知问题                                      |
+| v3.0.9   | 2020-11-16 | 浮窗广告适配广点通                                           |
 
 <div STYLE="page-break-after: always;"></div>
 ## 1.1 概述
@@ -101,7 +102,7 @@ pod 'ADSuyiMopub'
 <div STYLE="page-break-after: always;"></div>
 ## 2.2 手动导入SDK方式
 
-[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_SDK_iOS_3.0.8.zip)下载各SDK拖入到工程中
+[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_SDK_iOS_3.0.9.zip)下载各SDK拖入到工程中
 
 手动方式导入,需要添加如下依赖库:
 
