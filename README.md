@@ -86,7 +86,7 @@ pod 'ADSuyiLocationManagerGPS'// 含有系统定位代码
 推荐使用导入命令
 
 ```ruby
-pod 'ADSuyiSDK', '~> 3.0.8.0'
+pod 'ADSuyiSDK', '~> 3.0.9.0'
 pod 'ADSuyiBU'
 pod 'ADSuyiGDT'
 pod 'ADSuyiAdMobile'
