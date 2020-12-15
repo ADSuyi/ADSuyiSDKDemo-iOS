@@ -1,6 +1,6 @@
 
 
-# ADmobile ADSuyiSDK iOS接入文档 v3.0.9
+# ADmobile ADSuyiSDK iOS接入文档 v3.1.0
 
 
 
@@ -45,6 +45,7 @@
 | v3.0.7   | 2020-09-21 | 支持打底广告，修复已知问题                                   |
 | v3.0.8   | 2020-10-26 | 适配iOS14，修复已知问题                                      |
 | v3.0.9   | 2020-11-16 | 浮窗广告适配广点通                                           |
+| v3.1.0   | 2020-12-14 | 广告场景功能，开放开屏跳过按钮，错误码规范性整理，修复已知问题 |
 
 <div STYLE="page-break-after: always;"></div>
 ## 1.1 概述
@@ -70,7 +71,7 @@
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
 pod 'ADSuyiSDK'      # 主SDK
 pod 'ADSuyiBU'       # 穿山甲(头条)
-pod 'ADSuyiGDT'      # 广点通
+pod 'ADSuyiGDT'      # 优量汇
 pod 'ADSuyiAdMobile' # ADMobile
 pod 'ADSuyiInmobi'   # Inmobi
 pod 'ADSuyiMTG'      # Mobvista(汇量)
@@ -86,7 +87,7 @@ pod 'ADSuyiLocationManagerGPS'// 含有系统定位代码
 推荐使用导入命令
 
 ```ruby
-pod 'ADSuyiSDK', '~> 3.0.9.0'
+pod 'ADSuyiSDK', '~> 3.1.0.12141'
 pod 'ADSuyiBU'
 pod 'ADSuyiGDT'
 pod 'ADSuyiAdMobile'

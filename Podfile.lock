@@ -1,0 +1,70 @@
+PODS:
+  - ADMobGenDeviceInfo (1.8.4.11161):
+    - ADSuyiKit (~> 0.4.3)
+    - ADSuyiLocationManager (~> 0.1.6)
+    - ADSuyiNetwork (~> 0.1.3)
+  - ADMobileAdSDK (3.3.0.12141):
+    - ADMobGenDeviceInfo (~> 1.8.4.0)
+    - ADSuyiKit (~> 0.4.3.0)
+    - ADSuyiNetwork (~> 0.1.3.0)
+    - ADSuyiSDK (~> 3.1.0.0)
+  - ADSuyiAdMobile (3.3.0.12141):
+    - ADMobileAdSDK (~> 3.3.0.0)
+    - ADSuyiSDK (~> 3.1.0.0)
+  - ADSuyiBU (3.3.0.5.12141):
+    - ADSuyiSDK (~> 3.1.0.0)
+    - Bytedance-UnionAD (= 3.3.0.5)
+  - ADSuyiInmobi (7.5.0.12141):
+    - ADSuyiSDK (~> 3.1.0.0)
+    - InMobiSDK-China (= 7.5.0)
+  - ADSuyiKit (0.4.3.12141)
+  - ADSuyiLocationManager (0.1.6.12141)
+  - ADSuyiNetwork (0.1.3.12141):
+    - ADSuyiKit (~> 0.4.3)
+  - ADSuyiSDK (3.1.0.12141):
+    - ADMobGenDeviceInfo (~> 1.8.4.0)
+    - ADSuyiKit (~> 0.4.3.0)
+    - ADSuyiNetwork (~> 0.1.3.0)
+  - Bytedance-UnionAD (3.3.0.5)
+  - InMobiSDK-China (7.5.0)
+  - MJRefresh (3.5.0)
+
+DEPENDENCIES:
+  - ADSuyiAdMobile
+  - ADSuyiBU
+  - ADSuyiInmobi
+  - ADSuyiSDK (~> 3.1.0)
+  - MJRefresh
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - ADMobGenDeviceInfo
+    - ADMobileAdSDK
+    - ADSuyiAdMobile
+    - ADSuyiBU
+    - ADSuyiInmobi
+    - ADSuyiKit
+    - ADSuyiLocationManager
+    - ADSuyiNetwork
+    - ADSuyiSDK
+    - Bytedance-UnionAD
+    - InMobiSDK-China
+    - MJRefresh
+
+SPEC CHECKSUMS:
+  ADMobGenDeviceInfo: 67152545e9970817ca4230bb9af5e0f83155217d
+  ADMobileAdSDK: 3cb48c43e8c2dc57bbcae2d8e99d4597529f50f5
+  ADSuyiAdMobile: 66a407e25aefba3e18a425effec519cd027475d7
+  ADSuyiBU: 33e55000d80d63e3651284a55058645bdeacdce2
+  ADSuyiInmobi: fa2dca4fdf0adbdbb1dae5219ea522caef43f5ad
+  ADSuyiKit: 0cbff48779ac55b61abeed3d735041e77be9099f
+  ADSuyiLocationManager: 40b102b0c2da404228b04bdce0e54edd03bfdea1
+  ADSuyiNetwork: eb2248deb744f3b670273c51c44ca807ca1ed549
+  ADSuyiSDK: 94870d98797680e86c9713acff22b09fd15a1d69
+  Bytedance-UnionAD: 7fc15b173b44303a548b25ec534e4c1b04263b21
+  InMobiSDK-China: 509d8efa0ff54ba33bb86c56a51a9bda4d9f51e9
+  MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
+
+PODFILE CHECKSUM: 04f9350ec358248c0f22167e2673a3b68a723b28
+
+COCOAPODS: 1.10.0

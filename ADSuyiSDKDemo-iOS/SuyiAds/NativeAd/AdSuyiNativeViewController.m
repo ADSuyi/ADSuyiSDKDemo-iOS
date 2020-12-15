@@ -199,22 +199,37 @@
 
 #pragma mark - Helper
 
+- (void)adViewClickCloseButton:(UIButton *)btn {
+    UIView *adView = [btn superview];
+    [self adsy_nativeAdClose:_nativeAd adView:(UIView<ADSuyiAdapterNativeAdViewDelegate> *)adView];
+}
+
 - (void)setUpUnifiedNativeAdView:(UIView<ADSuyiAdapterNativeAdViewDelegate> *)adView {
+    // 设计的adView实际大小，其中宽度和高度可以自己根据自己的需求设置
     CGFloat adWidth = self.view.frame.size.width;
     CGFloat adHeight = (adWidth - 17 * 2) / 16.0 * 9 + 67 + 38;
-    
     adView.frame = CGRectMake(0, 0, adWidth, adHeight);
     
-//    UIImageView *iconImageView = [UIImageView new];
-//    [adView addSubview:iconImageView];
-//    iconImageView.frame = CGRectMake(12, 3, 44, 44);
-//    [adView.data loadIconImage:^(UIImage * _Nullable image) {
-//        iconImageView.image = image;
-//    }];
-//    iconImageView.clipsToBounds = YES;
-//    iconImageView.layer.cornerRadius = 22;
-//    iconImageView.contentMode = UIViewContentModeScaleAspectFill;
+    // 展示关闭按钮（必要）
+    UIButton *closeButton = [UIButton new];
+    [adView addSubview:closeButton];
+    closeButton.frame = CGRectMake(adWidth - 44, 0, 44, 44);
+    [closeButton setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
+    [closeButton addTarget:self action:@selector(adViewClickCloseButton:) forControlEvents:UIControlEventTouchUpInside];
     
+    // 显示logo图片（必要）
+    if(![adView.adsy_platform isEqualToString:ADSuyiAdapterPlatformGDT]) { // 优量汇（广点通）会自带logo，不需要添加
+        UIImageView *logoImage = [UIImageView new];
+        [adView addSubview:logoImage];
+        [adView adsy_platformLogoImageHasText:YES loadImageBlock:^(UIImage * _Nullable image) {
+            CGFloat maxWidth = 40;
+            CGFloat logoHeight = maxWidth / image.size.width * image.size.height;
+            logoImage.frame = CGRectMake(adWidth - maxWidth, adHeight - logoHeight, maxWidth, logoHeight);
+            logoImage.image = image;
+        }];
+    }
+    
+    // 设置标题文字（可选，但强烈建议带上）
     UILabel *titlabel = [UILabel new];
     [adView addSubview:titlabel];
     titlabel.font = [UIFont adsy_PingFangMediumFont:14];
@@ -226,13 +241,12 @@
     
     CGFloat height = textSize.height + 16 + 15;
     
+    // 设置主图/视频（主图可选，但强烈建议带上,如果有视频试图，则必须带上）
     CGRect mainFrame = CGRectMake(17, height, adWidth - 17 * 2, (adWidth - 17 * 2) / 16.0 * 9);
-    
     if(adView.data.shouldShowMediaView) {
         UIView *mediaView = [adView adsy_mediaViewForWidth:mainFrame.size.width];
         mediaView.frame = mainFrame;
         [adView addSubview:mediaView];
-        
     } else {
         UIImageView *imageView = [UIImageView new];
         imageView.backgroundColor = [UIColor adsy_colorWithHexString:@"#CCCCCC"];
@@ -249,8 +263,8 @@
         }
     }
     
+    // 设置广告标识（可选）
     height += (adWidth - 17 * 2) / 16.0 * 9 + 9;
-    
     UILabel *adLabel = [[UILabel alloc]init];
     adLabel.backgroundColor = [UIColor adsy_colorWithHexString:@"#CCCCCC"];
     adLabel.textColor = [UIColor adsy_colorWithHexString:@"#FFFFFF"];
@@ -260,6 +274,7 @@
     adLabel.frame = CGRectMake(17, height, 36, 18);
     adLabel.textAlignment = NSTextAlignmentCenter;
     
+    // 设置广告描述(可选)
     UILabel *descLabel = [UILabel new];
     descLabel.textColor = [UIColor adsy_colorWithHexString:@"#333333"];
     descLabel.font = [UIFont adsy_PingFangLightFont:12];

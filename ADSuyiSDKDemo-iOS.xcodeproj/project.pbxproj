@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		128C92C5EBD58CC366E48B48 /* Pods_ADSuyiSDKDemo_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A03A726372D89BD0B49B030F /* Pods_ADSuyiSDKDemo_iOS.framework */; };
+		6012F9759F8BCC5230C3F3D1 /* libPods-ADSuyiSDKDemo-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 422C7AE40E8567B741DE7A2F /* libPods-ADSuyiSDKDemo-iOS.a */; };
 		820EC7E6254A9F77001C7C88 /* BlankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 820EC7E3254A9F77001C7C88 /* BlankViewController.m */; };
 		820EC7E7254A9F77001C7C88 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 820EC7E4254A9F77001C7C88 /* TableViewController.m */; };
 		BF279CDA249B134700C38704 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF279CD9249B134700C38704 /* LaunchScreen.storyboard */; };
@@ -31,11 +31,11 @@
 
 /* Begin PBXFileReference section */
 		2F224B5F4E4E0DCAE1105072 /* Pods-ADSuyiSDKDemo-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADSuyiSDKDemo-iOS.release.xcconfig"; path = "Target Support Files/Pods-ADSuyiSDKDemo-iOS/Pods-ADSuyiSDKDemo-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		422C7AE40E8567B741DE7A2F /* libPods-ADSuyiSDKDemo-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ADSuyiSDKDemo-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		820EC7E2254A9F77001C7C88 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		820EC7E3254A9F77001C7C88 /* BlankViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlankViewController.m; sourceTree = "<group>"; };
 		820EC7E4254A9F77001C7C88 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		820EC7E5254A9F77001C7C88 /* BlankViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlankViewController.h; sourceTree = "<group>"; };
-		A03A726372D89BD0B49B030F /* Pods_ADSuyiSDKDemo_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ADSuyiSDKDemo_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF279CD9249B134700C38704 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFEA0868247E4CCC001815E3 /* ADSuyiSDKDemo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ADSuyiSDKDemo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEA086B247E4CCC001815E3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -74,7 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				128C92C5EBD58CC366E48B48 /* Pods_ADSuyiSDKDemo_iOS.framework in Frameworks */,
+				6012F9759F8BCC5230C3F3D1 /* libPods-ADSuyiSDKDemo-iOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,7 +84,7 @@
 		66890375DE678EA9A920BD13 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A03A726372D89BD0B49B030F /* Pods_ADSuyiSDKDemo_iOS.framework */,
+				422C7AE40E8567B741DE7A2F /* libPods-ADSuyiSDKDemo-iOS.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -239,8 +239,7 @@
 				BFEA0864247E4CCC001815E3 /* Sources */,
 				BFEA0865247E4CCC001815E3 /* Frameworks */,
 				BFEA0866247E4CCC001815E3 /* Resources */,
-				EE62FFBFC2B2CF40FBE8E667 /* [CP] Embed Pods Frameworks */,
-				3ABFE62B3F396B4CEC1805A6 /* [CP] Copy Pods Resources */,
+				0B4D9D61C3A881CAE8155552 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -299,7 +298,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3ABFE62B3F396B4CEC1805A6 /* [CP] Copy Pods Resources */ = {
+		0B4D9D61C3A881CAE8155552 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -336,23 +335,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EE62FFBFC2B2CF40FBE8E667 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ADSuyiSDKDemo-iOS/Pods-ADSuyiSDKDemo-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ADSuyiSDKDemo-iOS/Pods-ADSuyiSDKDemo-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ADSuyiSDKDemo-iOS/Pods-ADSuyiSDKDemo-iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
