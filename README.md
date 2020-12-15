@@ -80,6 +80,8 @@ pod 'ADSuyiUnity'    # Unity
 pod 'ADSuyiMGTV'     # 芒果TV
 pod 'ADSuyiIFLY'     # 讯飞
 pod 'ADSuyiMopub'    # mopub
+pod 'ADSuyiBaidu'    # baidu
+pod 'ADSuyiKS'			 # 快手
 // 推荐导入，通过系统定位获取定位信息
 pod 'ADSuyiLocationManagerGPS'// 含有系统定位代码
 ```
@@ -98,6 +100,8 @@ pod 'ADSuyiUnity'
 pod 'ADSuyiMGTV'
 pod 'ADSuyiIFLY'
 pod 'ADSuyiMopub'
+pod 'ADSuyiBaidu'
+pod 'ADSuyiKS'
 ```
 
 <div STYLE="page-break-after: always;"></div>
