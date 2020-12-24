@@ -199,11 +199,6 @@
 
 #pragma mark - Helper
 
-- (void)adViewClickCloseButton:(UIButton *)btn {
-    UIView *adView = [btn superview];
-    [self adsy_nativeAdClose:_nativeAd adView:(UIView<ADSuyiAdapterNativeAdViewDelegate> *)adView];
-}
-
 - (void)setUpUnifiedNativeAdView:(UIView<ADSuyiAdapterNativeAdViewDelegate> *)adView {
     // 设计的adView实际大小，其中宽度和高度可以自己根据自己的需求设置
     CGFloat adWidth = self.view.frame.size.width;
@@ -215,7 +210,7 @@
     [adView addSubview:closeButton];
     closeButton.frame = CGRectMake(adWidth - 44, 0, 44, 44);
     [closeButton setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
-    [closeButton addTarget:self action:@selector(adViewClickCloseButton:) forControlEvents:UIControlEventTouchUpInside];
+    [closeButton addTarget:adView action:@selector(adsy_close) forControlEvents:UIControlEventTouchUpInside];
     
     // 显示logo图片（必要）
     if(![adView.adsy_platform isEqualToString:ADSuyiAdapterPlatformGDT]) { // 优量汇（广点通）会自带logo，不需要添加
