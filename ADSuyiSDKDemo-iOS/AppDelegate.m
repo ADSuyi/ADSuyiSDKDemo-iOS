@@ -41,7 +41,15 @@
     return YES;
 }
 
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+    // 热启动加载开屏广告 进入前台加载
+    [self loadSplashAd];
+}
+
 - (void)loadSplashAd{
+    if (self.splashAd) {
+        return;
+    }
     // 1、初始化开屏广告实例对象
     self.splashAd = [[ADSuyiSDKSplashAd alloc]init];
     self.splashAd.delegate = self;

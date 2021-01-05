@@ -140,13 +140,26 @@
 - (void)adsy_nativeAdSucessToLoad:(ADSuyiSDKNativeAd *)nativeAd
                       adViewArray:(NSArray<__kindof UIView<ADSuyiAdapterNativeAdViewDelegate> *> *)adViewArray {
     for (UIView<ADSuyiAdapterNativeAdViewDelegate> *adView in adViewArray) {
-        // 4、判断信息流广告是否为自渲染类型
+        // 4、判断信息流广告是否为自渲染类型（必须实现） 可仿照所示样式demo实现 如无所需样式则需自行实现
         if(adView.renderType == ADSuyiAdapterRenderTypeNative) {
-            // 4.1、如果是自渲染类型则可样式自定义
-            [self setUpUnifiedNativeAdView:adView];
+            // 4.1、如果是自渲染类型则可样式自定义(3种示例demo样式见下)
+                // 1、常规样式
+            [self setUpUnifiedTopImageNativeAdView:adView];
+                // 2、纯图样式
+//            [self setUpUnifiedOnlyImageNativeAdView:adView];
+                // 3、上图下文
+//            [self setUpUnifiedTopImageNativeAdView:adView];
         }
         // 5、注册，自渲染：注册点击事件，模板：render，重要
         [adView adsy_registViews:@[adView]];
+        
+        // 广点通视频信息流广告会给mediaView添加事件，点击会出现半屏广告，以下为广点通官方给予的解决方案
+        if([adView.adsy_platform isEqualToString:ADSuyiAdapterPlatformGDT]
+           && adView.renderType == ADSuyiAdapterRenderTypeNative
+           && adView.data.shouldShowMediaView) {
+            UIView *mediaView = [adView adsy_mediaViewForWidth:0.0];
+            mediaView.userInteractionEnabled = NO;
+        }
     }
     
     [self.tableView.mj_header endRefreshing];
@@ -197,8 +210,9 @@
     
 }
 
-#pragma mark - Helper
+#pragma mark - Helper 自渲染类型信息流处理方法（以下广告样式根据需求选择） 1、setUpUnifiedNativeAdView常规样式 2、setUpUnifiedOnlyImageNativeAdView纯图样式  3、setUpUnifiedTopImageNativeAdView上图下文样式
 
+// 1、常规信息流示例样式
 - (void)setUpUnifiedNativeAdView:(UIView<ADSuyiAdapterNativeAdViewDelegate> *)adView {
     // 设计的adView实际大小，其中宽度和高度可以自己根据自己的需求设置
     CGFloat adWidth = self.view.frame.size.width;
@@ -210,6 +224,7 @@
     [adView addSubview:closeButton];
     closeButton.frame = CGRectMake(adWidth - 44, 0, 44, 44);
     [closeButton setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
+    // adsy_close该方法为协议中方法 直接添加target即可 无需实现
     [closeButton addTarget:adView action:@selector(adsy_close) forControlEvents:UIControlEventTouchUpInside];
     
     // 显示logo图片（必要）
@@ -277,6 +292,138 @@
     descLabel.text = adView.data.desc;
     [adView addSubview:descLabel];
     descLabel.frame = CGRectMake(17 + 36 + 4, height, self.view.frame.size.width - 57 - 17 - 20, 18);
+}
+
+// 2、纯图样式
+- (void)setUpUnifiedOnlyImageNativeAdView:(UIView<ADSuyiAdapterNativeAdViewDelegate> *)adView {
+    // 设计的adView实际大小，其中宽度和高度可以自己根据自己的需求设置
+    CGFloat adWidth = self.view.frame.size.width;
+    CGFloat adHeight = adWidth / 16.0 * 9;
+    adView.frame = CGRectMake(0, 0, adWidth, adHeight);
+    
+    // 设置主图/视频（主图可选，但强烈建议带上,如果有视频试图，则必须带上）
+    CGRect mainFrame = CGRectMake(0, 0, adWidth, adHeight);
+    if(adView.data.shouldShowMediaView) {
+        UIView *mediaView = [adView adsy_mediaViewForWidth:mainFrame.size.width];
+        mediaView.frame = mainFrame;
+        [adView addSubview:mediaView];
+    } else {
+        UIImageView *imageView = [UIImageView new];
+        imageView.backgroundColor = [UIColor adsy_colorWithHexString:@"#CCCCCC"];
+        [adView addSubview:imageView];
+        imageView.frame = mainFrame;
+        NSString *urlStr = adView.data.imageUrl;
+        if(urlStr.length > 0) {
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+                UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlStr]]];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    imageView.image = image;
+                });
+            });
+        }
+    }
+    
+    // 展示关闭按钮（必要）
+    UIButton *closeButton = [UIButton new];
+    [adView addSubview:closeButton];
+    closeButton.frame = CGRectMake(adWidth - 44, 0, 44, 44);
+    [closeButton setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
+    [closeButton addTarget:adView action:@selector(adsy_close) forControlEvents:UIControlEventTouchUpInside];
+    
+    // 显示logo图片（必要）
+    if(![adView.adsy_platform isEqualToString:ADSuyiAdapterPlatformGDT]) { // 优量汇（广点通）会自带logo，不需要添加
+        UIImageView *logoImage = [UIImageView new];
+        [adView addSubview:logoImage];
+//        [adView bringSubviewToFront:logoImage];
+        [adView adsy_platformLogoImageHasText:YES loadImageBlock:^(UIImage * _Nullable image) {
+            CGFloat maxWidth = 40;
+            CGFloat logoHeight = maxWidth / image.size.width * image.size.height;
+            logoImage.frame = CGRectMake(adWidth - maxWidth, adHeight - logoHeight, maxWidth, logoHeight);
+            logoImage.image = image;
+        }];
+    }
+
+}
+
+// 3、上图下文样式
+- (void)setUpUnifiedTopImageNativeAdView:(UIView<ADSuyiAdapterNativeAdViewDelegate> *)adView {
+    // 设计的adView实际大小，其中宽度和高度可以自己根据自己的需求设置
+    CGFloat adWidth = self.view.frame.size.width;
+    CGFloat adHeight = (adWidth - 17 * 2) / 16.0 * 9 + 70;
+    adView.frame = CGRectMake(0, 0, adWidth, adHeight);
+    
+    // 显示logo图片（必要）
+    if(![adView.adsy_platform isEqualToString:ADSuyiAdapterPlatformGDT]) { // 优量汇（广点通）会自带logo，不需要添加
+        UIImageView *logoImage = [UIImageView new];
+        [adView addSubview:logoImage];
+        [adView adsy_platformLogoImageHasText:YES loadImageBlock:^(UIImage * _Nullable image) {
+            CGFloat maxWidth = 40;
+            CGFloat logoHeight = maxWidth / image.size.width * image.size.height;
+            logoImage.frame = CGRectMake(adWidth - maxWidth, adHeight - logoHeight, maxWidth, logoHeight);
+            logoImage.image = image;
+        }];
+    }
+    
+    // 设置主图/视频（主图可选，但强烈建议带上,如果有视频试图，则必须带上）
+    CGRect mainFrame = CGRectMake(17, 0, adWidth - 17 * 2, (adWidth - 17 * 2) / 16.0 * 9);
+    if(adView.data.shouldShowMediaView) {
+        UIView *mediaView = [adView adsy_mediaViewForWidth:mainFrame.size.width];
+        mediaView.frame = mainFrame;
+        [adView addSubview:mediaView];
+    } else {
+        UIImageView *imageView = [UIImageView new];
+        imageView.backgroundColor = [UIColor adsy_colorWithHexString:@"#CCCCCC"];
+        [adView addSubview:imageView];
+        imageView.frame = mainFrame;
+        NSString *urlStr = adView.data.imageUrl;
+        if(urlStr.length > 0) {
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+                UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:urlStr]]];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    imageView.image = image;
+                });
+            });
+        }
+    }
+    
+    // 设置广告标识（可选）
+    UILabel *adLabel = [[UILabel alloc]init];
+    adLabel.backgroundColor = [UIColor adsy_colorWithHexString:@"#CCCCCC"];
+    adLabel.textColor = [UIColor adsy_colorWithHexString:@"#FFFFFF"];
+    adLabel.font = [UIFont adsy_PingFangLightFont:12];
+    adLabel.text = @"广告";
+    [adView addSubview:adLabel];
+    adLabel.frame = CGRectMake(17, (adWidth - 17 * 2) / 16.0 * 9 + 9, 36, 18);
+    adLabel.textAlignment = NSTextAlignmentCenter;
+    
+    // 设置广告描述(可选)
+    UILabel *descLabel = [UILabel new];
+    descLabel.textColor = [UIColor adsy_colorWithHexString:@"#333333"];
+    descLabel.font = [UIFont adsy_PingFangLightFont:12];
+    descLabel.textAlignment = NSTextAlignmentLeft;
+    descLabel.text = adView.data.desc;
+    [adView addSubview:descLabel];
+    descLabel.frame = CGRectMake(17 + 36 + 4, (adWidth - 17 * 2) / 16.0 * 9 + 9, self.view.frame.size.width - 57 - 17 - 20, 18);
+    
+    // 设置标题文字（可选，但强烈建议带上）
+    UILabel *titlabel = [UILabel new];
+    [adView addSubview:titlabel];
+    titlabel.font = [UIFont adsy_PingFangMediumFont:14];
+    titlabel.textColor = [UIColor adsy_colorWithHexString:@"#333333"];
+    titlabel.numberOfLines = 2;
+    titlabel.text = adView.data.title;
+    CGSize textSize = [titlabel sizeThatFits:CGSizeMake(adWidth - 17 * 2, 999)];
+    titlabel.frame = CGRectMake(17, (adWidth - 17 * 2) / 16.0 * 9 + 30, adWidth - 17 * 2, textSize.height);
+    
+    // 展示关闭按钮（必要）
+    UIButton *closeButton = [UIButton new];
+    [adView addSubview:closeButton];
+    [adView bringSubviewToFront:closeButton];
+    closeButton.frame = CGRectMake(adWidth - 44, 0, 44, 44);
+    [closeButton setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
+    // adsy_close方法为协议中方法 直接添加target即可 无需实现
+    [closeButton addTarget:adView action:@selector(adsy_close) forControlEvents:UIControlEventTouchUpInside];
+    
 }
 
 @end
