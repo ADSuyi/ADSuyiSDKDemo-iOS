@@ -3,50 +3,32 @@ PODS:
     - ADSuyiKit (~> 0.4.3)
     - ADSuyiLocationManager (~> 0.1.6)
     - ADSuyiNetwork (~> 0.1.3)
-  - ADMobileAdSDK (3.3.1.12231):
+  - ADMobileAdSDK (3.3.0.12141):
     - ADMobGenDeviceInfo (~> 1.8.4.0)
-    - ADSuyiKit (~> 0.4.4.0)
-    - ADSuyiNetwork (~> 0.1.4.0)
-    - ADSuyiSDK (~> 3.1.1.0)
-  - ADSuyiAdMobile (3.3.1.12231):
-    - ADMobileAdSDK (~> 3.3.1.0)
-    - ADSuyiSDK (~> 3.1.1.0)
-  - ADSuyiKit (0.4.4.11261)
+    - ADSuyiKit (~> 0.4.3.0)
+    - ADSuyiNetwork (~> 0.1.3.0)
+    - ADSuyiSDK (~> 3.1.0.0)
+  - ADSuyiAdMobile (3.3.0.12141):
+    - ADMobileAdSDK (~> 3.3.0.0)
+    - ADSuyiSDK (~> 3.1.0.0)
+  - ADSuyiGDT (4.11.12.12141):
+    - ADSuyiGDTSDK (= 4.11.12)
+    - ADSuyiSDK (~> 3.1.0.0)
+  - ADSuyiGDTSDK (4.11.12)
+  - ADSuyiKit (0.4.3.12141)
   - ADSuyiLocationManager (0.1.7.11261)
-  - ADSuyiMTG (6.6.9.0.11261):
-    - ADSuyiSDK (~> 3.1.1.0)
-    - MintegralAdSDK (= 6.6.9.0)
-    - MintegralAdSDK/BannerAd
-    - MintegralAdSDK/InterstitialAd
-    - MintegralAdSDK/InterstitialVideoAd
-    - MintegralAdSDK/NativeAd
-    - MintegralAdSDK/RewardVideoAd
-    - MintegralAdSDK/SplashAd
-  - ADSuyiNetwork (0.1.4.11261):
-    - ADSuyiKit (~> 0.4.4)
-  - ADSuyiSDK (3.1.1.11261):
+  - ADSuyiNetwork (0.1.3.12141):
+    - ADSuyiKit (~> 0.4.3)
+  - ADSuyiSDK (3.1.0.12141):
     - ADMobGenDeviceInfo (~> 1.8.4.0)
-    - ADSuyiKit (~> 0.4.4.0)
-    - ADSuyiNetwork (~> 0.1.4.0)
-  - MintegralAdSDK (6.6.9.0):
-    - MintegralAdSDK/NativeAd (= 6.6.9.0)
-  - MintegralAdSDK/BannerAd (6.6.9.0):
-    - MintegralAdSDK/NativeAd
-  - MintegralAdSDK/InterstitialAd (6.6.9.0):
-    - MintegralAdSDK/NativeAd
-  - MintegralAdSDK/InterstitialVideoAd (6.6.9.0):
-    - MintegralAdSDK/NativeAd
-  - MintegralAdSDK/NativeAd (6.6.9.0)
-  - MintegralAdSDK/RewardVideoAd (6.6.9.0):
-    - MintegralAdSDK/NativeAd
-  - MintegralAdSDK/SplashAd (6.6.9.0):
-    - MintegralAdSDK/NativeAd
+    - ADSuyiKit (~> 0.4.3.0)
+    - ADSuyiNetwork (~> 0.1.3.0)
   - MJRefresh (3.5.0)
 
 DEPENDENCIES:
   - ADSuyiAdMobile
-  - ADSuyiMTG
-  - ADSuyiSDK (~> 3.1.1.0)
+  - ADSuyiGDT
+  - ADSuyiSDK (~> 3.1.0.0)
   - MJRefresh
 
 SPEC REPOS:
@@ -54,26 +36,26 @@ SPEC REPOS:
     - ADMobGenDeviceInfo
     - ADMobileAdSDK
     - ADSuyiAdMobile
+    - ADSuyiGDT
+    - ADSuyiGDTSDK
     - ADSuyiKit
     - ADSuyiLocationManager
-    - ADSuyiMTG
     - ADSuyiNetwork
     - ADSuyiSDK
-    - MintegralAdSDK
     - MJRefresh
 
 SPEC CHECKSUMS:
   ADMobGenDeviceInfo: 67152545e9970817ca4230bb9af5e0f83155217d
-  ADMobileAdSDK: d478b21c534a503911d62e7253566a5dece45dc9
-  ADSuyiAdMobile: a3dbac659094e2d281b470e1cc81b0a6415c58e0
-  ADSuyiKit: 19b393f5218c3cc69aeee616b07557f27329513d
+  ADMobileAdSDK: 3cb48c43e8c2dc57bbcae2d8e99d4597529f50f5
+  ADSuyiAdMobile: 66a407e25aefba3e18a425effec519cd027475d7
+  ADSuyiGDT: 7a2727e53ef86eb31b5ff97e5ac44dcd0863226a
+  ADSuyiGDTSDK: 89db38484efb2c6502c181132743597c57e58352
+  ADSuyiKit: 0cbff48779ac55b61abeed3d735041e77be9099f
   ADSuyiLocationManager: 9a4a0ed5941f1aa106a24a1aecbdcb7126a3dceb
-  ADSuyiMTG: 0f5fc32d57f0dfa378e7f3474eb2845e050ea483
-  ADSuyiNetwork: 632ebc0392ff96012986a574170f15d892670c8e
-  ADSuyiSDK: a7653b90f7a6d173d470712e76d13074b77fd4f1
-  MintegralAdSDK: 797e544c57dec9085107a352098273e83499a4c5
+  ADSuyiNetwork: eb2248deb744f3b670273c51c44ca807ca1ed549
+  ADSuyiSDK: 94870d98797680e86c9713acff22b09fd15a1d69
   MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
 
-PODFILE CHECKSUM: b880d84900ea261c1f53ea80b29d7f52d795a74f
+PODFILE CHECKSUM: 19c7601fdef92fe83465992633e5cda731f2362d
 
 COCOAPODS: 1.10.0

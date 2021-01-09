@@ -175,7 +175,6 @@ NSLocationAlwaysAndWhenInUseUsageDeion
         <string>vipshop</string>
         <string>snssdk141</string>
         <string>ctrip</string>
-        <string>suning</string>
         <string>qunariphone</string>
         <string>QunarAlipay</string>
         <string>qunaraphone</string>
@@ -187,6 +186,7 @@ NSLocationAlwaysAndWhenInUseUsageDeion
         <string>taobao</string>
         <string>tmall</string>
         <string>openjd</string>
+        <string>jd</string>
         <string>jhs</string>
         <string>yhd</string>
         <string>wireless1688</string>
@@ -205,6 +205,7 @@ NSLocationAlwaysAndWhenInUseUsageDeion
         <string>gengmei</string>
         <string>airbnb</string>
         <string>alipays</string>
+        <string>alipay</string>
         <string>didicommon</string>
         <string>OneTravel</string>
         <string>farfetchCN</string>
@@ -217,7 +218,11 @@ NSLocationAlwaysAndWhenInUseUsageDeion
         <string>uclink</string>
         <string>app.soyoung</string>
         <string>qqmusic</string>
-    </array>
+        <string>kwai</string>
+        <string>ksnebula</string>
+        <string>taobaolite</string>
+        <string>lianjiabeike</string>
+     </array>
 ```
 
 <br>
