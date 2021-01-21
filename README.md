@@ -200,6 +200,7 @@ NSLocationAlwaysAndWhenInUseUsageDeion
         <string>pddopen</string>
         <string>mogujie</string>
         <string>koubei</string>
+        <string>ecook</string>
         <string>eleme</string>
         <string>youku</string>
         <string>gengmei</string>
