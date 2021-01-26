@@ -168,7 +168,7 @@
     // 设置日志输出等级
     [ADSuyiSDK setLogLevel:ADSuyiKitLogLevelDebug];
     // ADSuyiSDK初始化
-    [ADSuyiSDK initWithAppId:@"3323195" completionBlock:^(NSError * _Nonnull error) {
+    [ADSuyiSDK initWithAppId:@"3437764" completionBlock:^(NSError * _Nonnull error) {
         if (error) {
             NSLog(@"SDK 初始化失败：%@", error.localizedDescription);
         }
