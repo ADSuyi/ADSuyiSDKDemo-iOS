@@ -10,6 +10,7 @@
 		6012F9759F8BCC5230C3F3D1 /* libPods-ADSuyiSDKDemo-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 422C7AE40E8567B741DE7A2F /* libPods-ADSuyiSDKDemo-iOS.a */; };
 		820EC7E6254A9F77001C7C88 /* BlankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 820EC7E3254A9F77001C7C88 /* BlankViewController.m */; };
 		820EC7E7254A9F77001C7C88 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 820EC7E4254A9F77001C7C88 /* TableViewController.m */; };
+		824AD25525C11A5200BD1105 /* ADSuyiGroupAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 824AD25425C11A5200BD1105 /* ADSuyiGroupAdViewController.m */; };
 		BF279CDA249B134700C38704 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF279CD9249B134700C38704 /* LaunchScreen.storyboard */; };
 		BFEA086D247E4CCC001815E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA086C247E4CCC001815E3 /* AppDelegate.m */; };
 		BFEA0873247E4CCC001815E3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA0872247E4CCC001815E3 /* ViewController.m */; };
@@ -36,6 +37,8 @@
 		820EC7E3254A9F77001C7C88 /* BlankViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlankViewController.m; sourceTree = "<group>"; };
 		820EC7E4254A9F77001C7C88 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		820EC7E5254A9F77001C7C88 /* BlankViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlankViewController.h; sourceTree = "<group>"; };
+		824AD25325C11A5200BD1105 /* ADSuyiGroupAdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADSuyiGroupAdViewController.h; sourceTree = "<group>"; };
+		824AD25425C11A5200BD1105 /* ADSuyiGroupAdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADSuyiGroupAdViewController.m; sourceTree = "<group>"; };
 		BF279CD9249B134700C38704 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFEA0868247E4CCC001815E3 /* ADSuyiSDKDemo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ADSuyiSDKDemo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEA086B247E4CCC001815E3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -109,6 +112,15 @@
 			path = Contain;
 			sourceTree = "<group>";
 		};
+		824AD25225C119F200BD1105 /* GroupAd */ = {
+			isa = PBXGroup;
+			children = (
+				824AD25325C11A5200BD1105 /* ADSuyiGroupAdViewController.h */,
+				824AD25425C11A5200BD1105 /* ADSuyiGroupAdViewController.m */,
+			);
+			path = GroupAd;
+			sourceTree = "<group>";
+		};
 		BFEA085F247E4CCC001815E3 = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +161,7 @@
 		BFEA0888247E5430001815E3 /* SuyiAds */ = {
 			isa = PBXGroup;
 			children = (
+				824AD25225C119F200BD1105 /* GroupAd */,
 				820EC7E1254A9F77001C7C88 /* Contain */,
 				BFEA0889247E5430001815E3 /* NativeAd */,
 				BFEA088E247E5430001815E3 /* BannerAd */,
@@ -349,6 +362,7 @@
 				BFEA0873247E4CCC001815E3 /* ViewController.m in Sources */,
 				BFEA08A9247E5430001815E3 /* AdSuyiInterstitialViewController.m in Sources */,
 				BFEA086D247E4CCC001815E3 /* AppDelegate.m in Sources */,
+				824AD25525C11A5200BD1105 /* ADSuyiGroupAdViewController.m in Sources */,
 				820EC7E7254A9F77001C7C88 /* TableViewController.m in Sources */,
 				BFEA08AA247E5430001815E3 /* AdSuyiRewardvodViewController.m in Sources */,
 				BFEA08A4247E5430001815E3 /* AdSuyiBannerViewController.m in Sources */,

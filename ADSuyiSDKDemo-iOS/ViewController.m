@@ -21,6 +21,7 @@
 #import "AdSuyiInterstitialViewController.h"
 #import "AdSuyiDrawvodViewController.h"
 #import "TableViewController.h"
+#import "ADSuyiGroupAdViewController.h"
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *mainTableView;
@@ -38,7 +39,7 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.dataArray = @[@"开屏广告 SplashAD",@"横幅广告 BannerAD",@"信息流广告(模板) NativeAD",@"信息流广告列表(自渲染) NativeAD",@"插屏广告 InterstitalAD",@"全屏视频 FullScreenVideoAD",@"沉浸式视频 DrawVideoAD",@"激励视频 RewardVideoAD",@"内容SDK Contain"];
+    self.dataArray = @[@"开屏广告 SplashAD",@"横幅广告 BannerAD",@"信息流广告(模板) NativeAD",@"信息流广告列表(自渲染) NativeAD",@"插屏广告 InterstitalAD",@"全屏视频 FullScreenVideoAD",@"沉浸式视频 DrawVideoAD",@"激励视频 RewardVideoAD",@"内容SDK Contain",@"组合广告 GroupAd"];
     
     [self.mainTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     [self.view addSubview:self.mainTableView];
@@ -139,6 +140,10 @@
             TableViewController *containTable = [[TableViewController alloc]init];
             [self.navigationController pushViewController:containTable animated:YES];
             break;
+        }
+        case 9:{
+            ADSuyiGroupAdViewController *groupVc = [ADSuyiGroupAdViewController new];
+            [self.navigationController pushViewController:groupVc animated:YES];
         }
         default:
             break;
