@@ -12,10 +12,13 @@
 #import <ADSuyiKit/UIColor+ADSuyiKit.h>
 #import <ADSuyiKit/ADSuyiKitMacros.h>
 #import <ADSuyiSDK/ADSuyiSDKRewardvodAd.h>
+
 @interface ADSuyiGroupAdViewController ()<ADSuyiSDKNativeAdDelegate,ADSuyiSDKRewardvodAdDelegate>
+
 @property (nonatomic, strong) ADSuyiSDKNativeAd *nativeAd;
 @property (nonatomic, strong) UIView *alertView;
-@property (nonatomic, strong)ADSuyiSDKRewardvodAd *rewardvodAd;
+@property (nonatomic, strong) ADSuyiSDKRewardvodAd *rewardvodAd;
+@property (nonatomic, strong) UIButton *closeButton;
 
 @end
 
@@ -28,6 +31,10 @@
     self.alertView = [UIView new];
     self.alertView.frame = self.view.frame;
     self.alertView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+    _closeButton = [UIButton new];
+    [self.alertView addSubview:_closeButton];
+    [_closeButton setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
+    
     UIButton *button = [UIButton new];
     [button setTitle:@"获取组合广告" forState:UIControlStateNormal];
     button.clipsToBounds = YES;
@@ -48,7 +55,7 @@
         // 1、信息流广告初始化
         _nativeAd = [[ADSuyiSDKNativeAd alloc] initWithAdSize:CGSizeMake(320, 180)];
         // 2、传入posId，重要
-        _nativeAd.posId = @"26fe47d8b06658ace0";
+        _nativeAd.posId = _nativePosid;
         _nativeAd.delegate = self;
         _nativeAd.controller = self;
     }
@@ -62,7 +69,7 @@
     self.rewardvodAd.delegate = self;
     self.rewardvodAd.tolerateTimeout = 5;
     self.rewardvodAd.controller = self;
-    self.rewardvodAd.posId = @"47d196ffaaa92ae93c";
+    self.rewardvodAd.posId = _rewardPosid;
     
     // 2、加载激励视频广告
     [self.rewardvodAd loadRewardvodAd];
@@ -97,13 +104,11 @@
 
 - (void)adsy_nativeAdViewRenderOrRegistSuccess:(UIView<ADSuyiAdapterNativeAdViewDelegate> *)adView {
     // 6、注册或渲染成功，此时高度正常，可以展示
-    dispatch_async(dispatch_get_main_queue(), ^{
-//        self.alertWindow.hidden = NO;
-//        [self.alertWindow addSubview:adView];
-        adView.frame = CGRectMake(0, UIScreen.mainScreen.bounds.size.height/2-adView.bounds.size.height/2, adView.bounds.size.width, adView.bounds.size.height);
-        [self.alertView addSubview:adView];
-        [self.view addSubview:self.alertView];
-    });
+    adView.frame = CGRectMake(0, UIScreen.mainScreen.bounds.size.height/2-adView.bounds.size.height/2, adView.bounds.size.width, adView.bounds.size.height);
+    [self.closeButton addTarget:adView action:@selector(adsy_close) forControlEvents:UIControlEventTouchUpInside];
+    self.closeButton.frame = CGRectMake(adView.frame.size.width - 44, adView.frame.origin.y - 44, 44, 44);
+    [self.alertView addSubview:adView];
+    [self.view addSubview:self.alertView];
 }
 
 - (void)adsy_nativeAdViewRenderOrRegistFail:(UIView<ADSuyiAdapterNativeAdViewDelegate> *)adView {
@@ -155,13 +160,6 @@
             });
         }
     }
-    
-    // 展示关闭按钮（必要）
-    UIButton *closeButton = [UIButton new];
-    [adView addSubview:closeButton];
-    closeButton.frame = CGRectMake(adWidth - 44, 0, 44, 44);
-    [closeButton setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
-    [closeButton addTarget:adView action:@selector(adsy_close) forControlEvents:UIControlEventTouchUpInside];
     
     // 显示logo图片（必要）
     if(![adView.adsy_platform isEqualToString:ADSuyiAdapterPlatformGDT]) { // 优量汇（广点通）会自带logo，不需要添加

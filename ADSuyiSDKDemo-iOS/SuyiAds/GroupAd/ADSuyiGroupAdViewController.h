@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ADSuyiGroupAdViewController : UIViewController
 
+@property (nonatomic, copy) NSString *nativePosid;
+
+@property (nonatomic, copy) NSString *rewardPosid;
+
 @end
 
 NS_ASSUME_NONNULL_END
