@@ -1,6 +1,6 @@
 
 
-# ADmobile ADSuyiSDK iOS接入文档 v3.1.1.11261
+# ADmobile ADSuyiSDK iOS接入文档 v3.1.2.02031
 
 
 
@@ -38,17 +38,18 @@
 
 ## 修订历史
 
-| 文档版本     | 修订日期   | 修订说明                                                     |
-| ------------ | ---------- | ------------------------------------------------------------ |
-| V3.0.4       | 2020-05-28 | 接入广点通、头条、百度、inmobi、汇量、快手、谷歌、Mopub、Unity广告平台，建立开屏、banner、信息流（自渲染和模板）、插屏、激励视频、全屏视频、沉浸式视频广告类型 |
-| v3.0.6       | 2020-08-12 | 支持浮窗广告，接入讯飞、芒果TV平台，修复已知问题             |
-| v3.0.7       | 2020-09-21 | 支持打底广告，修复已知问题                                   |
-| v3.0.8       | 2020-10-26 | 适配iOS14，修复已知问题                                      |
-| v3.0.9       | 2020-11-16 | 浮窗广告适配广点通                                           |
-| v3.1.0       | 2020-12-14 | 广告场景功能，开放开屏跳过按钮，错误码规范性整理，修复已知问题 |
-| v3.1.1.11261 | 2020-12-23 | 信息流支持广点通模板2.0，自渲染信息流广告增加关闭按钮相关方法，修复已知问题 |
+| 文档版本 | 修订日期   | 修订说明                                                     |
+| -------- | ---------- | ------------------------------------------------------------ |
+| V3.0.4   | 2020-05-28 | 接入广点通、头条、百度、inmobi、汇量、快手、谷歌、Mopub、Unity广告平台，建立开屏、banner、信息流（自渲染和模板）、插屏、激励视频、全屏视频、沉浸式视频广告类型 |
+| v3.0.6   | 2020-08-12 | 支持浮窗广告，接入讯飞、芒果TV平台，修复已知问题             |
+| v3.0.7   | 2020-09-21 | 支持打底广告，修复已知问题                                   |
+| v3.0.8   | 2020-10-26 | 适配iOS14，修复已知问题                                      |
+| v3.0.9   | 2020-11-16 | 浮窗广告适配广点通                                           |
+| v3.1.0   | 2020-12-14 | 广告场景功能，开放开屏跳过按钮，错误码规范性整理，修复已知问题 |
+| v3.1.1   | 2020-12-23 | 信息流支持广点通模板2.0，自渲染信息流广告增加关闭按钮相关方法，修复已知问题 |
+| v3.1.2   | 2020-01-29 | 适配快手内容页，支持广点通v+开屏广告，修复已知问题           |
 
-
+<div STYLE="page-break-after: always;"></div>
 ## 1.1 概述
 
 尊敬的开发者朋友，欢迎您使用ADmobile 苏伊士广告SDK。通过本文档，您可以在几分钟之内轻松完成广告的集成过程。
@@ -57,10 +58,11 @@
 
 运行设备：iPhone （iPad上可能部分广告正常展示，但是存在填充很低或者平台不支持等问题，建议不要在iPad上展示广告）
 
-- `ADSuyiSDK Objective-C Demo地址`[[ADSuyiSDK Objective-C Demo Github]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS) | [[iOS集成文档OC 码云]](https://gitee.com/admobile/ADSuyiSDKDemo-iOS) 
-- `ADSuyiSDK Swift Demo地址`[[ADSuyiSDK Swift Demo Github]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS-Swift.git) | [[iOS集成文档swift 码云]](https://gitee.com/admobile/ADSuyiSDKDemo-iOS-Swift)
+- `ADSuyiSDK Objective-C Demo地址`[[ADSuyiSDK Objective-C Demo]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS)
+- `ADSuyiSDK Swift Demo地址`[[ADSuyiSDK Swift Demo]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS-Swift.git)
 
 <br>
+
 
 
 ## 2.1 采用cocoapods进行SDK的导入
@@ -77,9 +79,7 @@ pod 'ADSuyiInmobi'   # Inmobi
 pod 'ADSuyiMTG'      # Mobvista(汇量)
 pod 'ADSuyiGoogle'   # 谷歌
 pod 'ADSuyiUnity'    # Unity
-pod 'ADSuyiMGTV'     # 芒果TV
 pod 'ADSuyiIFLY'     # 讯飞
-pod 'ADSuyiMopub'    # mopub
 pod 'ADSuyiBaidu'    # baidu
 pod 'ADSuyiKS'			 # 快手
 // 推荐导入，通过系统定位获取定位信息
@@ -89,7 +89,7 @@ pod 'ADSuyiLocationManagerGPS'// 含有系统定位代码
 推荐使用导入命令
 
 ```ruby
-pod 'ADSuyiSDK', '~> 3.1.1.11261'
+pod 'ADSuyiSDK', '~> 3.1.2.0'
 pod 'ADSuyiBU'
 pod 'ADSuyiGDT'
 pod 'ADSuyiAdMobile'
@@ -97,14 +97,12 @@ pod 'ADSuyiInmobi'
 pod 'ADSuyiMTG'
 pod 'ADSuyiGoogle'
 pod 'ADSuyiUnity'
-pod 'ADSuyiMGTV'
 pod 'ADSuyiIFLY'
-pod 'ADSuyiMopub'
 pod 'ADSuyiBaidu'
 pod 'ADSuyiKS'
 ```
 
-
+<div STYLE="page-break-after: always;"></div>
 ## 2.2 手动导入SDK方式
 
 [点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_SDK_iOS.zip)下载各SDK拖入到工程中
@@ -139,7 +137,7 @@ libsqlite3.tbd
 ImageIO.framework
 ```
 
-
+<div STYLE="page-break-after: always;"></div>
 ## 3.1 工程环境配置
 
 1. 打开项目的 app target，查看 Build Settings 中的 Linking-Other Linker Flags 选项，确保含有 -ObjC 一值， 若没有则添加。
@@ -162,7 +160,7 @@ NSLocationWhenInUseUsageDescription
 NSLocationAlwaysAndWhenInUseUsageDeion
 ```
 
-5. Info.plist推荐设置广告主白名单，可提高广告收益
+5. Info.plist推荐设置白名单，可提高广告收益
 
 ```obj-c
 <key>LSApplicationQueriesSchemes</key>
@@ -170,23 +168,22 @@ NSLocationAlwaysAndWhenInUseUsageDeion
         <string>dianping</string>
         <string>imeituan</string>
         <string>com.suning.SuningEBuy</string>
-        <string>suning</string>
         <string>openapp.jdmobile</string>
         <string>vipshop</string>
         <string>snssdk141</string>
         <string>ctrip</string>
+        <string>suning</string>
         <string>qunariphone</string>
         <string>QunarAlipay</string>
         <string>qunaraphone</string>
         <string>yohobuy</string>
         <string>kaola</string>
-        <string>qqnews</string>
+        <string>agoda</string>
         <string>openapp.xzdz</string>
         <string>beibeiapp</string>
         <string>taobao</string>
         <string>tmall</string>
         <string>openjd</string>
-        <string>jd</string>
         <string>jhs</string>
         <string>yhd</string>
         <string>wireless1688</string>
@@ -200,13 +197,11 @@ NSLocationAlwaysAndWhenInUseUsageDeion
         <string>pddopen</string>
         <string>mogujie</string>
         <string>koubei</string>
-        <string>ecook</string>
         <string>eleme</string>
         <string>youku</string>
         <string>gengmei</string>
         <string>airbnb</string>
         <string>alipays</string>
-        <string>alipay</string>
         <string>didicommon</string>
         <string>OneTravel</string>
         <string>farfetchCN</string>
@@ -218,12 +213,7 @@ NSLocationAlwaysAndWhenInUseUsageDeion
         <string>iqiyi</string>
         <string>uclink</string>
         <string>app.soyoung</string>
-        <string>qqmusic</string>
-        <string>kwai</string>
-        <string>ksnebula</string>
-        <string>taobaolite</string>
-        <string>lianjiabeike</string>
-     </array>
+    </array>
 ```
 
 <br>
@@ -373,7 +363,7 @@ SKAdNetwork 是接收iOS端营销推广活动归因数据的一种方法。
 }
 ```
 
-
+<div STYLE="page-break-after: always;"></div>
 ## 4.1 集合SDK的初始化
 
 `申请的appid必须与您的包名一一对应`
@@ -403,7 +393,7 @@ NSString *sdkVersion = [ADSuyiSDK getSDKVersion];
 
 <br>
 
-
+<div STYLE="page-break-after: always;"></div>
 ## 4.2 开屏广告 - ADSuyiSDKSplashAd
 
 开屏广告会在您的应用开启时加载展示，拥有固定展示时间，展示完毕后自动关闭并进入您的应用主界面。
@@ -473,9 +463,8 @@ viewControllerForPresentingModalView
 @end
 ```
 
-
-
-开屏广告代理回调 - ADSuyiSDKSplashAdDelegate
+<div STYLE="page-break-after: always;"></div>
+开屏广告代理回调 - ADSuyiSDKSplashAdDelegate,ADSuyiSDKSplashAdZoomOutViewDelegate
 
 ```obj-c
 @protocol ADSuyiSDKSplashAdDelegate <NSObject>
@@ -505,7 +494,7 @@ viewControllerForPresentingModalView
 - (void)adsy_splashAdClicked:(ADSuyiSDKSplashAd *)splashAd;
 
 /**
- 开屏被关闭，强烈建议不要在此回调中做切换控制器的操作。
+ 开屏被关闭
  
  @param splashAd 广告实例
  */
@@ -518,30 +507,86 @@ viewControllerForPresentingModalView
  */
 - (void)adsy_splashAdEffective:(ADSuyiSDKSplashAd *)splashAd;
 
+
+@end
+
+@protocol ADSuyiSDKSplashAdZoomOutViewDelegate <NSObject>
+
+@optional
+
+/**
+ ZoomOutView被点击
+ 
+ @param splashAd 广告实例
+ @param splashZoomOutView zoomOutView
+ */
+- (void)adsy_splashZoomOutViewDidClick:(ADSuyiSDKSplashAd *)splashAd
+                     splashZoomOutView:(__kindof UIView <ADSuyiSDKSplashAdZoomOutViewProtocol>*)splashZoomOutView;
+
+/**
+ ZoomOutView 被关闭
+ 
+ @param splashAd 广告实例
+ @param splashZoomOutView zoomOutView
+ */
+- (void)adsy_splashZoomOutViewAdDidClose:(ADSuyiSDKSplashAd *)splashAd
+                       splashZoomOutView:(__kindof UIView <ADSuyiSDKSplashAdZoomOutViewProtocol>*)splashZoomOutView;
+
+/**
+ ZoomOutView 播放完成
+ 
+ @param splashAd 广告实例
+ @param splashZoomOutView zoomOutView
+ */
+- (void)adsy_splashZoomOutViewAdVideoFinished:(ADSuyiSDKSplashAd *)splashAd
+                            splashZoomOutView:(__kindof UIView <ADSuyiSDKSplashAdZoomOutViewProtocol>*)splashZoomOutView;
+
+/**
+ ZoomOutView 进入视频详情页
+ 
+ @param splashAd 广告实例
+ @param splashZoomOutView zoomOutView
+ */
+- (void)adsy_splashZoomOutViewAdDidPresentFullScreenModal:(ADSuyiSDKSplashAd *)splashAd
+                                        splashZoomOutView:(__kindof UIView <ADSuyiSDKSplashAdZoomOutViewProtocol>*)splashZoomOutView;
+
+/**
+ ZoomOutView 退出视频详情页
+ 
+ @param splashAd 广告实例
+ @param splashZoomOutView zoomOutView
+ */
+- (void)adsy_splashZoomOutViewAdDidDismissFullScreenModal:(ADSuyiSDKSplashAd *)splashAd
+                                        splashZoomOutView:(__kindof UIView <ADSuyiSDKSplashAdZoomOutViewProtocol>*)splashZoomOutView;
+
+
 @end
 
 ```
 
-
+<div STYLE="page-break-after: always;"></div>
 Swift请求开屏广告代码示例：[[开屏代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS-Swift/blob/master/ADSuyiSDKDemo-iOS-Swift/AppDelegate.swift)
 
 OC请求开屏广告代码示例：
 
 ```obj-c
 #import <ADSuyiSDK/ADSuyiSDKSplashAd.h>
-#import <ADSuyiKit/UIColor+ADSuyiKit.h>
-#import <ADSuyiKit/ADSuyiKitMacros.h>
+#import <ADSuyiKit/ADSuyiKit.h>
 
 /*
  * 推荐在AppDelegate中的最后加载开屏广告
  * 其他的接入方式会有需要特殊注意的方式，遇到过的相关问题在SDK相关问题的文档中有提到
  * 不建议在开屏展示过程中做控制器的切换（如：开屏广告关闭回调时切换当前window的根控制器或者present另外一个控制器）
+ * SUPPORT_SPLASH_ZOOMOUT，是否需要支持V+视频开屏广告取决于开发者，不选择v+开屏则可以不去适配
  */
 
 - (void)loadSplashAd{
     // 1、初始化开屏广告实例对象
     self.splashAd = [[ADSuyiSDKSplashAd alloc]init];
     self.splashAd.delegate = self;
+#ifdef SUPPORT_SPLASH_ZOOMOUT
+    self.splashAd.zoomOutViewDelegate = self;
+#endif
     self.splashAd.controller = _window.rootViewController;
     // 2、设置开屏的广告位id
     self.splashAd.posId = @"d11c2ef29dcb7e6e62";
@@ -583,7 +628,12 @@ OC请求开屏广告代码示例：
  @param splashAd 广告实例
  */
 - (void)adsy_splashAdSuccessToPresentScreen:(ADSuyiSDKSplashAd *)splashAd{
-    
+#ifdef SUPPORT_SPLASH_ZOOMOUT
+    if(splashAd.splashZoomOutView) {
+        UIViewController *rootVc = [UIApplication sharedApplication].keyWindow.rootViewController;
+        [rootVc.view addSubview:splashAd.splashZoomOutView];
+    }
+#endif
 }
 
 /**
@@ -611,7 +661,12 @@ OC请求开屏广告代码示例：
  @param splashAd 广告实例
  */
 - (void)adsy_splashAdClosed:(ADSuyiSDKSplashAd *)splashAd{
+#ifdef SUPPORT_SPLASH_ZOOMOUT
+    if(_splashAd.splashZoomOutView == nil)
+        _splashAd = nil;
+#else
     _splashAd = nil;
+#endif
 }
 
 /**
@@ -622,11 +677,57 @@ OC请求开屏广告代码示例：
 - (void)adsy_splashAdEffective:(ADSuyiSDKSplashAd *)splashAd{
     
 }
+
+#ifdef SUPPORT_SPLASH_ZOOMOUT
+
+#pragma mark - ADSuyiSDKSplashAdZoomOutViewDelegate
+
+/**
+ ZoomOutView被点击
+ */
+- (void)adsy_splashZoomOutViewDidClick:(ADSuyiSDKSplashAd *)splashAd
+                     splashZoomOutView:(__kindof UIView <ADSuyiSDKSplashAdZoomOutViewProtocol>*)splashZoomOutView {
+    
+}
+
+/**
+ ZoomOutView 被关闭
+ */
+- (void)adsy_splashZoomOutViewAdDidClose:(ADSuyiSDKSplashAd *)splashAd
+                       splashZoomOutView:(__kindof UIView <ADSuyiSDKSplashAdZoomOutViewProtocol>*)splashZoomOutView {
+    
+}
+
+/**
+ ZoomOutView 播放完成
+ */
+- (void)adsy_splashZoomOutViewAdVideoFinished:(ADSuyiSDKSplashAd *)splashAd
+                            splashZoomOutView:(__kindof UIView <ADSuyiSDKSplashAdZoomOutViewProtocol>*)splashZoomOutView {
+    
+}
+
+/**
+ ZoomOutView 进入视频详情页
+ */
+- (void)adsy_splashZoomOutViewAdDidPresentFullScreenModal:(ADSuyiSDKSplashAd *)splashAd
+                                        splashZoomOutView:(__kindof UIView <ADSuyiSDKSplashAdZoomOutViewProtocol>*)splashZoomOutView {
+    
+}
+
+/**
+ ZoomOutView 退出视频详情页
+ */
+- (void)adsy_splashZoomOutViewAdDidDismissFullScreenModal:(ADSuyiSDKSplashAd *)splashAd
+                                        splashZoomOutView:(__kindof UIView <ADSuyiSDKSplashAdZoomOutViewProtocol>*)splashZoomOutView {
+    _splashAd = nil;
+}
+
+#endif
 ```
 
 <br>
 
-
+<div STYLE="page-break-after: always;"></div>
 ## 4.3 Banner横幅广告 - ADSuyiSDKBannerAdView
 
 Banner广告(横幅广告)位于app顶部、中部、底部任意一处，横向贯穿整个app页面；当用户与app互动时，Banner广告会停留在屏幕上，并可在一段时间后自动刷新。
@@ -807,7 +908,7 @@ OC请求横幅广告请求示例：
 
 <br>
 
-
+<div STYLE="page-break-after: always;"></div>
 ## 4.4 信息流广告 - ADSuyiSDKNativeAd
 
 信息流广告，具备自渲染和模板两种广告样式：自渲染是SDK将返回广告标题、描述、Icon、图片、多媒体视图等信息，开发者可通过自行拼装渲染成喜欢的样式；模板样式则是返回拼装好的广告视图，开发者只需将视图添加到相应容器即可，模板样式的容器高度建议是自适应。**由于信息流广告不同广告平台支持的样式不一致，有些平台不支持自渲染，有些平台不支持模板，所以下发的广告可能是模板和自渲染混合，强烈建议开发者参考Demo适配两种类型。**
@@ -1000,7 +1101,7 @@ if(!_nativeAd) {
 
 <br>
 
-
+<div STYLE="page-break-after: always;"></div>
 ## 4.5 激励视频广告 - ADSuyiSDKRewardvodAd
 
 将短视频融入到APP场景当中，用户观看短视频广告后可以给予一些应用内奖励。常出现在游戏的复活、任务等位置，或者网服类APP的一些增值服务场景。
@@ -1196,7 +1297,7 @@ OC请求激励视频代码示例：
 
 ```
 
-
+<div STYLE="page-break-after: always;"></div>
 ## 4.6 插屏广告 - ADSuyiSDKIntertitialAd
 
 插屏广告是移动广告的一种常见形式，在应用流程中弹出，当应用展示插屏广告时，用户可以选择点击广告，访问其目标网址，也可以将其关闭并返回应用。在应用执行流程的自然停顿点，适合投放这类广告。
@@ -1354,7 +1455,7 @@ OC请求插屏代码示例：
 
 ```
 
-
+<div STYLE="page-break-after: always;"></div>
 ##4.7 全屏视频广告 - ADSuyiSDKFullScreenVodAd
 
 类似激励视频，与激励视频不同的是，全屏视频广告在观看一定时长（通常为5s）后即可跳过广告，无需全部观看完成，有视频跳过回调，但是没有激励回调。
@@ -1538,7 +1639,7 @@ OC请求全屏视频广告代码示例：
 }
 ```
 
-
+<div STYLE="page-break-after: always;"></div> 
 ## 4.8 沉浸式视频广告 - ADSuyiSDKDrawvodAd
 
 类似抖音、快手小视频一样的视频广告，目前仅有穿山甲和快手联盟拥有该样式。
@@ -1709,7 +1810,7 @@ OC请求沉浸式视频代码示例：
 }
 ```
 
-
+<div STYLE="page-break-after: always;"></div> 
 ## 4.9 浮窗广告 - ADSuyiSDKNotificationAd
 
 浮窗广告正常情况下不需要手动调用任何相关代码，如果需要展示请联系媒介处理。
@@ -1726,10 +1827,152 @@ OC请求沉浸式视频代码示例：
 [ADSuyiSDKStatusManager notificationAdContinue];
 ```
 
+<div STYLE="page-break-after: always;"></div> 
+## 4.10 快手内容 - ADSuyiContentAd
+
+快手小视频一样的视频广告，点击进入快手的内容页面
+
+快手内容广告 - ADSuyiContentAd：
+
+```objective-c
+typedef NS_ENUM(NSUInteger, ADSuyiSDKContentAdStatus) {
+    ADSuyiSDKContentAdStatusDefault, // 闲置状态
+    ADSuyiSDKContentAdStatusLoading, // 加载广告中
+};
+@protocol ADSuyiSDKContentAdDelegate;
+@protocol ADSuyiSDKContentAdViewProtocol;
+@interface ADSuyiSDKContentAd : NSObject
+
+/*
+ contentAdPadding
+ 详解：[可选]内容广告padding 默认 padding 左右各 16，上 8 下 0 ，在 调用loadContentAd之前配置
+ */
+@property (nonatomic, assign) UIEdgeInsets contentAdPadding;
+
+/*
+ contentAdWidth
+ 详解：内容广告默认宽度为屏幕宽度 在调用loadContentAd之前配置
+ */
+@property (nonatomic, assign) CGFloat contentAdWidth;
+
+/*
+ status
+ 详解：开发者可通过状态值来判断当前广告对象是否正在加载广告
+*/
+@property (nonatomic, assign, readonly) ADSuyiSDKContentAdStatus status;
+
+/**
+ 代理回调
+ */
+@property (nonatomic, weak) id<ADSuyiSDKContentAdDelegate> delegate;
+
+/**
+ 广告位id
+*/
+@property (nonatomic, copy) NSString *posId;
+
+
+/**
+ 场景id
+ */
+@property (nonatomic, copy, nullable) NSString *scenesId;
+
+/**
+ 加载广告
+ */
+- (void)loadContentAd;
+
+/**
+ 模拟点击 会回调- (void)adsy_contentAdClicked:(ADSuyiSDKContentAd *)contentAd contentDetailPage:(UIViewController *)contentPageVc方法
+ */
+- (void)clickContentPageWithContentView:(UIView<ADSuyiSDKContentAdViewProtocol>*)contentView;
+
+@end
+```
+
+快手内容广告回调：
+
+```objective-c
+@protocol ADSuyiSDKContentAdDelegate <NSObject>
+
+/**
+ 内容广告请求成功
+
+ @param contentAd 广告实例
+ @param contentAdView 广告视图
+ */
+- (void)adsy_contentAdSucessToLoad:(ADSuyiSDKContentAd *)contentAd contentAdView:(__kindof UIView <ADSuyiSDKContentAdViewProtocol>*)contentAdView;
+
+/**
+ 内容广告请求失败
+
+ @param contentAd 广告实例
+ @param errorModel 请求错误描述
+ */
+- (void)adsy_contentAdFailToLoad:(ADSuyiSDKContentAd *)contentAd
+                     errorModel:(ADSuyiAdapterErrorDefine *)errorModel;
+
+/**
+ 内容广告被点击
+
+ @param contentAd 广告实例
+ @param contentPageVc 点击后跳转的内容页面控制器  自行选择 push / present / 容器组操作
+ */
+- (void)adsy_contentAdClicked:(ADSuyiSDKContentAd *)contentAd contentDetailPage:(UIViewController *)contentPageVc;
+
+@end
+
+@protocol ADSuyiSDKContentAdViewProtocol <NSObject>
+
+/*
+ contentAdSize
+ 详解：内容广告尺寸 adsy_contentAdSucessToLoad 回调成功时获取
+ */
+@property (nonatomic, assign, readonly) CGSize contentAdSize;
+
+@end
+```
+
+Swift请求沉浸式视频代码示例：[[内容页广告代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS-Swift/blob/master/ADSuyiSDKDemo-iOS-Swift/SuyiAds/content/AdSuyiBaseContentViewController.swift)
+
+OC请求沉浸式视频代码示例：
+
+```objective-c
+#import <ADSuyiSDK/ADSuyiSDK.h>
+
+- (void)loadContentAd {
+    _contentAd = [[ADSuyiSDKContentAd alloc]init];
+    _contentAd.delegate = self;
+    _contentAd.posId = @"7d4b7081b1cb1467aa";
+    [_contentAd loadContentAd];
+}
+
+#pragma mark - ADSuyiContentAdDelegate
+
+- (void)adsy_contentAdSucessToLoad:(ADSuyiSDKContentAd *)contentAd contentAdView:(__kindof UIView<ADSuyiSDKContentAdViewProtocol> *)contentAdView {
+    _contentAdWidth = contentAdView.contentAdSize.width;
+    _contentAdHeight = contentAdView.contentAdSize.height;
+	  [contentAdView adsy_registView:nil];
+    [self.items addObject:contentAdView];
+    [self.tableView reloadData];
+}
+
+- (void)adsy_contentAdFailToLoad:(ADSuyiSDKContentAd *)contentAd errorModel:(ADSuyiAdapterErrorDefine *)errorModel {
+    NSLog(@"内容广告加载失败%@",errorModel);
+}
+
+- (void)adsy_contentAdClicked:(ADSuyiSDKContentAd *)contentAd contentDetailPage:(UIViewController *)contentPageVc {
+    // 使用控制器作为内容页面父控制器来添加返回按钮（按需求是否采用该方式）
+    AdSuyiBaseContentViewController *contentVc = [[AdSuyiBaseContentViewController alloc] initWithViewController:contentPageVc];
+    [self.navigationController pushViewController:contentVc animated:YES];
+}
+
+```
 
 
 
 
+<div STYLE="page-break-after: always;"></div> 
 ## 作者
 
 sangshen@admobile.top
