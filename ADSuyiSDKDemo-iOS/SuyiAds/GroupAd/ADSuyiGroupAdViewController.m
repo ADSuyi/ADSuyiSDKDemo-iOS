@@ -165,8 +165,7 @@
     if(![adView.adsy_platform isEqualToString:ADSuyiAdapterPlatformGDT]) { // 优量汇（广点通）会自带logo，不需要添加
         UIImageView *logoImage = [UIImageView new];
         [adView addSubview:logoImage];
-//        [adView bringSubviewToFront:logoImage];
-        [adView adsy_platformLogoImageHasText:YES loadImageBlock:^(UIImage * _Nullable image) {
+        [adView adsy_platformLogoImageDarkMode:NO loadImageBlock:^(UIImage * _Nullable image) {
             CGFloat maxWidth = 40;
             CGFloat logoHeight = maxWidth / image.size.width * image.size.height;
             logoImage.frame = CGRectMake(adWidth - maxWidth, adHeight - logoHeight, maxWidth, logoHeight);

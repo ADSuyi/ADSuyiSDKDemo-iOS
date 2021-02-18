@@ -22,6 +22,8 @@
 #import "AdSuyiDrawvodViewController.h"
 #import "TableViewController.h"
 #import "ADSuyiGroupAdViewController.h"
+#import "AdSuyiContentViewController.h"
+
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *mainTableView;
@@ -39,7 +41,7 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.dataArray = @[@"开屏广告 SplashAD",@"横幅广告 BannerAD",@"信息流广告(模板) NativeAD",@"信息流广告列表(自渲染) NativeAD",@"插屏广告 InterstitalAD",@"全屏视频 FullScreenVideoAD",@"沉浸式视频 DrawVideoAD",@"激励视频 RewardVideoAD",@"内容SDK Contain",@"组合广告 GroupAd", @"组合广告失败切换 GroupAd"];
+    self.dataArray = @[@"开屏广告 SplashAD",@"横幅广告 BannerAD",@"信息流广告(模板) NativeAD",@"信息流广告列表(自渲染) NativeAD",@"插屏广告 InterstitalAD",@"全屏视频 FullScreenVideoAD",@"沉浸式视频 DrawVideoAD",@"激励视频 RewardVideoAD",@"内容SDK Contain",@"组合广告 GroupAd", @"组合广告失败切换 GroupAd", @"内容组件"];
     
     [self.mainTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     [self.view addSubview:self.mainTableView];
@@ -153,6 +155,11 @@
             groupVc.nativePosid = @"";
             groupVc.rewardPosid = @"47d196ffaaa92ae93c";
             [self.navigationController pushViewController:groupVc animated:YES];
+            break;
+        }
+        case 11: {
+            AdSuyiContentViewController *contentVc = [AdSuyiContentViewController new];
+            [self.navigationController pushViewController:contentVc animated:YES];
             break;
         }
         default:

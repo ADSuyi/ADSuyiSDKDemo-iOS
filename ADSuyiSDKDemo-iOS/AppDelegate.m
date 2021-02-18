@@ -14,7 +14,16 @@
 #import <ADSuyiKit/ADSuyiKitMacros.h>
 #import <ADSuyiKit/ADSuyiKitLogging.h>
 
-@interface AppDelegate ()<ADSuyiSDKSplashAdDelegate>{
+// 支持广点通开屏广告v+
+#define SUPPORT_SPLASH_ZOOMOUT 1
+
+@interface AppDelegate ()
+<
+#ifdef SUPPORT_SPLASH_ZOOMOUT
+ADSuyiSDKSplashAdZoomOutViewDelegate,
+#endif
+ADSuyiSDKSplashAdDelegate
+>{
     UIWindow *_window;
 }
 
@@ -53,6 +62,9 @@
     // 1、初始化开屏广告实例对象
     self.splashAd = [[ADSuyiSDKSplashAd alloc]init];
     self.splashAd.delegate = self;
+#ifdef SUPPORT_SPLASH_ZOOMOUT
+    self.splashAd.zoomOutViewDelegate = self;
+#endif
     self.splashAd.controller = _window.rootViewController;
     // 2、设置开屏的广告位id
     self.splashAd.posId = @"73128265daffdd6a1d";
@@ -93,7 +105,12 @@
  @param splashAd 广告实例
  */
 - (void)adsy_splashAdSuccessToPresentScreen:(ADSuyiSDKSplashAd *)splashAd{
-    
+#ifdef SUPPORT_SPLASH_ZOOMOUT
+    if(splashAd.splashZoomOutView) {
+        UIViewController *rootVc = [UIApplication sharedApplication].keyWindow.rootViewController;
+        [rootVc.view addSubview:splashAd.splashZoomOutView];
+    }
+#endif
 }
 
 /**
@@ -121,7 +138,12 @@
  @param splashAd 广告实例
  */
 - (void)adsy_splashAdClosed:(ADSuyiSDKSplashAd *)splashAd{
+#ifdef SUPPORT_SPLASH_ZOOMOUT
+    if(_splashAd.splashZoomOutView == nil)
+        _splashAd = nil;
+#else
     _splashAd = nil;
+#endif
 }
 
 /**
@@ -132,6 +154,67 @@
 - (void)adsy_splashAdEffective:(ADSuyiSDKSplashAd *)splashAd{
     
 }
+
+#ifdef SUPPORT_SPLASH_ZOOMOUT
+
+#pragma mark - ADSuyiSDKSplashAdZoomOutViewDelegate
+
+/**
+ ZoomOutView被点击
+ 
+ @param splashAd 广告实例
+ @param splashZoomOutView zoomOutView
+ */
+- (void)adsy_splashZoomOutViewDidClick:(ADSuyiSDKSplashAd *)splashAd
+                     splashZoomOutView:(__kindof UIView <ADSuyiSDKSplashAdZoomOutViewProtocol>*)splashZoomOutView {
+    
+}
+
+/**
+ ZoomOutView 被关闭
+ 
+ @param splashAd 广告实例
+ @param splashZoomOutView zoomOutView
+ */
+- (void)adsy_splashZoomOutViewAdDidClose:(ADSuyiSDKSplashAd *)splashAd
+                       splashZoomOutView:(__kindof UIView <ADSuyiSDKSplashAdZoomOutViewProtocol>*)splashZoomOutView {
+    
+}
+
+/**
+ ZoomOutView 播放完成
+ 
+ @param splashAd 广告实例
+ @param splashZoomOutView zoomOutView
+ */
+- (void)adsy_splashZoomOutViewAdVideoFinished:(ADSuyiSDKSplashAd *)splashAd
+                            splashZoomOutView:(__kindof UIView <ADSuyiSDKSplashAdZoomOutViewProtocol>*)splashZoomOutView {
+    
+}
+
+/**
+ ZoomOutView 进入视频详情页
+ 
+ @param splashAd 广告实例
+ @param splashZoomOutView zoomOutView
+ */
+- (void)adsy_splashZoomOutViewAdDidPresentFullScreenModal:(ADSuyiSDKSplashAd *)splashAd
+                                        splashZoomOutView:(__kindof UIView <ADSuyiSDKSplashAdZoomOutViewProtocol>*)splashZoomOutView {
+    
+}
+
+/**
+ ZoomOutView 退出视频详情页
+ 
+ @param splashAd 广告实例
+ @param splashZoomOutView zoomOutView
+ */
+- (void)adsy_splashZoomOutViewAdDidDismissFullScreenModal:(ADSuyiSDKSplashAd *)splashAd
+                                        splashZoomOutView:(__kindof UIView <ADSuyiSDKSplashAdZoomOutViewProtocol>*)splashZoomOutView {
+    _splashAd = nil;
+}
+
+#endif
 
 #pragma mark -- private
 
