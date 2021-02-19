@@ -50,6 +50,8 @@
 | v3.1.2   | 2020-01-29 | 适配快手内容页，支持广点通v+开屏广告，修复已知问题           |
 
 <div STYLE="page-break-after: always;"></div>
+
+
 ## 1.1 概述
 
 尊敬的开发者朋友，欢迎您使用ADmobile 苏伊士广告SDK。通过本文档，您可以在几分钟之内轻松完成广告的集成过程。
@@ -60,8 +62,6 @@
 
 - `ADSuyiSDK Objective-C Demo地址`[[ADSuyiSDK Objective-C Demo]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS)
 - `ADSuyiSDK Swift Demo地址`[[ADSuyiSDK Swift Demo]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS-Swift.git)
-
-<br>
 
 
 
@@ -103,6 +103,8 @@ pod 'ADSuyiKS'
 ```
 
 <div STYLE="page-break-after: always;"></div>
+
+
 ## 2.2 手动导入SDK方式
 
 [点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_SDK_iOS.zip)下载各SDK拖入到工程中
@@ -138,6 +140,8 @@ ImageIO.framework
 ```
 
 <div STYLE="page-break-after: always;"></div>
+
+
 ## 3.1 工程环境配置
 
 1. 打开项目的 app target，查看 Build Settings 中的 Linking-Other Linker Flags 选项，确保含有 -ObjC 一值， 若没有则添加。
@@ -216,7 +220,7 @@ NSLocationAlwaysAndWhenInUseUsageDeion
     </array>
 ```
 
-<br>
+
 
 ## 3.2 iOS14适配
 
@@ -339,6 +343,8 @@ SKAdNetwork 是接收iOS端营销推广活动归因数据的一种方法。
   </array>
 ```
 
+
+
 ### 3.2.2 IDFA
 
 从 iOS 14 开始，在应用程序调用 App Tracking Transparency 向用户提跟踪授权请求之前，IDFA 将不可用。
@@ -364,6 +370,8 @@ SKAdNetwork 是接收iOS端营销推广活动归因数据的一种方法。
 ```
 
 <div STYLE="page-break-after: always;"></div>
+
+
 ## 4.1 集合SDK的初始化
 
 `申请的appid必须与您的包名一一对应`
@@ -391,9 +399,9 @@ SKAdNetwork 是接收iOS端营销推广活动归因数据的一种方法。
 NSString *sdkVersion = [ADSuyiSDK getSDKVersion];
 ```
 
-<br>
-
 <div STYLE="page-break-after: always;"></div>
+
+
 ## 4.2 开屏广告 - ADSuyiSDKSplashAd
 
 开屏广告会在您的应用开启时加载展示，拥有固定展示时间，展示完毕后自动关闭并进入您的应用主界面。
@@ -725,9 +733,9 @@ OC请求开屏广告代码示例：
 #endif
 ```
 
-<br>
-
 <div STYLE="page-break-after: always;"></div>
+
+
 ## 4.3 Banner横幅广告 - ADSuyiSDKBannerAdView
 
 Banner广告(横幅广告)位于app顶部、中部、底部任意一处，横向贯穿整个app页面；当用户与app互动时，Banner广告会停留在屏幕上，并可在一段时间后自动刷新。
@@ -906,9 +914,9 @@ OC请求横幅广告请求示例：
 }
 ```
 
-<br>
-
 <div STYLE="page-break-after: always;"></div>
+
+
 ## 4.4 信息流广告 - ADSuyiSDKNativeAd
 
 信息流广告，具备自渲染和模板两种广告样式：自渲染是SDK将返回广告标题、描述、Icon、图片、多媒体视图等信息，开发者可通过自行拼装渲染成喜欢的样式；模板样式则是返回拼装好的广告视图，开发者只需将视图添加到相应容器即可，模板样式的容器高度建议是自适应。**由于信息流广告不同广告平台支持的样式不一致，有些平台不支持自渲染，有些平台不支持模板，所以下发的广告可能是模板和自渲染混合，强烈建议开发者参考Demo适配两种类型。**
@@ -1099,9 +1107,9 @@ if(!_nativeAd) {
 }
 ```
 
-<br>
-
 <div STYLE="page-break-after: always;"></div>
+
+
 ## 4.5 激励视频广告 - ADSuyiSDKRewardvodAd
 
 将短视频融入到APP场景当中，用户观看短视频广告后可以给予一些应用内奖励。常出现在游戏的复活、任务等位置，或者网服类APP的一些增值服务场景。
@@ -1298,6 +1306,8 @@ OC请求激励视频代码示例：
 ```
 
 <div STYLE="page-break-after: always;"></div>
+
+
 ## 4.6 插屏广告 - ADSuyiSDKIntertitialAd
 
 插屏广告是移动广告的一种常见形式，在应用流程中弹出，当应用展示插屏广告时，用户可以选择点击广告，访问其目标网址，也可以将其关闭并返回应用。在应用执行流程的自然停顿点，适合投放这类广告。
@@ -1456,7 +1466,7 @@ OC请求插屏代码示例：
 ```
 
 <div STYLE="page-break-after: always;"></div>
-##4.7 全屏视频广告 - ADSuyiSDKFullScreenVodAd
+## 4.7 全屏视频广告 - ADSuyiSDKFullScreenVodAd
 
 类似激励视频，与激励视频不同的是，全屏视频广告在观看一定时长（通常为5s）后即可跳过广告，无需全部观看完成，有视频跳过回调，但是没有激励回调。
 
@@ -1640,6 +1650,8 @@ OC请求全屏视频广告代码示例：
 ```
 
 <div STYLE="page-break-after: always;"></div> 
+
+
 ## 4.8 沉浸式视频广告 - ADSuyiSDKDrawvodAd
 
 类似抖音、快手小视频一样的视频广告，目前仅有穿山甲和快手联盟拥有该样式。
@@ -1811,6 +1823,8 @@ OC请求沉浸式视频代码示例：
 ```
 
 <div STYLE="page-break-after: always;"></div> 
+
+
 ## 4.9 浮窗广告 - ADSuyiSDKNotificationAd
 
 浮窗广告正常情况下不需要手动调用任何相关代码，如果需要展示请联系媒介处理。
@@ -1828,6 +1842,8 @@ OC请求沉浸式视频代码示例：
 ```
 
 <div STYLE="page-break-after: always;"></div> 
+
+
 ## 4.10 快手内容 - ADSuyiContentAd
 
 快手小视频一样的视频广告，点击进入快手的内容页面
@@ -1970,9 +1986,9 @@ OC请求沉浸式视频代码示例：
 ```
 
 
-
-
 <div STYLE="page-break-after: always;"></div> 
+
+
 ## 作者
 
 sangshen@admobile.top
