@@ -104,12 +104,7 @@
 - (void)adsy_contentAdSucessToLoad:(ADSuyiSDKContentAd *)contentAd contentAdView:(__kindof UIView<ADSuyiSDKContentAdViewProtocol> *)contentAdView {
     contentAdView.frame = CGRectMake(0, 0, 200, 100);
     contentAdView.backgroundColor = UIColor.redColor;
-//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(clickContentView)];
-//    _contentView = contentAdView;
-//    [contentAdView addGestureRecognizer:tap];
-//    UIView *view = [UIView new];
-//    view.frame = CGRectMake(0, 0, 200, 100);
-//    view.backgroundColor = UIColor.greenColor;
+    // 使用内容组件返回视图
     [contentAdView adsy_registView:nil];
     [self.items addObject:contentAdView];
     [self.tableView reloadData];
@@ -118,7 +113,6 @@
 }
 
 - (void)adsy_contentAdFailToLoad:(ADSuyiSDKContentAd *)contentAd errorModel:(ADSuyiAdapterErrorDefine *)errorModel {
-    NSLog(@"内容广告加载失败%@",errorModel);
     [_tableView.mj_header endRefreshing];
     [_tableView.mj_footer endRefreshing];
 }
@@ -128,10 +122,4 @@
     AdSuyiBaseContentViewController *contentVc = [[AdSuyiBaseContentViewController alloc] initWithViewController:contentPageVc];
     [self.navigationController pushViewController:contentVc animated:YES];
 }
-//
-//- (void)clickContentView {
-//    // 该方法执行会自动调用点击回调
-//    [_contentAd clickContentPageWithContentView:_contentView];
-//}
-
 @end
