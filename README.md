@@ -230,7 +230,37 @@ NSLocationAlwaysAndWhenInUseUsageDeion
 2. 升级ADSuyiSDK 3.0.8及以上版本；
 3. 设置SKAdNetwork和IDFA权限；
 
-### 3.2.1 SKAdNetwork
+
+
+### 3.2.1 获取App Tracking Transparency授权（弹窗授权获取IDFA）
+
+从 iOS 14 开始，在应用程序调用 App Tracking Transparency 向用户提跟踪授权请求之前，IDFA 将不可用。
+
+1. 更新 Info.plist，添加 NSUserTrackingUsageDescription 字段和自定义文案描述。
+
+```objective-c
+<key>NSUserTrackingUsageDescription</key>
+<string>该标识符将用于向您投放个性化广告</string>
+```
+
+2. 向用户申请权限。
+
+```objective-c
+#import <AppTrackingTransparency/AppTrackingTransparency.h>
+#import <AdSupport/AdSupport.h>
+...
+- (void)requestIDFA {
+  [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
+    [self requestAd]
+  }];
+}
+```
+
+<div STYLE="page-break-after: always;"></div>
+
+
+
+### 3.2.2 SKAdNetwork
 
 SKAdNetwork 是接收iOS端营销推广活动归因数据的一种方法。
 
@@ -343,33 +373,8 @@ SKAdNetwork 是接收iOS端营销推广活动归因数据的一种方法。
   </array>
 ```
 
+<div STYLE="page-break-after: alway
 
-
-### 3.2.2 IDFA
-
-从 iOS 14 开始，在应用程序调用 App Tracking Transparency 向用户提跟踪授权请求之前，IDFA 将不可用。
-
-1. 更新 Info.plist，添加 NSUserTrackingUsageDescription 字段和自定义文案描述。
-
-```objective-c
-<key>NSUserTrackingUsageDescription</key>
-<string>该标识符将用于向您投放个性化广告</string>
-```
-
-2. 向用户申请权限。
-
-```objective-c
-#import <AppTrackingTransparency/AppTrackingTransparency.h>
-#import <AdSupport/AdSupport.h>
-...
-- (void)requestIDFA {
-  [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
-    [self requestAd]
-  }];
-}
-```
-
-<div STYLE="page-break-after: always;"></div>
 
 
 ## 4.1 集合SDK的初始化
