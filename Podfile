@@ -10,11 +10,13 @@ target 'ADSuyiSDKDemo-iOS' do
   # Pods for ADSuyiSDKDemo-iOS
   pod 'ADSuyiSDK', '~> 3.1.2.0'
   pod 'ADSuyiAdMobile'
-#  pod 'ADSuyiMTG'
+  pod 'ADSuyiMTG'
   pod 'ADSuyiGDT'
   pod 'ADSuyiBU'
   # 内容组件
   pod 'ADSuyiKS'
+#  小说SDK
+  pod 'ADSuyiStarRd'
 
   pod 'MJRefresh'
 

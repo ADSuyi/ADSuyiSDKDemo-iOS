@@ -53,7 +53,45 @@ ADSuyiSDKSplashAdDelegate
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // 热启动加载开屏广告 进入前台加载
     [self loadSplashAd];
+//    进入前台 小说控制事件结束
+    [application endReceivingRemoteControlEvents];
 }
+#pragma mark - 小说SDK后台播放控制
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+- (void)applicationDidEnterBackground:(UIApplication *)application {
+    [application beginReceivingRemoteControlEvents];
+}
+// 小说后台播放控制
+- (void)remoteControlReceivedWithEvent:(UIEvent *)event {
+    switch (event.subtype) {
+        case UIEventSubtypeRemoteControlPlay: {//恢复播放
+            [ADSuyiSDKContainAd replay];
+        }
+            break;
+        case UIEventSubtypeRemoteControlPause: {//暂停
+            [ADSuyiSDKContainAd pause];
+            break;
+        }
+        case UIEventSubtypeRemoteControlPreviousTrack: {//上一曲
+            [ADSuyiSDKContainAd last];
+            break;
+        }
+        case UIEventSubtypeRemoteControlNextTrack: {//下一曲
+            [ADSuyiSDKContainAd next];
+            break;
+        }
+        case UIEventSubtypeRemoteControlTogglePlayPause: {//小窗口暂停
+            [ADSuyiSDKContainAd smallWindowPause];
+            break;
+        }
+        default:
+            break;
+    }
+}
+
 
 - (void)loadSplashAd{
     if (self.splashAd) {
