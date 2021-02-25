@@ -251,7 +251,7 @@ NSLocationAlwaysAndWhenInUseUsageDeion
 ...
 - (void)requestIDFA {
   [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
-    [self requestAd]
+  
   }];
 }
 ```
