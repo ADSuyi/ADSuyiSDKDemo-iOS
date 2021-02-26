@@ -251,9 +251,14 @@ NSLocationAlwaysAndWhenInUseUsageDeion
 ...
 - (void)requestIDFA {
   [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
-    [self requestAd]
+    
   }];
 }
+// 建议启动App就获取权限或者请求广告前获取
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  	[self requestIDFA];
+}
+
 ```
 
 <div STYLE="page-break-after: always;"></div>

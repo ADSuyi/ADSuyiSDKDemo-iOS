@@ -14,6 +14,9 @@
 #import <ADSuyiKit/ADSuyiKitMacros.h>
 #import <ADSuyiKit/ADSuyiKitLogging.h>
 
+#import <AppTrackingTransparency/AppTrackingTransparency.h>
+#import <AdSupport/AdSupport.h>
+
 // 支持广点通开屏广告v+
 #define SUPPORT_SPLASH_ZOOMOUT 1
 
@@ -36,6 +39,13 @@ ADSuyiSDKSplashAdDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+//    获取idfa权限 建议启动就获取权限 不获取权限会影响收益
+    if (@available(iOS 14.0, *)) {
+        [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
+                    
+        }];
+    }
     
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     _window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];

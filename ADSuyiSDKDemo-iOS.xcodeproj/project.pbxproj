@@ -10,6 +10,8 @@
 		13CC793425DE542800D77DE5 /* AdSuyiBaseContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CC793025DE542800D77DE5 /* AdSuyiBaseContentViewController.m */; };
 		13CC793525DE542800D77DE5 /* AdSuyiContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CC793125DE542800D77DE5 /* AdSuyiContentViewController.m */; };
 		6012F9759F8BCC5230C3F3D1 /* libPods-ADSuyiSDKDemo-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 422C7AE40E8567B741DE7A2F /* libPods-ADSuyiSDKDemo-iOS.a */; };
+		82085D7825E8937500FCE89F /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82085D7725E8937500FCE89F /* AppTrackingTransparency.framework */; };
+		82085D7A25E8937C00FCE89F /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82085D7925E8937C00FCE89F /* AdSupport.framework */; };
 		820EC7E6254A9F77001C7C88 /* BlankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 820EC7E3254A9F77001C7C88 /* BlankViewController.m */; };
 		820EC7E7254A9F77001C7C88 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 820EC7E4254A9F77001C7C88 /* TableViewController.m */; };
 		824AD25525C11A5200BD1105 /* ADSuyiGroupAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 824AD25425C11A5200BD1105 /* ADSuyiGroupAdViewController.m */; };
@@ -39,6 +41,8 @@
 		13CC793325DE542800D77DE5 /* AdSuyiBaseContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdSuyiBaseContentViewController.h; sourceTree = "<group>"; };
 		2F224B5F4E4E0DCAE1105072 /* Pods-ADSuyiSDKDemo-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADSuyiSDKDemo-iOS.release.xcconfig"; path = "Target Support Files/Pods-ADSuyiSDKDemo-iOS/Pods-ADSuyiSDKDemo-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		422C7AE40E8567B741DE7A2F /* libPods-ADSuyiSDKDemo-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ADSuyiSDKDemo-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		82085D7725E8937500FCE89F /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
+		82085D7925E8937C00FCE89F /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		820EC7E2254A9F77001C7C88 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		820EC7E3254A9F77001C7C88 /* BlankViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlankViewController.m; sourceTree = "<group>"; };
 		820EC7E4254A9F77001C7C88 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
@@ -84,6 +88,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6012F9759F8BCC5230C3F3D1 /* libPods-ADSuyiSDKDemo-iOS.a in Frameworks */,
+				82085D7825E8937500FCE89F /* AppTrackingTransparency.framework in Frameworks */,
+				82085D7A25E8937C00FCE89F /* AdSupport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +110,8 @@
 		66890375DE678EA9A920BD13 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				82085D7925E8937C00FCE89F /* AdSupport.framework */,
+				82085D7725E8937500FCE89F /* AppTrackingTransparency.framework */,
 				422C7AE40E8567B741DE7A2F /* libPods-ADSuyiSDKDemo-iOS.a */,
 			);
 			name = Frameworks;
