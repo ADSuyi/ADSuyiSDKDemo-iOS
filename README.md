@@ -238,9 +238,14 @@ NSLocationAlwaysAndWhenInUseUsageDeion
 
 1. 更新 Info.plist，添加 NSUserTrackingUsageDescription 字段和自定义文案描述。
 
+   弹窗小字文案建议：
+
+   - `获取标记权限向您提供更优质、安全的个性化服务及内容，未经同意我们不会用于其他目的；开启后，您也可以前往系统“设置-隐私 ”中随时关闭。`
+   - `获取IDFA标记权限向您提供更优质、安全的个性化服务及内容；开启后，您也可以前往系统“设置-隐私 ”中随时关闭。`
+
 ```objective-c
 <key>NSUserTrackingUsageDescription</key>
-<string>该标识符将用于向您投放个性化广告</string>
+<string>获取标记权限向您提供更优质、安全的个性化服务及内容，未经同意我们不会用于其他目的；开启后，您也可以前往系统“设置-隐私 ”中随时关闭</string>
 ```
 
 2. 向用户申请权限。
