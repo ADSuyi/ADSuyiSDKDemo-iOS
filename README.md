@@ -1,6 +1,6 @@
 
 
-# ADmobile ADSuyiSDK iOS接入文档 v3.1.2.02031
+# ADmobile ADSuyiSDK iOS接入文档 v3.1.3.03011
 
 
 
@@ -47,7 +47,8 @@
 | v3.0.9   | 2020-11-16 | 浮窗广告适配广点通                                           |
 | v3.1.0   | 2020-12-14 | 广告场景功能，开放开屏跳过按钮，错误码规范性整理，修复已知问题 |
 | v3.1.1   | 2020-12-23 | 信息流支持广点通模板2.0，自渲染信息流广告增加关闭按钮相关方法，修复已知问题 |
-| v3.1.2   | 2020-02-18 | 适配快手内容页;支持广点通v+开屏广告;升级第三方SDK（优量汇、穿山甲、快手联盟等）           |
+| v3.1.2   | 2020-02-18 | 适配快手内容页;支持广点通v+开屏广告;升级第三方SDK（优量汇、穿山甲、快手联盟等） |
+| v3.1.3   | 2020-03-01 | 适配Vungle横幅广告，插屏广告，激励视频广告;升级第三方SDK（Google、穿山甲、汇量等） |
 
 <div STYLE="page-break-after: always;"></div>
 
@@ -82,6 +83,7 @@ pod 'ADSuyiUnity'    # Unity
 pod 'ADSuyiIFLY'     # 讯飞
 pod 'ADSuyiBaidu'    # baidu
 pod 'ADSuyiKS'			 # 快手
+pod 'ADSuyiVungle'	 # vungle
 // 推荐导入，通过系统定位获取定位信息
 pod 'ADSuyiLocationManagerGPS'// 含有系统定位代码
 ```
@@ -89,7 +91,7 @@ pod 'ADSuyiLocationManagerGPS'// 含有系统定位代码
 推荐使用导入命令
 
 ```ruby
-pod 'ADSuyiSDK', '~> 3.1.2.0'
+pod 'ADSuyiSDK', '~> 3.1.3.0'
 pod 'ADSuyiBU'
 pod 'ADSuyiGDT'
 pod 'ADSuyiAdMobile'
@@ -100,6 +102,7 @@ pod 'ADSuyiUnity'
 pod 'ADSuyiIFLY'
 pod 'ADSuyiBaidu'
 pod 'ADSuyiKS'
+pod 'ADSuyiVungle'
 ```
 
 <div STYLE="page-break-after: always;"></div>
@@ -256,7 +259,7 @@ NSLocationAlwaysAndWhenInUseUsageDeion
 ...
 - (void)requestIDFA {
   [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
-    
+    // 无需对授权状态进行处理
   }];
 }
 // 建议启动App就获取权限或者请求广告前获取
@@ -384,7 +387,6 @@ SKAdNetwork 是接收iOS端营销推广活动归因数据的一种方法。
 ```
 
 <div STYLE="page-break-after: alway
-
 
 
 ## 4.1 集合SDK的初始化
