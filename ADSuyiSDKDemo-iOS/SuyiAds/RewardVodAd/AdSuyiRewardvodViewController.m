@@ -7,7 +7,7 @@
 //
 
 #import "AdSuyiRewardvodViewController.h"
-#import <ADSuyiSDK/ADSuyiSDKRewardvodAd.h>
+
 
 @interface AdSuyiRewardvodViewController ()<ADSuyiSDKRewardvodAdDelegate>
 
@@ -32,8 +32,11 @@
     self.rewardvodAd.delegate = self;
     self.rewardvodAd.tolerateTimeout = 5;
     self.rewardvodAd.controller = self;
-    self.rewardvodAd.posId = @"47d196ffaaa92ae93c";
-    
+    self.rewardvodAd.posId = @"d4cccba91a4605bced";
+    self.rewardvodAd.userId = @"erik";
+    self.rewardvodAd.extraInfo = @"这是一个激励验证";
+    self.rewardvodAd.rewardName = @"激励验证测试";
+    self.rewardvodAd.rewardAmount = [NSNumber numberWithInt:2];
     // 2、加载激励视频广告
     [self.rewardvodAd loadRewardvodAd];
 }
@@ -137,6 +140,14 @@
  @param errorModel 具体错误信息
  */
 - (void)adsy_rewardvodAdPlaying:(ADSuyiSDKRewardvodAd *)rewardvodAd errorModel:(ADSuyiAdapterErrorDefine *)errorModel{
+    
+}
+
+- (void)adsy_rewardvodAdServerDidSucceed:(ADSuyiSDKRewardvodAd *)rewardvodAd {
+    
+}
+
+- (void)adsy_rewardvodAdServerDidFailed:(ADSuyiSDKRewardvodAd *)rewardvodAd errorModel:(ADSuyiAdapterErrorDefine *)errorModel {
     
 }
 

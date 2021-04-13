@@ -3,10 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0315BF102625BE4A006BDB9B /* ADSuyiSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0315BF0F2625BE4A006BDB9B /* ADSuyiSDK.xcframework */; };
+		03B70B8926214B9100D699F1 /* ADMobileAdSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B70B8126214B9100D699F1 /* ADMobileAdSDK.xcframework */; };
+		03B70B8B26214B9100D699F1 /* ADSuyiAdMobile.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B70B8226214B9100D699F1 /* ADSuyiAdMobile.xcframework */; };
+		03B70B8F26214B9100D699F1 /* ADSuyiGDT.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B70B8426214B9100D699F1 /* ADSuyiGDT.xcframework */; };
+		03B70B9126214B9100D699F1 /* ADSuyiKS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B70B8526214B9100D699F1 /* ADSuyiKS.xcframework */; };
+		03B70B9426214B9100D699F1 /* ADSuyiStarRd.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B70B8626214B9100D699F1 /* ADSuyiStarRd.xcframework */; };
 		13CC793425DE542800D77DE5 /* AdSuyiBaseContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CC793025DE542800D77DE5 /* AdSuyiBaseContentViewController.m */; };
 		13CC793525DE542800D77DE5 /* AdSuyiContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CC793125DE542800D77DE5 /* AdSuyiContentViewController.m */; };
 		6012F9759F8BCC5230C3F3D1 /* libPods-ADSuyiSDKDemo-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 422C7AE40E8567B741DE7A2F /* libPods-ADSuyiSDKDemo-iOS.a */; };
@@ -35,6 +41,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0315BF0F2625BE4A006BDB9B /* ADSuyiSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ADSuyiSDK.xcframework; path = Pods/ADSuyiSDK/ADSuyiSDK/Classes/core/ADSuyiSDK.xcframework; sourceTree = "<group>"; };
+		03B70B7C26214B8B00D699F1 /* ADSuyiSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ADSuyiSDK.xcframework; path = Pods/ADSuyiSDK/ADSuyiSDK/Classes/ADSuyiSDK.xcframework; sourceTree = "<group>"; };
+		03B70B8026214B9100D699F1 /* ADMobGenDeviceInfo.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ADMobGenDeviceInfo.xcframework; path = Pods/ADMobGenDeviceInfo/ADMobGenDeviceInfo/Classes/ADMobGenDeviceInfo.xcframework; sourceTree = "<group>"; };
+		03B70B8126214B9100D699F1 /* ADMobileAdSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ADMobileAdSDK.xcframework; path = Pods/ADMobileAdSDK/ADMobileAdSDK/Classes/ADMobileAdSDK.xcframework; sourceTree = "<group>"; };
+		03B70B8226214B9100D699F1 /* ADSuyiAdMobile.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ADSuyiAdMobile.xcframework; path = Pods/ADSuyiAdMobile/ADSuyiAdMobile/Classes/ADSuyiAdMobile.xcframework; sourceTree = "<group>"; };
+		03B70B8326214B9100D699F1 /* ADSuyiBU.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ADSuyiBU.xcframework; path = Pods/ADSuyiBU/ADSuyiBU/Classes/ADSuyiBU.xcframework; sourceTree = "<group>"; };
+		03B70B8426214B9100D699F1 /* ADSuyiGDT.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ADSuyiGDT.xcframework; path = Pods/ADSuyiGDT/ADSuyiGDT/Classes/ADSuyiGDT.xcframework; sourceTree = "<group>"; };
+		03B70B8526214B9100D699F1 /* ADSuyiKS.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ADSuyiKS.xcframework; path = Pods/ADSuyiKS/ADSuyiKS/Classes/ADSuyiKS.xcframework; sourceTree = "<group>"; };
+		03B70B8626214B9100D699F1 /* ADSuyiStarRd.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ADSuyiStarRd.xcframework; path = Pods/ADSuyiStarRd/ADSuyiStarRd/Classes/ADSuyiStarRd.xcframework; sourceTree = "<group>"; };
 		13CC793025DE542800D77DE5 /* AdSuyiBaseContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdSuyiBaseContentViewController.m; sourceTree = "<group>"; };
 		13CC793125DE542800D77DE5 /* AdSuyiContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdSuyiContentViewController.m; sourceTree = "<group>"; };
 		13CC793225DE542800D77DE5 /* AdSuyiContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdSuyiContentViewController.h; sourceTree = "<group>"; };
@@ -87,8 +102,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0315BF102625BE4A006BDB9B /* ADSuyiSDK.xcframework in Frameworks */,
+				03B70B9126214B9100D699F1 /* ADSuyiKS.xcframework in Frameworks */,
 				6012F9759F8BCC5230C3F3D1 /* libPods-ADSuyiSDKDemo-iOS.a in Frameworks */,
+				03B70B8F26214B9100D699F1 /* ADSuyiGDT.xcframework in Frameworks */,
+				03B70B8B26214B9100D699F1 /* ADSuyiAdMobile.xcframework in Frameworks */,
 				82085D7825E8937500FCE89F /* AppTrackingTransparency.framework in Frameworks */,
+				03B70B8926214B9100D699F1 /* ADMobileAdSDK.xcframework in Frameworks */,
+				03B70B9426214B9100D699F1 /* ADSuyiStarRd.xcframework in Frameworks */,
 				82085D7A25E8937C00FCE89F /* AdSupport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -110,6 +131,15 @@
 		66890375DE678EA9A920BD13 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0315BF0F2625BE4A006BDB9B /* ADSuyiSDK.xcframework */,
+				03B70B8026214B9100D699F1 /* ADMobGenDeviceInfo.xcframework */,
+				03B70B8126214B9100D699F1 /* ADMobileAdSDK.xcframework */,
+				03B70B8226214B9100D699F1 /* ADSuyiAdMobile.xcframework */,
+				03B70B8326214B9100D699F1 /* ADSuyiBU.xcframework */,
+				03B70B8426214B9100D699F1 /* ADSuyiGDT.xcframework */,
+				03B70B8526214B9100D699F1 /* ADSuyiKS.xcframework */,
+				03B70B8626214B9100D699F1 /* ADSuyiStarRd.xcframework */,
+				03B70B7C26214B8B00D699F1 /* ADSuyiSDK.xcframework */,
 				82085D7925E8937C00FCE89F /* AdSupport.framework */,
 				82085D7725E8937500FCE89F /* AppTrackingTransparency.framework */,
 				422C7AE40E8567B741DE7A2F /* libPods-ADSuyiSDKDemo-iOS.a */,
@@ -554,13 +584,48 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y8FBV7Y443;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/ADMobGenBaiDuSDK/ADMobGenBaiDuSDK/Classes\"",
+					"\"${PODS_ROOT}/ADMobGenDeviceInfo/ADMobGenDeviceInfo/Classes\"",
+					"\"${PODS_ROOT}/ADMobileAdSDK/ADMobileAdSDK/Classes\"",
+					"\"${PODS_ROOT}/ADSuyiKSSDK\"",
+					"\"${PODS_ROOT}/ADSuyiKit/ADSuyiKit/Classes\"",
+					"\"${PODS_ROOT}/ADSuyiLocationManager/ADSuyiLocationManager/Classes\"",
+					"\"${PODS_ROOT}/ADSuyiNetwork/ADSuyiNetwork/Classes\"",
+					"\"${PODS_ROOT}/ADSuyiSDK/ADSuyiSDK/Classes/admobile\"",
+					"\"${PODS_ROOT}/ADSuyiSDK/ADSuyiSDK/Classes/baidu\"",
+					"\"${PODS_ROOT}/ADSuyiSDK/ADSuyiSDK/Classes/bu\"",
+					"\"${PODS_ROOT}/ADSuyiSDK/ADSuyiSDK/Classes/core\"",
+					"\"${PODS_ROOT}/ADSuyiSDK/ADSuyiSDK/Classes/inmobi\"",
+					"\"${PODS_ROOT}/ADSuyiSDK/ADSuyiSDK/Classes/unity\"",
+					"\"${PODS_ROOT}/ADSuyiStarRd/ADSuyiStarRd/Classes\"",
+					"\"${PODS_ROOT}/Ads-CN/PangleSDK\"",
+					"\"${PODS_ROOT}/InMobiSDK-China\"",
+					"\"${PODS_ROOT}/StarRdSdk/Framework\"",
+					"\"${PODS_ROOT}/UnityAds\"",
+					"\"${PODS_ROOT}/XCSADBridge/ios\"",
+					"\"${PODS_ROOT}/XCSADCore/ios\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/ADMobGenDeviceInfo\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/ADMobileAdSDK\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/ADSuyiAdMobile\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/ADSuyiBU\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/ADSuyiBaidu\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/ADSuyiGDT\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/ADSuyiInmobi\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/ADSuyiKS\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/ADSuyiKit\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/ADSuyiSDK\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/ADSuyiStarRd\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/ADSuyiUnity\"",
+				);
 				INFOPLIST_FILE = "ADSuyiSDKDemo-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sangshen.ADSuyiSDKDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuyue.czyouxuan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -581,7 +646,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sangshen.ADSuyiSDKDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuyue.czyouxuan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

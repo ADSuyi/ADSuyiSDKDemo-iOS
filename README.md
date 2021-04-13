@@ -1,6 +1,6 @@
 
 
-# ADmobile ADSuyiSDK iOS接入文档 v3.1.3.03011
+# ADmobile ADSuyiSDK iOS接入文档 v3.1.5.03051
 
 
 
@@ -49,6 +49,7 @@
 | v3.1.1   | 2020-12-23 | 信息流支持广点通模板2.0，自渲染信息流广告增加关闭按钮相关方法，修复已知问题 |
 | v3.1.2   | 2020-02-18 | 适配快手内容页;支持广点通v+开屏广告;升级第三方SDK（优量汇、穿山甲、快手联盟等） |
 | v3.1.3   | 2020-03-01 | 适配Vungle横幅广告，插屏广告，激励视频广告;升级第三方SDK（Google、穿山甲、汇量等） |
+| v3.1.5   | 2020-03-05 | 部分平台激励视频支持服务端验证;升级第三方SDK（优量汇、穿山甲等） |
 
 <div STYLE="page-break-after: always;"></div>
 
@@ -72,18 +73,17 @@
 
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
-pod 'ADSuyiSDK'      # 主SDK
-pod 'ADSuyiBU'       # 穿山甲(头条)
-pod 'ADSuyiGDT'      # 优量汇
-pod 'ADSuyiAdMobile' # ADMobile
-pod 'ADSuyiInmobi'   # Inmobi
-pod 'ADSuyiMTG'      # Mobvista(汇量)
-pod 'ADSuyiGoogle'   # 谷歌
-pod 'ADSuyiUnity'    # Unity
-pod 'ADSuyiIFLY'     # 讯飞
-pod 'ADSuyiBaidu'    # baidu
-pod 'ADSuyiKS'			 # 快手
-pod 'ADSuyiVungle'	 # vungle
+pod 'ADSuyiSDK', '~> 3.1.5.0'								# 主SDK  #必选
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt'     	# 优量汇
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile' # ADMobile  #必选
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu'		# baidu
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu'   		# 穿山甲(头条)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/google'   # 谷歌
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi'   # Inmobi
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks'				# 快手
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/unity'		# Unity
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg'			# Mobvista(汇量)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/vungle'		# vungle
 // 推荐导入，通过系统定位获取定位信息
 pod 'ADSuyiLocationManagerGPS'// 含有系统定位代码
 ```
@@ -91,18 +91,17 @@ pod 'ADSuyiLocationManagerGPS'// 含有系统定位代码
 推荐使用导入命令
 
 ```ruby
-pod 'ADSuyiSDK', '~> 3.1.3.0'
-pod 'ADSuyiBU'
-pod 'ADSuyiGDT'
-pod 'ADSuyiAdMobile'
-pod 'ADSuyiInmobi'
-pod 'ADSuyiMTG'
-pod 'ADSuyiGoogle'
-pod 'ADSuyiUnity'
-pod 'ADSuyiIFLY'
-pod 'ADSuyiBaidu'
-pod 'ADSuyiKS'
-pod 'ADSuyiVungle'
+pod 'ADSuyiSDK', '~> 3.1.5.0'								# 主SDK  #必选	
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt'			# 优量汇
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile'	# ADMobile  #必选
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu'		# baidu
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu'				# 穿山甲(头条)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/google'		# 谷歌
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi'		# Inmobi
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks'				# 快手
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/unity'		# Unity
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg'			# Mobvista(汇量)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/vungle'		# vungle
 ```
 
 <div STYLE="page-break-after: always;"></div>
@@ -387,6 +386,7 @@ SKAdNetwork 是接收iOS端营销推广活动归因数据的一种方法。
 ```
 
 <div STYLE="page-break-after: alway
+
 
 
 ## 4.1 集合SDK的初始化
@@ -1157,6 +1157,31 @@ if(!_nativeAd) {
 @property (nonatomic, copy) NSString *posId;
 
 /**
+ 场景id
+ */
+@property (nonatomic, copy, nullable) NSString *scenesId;
+
+/**
+ 用户id （用户在App内的userID，用于激励视频服务器验证，如无需服务器验证可不传）
+ */
+@property (nonatomic, copy, nullable) NSString *userId;
+
+/**
+ 奖励名称 （用于激励视频服务器验证参数，可选）
+ */
+@property (nonatomic, copy, nullable) NSString *rewardName;
+
+/**
+ 奖励数量 （用于激励视频服务器验证参数，可选）
+ */
+@property (nonatomic, assign,nullable) NSNumber *rewardAmount;
+
+/**
+ 其他信息 （服务器端验证回调中包含的可选自定义奖励字符串，可选）
+ */
+@property (nonatomic, copy, nullable) NSString *extraInfo;
+
+/**
  代理回调
  */
 @property (nonatomic, weak) id<ADSuyiSDKRewardvodAdDelegate> delegate;
@@ -1165,6 +1190,11 @@ if(!_nativeAd) {
 加载激励视频广告
 */
 - (void)loadRewardvodAd;
+
+/**
+ 激励视频广告是否支持服务端验证
+ */
+- (BOOL)rewardvodAdCanServerVerrify;
 
 /**
  激励视频广告是否准备好
@@ -1180,6 +1210,7 @@ if(!_nativeAd) {
  展示激励视频广告
  */
 - (void)showRewardvodAd;
+
 
 @end
 
@@ -1242,7 +1273,7 @@ if(!_nativeAd) {
 - (void)adsy_rewardvodAdDidPlayFinish:(ADSuyiSDKRewardvodAd *)rewardvodAd;
 
 /**
- 视频广告视频达到奖励条件
+ 视频广告视频达到奖励条件 （开启服务器验证后请使用服务端验证判断是否达到条件，无需使用本回调做激励达成判断）
  
  @param rewardvodAd 广告实例
  */
@@ -1264,6 +1295,21 @@ if(!_nativeAd) {
  */
 - (void)adsy_rewardvodAdPlaying:(ADSuyiSDKRewardvodAd *)rewardvodAd errorModel:(ADSuyiAdapterErrorDefine *)errorModel;
 
+/**
+ 视频广告激励服务验证成功（需等待服务器返回结果后判断是否激励生效）
+ 
+ @param rewardvodAd 广告实例
+ */
+- (void)adsy_rewardvodAdServerDidSucceed:(ADSuyiSDKRewardvodAd *)rewardvodAd;
+
+/**
+ 视频广告完成激励服务验证失败
+ 
+ @param rewardvodAd 广告实例
+ @param errorModel 认证失败错误信息
+ */
+- (void)adsy_rewardvodAdServerDidFailed:(ADSuyiSDKRewardvodAd *)rewardvodAd errorModel:(ADSuyiAdapterErrorDefine *)errorModel;
+
 @end
 
 ```
@@ -1282,6 +1328,11 @@ OC请求激励视频代码示例：
     self.rewardvodAd.tolerateTimeout = 5;
     self.rewardvodAd.controller = self;
     self.rewardvodAd.posId = @"e9e0f8d1fe21873695";
+  	// 以下参数如不需服务端验证可不传
+  	self.rewardvodAd.userId = @"xxx";
+    self.rewardvodAd.extraInfo = @"这是一个激励视频生效验证";
+    self.rewardvodAd.rewardName = @"看视频得金币";
+    self.rewardvodAd.rewardAmount = [NSNumber numberWithInt:2];
     
     // 2、加载激励视频广告
     [self.rewardvodAd loadRewardvodAd];
@@ -1319,6 +1370,26 @@ OC请求激励视频代码示例：
     // 4、广告内存回收
     _rewardvodAd = nil;
 }
+
+/**
+ 视频广告发送服务端验证成功回调
+ 
+ @param rewardvodAd 广告实例
+ */
+- (void)adsy_rewardvodAdServerDidSucceed:(ADSuyiSDKRewardvodAd *)rewardvodAd {
+    
+}
+
+/**
+ 视频广告发送服务端验证请求失败回调
+ 
+ @param rewardvodAd 广告实例
+ @param errorModel 具体错误信息
+ */
+- (void)adsy_rewardvodAdServerDidFailed:(ADSuyiSDKRewardvodAd *)rewardvodAd errorModel:(ADSuyiAdapterErrorDefine *)errorModel {
+    
+}
+
 
 ```
 
@@ -2008,9 +2079,9 @@ OC请求沉浸式视频代码示例：
 
 ## 作者
 
-sangshen@admobile.top
-
 huacai@admobile.top
+
+bale@admobile.top
 
 ## 商务合作
 
