@@ -7,7 +7,7 @@
 //
 
 #import "AdSuyiRewardvodViewController.h"
-
+#import <ADSuyiSDK/ADSuyiSDKRewardvodAd.h>
 
 @interface AdSuyiRewardvodViewController ()<ADSuyiSDKRewardvodAdDelegate>
 
