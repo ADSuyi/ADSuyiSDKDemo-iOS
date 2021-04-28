@@ -3,16 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0315BF102625BE4A006BDB9B /* ADSuyiSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0315BF0F2625BE4A006BDB9B /* ADSuyiSDK.xcframework */; };
-		03B70B8926214B9100D699F1 /* ADMobileAdSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B70B8126214B9100D699F1 /* ADMobileAdSDK.xcframework */; };
-		03B70B8B26214B9100D699F1 /* ADSuyiAdMobile.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B70B8226214B9100D699F1 /* ADSuyiAdMobile.xcframework */; };
-		03B70B8F26214B9100D699F1 /* ADSuyiGDT.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B70B8426214B9100D699F1 /* ADSuyiGDT.xcframework */; };
-		03B70B9126214B9100D699F1 /* ADSuyiKS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B70B8526214B9100D699F1 /* ADSuyiKS.xcframework */; };
-		03B70B9426214B9100D699F1 /* ADSuyiStarRd.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B70B8626214B9100D699F1 /* ADSuyiStarRd.xcframework */; };
+		0315BF102625BE4A006BDB9B /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		03B70B8926214B9100D699F1 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		03B70B8B26214B9100D699F1 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		03B70B8F26214B9100D699F1 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		03B70B9126214B9100D699F1 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		03B70B9426214B9100D699F1 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		03ED19272637A7C200089CF2 /* SetConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 03ED19172637A7C200089CF2 /* SetConfigManager.m */; };
+		03ED19282637A7C200089CF2 /* NativeAdSetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03ED19182637A7C200089CF2 /* NativeAdSetTableViewController.m */; };
+		03ED19292637A7C200089CF2 /* DrawAdSetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03ED191C2637A7C200089CF2 /* DrawAdSetTableViewController.m */; };
+		03ED192A2637A7C200089CF2 /* FullScreenAdSetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03ED191D2637A7C200089CF2 /* FullScreenAdSetTableViewController.m */; };
+		03ED192B2637A7C200089CF2 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03ED19202637A7C200089CF2 /* NavigationViewController.m */; };
+		03ED192C2637A7C200089CF2 /* SetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03ED19212637A7C200089CF2 /* SetTableViewController.m */; };
+		03ED192D2637A7C200089CF2 /* SplashSetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03ED19222637A7C200089CF2 /* SplashSetTableViewController.m */; };
+		03ED192E2637A7C200089CF2 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 03ED19232637A7C200089CF2 /* UIView+Toast.m */; };
+		03ED192F2637A7C200089CF2 /* BannerAdSetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03ED19242637A7C200089CF2 /* BannerAdSetTableViewController.m */; };
+		03ED19302637A7C200089CF2 /* PlatformTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03ED19252637A7C200089CF2 /* PlatformTableViewController.m */; };
+		03ED19312637A7C200089CF2 /* NotificationAdSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03ED19262637A7C200089CF2 /* NotificationAdSetViewController.m */; };
+		03ED19512637C21100089CF2 /* AdSuyiContainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03ED19502637C21100089CF2 /* AdSuyiContainViewController.m */; };
 		13CC793425DE542800D77DE5 /* AdSuyiBaseContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CC793025DE542800D77DE5 /* AdSuyiBaseContentViewController.m */; };
 		13CC793525DE542800D77DE5 /* AdSuyiContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CC793125DE542800D77DE5 /* AdSuyiContentViewController.m */; };
 		6012F9759F8BCC5230C3F3D1 /* libPods-ADSuyiSDKDemo-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 422C7AE40E8567B741DE7A2F /* libPods-ADSuyiSDKDemo-iOS.a */; };
@@ -41,6 +53,30 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		03ED19112637A7C200089CF2 /* FullScreenAdSetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullScreenAdSetTableViewController.h; sourceTree = "<group>"; };
+		03ED19122637A7C200089CF2 /* DrawAdSetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawAdSetTableViewController.h; sourceTree = "<group>"; };
+		03ED19132637A7C200089CF2 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		03ED19142637A7C200089CF2 /* SplashSetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashSetTableViewController.h; sourceTree = "<group>"; };
+		03ED19152637A7C200089CF2 /* SetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetTableViewController.h; sourceTree = "<group>"; };
+		03ED19162637A7C200089CF2 /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
+		03ED19172637A7C200089CF2 /* SetConfigManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetConfigManager.m; sourceTree = "<group>"; };
+		03ED19182637A7C200089CF2 /* NativeAdSetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeAdSetTableViewController.m; sourceTree = "<group>"; };
+		03ED19192637A7C200089CF2 /* NotificationAdSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationAdSetViewController.h; sourceTree = "<group>"; };
+		03ED191A2637A7C200089CF2 /* PlatformTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlatformTableViewController.h; sourceTree = "<group>"; };
+		03ED191B2637A7C200089CF2 /* BannerAdSetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerAdSetTableViewController.h; sourceTree = "<group>"; };
+		03ED191C2637A7C200089CF2 /* DrawAdSetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawAdSetTableViewController.m; sourceTree = "<group>"; };
+		03ED191D2637A7C200089CF2 /* FullScreenAdSetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullScreenAdSetTableViewController.m; sourceTree = "<group>"; };
+		03ED191E2637A7C200089CF2 /* NativeAdSetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeAdSetTableViewController.h; sourceTree = "<group>"; };
+		03ED191F2637A7C200089CF2 /* SetConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetConfigManager.h; sourceTree = "<group>"; };
+		03ED19202637A7C200089CF2 /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
+		03ED19212637A7C200089CF2 /* SetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetTableViewController.m; sourceTree = "<group>"; };
+		03ED19222637A7C200089CF2 /* SplashSetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashSetTableViewController.m; sourceTree = "<group>"; };
+		03ED19232637A7C200089CF2 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		03ED19242637A7C200089CF2 /* BannerAdSetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerAdSetTableViewController.m; sourceTree = "<group>"; };
+		03ED19252637A7C200089CF2 /* PlatformTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlatformTableViewController.m; sourceTree = "<group>"; };
+		03ED19262637A7C200089CF2 /* NotificationAdSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationAdSetViewController.m; sourceTree = "<group>"; };
+		03ED194F2637C21100089CF2 /* AdSuyiContainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdSuyiContainViewController.h; sourceTree = "<group>"; };
+		03ED19502637C21100089CF2 /* AdSuyiContainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdSuyiContainViewController.m; sourceTree = "<group>"; };
 		13CC793025DE542800D77DE5 /* AdSuyiBaseContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdSuyiBaseContentViewController.m; sourceTree = "<group>"; };
 		13CC793125DE542800D77DE5 /* AdSuyiContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdSuyiContentViewController.m; sourceTree = "<group>"; };
 		13CC793225DE542800D77DE5 /* AdSuyiContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdSuyiContentViewController.h; sourceTree = "<group>"; };
@@ -93,14 +129,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0315BF102625BE4A006BDB9B /* ADSuyiSDK.xcframework in Frameworks */,
-				03B70B9126214B9100D699F1 /* ADSuyiKS.xcframework in Frameworks */,
+				0315BF102625BE4A006BDB9B /* (null) in Frameworks */,
+				03B70B9126214B9100D699F1 /* (null) in Frameworks */,
 				6012F9759F8BCC5230C3F3D1 /* libPods-ADSuyiSDKDemo-iOS.a in Frameworks */,
-				03B70B8F26214B9100D699F1 /* ADSuyiGDT.xcframework in Frameworks */,
-				03B70B8B26214B9100D699F1 /* ADSuyiAdMobile.xcframework in Frameworks */,
+				03B70B8F26214B9100D699F1 /* (null) in Frameworks */,
+				03B70B8B26214B9100D699F1 /* (null) in Frameworks */,
 				82085D7825E8937500FCE89F /* AppTrackingTransparency.framework in Frameworks */,
-				03B70B8926214B9100D699F1 /* ADMobileAdSDK.xcframework in Frameworks */,
-				03B70B9426214B9100D699F1 /* ADSuyiStarRd.xcframework in Frameworks */,
+				03B70B8926214B9100D699F1 /* (null) in Frameworks */,
+				03B70B9426214B9100D699F1 /* (null) in Frameworks */,
 				82085D7A25E8937C00FCE89F /* AdSupport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,6 +144,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03ED19102637A7C200089CF2 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				03ED19112637A7C200089CF2 /* FullScreenAdSetTableViewController.h */,
+				03ED19122637A7C200089CF2 /* DrawAdSetTableViewController.h */,
+				03ED19132637A7C200089CF2 /* UIView+Toast.h */,
+				03ED19142637A7C200089CF2 /* SplashSetTableViewController.h */,
+				03ED19152637A7C200089CF2 /* SetTableViewController.h */,
+				03ED19162637A7C200089CF2 /* NavigationViewController.h */,
+				03ED19172637A7C200089CF2 /* SetConfigManager.m */,
+				03ED19182637A7C200089CF2 /* NativeAdSetTableViewController.m */,
+				03ED19192637A7C200089CF2 /* NotificationAdSetViewController.h */,
+				03ED191A2637A7C200089CF2 /* PlatformTableViewController.h */,
+				03ED191B2637A7C200089CF2 /* BannerAdSetTableViewController.h */,
+				03ED191C2637A7C200089CF2 /* DrawAdSetTableViewController.m */,
+				03ED191D2637A7C200089CF2 /* FullScreenAdSetTableViewController.m */,
+				03ED191E2637A7C200089CF2 /* NativeAdSetTableViewController.h */,
+				03ED191F2637A7C200089CF2 /* SetConfigManager.h */,
+				03ED19202637A7C200089CF2 /* NavigationViewController.m */,
+				03ED19212637A7C200089CF2 /* SetTableViewController.m */,
+				03ED19222637A7C200089CF2 /* SplashSetTableViewController.m */,
+				03ED19232637A7C200089CF2 /* UIView+Toast.m */,
+				03ED19242637A7C200089CF2 /* BannerAdSetTableViewController.m */,
+				03ED19252637A7C200089CF2 /* PlatformTableViewController.m */,
+				03ED19262637A7C200089CF2 /* NotificationAdSetViewController.m */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		13CC792F25DE541D00D77DE5 /* Content */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,15 +187,6 @@
 		66890375DE678EA9A920BD13 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0315BF0F2625BE4A006BDB9B /* ADSuyiSDK.xcframework */,
-				03B70B8026214B9100D699F1 /* ADMobGenDeviceInfo.xcframework */,
-				03B70B8126214B9100D699F1 /* ADMobileAdSDK.xcframework */,
-				03B70B8226214B9100D699F1 /* ADSuyiAdMobile.xcframework */,
-				03B70B8326214B9100D699F1 /* ADSuyiBU.xcframework */,
-				03B70B8426214B9100D699F1 /* ADSuyiGDT.xcframework */,
-				03B70B8526214B9100D699F1 /* ADSuyiKS.xcframework */,
-				03B70B8626214B9100D699F1 /* ADSuyiStarRd.xcframework */,
-				03B70B7C26214B8B00D699F1 /* ADSuyiSDK.xcframework */,
 				82085D7925E8937C00FCE89F /* AdSupport.framework */,
 				82085D7725E8937500FCE89F /* AppTrackingTransparency.framework */,
 				422C7AE40E8567B741DE7A2F /* libPods-ADSuyiSDKDemo-iOS.a */,
@@ -154,6 +210,8 @@
 				820EC7E4254A9F77001C7C88 /* TableViewController.m */,
 				820EC7E3254A9F77001C7C88 /* BlankViewController.m */,
 				820EC7E5254A9F77001C7C88 /* BlankViewController.h */,
+				03ED194F2637C21100089CF2 /* AdSuyiContainViewController.h */,
+				03ED19502637C21100089CF2 /* AdSuyiContainViewController.m */,
 			);
 			path = Contain;
 			sourceTree = "<group>";
@@ -188,6 +246,7 @@
 		BFEA086A247E4CCC001815E3 /* ADSuyiSDKDemo-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				03ED19102637A7C200089CF2 /* Config */,
 				BFEA0888247E5430001815E3 /* SuyiAds */,
 				BFEA0884247E5383001815E3 /* ADMob_Logo.png */,
 				BFEA0885247E5383001815E3 /* 750x1334.png */,
@@ -425,6 +484,7 @@
 				13CC793425DE542800D77DE5 /* AdSuyiBaseContentViewController.m in Sources */,
 				BFEA08A5247E5430001815E3 /* AdSuyiSplashViewController.m in Sources */,
 				BFEA08A8247E5430001815E3 /* AdSuyiFullScreenvodViewController.m in Sources */,
+				03ED192E2637A7C200089CF2 /* UIView+Toast.m in Sources */,
 				BFEA0873247E4CCC001815E3 /* ViewController.m in Sources */,
 				BFEA08A9247E5430001815E3 /* AdSuyiInterstitialViewController.m in Sources */,
 				BFEA086D247E4CCC001815E3 /* AppDelegate.m in Sources */,
@@ -432,12 +492,23 @@
 				820EC7E7254A9F77001C7C88 /* TableViewController.m in Sources */,
 				BFEA08AA247E5430001815E3 /* AdSuyiRewardvodViewController.m in Sources */,
 				BFEA08A4247E5430001815E3 /* AdSuyiBannerViewController.m in Sources */,
+				03ED192B2637A7C200089CF2 /* NavigationViewController.m in Sources */,
 				BFEA08A2247E5430001815E3 /* AdSuyiNativeViewController.m in Sources */,
+				03ED19312637A7C200089CF2 /* NotificationAdSetViewController.m in Sources */,
+				03ED19292637A7C200089CF2 /* DrawAdSetTableViewController.m in Sources */,
+				03ED19302637A7C200089CF2 /* PlatformTableViewController.m in Sources */,
+				03ED19282637A7C200089CF2 /* NativeAdSetTableViewController.m in Sources */,
 				BFEA087E247E4CCF001815E3 /* main.m in Sources */,
+				03ED192D2637A7C200089CF2 /* SplashSetTableViewController.m in Sources */,
+				03ED19512637C21100089CF2 /* AdSuyiContainViewController.m in Sources */,
+				03ED19272637A7C200089CF2 /* SetConfigManager.m in Sources */,
+				03ED192A2637A7C200089CF2 /* FullScreenAdSetTableViewController.m in Sources */,
 				BFEA08A3247E5430001815E3 /* AdSuyiNativeViewCell.m in Sources */,
 				BFEA08A6247E5430001815E3 /* AdSuyiDrawvodViewController.m in Sources */,
 				13CC793525DE542800D77DE5 /* AdSuyiContentViewController.m in Sources */,
+				03ED192F2637A7C200089CF2 /* BannerAdSetTableViewController.m in Sources */,
 				820EC7E6254A9F77001C7C88 /* BlankViewController.m in Sources */,
+				03ED192C2637A7C200089CF2 /* SetTableViewController.m in Sources */,
 				BFEA08A7247E5430001815E3 /* AdSuyiDrawvodAdTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -616,7 +687,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yuyue.czyouxuan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sangshen.ADSuyiSDKDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -637,7 +708,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yuyue.czyouxuan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sangshen.ADSuyiSDKDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

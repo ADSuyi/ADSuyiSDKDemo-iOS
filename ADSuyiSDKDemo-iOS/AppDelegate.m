@@ -16,7 +16,7 @@
 
 #import <AppTrackingTransparency/AppTrackingTransparency.h>
 #import <AdSupport/AdSupport.h>
-
+#import "NavigationViewController.h"
 // 支持广点通开屏广告v+
 #define SUPPORT_SPLASH_ZOOMOUT 1
 
@@ -48,7 +48,7 @@ ADSuyiSDKSplashAdDelegate
     }
     
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    _window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];
+    _window.rootViewController = [[NavigationViewController alloc] initWithRootViewController:[ViewController new]];
     [_window makeKeyAndVisible];
     [self setThirtyPartySdk];
     /*
@@ -299,7 +299,7 @@ ADSuyiSDKSplashAdDelegate
     // 设置日志输出等级
     [ADSuyiSDK setLogLevel:ADSuyiKitLogLevelDebug];
     // ADSuyiSDK初始化
-    [ADSuyiSDK initWithAppId:@"3679316" completionBlock:^(NSError * _Nonnull error) {
+    [ADSuyiSDK initWithAppId:@"3437764" completionBlock:^(NSError * _Nonnull error) {
         if (error) {
             NSLog(@"SDK 初始化失败：%@", error.localizedDescription);
         }

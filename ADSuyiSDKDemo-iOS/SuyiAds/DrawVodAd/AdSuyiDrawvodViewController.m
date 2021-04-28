@@ -10,7 +10,7 @@
 #import "AdSuyiDrawvodAdTableViewCell.h"
 #import <ADSuyiSDK/ADSuyiSDKDrawvodAd.h>
 #import <ADSuyiSDK/ADSuyiAdapterDrawvodAdView.h>
-
+#import "SetConfigManager.h"
 @interface AdSuyiDrawvodViewController () <ADSuyiSDKDrawvodAdDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -28,8 +28,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.view.backgroundColor = [UIColor blackColor];
-    
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self setupUI];
     [self loadDrawvodAd];
 }
@@ -89,7 +89,7 @@ static NSString *identifier = @"cell";
 
 - (void)loadDrawvodAd{
     // 2、加载沉浸式视频广告
-    [self.drawvodAd load:3];
+    [self.drawvodAd load:[SetConfigManager sharedManager].drawAdCount];
 }
 
 #pragma mark - UITableViewDelegate

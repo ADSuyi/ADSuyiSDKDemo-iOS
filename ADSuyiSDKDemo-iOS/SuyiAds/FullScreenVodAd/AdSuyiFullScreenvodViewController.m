@@ -8,10 +8,12 @@
 
 #import "AdSuyiFullScreenvodViewController.h"
 #import <ADSuyiSDK/ADSuyiSDKFullScreenVodAd.h>
-
+#import "UIView+Toast.h"
+#import "SetConfigManager.h"
 @interface AdSuyiFullScreenvodViewController ()<ADSuyiSDKFullScreenVodAdDelegate>
 
 @property (nonatomic, strong) ADSuyiSDKFullScreenVodAd *fullScreenvodAd;
+@property(nonatomic ,assign) BOOL isReady;
 
 @end
 
@@ -20,11 +22,36 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor colorWithRed:225/255.0 green:233/255.0 blue:239/255.0 alpha:1];
     
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.title = @"插屏";
+    self.view.backgroundColor = [UIColor colorWithRed:225/255.0 green:233/255.0 blue:239/255.0 alpha:1];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    UIButton *loadBtn = [UIButton new];
+    loadBtn.layer.cornerRadius = 3;
+    loadBtn.clipsToBounds = YES;
+    loadBtn.backgroundColor = UIColor.whiteColor;
+    [loadBtn setTitle:@"加载插屏" forState:(UIControlStateNormal)];
+    [loadBtn setTitleColor:UIColor.blackColor forState:(UIControlStateNormal)];
+    [self.view addSubview:loadBtn];
+    loadBtn.frame = CGRectMake(30, UIScreen.mainScreen.bounds.size.height/2-60, UIScreen.mainScreen.bounds.size.width-60, 40);
+    [loadBtn addTarget:self action:@selector(loadFullScreenvod) forControlEvents:(UIControlEventTouchUpInside)];
     
-    [self loadFullScreenvod];
+    UIButton *showBtn = [UIButton new];
+    showBtn.layer.cornerRadius = 3;
+    showBtn.clipsToBounds = YES;
+    showBtn.backgroundColor = UIColor.whiteColor;
+    [showBtn setTitle:@"展示插屏" forState:(UIControlStateNormal)];
+    [showBtn setTitleColor:UIColor.blackColor forState:(UIControlStateNormal)];
+    [self.view addSubview:showBtn];
+    [showBtn addTarget:self action:@selector(showFullScreenvodAd) forControlEvents:(UIControlEventTouchUpInside)];
+    showBtn.frame = CGRectMake(30, UIScreen.mainScreen.bounds.size.height/2+20, UIScreen.mainScreen.bounds.size.width-60, 40);
+    _isReady = NO;
+    
 }
+
+
 
 // 99b38e917aada07c6d 全屏视频广告id
 - (void)loadFullScreenvod{
@@ -34,8 +61,19 @@
     self.fullScreenvodAd.posId = @"f3953777bc833957d8";
     self.fullScreenvodAd.delegate = self;
     self.fullScreenvodAd.tolerateTimeout = 5;
+    if (![[SetConfigManager sharedManager].fullAdAdScenceId isEqualToString:@""])
+        self.fullScreenvodAd.scenesId = [SetConfigManager sharedManager].fullAdAdScenceId;
     // 2、加载全屏视频广告
     [self.fullScreenvodAd loadAdData];
+    
+}
+
+- (void)showFullScreenvodAd {
+    if (_isReady) {
+        [self.fullScreenvodAd show];
+        return;
+    }
+    [self.view makeToast:@"广告未准备好"];
     
 }
 
@@ -56,7 +94,7 @@
 */
 - (void)adsy_fullScreenVodAdReadyToPlay:(ADSuyiSDKFullScreenVodAd *)fullScreenVodAd{
     // 3、推荐在准备好被播放会调用展示激励视频广告
-    [self.fullScreenvodAd show];
+    [self.view makeToast:@"广告准备好"];
 }
 
 /**
@@ -66,7 +104,7 @@
 */
 - (void)adsy_fullScreenVodAdSuccessToLoadVideo:(ADSuyiSDKFullScreenVodAd *)fullScreenVodAd{
     // 3、也可在视频加载成功回调中展示激励视频广告
-    [self.fullScreenvodAd show];
+    [self.view makeToast:@"广告准备好"];
 }
 
 /**
@@ -77,6 +115,7 @@
 */
 - (void)adsy_fullScreenVodAdFailedToLoad:(ADSuyiSDKFullScreenVodAd *)fullScreenVodAd error:(ADSuyiAdapterErrorDefine *)error{
     // 4、广告内存回收
+    [self.view makeToast:error.description];
     _fullScreenvodAd = nil;
 }
 

@@ -13,7 +13,7 @@
 #import <ADSuyiKit/UIFont+ADSuyiKit.h>
 #import <ADSuyiKit/UIColor+ADSuyiKit.h>
 #import <ADSuyiKit/ADSuyiKitMacros.h>
-
+#import "SetConfigManager.h"
 @interface AdSuyiNativeViewController () <UITableViewDelegate, UITableViewDataSource, ADSuyiSDKNativeAdDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -32,6 +32,17 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
+    UIButton *setAdConfigBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    [setAdConfigBtn setTitle:@"设置" forState:(UIControlStateNormal)];
+    [setAdConfigBtn setTitleColor:UIColor.whiteColor forState:(UIControlStateNormal)];
+    setAdConfigBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+    setAdConfigBtn.frame = CGRectMake(0, 0, 50, 20);
+    [setAdConfigBtn addTarget:self action:@selector(showTypeSelect) forControlEvents:(UIControlEventTouchUpInside)];
+    
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithCustomView:setAdConfigBtn];
+    self.navigationItem.rightBarButtonItem = rightItem;
     
     _items = [NSMutableArray new];
     
@@ -58,6 +69,25 @@
 
 - (void)dealloc {
     [self cleanAllAd];
+}
+
+- (void)showTypeSelect {
+    UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:@"" message:@"选择信息流类型" preferredStyle:(UIAlertControllerStyleActionSheet)];
+    UIAlertAction *expressType = [UIAlertAction actionWithTitle:@"模板" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        self.nativeAd.posId = @"d4366018478613f768";
+        [self cleanAllAd];
+        [self loadNative];
+    }];
+    UIAlertAction *nativeType = [UIAlertAction actionWithTitle:@"自渲染" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        self.nativeAd.posId = @"26fe47d8b06658ace0";
+        [self cleanAllAd];
+        [self loadNative];
+    }];
+    UIAlertAction *cancle = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:nil];
+    [alertVc addAction:expressType];
+    [alertVc addAction:nativeType];
+    [alertVc addAction:cancle];
+    [self presentViewController:alertVc animated:YES completion:nil];
 }
 
 #pragma mark - Private method
@@ -89,9 +119,12 @@
         _nativeAd.posId = self.posId;
         _nativeAd.delegate = self;
         _nativeAd.controller = self;
+        if (![[SetConfigManager sharedManager].nativeAdScenceId isEqualToString:@""]) {
+            _nativeAd.scenesId = [SetConfigManager sharedManager].nativeAdScenceId;
+        }
     }
     // 3、加载信息流广告
-    [_nativeAd load:1];
+    [_nativeAd load:(int)[SetConfigManager sharedManager].nativeAdCount];
 }
 
 #pragma mark - UITableViewDelegate

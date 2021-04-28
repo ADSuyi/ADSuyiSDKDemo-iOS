@@ -12,13 +12,15 @@
 #import <ADSuyiKit/UIColor+ADSuyiKit.h>
 #import <ADSuyiKit/ADSuyiKitMacros.h>
 #import <ADSuyiSDK/ADSuyiSDKRewardvodAd.h>
-
+#import "UIView+Toast.h"
 @interface ADSuyiGroupAdViewController ()<ADSuyiSDKNativeAdDelegate,ADSuyiSDKRewardvodAdDelegate>
 
 @property (nonatomic, strong) ADSuyiSDKNativeAd *nativeAd;
 @property (nonatomic, strong) UIView *alertView;
 @property (nonatomic, strong) ADSuyiSDKRewardvodAd *rewardvodAd;
 @property (nonatomic, strong) UIButton *closeButton;
+@property (nonatomic, strong) UITextView *textView;
+@property (nonatomic, copy) NSString *logString;
 
 @end
 
@@ -27,7 +29,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = UIColor.whiteColor;
+    self.view.backgroundColor = [UIColor colorWithRed:225/255.0 green:233/255.0 blue:239/255.0 alpha:1];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.title = @"组合广告";
     self.alertView = [UIView new];
     self.alertView.frame = self.view.frame;
     self.alertView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
@@ -45,10 +49,55 @@
     [button addTarget:self action:@selector(requestNativeAd) forControlEvents:UIControlEventTouchUpInside];
     [button setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
     button.titleLabel.font = [UIFont systemFontOfSize:15];
-    [self.view addSubview:button];
+//    [self.view addSubview:button];
     button.frame = CGRectMake(UIScreen.mainScreen.bounds.size.width/2-60, UIScreen.mainScreen.bounds.size.height/2-15,120, 30);
     
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    UIButton *loadBtn = [UIButton new];
+    loadBtn.layer.cornerRadius = 3;
+    loadBtn.clipsToBounds = YES;
+    loadBtn.backgroundColor = UIColor.whiteColor;
+    [loadBtn setTitle:@"组合广告正常路径示例" forState:(UIControlStateNormal)];
+    [loadBtn setTitleColor:UIColor.blackColor forState:(UIControlStateNormal)];
+    [self.view addSubview:loadBtn];
+    loadBtn.frame = CGRectMake(30, 100, UIScreen.mainScreen.bounds.size.width-60, 40);
+    [loadBtn addTarget:self action:@selector(loadNormal) forControlEvents:(UIControlEventTouchUpInside)];
+    
+    UIButton *showBtn = [UIButton new];
+    showBtn.layer.cornerRadius = 3;
+    showBtn.clipsToBounds = YES;
+    showBtn.backgroundColor = UIColor.whiteColor;
+    [showBtn setTitle:@"组合广告异常切换示例" forState:(UIControlStateNormal)];
+    [showBtn setTitleColor:UIColor.blackColor forState:(UIControlStateNormal)];
+    [self.view addSubview:showBtn];
+    [showBtn addTarget:self action:@selector(loadError) forControlEvents:(UIControlEventTouchUpInside)];
+    showBtn.frame = CGRectMake(30, 160, UIScreen.mainScreen.bounds.size.width-60, 40);
+    
+    _textView = [UITextView new];
+    _textView.textColor = UIColor.grayColor;
+    [self.view addSubview:_textView];
+    _textView.backgroundColor = [UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1];
+    _textView.frame = CGRectMake(30, 240, UIScreen.mainScreen.bounds.size.width-60, 250);
+    _textView.editable = NO;
+    
+    
+    
 }
+
+- (void)loadNormal {
+    self.nativeAd.posId = _nativePosid;
+    [self requestNativeAd];
+    _logString = [NSString stringWithFormat:@"%@开始获取DL广告\n",_logString];
+    self.textView.text = _logString;
+    
+}
+- (void)loadError {
+    self.nativeAd.posId = @"";
+    [self requestNativeAd];
+    _logString = [NSString stringWithFormat:@"%@开始获取DL广告\n",_logString];
+    self.textView.text = _logString;
+}
+
 
 - (void)requestNativeAd {
     if(!_nativeAd) {
@@ -94,12 +143,19 @@
             mediaView.userInteractionEnabled = NO;
         }
     }
+    _logString = [NSString stringWithFormat:@"%@获取DL广告成功\n",_logString];
+    self.textView.text = _logString;
 }
 
 - (void)adsy_nativeAdFailToLoad:(ADSuyiSDKNativeAd *)nativeAd
                      errorModel:(ADSuyiAdapterErrorDefine *)errorModel {
 //    加载激励图文失败时 开始加载激励视频
+    _logString = [NSString stringWithFormat:@"%@获取DL广告失败\n",_logString];
+    self.textView.text = _logString;
     [self requestRewardAd];
+    _logString = [NSString stringWithFormat:@"%@开始获取激励视频\n",_logString];
+    self.textView.text = _logString;
+    
 }
 
 - (void)adsy_nativeAdViewRenderOrRegistSuccess:(UIView<ADSuyiAdapterNativeAdViewDelegate> *)adView {
@@ -182,7 +238,8 @@
  @param rewardvodAd 广告实例
  */
 - (void)adsy_rewardvodAdLoadSuccess:(ADSuyiSDKRewardvodAd *)rewardvodAd{
-    
+    _logString = [NSString stringWithFormat:@"%@获取激励视频成功\n",_logString];
+    self.textView.text = _logString;
 }
 
 /**
@@ -195,6 +252,8 @@
     if ([self.rewardvodAd rewardvodAdIsReady]) {
         [self.rewardvodAd showRewardvodAd];
     }
+    _logString = [NSString stringWithFormat:@"%@展示激励视频\n",_logString];
+    self.textView.text = _logString;
 }
 
 /**

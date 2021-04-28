@@ -8,10 +8,11 @@
 
 #import "AdSuyiRewardvodViewController.h"
 #import <ADSuyiSDK/ADSuyiSDKRewardvodAd.h>
-
+#import "UIView+Toast.h"
 @interface AdSuyiRewardvodViewController ()<ADSuyiSDKRewardvodAdDelegate>
 
 @property (nonatomic, strong)ADSuyiSDKRewardvodAd *rewardvodAd;
+@property(nonatomic ,assign) BOOL isReadyToplay;
 
 @end
 
@@ -20,11 +21,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title = @"激励视频";
+    self.view.backgroundColor = [UIColor colorWithRed:225/255.0 green:233/255.0 blue:239/255.0 alpha:1];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    UIButton *loadBtn = [UIButton new];
+    loadBtn.layer.cornerRadius = 3;
+    loadBtn.clipsToBounds = YES;
+    loadBtn.backgroundColor = UIColor.whiteColor;
+    [loadBtn setTitle:@"加载激励视频" forState:(UIControlStateNormal)];
+    [loadBtn setTitleColor:UIColor.blackColor forState:(UIControlStateNormal)];
+    [self.view addSubview:loadBtn];
+    loadBtn.frame = CGRectMake(30, UIScreen.mainScreen.bounds.size.height/2-60, UIScreen.mainScreen.bounds.size.width-60, 40);
+    [loadBtn addTarget:self action:@selector(loadRewardvodAd) forControlEvents:(UIControlEventTouchUpInside)];
     
-    self.view.backgroundColor = [UIColor whiteColor];
-    
-    [self loadRewardvodAd];
+    UIButton *showBtn = [UIButton new];
+    showBtn.layer.cornerRadius = 3;
+    showBtn.clipsToBounds = YES;
+    showBtn.backgroundColor = UIColor.whiteColor;
+    [showBtn setTitle:@"展示激励视频" forState:(UIControlStateNormal)];
+    [showBtn setTitleColor:UIColor.blackColor forState:(UIControlStateNormal)];
+    [self.view addSubview:showBtn];
+    [showBtn addTarget:self action:@selector(showRewardvodAd) forControlEvents:(UIControlEventTouchUpInside)];
+    showBtn.frame = CGRectMake(30, UIScreen.mainScreen.bounds.size.height/2+20, UIScreen.mainScreen.bounds.size.width-60, 40);
 }
+
 // 702a2efe46a42ae0f7 激励视频测试id
 - (void)loadRewardvodAd{
     // 1、初始化激励视频广告
@@ -39,6 +59,14 @@
     self.rewardvodAd.rewardAmount = [NSNumber numberWithInt:2];
     // 2、加载激励视频广告
     [self.rewardvodAd loadRewardvodAd];
+}
+
+- (void)showRewardvodAd {
+    if ([self.rewardvodAd rewardvodAdIsReady] && _isReadyToplay) {
+        [self.rewardvodAd showRewardvodAd];
+    }else{
+        [self.view makeToast:@"激励视频未准备完成"];
+    }
 }
 
 #pragma mark - ADSuyiSDKRewardvodAdDelegate
@@ -57,10 +85,8 @@
  @param rewardvodAd 广告实例
  */
 - (void)adsy_rewardvodAdReadyToPlay:(ADSuyiSDKRewardvodAd *)rewardvodAd{
-    // 3、推荐在准备好被播放回调中展示激励视频广告
-    if ([self.rewardvodAd rewardvodAdIsReady]) {
-        [self.rewardvodAd showRewardvodAd];
-    }
+    _isReadyToplay = YES;
+    [self.view makeToast:@"激励视频准备完成"];
 }
 
 /**
@@ -130,6 +156,7 @@
  */
 - (void)adsy_rewardvodAdFailToLoad:(ADSuyiSDKRewardvodAd *)rewardvodAd errorModel:(ADSuyiAdapterErrorDefine *)errorModel{
     // 4、广告内存回收
+    [self.view makeToast:errorModel.description];
     _rewardvodAd = nil;
 }
 

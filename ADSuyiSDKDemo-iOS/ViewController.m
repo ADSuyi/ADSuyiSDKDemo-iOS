@@ -23,7 +23,9 @@
 #import "TableViewController.h"
 #import "ADSuyiGroupAdViewController.h"
 #import "AdSuyiContentViewController.h"
-
+#import "SetConfigManager.h"
+#import "SetTableViewController.h"
+#import "AdSuyiContainViewController.h"
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *mainTableView;
@@ -38,13 +40,27 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = [NSString stringWithFormat:@"ADSuyiSDK-Demo-v%@",[ADSuyiSDK getSDKVersion]];
+    UIButton *setAdConfigBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    [setAdConfigBtn setTitle:@"设置" forState:(UIControlStateNormal)];
+    [setAdConfigBtn setTitleColor:UIColor.whiteColor forState:(UIControlStateNormal)];
+    setAdConfigBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+    setAdConfigBtn.frame = CGRectMake(0, 0, 50, 20);
+    [setAdConfigBtn addTarget:self action:@selector(setSingleAdConfig) forControlEvents:(UIControlEventTouchUpInside)];
+    
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithCustomView:setAdConfigBtn];
+    self.navigationItem.rightBarButtonItem = rightItem;
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.dataArray = @[@"开屏广告 SplashAD",@"横幅广告 BannerAD",@"信息流广告(模板) NativeAD",@"信息流广告列表(自渲染) NativeAD",@"插屏广告 InterstitalAD",@"全屏视频 FullScreenVideoAD",@"沉浸式视频 DrawVideoAD",@"激励视频 RewardVideoAD",@"内容SDK Contain",@"组合广告 GroupAd", @"组合广告失败切换 GroupAd", @"内容组件"];
+    self.dataArray = @[@"开屏广告", @"开屏V+广告", @"原生信息流广告", @"Banner横幅广告",@"激励视频",@"插屏广告",@"Draw视频",@"全屏视频",@"内容组件",@"组合广告"];
     
     [self.mainTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     [self.view addSubview:self.mainTableView];
+}
+
+- (void)setSingleAdConfig {
+    SetTableViewController *setAd = [[SetTableViewController alloc]init];
+    [self.navigationController pushViewController:setAd animated:YES];
 }
 
 
@@ -53,7 +69,7 @@
         _mainTableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
         _mainTableView.delegate = self;
         _mainTableView.dataSource = self;
-        _mainTableView.backgroundColor = [UIColor whiteColor];
+        _mainTableView.backgroundColor = [UIColor colorWithRed:225/255.0 green:233/255.0 blue:239/255.0 alpha:1];
         _mainTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return _mainTableView;
@@ -67,6 +83,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    cell.contentView.backgroundColor = [UIColor colorWithRed:225/255.0 green:233/255.0 blue:239/255.0 alpha:1];
     NSString *title = [self.dataArray adsy_objectOrNilAtIndex:indexPath.row];
     
     UIView *view = [cell.contentView viewWithTag:999];
@@ -106,7 +123,7 @@
             break;
         }
         case 1: {
-            [self.navigationController pushViewController:[AdSuyiBannerViewController new] animated:YES];
+            [self.navigationController pushViewController:[AdSuyiSplashViewController new] animated:YES];
             break;
         }
         case 2: {
@@ -116,17 +133,15 @@
             break;
         }
         case 3: {
-            AdSuyiNativeViewController *vc = [AdSuyiNativeViewController new];
-            vc.posId = @"26fe47d8b06658ace0";
-            [self.navigationController pushViewController:vc animated:YES];
+            [self.navigationController pushViewController:[AdSuyiBannerViewController new] animated:YES];
             break;
         }
         case 4: {
-            [self.navigationController pushViewController:[AdSuyiInterstitialViewController new] animated:YES];
+            [self.navigationController pushViewController:[AdSuyiRewardvodViewController new] animated:YES];
             break;
         }
         case 5: {
-            [self.navigationController pushViewController:[AdSuyiFullScreenvodViewController new] animated:YES];
+            [self.navigationController pushViewController:[AdSuyiInterstitialViewController new] animated:YES];
             break;
         }
         case 6: {
@@ -134,13 +149,13 @@
             break;
         }
         case 7: {
-            [self.navigationController pushViewController:[AdSuyiRewardvodViewController new] animated:YES];
+            [self.navigationController pushViewController:[AdSuyiFullScreenvodViewController new] animated:YES];
             break;
         }
         case 8:{
             //contain使用场景示例
-            TableViewController *containTable = [[TableViewController alloc]init];
-            [self.navigationController pushViewController:containTable animated:YES];
+            AdSuyiContainViewController *containVc = [[AdSuyiContainViewController alloc]init];
+            [self.navigationController pushViewController:containVc animated:YES];
             break;
         }
         case 9:{
@@ -148,18 +163,6 @@
             groupVc.nativePosid = @"26fe47d8b06658ace0";
             groupVc.rewardPosid = @"47d196ffaaa92ae93c";
             [self.navigationController pushViewController:groupVc animated:YES];
-            break;
-        }
-        case 10: {
-            ADSuyiGroupAdViewController *groupVc = [ADSuyiGroupAdViewController new];
-            groupVc.nativePosid = @"";
-            groupVc.rewardPosid = @"47d196ffaaa92ae93c";
-            [self.navigationController pushViewController:groupVc animated:YES];
-            break;
-        }
-        case 11: {
-            AdSuyiContentViewController *contentVc = [AdSuyiContentViewController new];
-            [self.navigationController pushViewController:contentVc animated:YES];
             break;
         }
         default:

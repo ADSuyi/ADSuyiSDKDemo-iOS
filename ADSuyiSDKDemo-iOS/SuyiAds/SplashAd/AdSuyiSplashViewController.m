@@ -10,7 +10,7 @@
 #import <ADSuyiSDK/ADSuyiSDKSplashAd.h>
 #import <ADSuyiKit/UIColor+ADSuyiKit.h>
 #import <ADSuyiKit/ADSuyiKitMacros.h>
-
+#import "SetConfigManager.h"
 @interface AdSuyiSplashViewController ()<ADSuyiSDKSplashAdDelegate>
 
 @property (nonatomic, strong) ADSuyiSDKSplashAd *splashAd;
@@ -24,9 +24,13 @@
     // Do any additional setup after loading the view.
     
     self.view.backgroundColor = [UIColor whiteColor];
+    self.title = @"开屏广告";
+    
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
     [self loadSplashAd];
 }
+
 
 // 开屏测试id 518f5daa123ec3e866
 - (void)loadSplashAd{
@@ -50,7 +54,10 @@
     UIImageView *logoImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"ADMob_Logo.png"]];
     logoImageView.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width-135)/2, (bottomViewHeight-46)/2, 135, 46);
     [bottomView addSubview:logoImageView];
-    
+    if ([SetConfigManager sharedManager].isCustomSkipView) {
+        // TODO:    补充开屏自定义跳过视图
+        self.splashAd.skipView = [UIView new];
+    }
     [self.splashAd loadAndShowInWindow:[UIApplication sharedApplication].keyWindow withBottomView:bottomView];
 }
 

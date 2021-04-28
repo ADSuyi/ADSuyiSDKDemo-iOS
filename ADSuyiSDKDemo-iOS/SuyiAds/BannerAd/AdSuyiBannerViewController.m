@@ -9,7 +9,7 @@
 #import "AdSuyiBannerViewController.h"
 #import <ADSuyiSDK/ADSuyiSDKBannerAdView.h>
 #import <ADSuyiKit/ADSuyiKitMacros.h>
-
+#import "SetConfigManager.h"
 @interface AdSuyiBannerItem : NSObject
 
 @property (nonatomic, assign) CGFloat rate;
@@ -39,11 +39,13 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
     for (int i = 0; i < self.array.count; i++) {
         [self createButtonWithItem:self.array[i] index:i];
     }
 }
+
 
 #pragma mark - Private method
 
@@ -59,7 +61,9 @@
     self.bannerView.controller = self;
     // 3、设置广告位id，重要
     self.bannerView.posId = posId;
-    self.bannerView.refershTime = 30;
+    self.bannerView.refershTime = [SetConfigManager sharedManager].bannerAdInterval;
+    if (![[SetConfigManager sharedManager].bannerAdScenceId isEqualToString:@""])
+        self.bannerView.scenesId = [SetConfigManager sharedManager].bannerAdScenceId;
     // 4、可先展示再请求
     [self.view addSubview:self.bannerView];
     self.bannerView.backgroundColor = [UIColor redColor];

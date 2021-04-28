@@ -8,10 +8,12 @@
 
 #import "AdSuyiInterstitialViewController.h"
 #import <ADSuyiSDK/ADSuyiSDKIntertitialAd.h>
-
+#import "UIView+Toast.h"
+#import "SetConfigManager.h"
 @interface AdSuyiInterstitialViewController ()<ADSuyiSDKIntertitialAdDelegate>
 
 @property (nonatomic, strong) ADSuyiSDKIntertitialAd *intertitialAd;
+@property(nonatomic ,assign) BOOL isReady;
 
 @end
 
@@ -19,11 +21,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.title = @"插屏";
+    self.view.backgroundColor = [UIColor colorWithRed:225/255.0 green:233/255.0 blue:239/255.0 alpha:1];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    UIButton *loadBtn = [UIButton new];
+    loadBtn.layer.cornerRadius = 3;
+    loadBtn.clipsToBounds = YES;
+    loadBtn.backgroundColor = UIColor.whiteColor;
+    [loadBtn setTitle:@"加载插屏" forState:(UIControlStateNormal)];
+    [loadBtn setTitleColor:UIColor.blackColor forState:(UIControlStateNormal)];
+    [self.view addSubview:loadBtn];
+    loadBtn.frame = CGRectMake(30, UIScreen.mainScreen.bounds.size.height/2-60, UIScreen.mainScreen.bounds.size.width-60, 40);
+    [loadBtn addTarget:self action:@selector(loadInterstitialAd) forControlEvents:(UIControlEventTouchUpInside)];
     
-    [self loadInterstitialAd];
+    UIButton *showBtn = [UIButton new];
+    showBtn.layer.cornerRadius = 3;
+    showBtn.clipsToBounds = YES;
+    showBtn.backgroundColor = UIColor.whiteColor;
+    [showBtn setTitle:@"展示插屏" forState:(UIControlStateNormal)];
+    [showBtn setTitleColor:UIColor.blackColor forState:(UIControlStateNormal)];
+    [self.view addSubview:showBtn];
+    [showBtn addTarget:self action:@selector(showInterstitialAd) forControlEvents:(UIControlEventTouchUpInside)];
+    showBtn.frame = CGRectMake(30, UIScreen.mainScreen.bounds.size.height/2+20, UIScreen.mainScreen.bounds.size.width-60, 40);
+    _isReady = NO;
 }
 
 // 217d589e286f472159 插屏测试id
@@ -34,8 +55,19 @@
     self.intertitialAd.posId = @"9535af29514e548fe0";
     self.intertitialAd.delegate = self;
     self.intertitialAd.tolerateTimeout = 4;
+    if (![[SetConfigManager sharedManager].fullAdAdScenceId isEqualToString:@""])
+        self.intertitialAd.scenesId = [SetConfigManager sharedManager].fullAdAdScenceId;
     // 2、加载插屏广告
     [self.intertitialAd loadAdData];
+}
+
+- (void)showInterstitialAd {
+    if (_isReady) {
+        [self.intertitialAd show];
+        return;
+    }
+    [self.view makeToast:@"广告未准备好"];
+    
 }
 
 #pragma mark - ADSuyiSDKIntertitialAdDelegate
@@ -46,7 +78,8 @@
 */
 - (void)adsy_interstitialAdSuccedToLoad:(ADSuyiSDKIntertitialAd *)interstitialAd{
     // 3、展示插屏广告
-    [self.intertitialAd show];
+    _isReady = YES;
+    [self.view makeToast:@"广告准备好"];
 }
 
 /**
@@ -57,6 +90,7 @@
 */
 - (void)adsy_interstitialAdFailedToLoad:(ADSuyiSDKIntertitialAd *)interstitialAd error:(ADSuyiAdapterErrorDefine *)error{
     // 4、内存回收
+    [self.view makeToast:error.description];
     _intertitialAd = nil;
 }
 
@@ -75,7 +109,7 @@
  @param interstitialAd 插屏广告实例对象
 */
 - (void)adsy_interstitialAdFailedToPresent:(ADSuyiSDKIntertitialAd *)interstitialAd error:(NSError *)error{
-    
+    [self.view makeToast:error.description];
 }
 
 /**

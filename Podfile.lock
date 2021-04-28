@@ -1,0 +1,194 @@
+PODS:
+  - ADMobGenBaiDuSDK (4.72)
+  - ADMobGenDeviceInfo (1.8.5.03051):
+    - ADSuyiKit (~> 0.4.5.0)
+    - ADSuyiLocationManager (~> 0.1.7.0)
+    - ADSuyiNetwork (~> 0.1.4.0)
+  - ADMobileAdSDK (3.3.3.03051):
+    - ADMobGenDeviceInfo
+    - ADSuyiKit (~> 0.4.5.0)
+    - ADSuyiNetwork (~> 0.1.4.0)
+  - Ads-CN (3.4.2.8):
+    - Ads-CN/BUAdSDK (= 3.4.2.8)
+  - Ads-CN/BUAdSDK (3.4.2.8):
+    - Ads-CN/BUFoundation
+    - Ads-CN/Domestic
+  - Ads-CN/BUFoundation (3.4.2.8)
+  - Ads-CN/Domestic (3.4.2.8)
+  - ADSuyiKit (0.4.5.03051)
+  - ADSuyiKSSDK (3.3.11)
+  - ADSuyiLocationManager (0.1.7.11261)
+  - ADSuyiNetwork (0.1.4.11261):
+    - ADSuyiKit (~> 0.4.4)
+  - ADSuyiSDK (3.1.5.03052):
+    - ADMobGenDeviceInfo (~> 1.8.5.03051)
+    - ADSuyiKit (~> 0.4.5.0)
+    - ADSuyiNetwork (~> 0.1.4.3051)
+    - ADSuyiSDK/core (= 3.1.5.03052)
+  - ADSuyiSDK/ADSuyiSDKPlatforms/admobile (3.1.5.03052):
+    - ADMobGenDeviceInfo (~> 1.8.5.03051)
+    - ADMobileAdSDK (~> 3.3.3.0)
+    - ADSuyiKit (~> 0.4.5.0)
+    - ADSuyiNetwork (~> 0.1.4.3051)
+    - ADSuyiSDK/core
+  - ADSuyiSDK/ADSuyiSDKPlatforms/baidu (3.1.5.03052):
+    - ADMobGenBaiDuSDK (= 4.72)
+    - ADMobGenDeviceInfo (~> 1.8.5.03051)
+    - ADSuyiKit (~> 0.4.5.0)
+    - ADSuyiNetwork (~> 0.1.4.3051)
+    - ADSuyiSDK/core
+  - ADSuyiSDK/ADSuyiSDKPlatforms/bu (3.1.5.03052):
+    - ADMobGenDeviceInfo (~> 1.8.5.03051)
+    - Ads-CN (= 3.4.2.8)
+    - ADSuyiKit (~> 0.4.5.0)
+    - ADSuyiNetwork (~> 0.1.4.3051)
+    - ADSuyiSDK/core
+  - ADSuyiSDK/ADSuyiSDKPlatforms/gdt (3.1.5.03052):
+    - ADMobGenDeviceInfo (~> 1.8.5.03051)
+    - ADSuyiKit (~> 0.4.5.0)
+    - ADSuyiNetwork (~> 0.1.4.3051)
+    - ADSuyiSDK/core
+    - GDTMobSDK (= 4.12.4)
+  - ADSuyiSDK/ADSuyiSDKPlatforms/inmobi (3.1.5.03052):
+    - ADMobGenDeviceInfo (~> 1.8.5.03051)
+    - ADSuyiKit (~> 0.4.5.0)
+    - ADSuyiNetwork (~> 0.1.4.3051)
+    - ADSuyiSDK/core
+    - InMobiSDK-China (= 7.5.0)
+  - ADSuyiSDK/ADSuyiSDKPlatforms/ks (3.1.5.03052):
+    - ADMobGenDeviceInfo (~> 1.8.5.03051)
+    - ADSuyiKit (~> 0.4.5.0)
+    - ADSuyiKSSDK (= 3.3.11)
+    - ADSuyiNetwork (~> 0.1.4.3051)
+    - ADSuyiSDK/core
+  - ADSuyiSDK/ADSuyiSDKPlatforms/unity (3.1.5.03052):
+    - ADMobGenDeviceInfo (~> 1.8.5.03051)
+    - ADSuyiKit (~> 0.4.5.0)
+    - ADSuyiNetwork (~> 0.1.4.3051)
+    - ADSuyiSDK/core
+    - UnityAds (= 3.6.0)
+  - ADSuyiSDK/core (3.1.5.03052):
+    - ADMobGenDeviceInfo (~> 1.8.5.03051)
+    - ADSuyiKit (~> 0.4.5.0)
+    - ADSuyiNetwork (~> 0.1.4.3051)
+  - ADSuyiStarRd (1.2.3.03051):
+    - ADSuyiSDK (~> 3.1.5.0)
+    - StarRdSdk (= 1.2.3)
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
+  - GDTMobSDK (4.12.4):
+    - GDTMobSDK/GDTMobSDK (= 4.12.4)
+  - GDTMobSDK/GDTMobSDK (4.12.4)
+  - InMobiSDK-China (7.5.0)
+  - Masonry (1.1.0)
+  - MBProgressHUD (1.2.0)
+  - MJRefresh (3.4.3)
+  - StarRdSdk (1.2.3):
+    - AFNetworking (~> 4.0.1)
+    - Masonry (~> 1.1.0)
+    - MBProgressHUD (~> 1.2.0)
+    - MJRefresh (~> 3.4.3)
+    - XCSADBridge (~> 1.2.5)
+    - YYCache (~> 1.0.4)
+    - YYImage (~> 1.0.4)
+    - YYModel (~> 1.0.4)
+    - YYText (~> 1.0.7)
+    - YYWebImage (~> 1.0.5)
+  - UnityAds (3.6.0)
+  - XCSADBridge (1.2.6):
+    - ADSuyiSDK
+    - XCSADCore
+  - XCSADCore (1.2.7)
+  - YYCache (1.0.4)
+  - YYImage (1.0.4):
+    - YYImage/Core (= 1.0.4)
+  - YYImage/Core (1.0.4)
+  - YYModel (1.0.4)
+  - YYText (1.0.7)
+  - YYWebImage (1.0.5):
+    - YYCache
+    - YYImage
+
+DEPENDENCIES:
+  - ADSuyiSDK (~> 3.1.5.0)
+  - ADSuyiSDK/ADSuyiSDKPlatforms/admobile
+  - ADSuyiSDK/ADSuyiSDKPlatforms/baidu
+  - ADSuyiSDK/ADSuyiSDKPlatforms/bu
+  - ADSuyiSDK/ADSuyiSDKPlatforms/gdt
+  - ADSuyiSDK/ADSuyiSDKPlatforms/inmobi
+  - ADSuyiSDK/ADSuyiSDKPlatforms/ks
+  - ADSuyiSDK/ADSuyiSDKPlatforms/unity
+  - ADSuyiStarRd
+  - MJRefresh
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - ADMobGenBaiDuSDK
+    - ADMobGenDeviceInfo
+    - ADMobileAdSDK
+    - Ads-CN
+    - ADSuyiKit
+    - ADSuyiKSSDK
+    - ADSuyiLocationManager
+    - ADSuyiNetwork
+    - ADSuyiSDK
+    - ADSuyiStarRd
+    - AFNetworking
+    - GDTMobSDK
+    - InMobiSDK-China
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - StarRdSdk
+    - UnityAds
+    - XCSADBridge
+    - XCSADCore
+    - YYCache
+    - YYImage
+    - YYModel
+    - YYText
+    - YYWebImage
+
+SPEC CHECKSUMS:
+  ADMobGenBaiDuSDK: 8ada8baccffa21e53fb51c898d9751001a07e343
+  ADMobGenDeviceInfo: bff2847620178e20794efa6d1575eecd69f917a8
+  ADMobileAdSDK: 16d1ec5d6333ae4579acf1556995d165cd67491c
+  Ads-CN: 5055041248e93cd9b763023d32a12f3690d8b872
+  ADSuyiKit: 32fdbdc4d5d6db9fa60b5ee0f64ae3a868719ac2
+  ADSuyiKSSDK: 02a4127ccdeeeed11277ba53259c36e281532ae5
+  ADSuyiLocationManager: 9a4a0ed5941f1aa106a24a1aecbdcb7126a3dceb
+  ADSuyiNetwork: 632ebc0392ff96012986a574170f15d892670c8e
+  ADSuyiSDK: 9abd8a91c14b2fff45b62cfa5911698e800a5747
+  ADSuyiStarRd: e03b287b128ee9574dd87a3e4f8b4c795380865a
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  GDTMobSDK: a5b9ad3b329c913c70266e7386d113b0190d61e0
+  InMobiSDK-China: 509d8efa0ff54ba33bb86c56a51a9bda4d9f51e9
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
+  StarRdSdk: 3a038d0f1fade8f78b6ff39d31c01b762f3ba542
+  UnityAds: 3f88cf3d3b11991de1025fcf0e3109fd86035fba
+  XCSADBridge: cb260c2a1708732c822eb6dd41dfa90d8db58c0c
+  XCSADCore: 3509432b4117967ed897dd18767ed660512b2127
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
+  YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
+
+PODFILE CHECKSUM: 5c1ede314fe895bcd2a913d77897454734fec701
+
+COCOAPODS: 1.10.1
