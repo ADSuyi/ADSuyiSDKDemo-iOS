@@ -8,66 +8,66 @@ PODS:
     - ADMobGenDeviceInfo
     - ADSuyiKit (~> 0.4.5.0)
     - ADSuyiNetwork (~> 0.1.4.0)
-  - Ads-CN (3.4.2.8):
-    - Ads-CN/BUAdSDK (= 3.4.2.8)
-  - Ads-CN/BUAdSDK (3.4.2.8):
+  - Ads-CN (3.4.3.9):
+    - Ads-CN/BUAdSDK (= 3.4.3.9)
+  - Ads-CN/BUAdSDK (3.4.3.9):
     - Ads-CN/BUFoundation
     - Ads-CN/Domestic
-  - Ads-CN/BUFoundation (3.4.2.8)
-  - Ads-CN/Domestic (3.4.2.8)
+  - Ads-CN/BUFoundation (3.4.3.9)
+  - Ads-CN/Domestic (3.4.3.9)
   - ADSuyiKit (0.4.5.03051)
   - ADSuyiKSSDK (3.3.11)
   - ADSuyiLocationManager (0.1.7.11261)
   - ADSuyiNetwork (0.1.4.11261):
     - ADSuyiKit (~> 0.4.4)
-  - ADSuyiSDK (3.1.5.03052):
+  - ADSuyiSDK (3.1.5.03051):
     - ADMobGenDeviceInfo (~> 1.8.5.03051)
     - ADSuyiKit (~> 0.4.5.0)
     - ADSuyiNetwork (~> 0.1.4.3051)
-    - ADSuyiSDK/core (= 3.1.5.03052)
-  - ADSuyiSDK/ADSuyiSDKPlatforms/admobile (3.1.5.03052):
+    - ADSuyiSDK/core (= 3.1.5.03051)
+  - ADSuyiSDK/ADSuyiSDKPlatforms/admobile (3.1.5.03051):
     - ADMobGenDeviceInfo (~> 1.8.5.03051)
     - ADMobileAdSDK (~> 3.3.3.0)
     - ADSuyiKit (~> 0.4.5.0)
     - ADSuyiNetwork (~> 0.1.4.3051)
     - ADSuyiSDK/core
-  - ADSuyiSDK/ADSuyiSDKPlatforms/baidu (3.1.5.03052):
+  - ADSuyiSDK/ADSuyiSDKPlatforms/baidu (3.1.5.03051):
     - ADMobGenBaiDuSDK (= 4.72)
     - ADMobGenDeviceInfo (~> 1.8.5.03051)
     - ADSuyiKit (~> 0.4.5.0)
     - ADSuyiNetwork (~> 0.1.4.3051)
     - ADSuyiSDK/core
-  - ADSuyiSDK/ADSuyiSDKPlatforms/bu (3.1.5.03052):
+  - ADSuyiSDK/ADSuyiSDKPlatforms/bu (3.1.5.03051):
     - ADMobGenDeviceInfo (~> 1.8.5.03051)
-    - Ads-CN (= 3.4.2.8)
+    - Ads-CN (= 3.4.3.9)
     - ADSuyiKit (~> 0.4.5.0)
     - ADSuyiNetwork (~> 0.1.4.3051)
     - ADSuyiSDK/core
-  - ADSuyiSDK/ADSuyiSDKPlatforms/gdt (3.1.5.03052):
+  - ADSuyiSDK/ADSuyiSDKPlatforms/gdt (3.1.5.03051):
     - ADMobGenDeviceInfo (~> 1.8.5.03051)
     - ADSuyiKit (~> 0.4.5.0)
     - ADSuyiNetwork (~> 0.1.4.3051)
     - ADSuyiSDK/core
     - GDTMobSDK (= 4.12.4)
-  - ADSuyiSDK/ADSuyiSDKPlatforms/inmobi (3.1.5.03052):
+  - ADSuyiSDK/ADSuyiSDKPlatforms/inmobi (3.1.5.03051):
     - ADMobGenDeviceInfo (~> 1.8.5.03051)
     - ADSuyiKit (~> 0.4.5.0)
     - ADSuyiNetwork (~> 0.1.4.3051)
     - ADSuyiSDK/core
     - InMobiSDK-China (= 7.5.0)
-  - ADSuyiSDK/ADSuyiSDKPlatforms/ks (3.1.5.03052):
+  - ADSuyiSDK/ADSuyiSDKPlatforms/ks (3.1.5.03051):
     - ADMobGenDeviceInfo (~> 1.8.5.03051)
     - ADSuyiKit (~> 0.4.5.0)
     - ADSuyiKSSDK (= 3.3.11)
     - ADSuyiNetwork (~> 0.1.4.3051)
     - ADSuyiSDK/core
-  - ADSuyiSDK/ADSuyiSDKPlatforms/unity (3.1.5.03052):
+  - ADSuyiSDK/ADSuyiSDKPlatforms/unity (3.1.5.03051):
     - ADMobGenDeviceInfo (~> 1.8.5.03051)
     - ADSuyiKit (~> 0.4.5.0)
     - ADSuyiNetwork (~> 0.1.4.3051)
     - ADSuyiSDK/core
     - UnityAds (= 3.6.0)
-  - ADSuyiSDK/core (3.1.5.03052):
+  - ADSuyiSDK/core (3.1.5.03051):
     - ADMobGenDeviceInfo (~> 1.8.5.03051)
     - ADSuyiKit (~> 0.4.5.0)
     - ADSuyiNetwork (~> 0.1.4.3051)
@@ -166,12 +166,12 @@ SPEC CHECKSUMS:
   ADMobGenBaiDuSDK: 8ada8baccffa21e53fb51c898d9751001a07e343
   ADMobGenDeviceInfo: bff2847620178e20794efa6d1575eecd69f917a8
   ADMobileAdSDK: 16d1ec5d6333ae4579acf1556995d165cd67491c
-  Ads-CN: 5055041248e93cd9b763023d32a12f3690d8b872
+  Ads-CN: 89e08bd1cc922e608e176b93983b8ca09a92caf8
   ADSuyiKit: 32fdbdc4d5d6db9fa60b5ee0f64ae3a868719ac2
   ADSuyiKSSDK: 02a4127ccdeeeed11277ba53259c36e281532ae5
   ADSuyiLocationManager: 9a4a0ed5941f1aa106a24a1aecbdcb7126a3dceb
   ADSuyiNetwork: 632ebc0392ff96012986a574170f15d892670c8e
-  ADSuyiSDK: 9abd8a91c14b2fff45b62cfa5911698e800a5747
+  ADSuyiSDK: cb15cdb3e568082ec7580ffa313164582ea9b342
   ADSuyiStarRd: e03b287b128ee9574dd87a3e4f8b4c795380865a
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   GDTMobSDK: a5b9ad3b329c913c70266e7386d113b0190d61e0
@@ -189,6 +189,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 5c1ede314fe895bcd2a913d77897454734fec701
+PODFILE CHECKSUM: de466a032b76441ad7b1f7deab5ae1fd55be076a
 
 COCOAPODS: 1.10.1

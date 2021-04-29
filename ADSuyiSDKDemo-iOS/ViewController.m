@@ -39,7 +39,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = [NSString stringWithFormat:@"ADSuyiSDK-Demo-v%@",[ADSuyiSDK getSDKVersion]];
+    self.title = [NSString stringWithFormat:@"ADmobile 广告聚合SDK Demo"];
     UIButton *setAdConfigBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
 //    [setAdConfigBtn setTitle:@"设置" forState:(UIControlStateNormal)];
     [setAdConfigBtn setImage:[UIImage imageNamed:@"set"] forState:(UIControlStateNormal)];
@@ -80,6 +80,18 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.dataArray.count;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    UILabel *label = [UILabel new];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.textColor = [UIColor colorWithRed:36/255.0 green:132/255.0 blue:207/255.0 alpha:1];
+    label.text = [ADSuyiSDK getSDKVersion];
+    return label;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 45;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
