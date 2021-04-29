@@ -41,7 +41,8 @@
     // Do any additional setup after loading the view.
     self.title = [NSString stringWithFormat:@"ADSuyiSDK-Demo-v%@",[ADSuyiSDK getSDKVersion]];
     UIButton *setAdConfigBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
-    [setAdConfigBtn setTitle:@"设置" forState:(UIControlStateNormal)];
+//    [setAdConfigBtn setTitle:@"设置" forState:(UIControlStateNormal)];
+    [setAdConfigBtn setImage:[UIImage imageNamed:@"set"] forState:(UIControlStateNormal)];
     [setAdConfigBtn setTitleColor:UIColor.whiteColor forState:(UIControlStateNormal)];
     setAdConfigBtn.titleLabel.font = [UIFont systemFontOfSize:15];
     setAdConfigBtn.frame = CGRectMake(0, 0, 50, 20);
@@ -128,7 +129,6 @@
         }
         case 2: {
             AdSuyiNativeViewController *vc = [AdSuyiNativeViewController new];
-            vc.posId = @"d4366018478613f768";
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }
@@ -160,7 +160,7 @@
         }
         case 9:{
             ADSuyiGroupAdViewController *groupVc = [ADSuyiGroupAdViewController new];
-            groupVc.nativePosid = @"26fe47d8b06658ace0";
+            groupVc.nativePosid = @"177a790a315eeb7053";
             groupVc.rewardPosid = @"47d196ffaaa92ae93c";
             [self.navigationController pushViewController:groupVc animated:YES];
             break;

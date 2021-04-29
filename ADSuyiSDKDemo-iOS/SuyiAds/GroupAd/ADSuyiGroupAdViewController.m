@@ -38,6 +38,7 @@
     _closeButton = [UIButton new];
     [self.alertView addSubview:_closeButton];
     [_closeButton setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
+    [_closeButton addTarget:self action:@selector(removeAdView) forControlEvents:(UIControlEventTouchUpInside)];
     
     UIButton *button = [UIButton new];
     [button setTitle:@"获取组合广告" forState:UIControlStateNormal];
@@ -84,15 +85,21 @@
     
 }
 
+- (void)removeAdView {
+    [self.alertView removeFromSuperview];
+}
+
 - (void)loadNormal {
-    self.nativeAd.posId = _nativePosid;
+    _nativeAd = nil;
+    _nativePosid = @"177a790a315eeb7053";
     [self requestNativeAd];
     _logString = [NSString stringWithFormat:@"%@开始获取DL广告\n",_logString];
     self.textView.text = _logString;
     
 }
 - (void)loadError {
-    self.nativeAd.posId = @"";
+    _nativeAd = nil;
+    _nativePosid = @"";
     [self requestNativeAd];
     _logString = [NSString stringWithFormat:@"%@开始获取DL广告\n",_logString];
     self.textView.text = _logString;
@@ -160,7 +167,7 @@
 
 - (void)adsy_nativeAdViewRenderOrRegistSuccess:(UIView<ADSuyiAdapterNativeAdViewDelegate> *)adView {
     // 6、注册或渲染成功，此时高度正常，可以展示
-    adView.frame = CGRectMake(0, UIScreen.mainScreen.bounds.size.height/2-adView.bounds.size.height/2, adView.bounds.size.width, adView.bounds.size.height);
+    adView.frame = CGRectMake(UIScreen.mainScreen.bounds.size.width/2-adView.bounds.size.width/2, UIScreen.mainScreen.bounds.size.height/2-adView.bounds.size.height/2, adView.bounds.size.width, adView.bounds.size.height);
     [self.closeButton addTarget:adView action:@selector(adsy_close) forControlEvents:UIControlEventTouchUpInside];
     self.closeButton.frame = CGRectMake(adView.frame.size.width - 44, adView.frame.origin.y - 44, 44, 44);
     [self.alertView addSubview:adView];

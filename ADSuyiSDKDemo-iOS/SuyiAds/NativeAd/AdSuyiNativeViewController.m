@@ -35,7 +35,8 @@
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
     UIButton *setAdConfigBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
-    [setAdConfigBtn setTitle:@"设置" forState:(UIControlStateNormal)];
+//    [setAdConfigBtn setTitle:@"设置" forState:(UIControlStateNormal)];
+    [setAdConfigBtn setImage:[UIImage imageNamed:@"set"] forState:(UIControlStateNormal)];
     [setAdConfigBtn setTitleColor:UIColor.whiteColor forState:(UIControlStateNormal)];
     setAdConfigBtn.titleLabel.font = [UIFont systemFontOfSize:15];
     setAdConfigBtn.frame = CGRectMake(0, 0, 50, 20);
@@ -74,14 +75,21 @@
 - (void)showTypeSelect {
     UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:@"" message:@"选择信息流类型" preferredStyle:(UIAlertControllerStyleActionSheet)];
     UIAlertAction *expressType = [UIAlertAction actionWithTitle:@"模板" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-        self.nativeAd.posId = @"d4366018478613f768";
+        self.posId = @"177a790a315eeb7053";
         [self cleanAllAd];
-        [self loadNative];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            self->_nativeAd = nil;
+            [self loadNative];
+        });
     }];
     UIAlertAction *nativeType = [UIAlertAction actionWithTitle:@"自渲染" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-        self.nativeAd.posId = @"26fe47d8b06658ace0";
+        self.posId = @"e9eaffb6b9d97cd813";
         [self cleanAllAd];
-        [self loadNative];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            self->_nativeAd = nil;
+            [self loadNative];
+        });
+        
     }];
     UIAlertAction *cancle = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:nil];
     [alertVc addAction:expressType];
@@ -110,15 +118,16 @@
  */
 - (void)loadNative{
     if (kADSYStringIsEmpty(self.posId)) {
-        self.posId = @"750ccddf366d01b017";
+        self.posId = @"177a790a315eeb7053";
     }
+    
     if(!_nativeAd) {
         // 1、信息流广告初始化
         _nativeAd = [[ADSuyiSDKNativeAd alloc] initWithAdSize:CGSizeMake(self.tableView.frame.size.width, 10)];
         // 2、传入posId，重要
-        _nativeAd.posId = self.posId;
         _nativeAd.delegate = self;
         _nativeAd.controller = self;
+        _nativeAd.posId = self.posId;
         if (![[SetConfigManager sharedManager].nativeAdScenceId isEqualToString:@""]) {
             _nativeAd.scenesId = [SetConfigManager sharedManager].nativeAdScenceId;
         }

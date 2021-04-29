@@ -27,7 +27,7 @@
     ecooklabel.textColor = UIColor.grayColor;
     ecooklabel.text = @"菜谱";
     [self.view addSubview:ecooklabel];
-    ecooklabel.frame = CGRectMake(30, 80, 100, 30);
+    ecooklabel.frame = CGRectMake(30, 90, 100, 30);
     
     UIButton *ecookBtn = [UIButton new];
     ecookBtn.layer.cornerRadius = 3;
@@ -36,7 +36,7 @@
     [ecookBtn setTitle:@"菜谱入口" forState:(UIControlStateNormal)];
     [ecookBtn setTitleColor:UIColor.blackColor forState:(UIControlStateNormal)];
     [self.view addSubview:ecookBtn];
-    ecookBtn.frame = CGRectMake(30, 120, UIScreen.mainScreen.bounds.size.width-60, 40);
+    ecookBtn.frame = CGRectMake(30, 130, UIScreen.mainScreen.bounds.size.width-60, 40);
     [ecookBtn addTarget:self action:@selector(ecookBtnClick) forControlEvents:(UIControlEventTouchUpInside)];
     
     UIButton *ecookTabBtn = [UIButton new];
@@ -46,14 +46,14 @@
     [ecookTabBtn setTitle:@"菜谱Tabbar" forState:(UIControlStateNormal)];
     [ecookTabBtn setTitleColor:UIColor.blackColor forState:(UIControlStateNormal)];
     [self.view addSubview:ecookTabBtn];
-    ecookTabBtn.frame = CGRectMake(30, 180, UIScreen.mainScreen.bounds.size.width-60, 40);
+    ecookTabBtn.frame = CGRectMake(30, 190, UIScreen.mainScreen.bounds.size.width-60, 40);
     [ecookTabBtn addTarget:self action:@selector(ecookTabbarClick) forControlEvents:(UIControlEventTouchUpInside)];
     
     UILabel *novellabel = [UILabel new];
     novellabel.textColor = UIColor.grayColor;
     novellabel.text = @"小说";
     [self.view addSubview:novellabel];
-    novellabel.frame = CGRectMake(30, 280, 100, 30);
+    novellabel.frame = CGRectMake(30, 290, 100, 30);
     
     UIButton *novelBtn = [UIButton new];
     novelBtn.layer.cornerRadius = 3;
@@ -62,7 +62,7 @@
     [novelBtn setTitle:@"小说入口" forState:(UIControlStateNormal)];
     [novelBtn setTitleColor:UIColor.blackColor forState:(UIControlStateNormal)];
     [self.view addSubview:novelBtn];
-    novelBtn.frame = CGRectMake(30, 320, UIScreen.mainScreen.bounds.size.width-60, 40);
+    novelBtn.frame = CGRectMake(30, 330, UIScreen.mainScreen.bounds.size.width-60, 40);
     [novelBtn addTarget:self action:@selector(novelBtnClick) forControlEvents:(UIControlEventTouchUpInside)];
     
     UIButton *novelTabBtn = [UIButton new];
@@ -72,7 +72,7 @@
     [novelTabBtn setTitle:@"小说Tabbar" forState:(UIControlStateNormal)];
     [novelTabBtn setTitleColor:UIColor.blackColor forState:(UIControlStateNormal)];
     [self.view addSubview:novelTabBtn];
-    novelTabBtn.frame = CGRectMake(30, 380, UIScreen.mainScreen.bounds.size.width-60, 40);
+    novelTabBtn.frame = CGRectMake(30, 390, UIScreen.mainScreen.bounds.size.width-60, 40);
     [novelTabBtn addTarget:self action:@selector(novelTabbarClick) forControlEvents:(UIControlEventTouchUpInside)];
     
 }

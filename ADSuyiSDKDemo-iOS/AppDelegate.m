@@ -43,10 +43,11 @@ ADSuyiSDKSplashAdDelegate
 //    获取idfa权限 建议启动就获取权限 不获取权限会影响收益
     if (@available(iOS 14.0, *)) {
         [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
-                    
+            
         }];
     }
-    
+    NSString *idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+    NSLog(@"idaf===%@",idfa);
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     _window.rootViewController = [[NavigationViewController alloc] initWithRootViewController:[ViewController new]];
     [_window makeKeyAndVisible];

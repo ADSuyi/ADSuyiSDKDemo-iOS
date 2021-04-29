@@ -27,7 +27,7 @@
         _selectBtn = [UIButton new];
         _selectBtn.layer.borderWidth = 1;
         _selectBtn.layer.borderColor = UIColor.lightGrayColor.CGColor;
-        [_selectBtn setImage:[UIImage imageNamed:@"close"] forState:(UIControlStateNormal)];
+        [_selectBtn setImage:[UIImage imageNamed:@"info"] forState:(UIControlStateNormal)];
         [_selectBtn setTitle:@"1" forState:UIControlStateNormal];
         [_selectBtn setTitleColor:UIColor.blackColor forState:(UIControlStateNormal)];
         _selectBtn.frame = CGRectMake(0, 0, 60, 30);

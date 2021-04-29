@@ -52,7 +52,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
     if (section==0) {
-        return 2;
+        return 1;
     }
     return _adTypeArray.count;
 }
@@ -74,15 +74,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleValue1) reuseIdentifier:@"cell"];
     if (indexPath.section == 0) {
-        if (indexPath.row==0) {
-            cell.textLabel.text = @"暗黑模式";
-            cell.accessoryView = self.switchDarkMode;
-        }else {
-            cell.textLabel.text = @"广告平台";
-            cell.detailTextLabel.text = _platform;
-            cell.accessoryType = UIAccessibilityNavigationStyleSeparate;
+        cell.textLabel.text = @"广告平台";
+        cell.detailTextLabel.text = _platform;
+        cell.accessoryType = UIAccessibilityNavigationStyleSeparate;
             
-        }
     } else {
         cell.textLabel.text = _adTypeArray[indexPath.row];
         cell.accessoryType = UIAccessibilityNavigationStyleSeparate;
@@ -93,7 +88,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section ==0 ) {
-        if (indexPath.row==1) {
+        if (indexPath.row==0) {
             PlatformTableViewController *platformVc = [PlatformTableViewController new];
             platformVc.selectedBlock = ^(NSString * _Nonnull platorm) {
                 self->_platform = platorm;
