@@ -25,14 +25,14 @@
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.view.backgroundColor = [UIColor colorWithRed:225/255.0 green:233/255.0 blue:239/255.0 alpha:1];
     
-    self.title = @"插屏";
+    self.title = @"全屏视频";
     self.view.backgroundColor = [UIColor colorWithRed:225/255.0 green:233/255.0 blue:239/255.0 alpha:1];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     UIButton *loadBtn = [UIButton new];
     loadBtn.layer.cornerRadius = 3;
     loadBtn.clipsToBounds = YES;
     loadBtn.backgroundColor = UIColor.whiteColor;
-    [loadBtn setTitle:@"加载插屏" forState:(UIControlStateNormal)];
+    [loadBtn setTitle:@"加载全屏视频" forState:(UIControlStateNormal)];
     [loadBtn setTitleColor:UIColor.blackColor forState:(UIControlStateNormal)];
     [self.view addSubview:loadBtn];
     loadBtn.frame = CGRectMake(30, UIScreen.mainScreen.bounds.size.height/2-60, UIScreen.mainScreen.bounds.size.width-60, 40);
@@ -42,7 +42,7 @@
     showBtn.layer.cornerRadius = 3;
     showBtn.clipsToBounds = YES;
     showBtn.backgroundColor = UIColor.whiteColor;
-    [showBtn setTitle:@"展示插屏" forState:(UIControlStateNormal)];
+    [showBtn setTitle:@"展示全屏视频" forState:(UIControlStateNormal)];
     [showBtn setTitleColor:UIColor.blackColor forState:(UIControlStateNormal)];
     [self.view addSubview:showBtn];
     [showBtn addTarget:self action:@selector(showFullScreenvodAd) forControlEvents:(UIControlEventTouchUpInside)];
