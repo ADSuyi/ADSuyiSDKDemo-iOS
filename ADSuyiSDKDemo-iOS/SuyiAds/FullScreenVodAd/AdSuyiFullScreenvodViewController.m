@@ -73,7 +73,7 @@
         [self.fullScreenvodAd show];
         return;
     }
-    [self.view makeToast:@"广告未准备好"];
+    [self.view makeToast:@"广告未准备完成"];
     
 }
 
@@ -94,7 +94,8 @@
 */
 - (void)adsy_fullScreenVodAdReadyToPlay:(ADSuyiSDKFullScreenVodAd *)fullScreenVodAd{
     // 3、推荐在准备好被播放会调用展示激励视频广告
-    [self.view makeToast:@"广告准备好"];
+    _isReady = YES;
+    [self.view makeToast:@"广告准备完成"];
 }
 
 /**
@@ -104,7 +105,8 @@
 */
 - (void)adsy_fullScreenVodAdSuccessToLoadVideo:(ADSuyiSDKFullScreenVodAd *)fullScreenVodAd{
     // 3、也可在视频加载成功回调中展示激励视频广告
-    [self.view makeToast:@"广告准备好"];
+    _isReady = YES;
+    [self.view makeToast:@"广告准备完成"];
 }
 
 /**

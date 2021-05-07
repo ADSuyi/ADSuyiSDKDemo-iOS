@@ -61,12 +61,12 @@ PODS:
     - ADSuyiKSSDK (= 3.3.11)
     - ADSuyiNetwork (~> 0.1.4.3051)
     - ADSuyiSDK/core
-  - ADSuyiSDK/ADSuyiSDKPlatforms/unity (3.1.5.03051):
+  - ADSuyiSDK/ADSuyiSDKPlatforms/vungle (3.1.5.03051):
     - ADMobGenDeviceInfo (~> 1.8.5.03051)
     - ADSuyiKit (~> 0.4.5.0)
+    - ADSuyiKSSDK (= 3.3.11)
     - ADSuyiNetwork (~> 0.1.4.3051)
     - ADSuyiSDK/core
-    - UnityAds (= 3.6.0)
   - ADSuyiSDK/core (3.1.5.03051):
     - ADMobGenDeviceInfo (~> 1.8.5.03051)
     - ADSuyiKit (~> 0.4.5.0)
@@ -107,7 +107,6 @@ PODS:
     - YYModel (~> 1.0.4)
     - YYText (~> 1.0.7)
     - YYWebImage (~> 1.0.5)
-  - UnityAds (3.6.0)
   - XCSADBridge (1.2.6):
     - ADSuyiSDK
     - XCSADCore
@@ -130,7 +129,7 @@ DEPENDENCIES:
   - ADSuyiSDK/ADSuyiSDKPlatforms/gdt
   - ADSuyiSDK/ADSuyiSDKPlatforms/inmobi
   - ADSuyiSDK/ADSuyiSDKPlatforms/ks
-  - ADSuyiSDK/ADSuyiSDKPlatforms/unity
+  - ADSuyiSDK/ADSuyiSDKPlatforms/vungle
   - ADSuyiStarRd
   - MJRefresh
 
@@ -153,7 +152,6 @@ SPEC REPOS:
     - MBProgressHUD
     - MJRefresh
     - StarRdSdk
-    - UnityAds
     - XCSADBridge
     - XCSADCore
     - YYCache
@@ -180,7 +178,6 @@ SPEC CHECKSUMS:
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
   StarRdSdk: 3a038d0f1fade8f78b6ff39d31c01b762f3ba542
-  UnityAds: 3f88cf3d3b11991de1025fcf0e3109fd86035fba
   XCSADBridge: cb260c2a1708732c822eb6dd41dfa90d8db58c0c
   XCSADCore: 3509432b4117967ed897dd18767ed660512b2127
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
@@ -189,6 +186,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: de466a032b76441ad7b1f7deab5ae1fd55be076a
+PODFILE CHECKSUM: 64ddf40a67cb21febac2f1db5483abb0aa915a9e
 
 COCOAPODS: 1.10.1

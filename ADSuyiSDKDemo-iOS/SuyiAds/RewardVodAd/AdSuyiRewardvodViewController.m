@@ -52,7 +52,7 @@
     self.rewardvodAd.delegate = self;
     self.rewardvodAd.tolerateTimeout = 5;
     self.rewardvodAd.controller = self;
-    self.rewardvodAd.posId = @"d4cccba91a4605bced";
+    self.rewardvodAd.posId = @"47d196ffaaa92ae93c";
     self.rewardvodAd.userId = @"erik";
     self.rewardvodAd.extraInfo = @"这是一个激励验证";
     self.rewardvodAd.rewardName = @"激励验证测试";
@@ -86,7 +86,10 @@
  */
 - (void)adsy_rewardvodAdReadyToPlay:(ADSuyiSDKRewardvodAd *)rewardvodAd{
     _isReadyToplay = YES;
-    [self.view makeToast:@"激励视频准备完成"];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.view makeToast:@"激励视频准备完成"];
+    });
+    
 }
 
 /**
@@ -156,7 +159,9 @@
  */
 - (void)adsy_rewardvodAdFailToLoad:(ADSuyiSDKRewardvodAd *)rewardvodAd errorModel:(ADSuyiAdapterErrorDefine *)errorModel{
     // 4、广告内存回收
-    [self.view makeToast:errorModel.description];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.view makeToast:errorModel.description];
+    });
     _rewardvodAd = nil;
 }
 
