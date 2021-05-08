@@ -11,9 +11,15 @@
 #import <ADSuyiKit/UIColor+ADSuyiKit.h>
 #import <ADSuyiKit/ADSuyiKitMacros.h>
 #import "SetConfigManager.h"
+#import "ADSuyiSplashSkipView.h"
+#import "ADSuyiRingProgressView.h"
 @interface AdSuyiSplashViewController ()<ADSuyiSDKSplashAdDelegate>
 
 @property (nonatomic, strong) ADSuyiSDKSplashAd *splashAd;
+
+@property (nonatomic, strong) ADSuyiSplashSkipView *skipNormalView;
+
+@property (nonatomic, strong) ADSuyiRingProgressView *skipRingView;
 
 @end
 
@@ -55,8 +61,12 @@
     logoImageView.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width-135)/2, (bottomViewHeight-46)/2, 135, 46);
     [bottomView addSubview:logoImageView];
     if ([SetConfigManager sharedManager].isCustomSkipView) {
-        // TODO:    补充开屏自定义跳过视图
-        self.splashAd.skipView = [UIView new];
+        // 1、常规跳过按钮 Eg: x秒 | 跳过
+        _skipNormalView = [ADSuyiSplashSkipView new];
+        // 2、圆形进度条样式
+        _skipRingView = [ADSuyiRingProgressView new];
+        // 3、 可以选择不设置跳过视图 加载默认跳过样式
+        self.splashAd.skipView = _skipRingView;
     }
     [self.splashAd loadAndShowInWindow:[UIApplication sharedApplication].keyWindow withBottomView:bottomView];
 }

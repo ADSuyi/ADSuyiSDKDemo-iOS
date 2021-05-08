@@ -18,6 +18,7 @@
 - (UISwitch *)switchBtn {
     if (!_switchBtn) {
         _switchBtn = [UISwitch new];
+        _switchBtn.on = [SetConfigManager sharedManager].nativeAdMuted;
     }
     return _switchBtn;
 }
@@ -28,7 +29,7 @@
         _selectBtn.layer.borderWidth = 1;
         _selectBtn.layer.borderColor = UIColor.lightGrayColor.CGColor;
         [_selectBtn setImage:[UIImage imageNamed:@"info"] forState:(UIControlStateNormal)];
-        [_selectBtn setTitle:@"1" forState:UIControlStateNormal];
+        [_selectBtn setTitle:[NSString stringWithFormat:@"%ld",(long)[SetConfigManager sharedManager].nativeAdCount] forState:UIControlStateNormal];
         [_selectBtn setTitleColor:UIColor.blackColor forState:(UIControlStateNormal)];
         _selectBtn.frame = CGRectMake(0, 0, 60, 30);
         _selectBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 30);
@@ -130,6 +131,7 @@
             _textField = [UITextField new];
             _textField.placeholder = @"场景id";
 //            cell.accessoryView = textField;
+            _textField.text = [SetConfigManager sharedManager].nativeAdScenceId;
             [cell.contentView addSubview:_textField];
             _textField.frame = CGRectMake(100, 0, UIScreen.mainScreen.bounds.size.width/2, 45);
         }

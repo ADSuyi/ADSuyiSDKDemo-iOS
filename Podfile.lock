@@ -61,12 +61,6 @@ PODS:
     - ADSuyiKSSDK (= 3.3.11)
     - ADSuyiNetwork (~> 0.1.4.3051)
     - ADSuyiSDK/core
-  - ADSuyiSDK/ADSuyiSDKPlatforms/vungle (3.1.5.03051):
-    - ADMobGenDeviceInfo (~> 1.8.5.03051)
-    - ADSuyiKit (~> 0.4.5.0)
-    - ADSuyiKSSDK (= 3.3.11)
-    - ADSuyiNetwork (~> 0.1.4.3051)
-    - ADSuyiSDK/core
   - ADSuyiSDK/core (3.1.5.03051):
     - ADMobGenDeviceInfo (~> 1.8.5.03051)
     - ADSuyiKit (~> 0.4.5.0)
@@ -129,7 +123,6 @@ DEPENDENCIES:
   - ADSuyiSDK/ADSuyiSDKPlatforms/gdt
   - ADSuyiSDK/ADSuyiSDKPlatforms/inmobi
   - ADSuyiSDK/ADSuyiSDKPlatforms/ks
-  - ADSuyiSDK/ADSuyiSDKPlatforms/vungle
   - ADSuyiStarRd
   - MJRefresh
 
@@ -186,6 +179,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 64ddf40a67cb21febac2f1db5483abb0aa915a9e
+PODFILE CHECKSUM: 2ec684916595f1d26423f23f1b96e68d48fd2b46
 
 COCOAPODS: 1.10.1

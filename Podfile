@@ -17,7 +17,6 @@ target 'ADSuyiSDKDemo-iOS' do
   pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi'
   pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks'
 #  pod 'ADSuyiSDK/ADSuyiSDKPlatforms/unity'
-  pod 'ADSuyiSDK/ADSuyiSDKPlatforms/vungle'
 #  小说SDK
   pod 'ADSuyiStarRd'
 

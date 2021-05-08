@@ -25,6 +25,8 @@
 		03ED19302637A7C200089CF2 /* PlatformTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03ED19252637A7C200089CF2 /* PlatformTableViewController.m */; };
 		03ED19312637A7C200089CF2 /* NotificationAdSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03ED19262637A7C200089CF2 /* NotificationAdSetViewController.m */; };
 		03ED19512637C21100089CF2 /* AdSuyiContainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03ED19502637C21100089CF2 /* AdSuyiContainViewController.m */; };
+		03FC883A26461C660059037E /* ADSuyiSplashSkipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FC883826461C660059037E /* ADSuyiSplashSkipView.m */; };
+		03FC883B26461C660059037E /* ADSuyiRingProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FC883926461C660059037E /* ADSuyiRingProgressView.m */; };
 		13CC793425DE542800D77DE5 /* AdSuyiBaseContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CC793025DE542800D77DE5 /* AdSuyiBaseContentViewController.m */; };
 		13CC793525DE542800D77DE5 /* AdSuyiContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CC793125DE542800D77DE5 /* AdSuyiContentViewController.m */; };
 		6012F9759F8BCC5230C3F3D1 /* libPods-ADSuyiSDKDemo-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 422C7AE40E8567B741DE7A2F /* libPods-ADSuyiSDKDemo-iOS.a */; };
@@ -77,6 +79,10 @@
 		03ED19262637A7C200089CF2 /* NotificationAdSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationAdSetViewController.m; sourceTree = "<group>"; };
 		03ED194F2637C21100089CF2 /* AdSuyiContainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdSuyiContainViewController.h; sourceTree = "<group>"; };
 		03ED19502637C21100089CF2 /* AdSuyiContainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdSuyiContainViewController.m; sourceTree = "<group>"; };
+		03FC883626461C660059037E /* ADSuyiSplashSkipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADSuyiSplashSkipView.h; sourceTree = "<group>"; };
+		03FC883726461C660059037E /* ADSuyiRingProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADSuyiRingProgressView.h; sourceTree = "<group>"; };
+		03FC883826461C660059037E /* ADSuyiSplashSkipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADSuyiSplashSkipView.m; sourceTree = "<group>"; };
+		03FC883926461C660059037E /* ADSuyiRingProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADSuyiRingProgressView.m; sourceTree = "<group>"; };
 		13CC793025DE542800D77DE5 /* AdSuyiBaseContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdSuyiBaseContentViewController.m; sourceTree = "<group>"; };
 		13CC793125DE542800D77DE5 /* AdSuyiContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdSuyiContentViewController.m; sourceTree = "<group>"; };
 		13CC793225DE542800D77DE5 /* AdSuyiContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdSuyiContentViewController.h; sourceTree = "<group>"; };
@@ -171,6 +177,17 @@
 				03ED19262637A7C200089CF2 /* NotificationAdSetViewController.m */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		03FC883526461C4D0059037E /* skipView */ = {
+			isa = PBXGroup;
+			children = (
+				03FC883726461C660059037E /* ADSuyiRingProgressView.h */,
+				03FC883926461C660059037E /* ADSuyiRingProgressView.m */,
+				03FC883626461C660059037E /* ADSuyiSplashSkipView.h */,
+				03FC883826461C660059037E /* ADSuyiSplashSkipView.m */,
+			);
+			path = skipView;
 			sourceTree = "<group>";
 		};
 		13CC792F25DE541D00D77DE5 /* Content */ = {
@@ -305,6 +322,7 @@
 			children = (
 				BFEA0893247E5430001815E3 /* AdSuyiSplashViewController.h */,
 				BFEA0892247E5430001815E3 /* AdSuyiSplashViewController.m */,
+				03FC883526461C4D0059037E /* skipView */,
 			);
 			path = SplashAd;
 			sourceTree = "<group>";
@@ -482,6 +500,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13CC793425DE542800D77DE5 /* AdSuyiBaseContentViewController.m in Sources */,
+				03FC883B26461C660059037E /* ADSuyiRingProgressView.m in Sources */,
 				BFEA08A5247E5430001815E3 /* AdSuyiSplashViewController.m in Sources */,
 				BFEA08A8247E5430001815E3 /* AdSuyiFullScreenvodViewController.m in Sources */,
 				03ED192E2637A7C200089CF2 /* UIView+Toast.m in Sources */,
@@ -490,6 +509,7 @@
 				BFEA086D247E4CCC001815E3 /* AppDelegate.m in Sources */,
 				824AD25525C11A5200BD1105 /* ADSuyiGroupAdViewController.m in Sources */,
 				820EC7E7254A9F77001C7C88 /* TableViewController.m in Sources */,
+				03FC883A26461C660059037E /* ADSuyiSplashSkipView.m in Sources */,
 				BFEA08AA247E5430001815E3 /* AdSuyiRewardvodViewController.m in Sources */,
 				BFEA08A4247E5430001815E3 /* AdSuyiBannerViewController.m in Sources */,
 				03ED192B2637A7C200089CF2 /* NavigationViewController.m in Sources */,

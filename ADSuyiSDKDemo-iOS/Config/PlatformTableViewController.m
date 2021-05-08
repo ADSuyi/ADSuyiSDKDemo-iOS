@@ -8,6 +8,43 @@
 #import "PlatformTableViewController.h"
 #import "SetConfigManager.h"
 #import <ADSuyiSDK/ADSuyiSDK.h>
+
+@interface ADSuyiAdapterCommonClassLoader : NSObject
+
++ (instancetype)sharedInstance;
+
+@property (nonatomic, strong) NSMutableDictionary<NSString *, Class> *routers;
+
+@end
+
+@interface ADSuyiAdapterSplashClassLoader : ADSuyiAdapterCommonClassLoader
+
+@end
+
+@interface ADSuyiAdapterBannerClassLoader : ADSuyiAdapterCommonClassLoader
+
+@end
+
+@interface ADSuyiAdapterRewardVodClassLoader : ADSuyiAdapterCommonClassLoader
+
+@end
+
+@interface ADSuyiAdapterInterstitialClassLoader : ADSuyiAdapterCommonClassLoader
+
+@end
+
+@interface ADSuyiAdapterDrawvodClassLoader : ADSuyiAdapterCommonClassLoader
+
+@end
+
+@interface ADSuyiAdapterFullScreenVodClassLoader : ADSuyiAdapterCommonClassLoader
+
+@end
+
+@interface ADSuyiAdapterNativeClassLoader : ADSuyiAdapterCommonClassLoader
+
+@end
+
 @interface PlatformTableViewController ()
 @property (nonatomic, strong) NSArray *platformArray;
 @property(nonatomic ,assign) NSInteger selectIndex;
@@ -42,20 +79,13 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-//- (void)viewWillDisappear:(BOOL)animated {
-//    [super viewWillDisappear:animated];
-//    [SetConfigManager sharedManager].platform = self.platformArray[_selectIndex];
-//}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
     return self.platformArray.count;
 }
 
@@ -106,6 +136,15 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     if (_selectIndex == 0) {
+        [self resetClassLoaderArr:@[
+            ADSuyiAdapterSplashClassLoader.sharedInstance,
+            ADSuyiAdapterBannerClassLoader.sharedInstance,
+            ADSuyiAdapterNativeClassLoader.sharedInstance,
+            ADSuyiAdapterDrawvodClassLoader.sharedInstance,
+            ADSuyiAdapterFullScreenVodClassLoader.sharedInstance,
+            ADSuyiAdapterRewardVodClassLoader.sharedInstance,
+            ADSuyiAdapterInterstitialClassLoader.sharedInstance
+        ]];
         return;
     }
     if (self.selectedBlock) {
@@ -114,6 +153,21 @@
     [SetConfigManager sharedManager].platform = self.platformArray[_selectIndex];
     [ADSuyiSDK setOnlyPlatform:self.platformDic[self.platformArray[_selectIndex]]];
     
+}
+
+- (void)resetClassLoaderArr:(NSArray<ADSuyiAdapterCommonClassLoader *>*)arr {
+    static dispatch_once_t onceToken;
+    static NSMapTable<ADSuyiAdapterCommonClassLoader*, NSMutableDictionary*> *_cache;
+    dispatch_once(&onceToken, ^{
+        _cache = [NSMapTable new];
+        for (ADSuyiAdapterCommonClassLoader *loader in arr) {
+            [_cache setObject:loader.routers.mutableCopy forKey:loader];
+        }
+    });
+    
+    for (ADSuyiAdapterCommonClassLoader *loader in arr) {
+        loader.routers = [[_cache objectForKey:loader] mutableCopy];
+    }
 }
 
 /*
