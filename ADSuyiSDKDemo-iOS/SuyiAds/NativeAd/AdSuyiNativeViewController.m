@@ -182,7 +182,8 @@
 - (void)adsy_nativeAdSucessToLoad:(ADSuyiSDKNativeAd *)nativeAd
                       adViewArray:(NSArray<__kindof UIView<ADSuyiAdapterNativeAdViewDelegate> *> *)adViewArray {
     for (UIView<ADSuyiAdapterNativeAdViewDelegate> *adView in adViewArray) {
-        // 4、判断信息流广告是否为自渲染类型（必须实现） 可仿照所示样式demo实现 如无所需样式则需自行实现
+        // 4、判断信息流广告是否为自渲染类型（可选实现） 可仿照所示样式demo实现 如无所需样式则需自行实现
+        // 如果单纯只配置了模版信息流，那么不需要实现，如果配置了自渲染信息流，那么需要实现
         if(adView.renderType == ADSuyiAdapterRenderTypeNative) {
             // 4.1、如果是自渲染类型则可样式自定义(3种示例demo样式见下)
                 // 1、常规样式
