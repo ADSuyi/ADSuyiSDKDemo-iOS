@@ -47,9 +47,10 @@
 | v3.0.9   | 2020-11-16 | 浮窗广告适配广点通                                           |
 | v3.1.0   | 2020-12-14 | 广告场景功能，开放开屏跳过按钮，错误码规范性整理，修复已知问题 |
 | v3.1.1   | 2020-12-23 | 信息流支持广点通模板2.0，自渲染信息流广告增加关闭按钮相关方法，修复已知问题 |
-| v3.1.2   | 2020-02-18 | 适配快手内容页;支持广点通v+开屏广告;升级第三方SDK（优量汇、穿山甲、快手联盟等） |
-| v3.1.3   | 2020-03-01 | 适配Vungle横幅广告，插屏广告，激励视频广告;升级第三方SDK（Google、穿山甲、汇量等） |
-| v3.1.5   | 2020-03-05 | 部分平台激励视频支持服务端验证;升级第三方SDK（优量汇、穿山甲等） |
+| v3.1.2   | 2021-02-18 | 适配快手内容页;支持广点通v+开屏广告;升级第三方SDK（优量汇、穿山甲、快手联盟等） |
+| v3.1.3   | 2021-03-01 | 适配Vungle横幅广告，插屏广告，激励视频广告;升级第三方SDK（Google、穿山甲、汇量等） |
+| v3.1.5   | 2021-03-05 | 部分平台激励视频支持服务端验证;升级第三方SDK（优量汇、穿山甲等） |
+| v3.2.0   | 2021-03-31 | admobile支持模板信息流;支持优量汇模板2.0激励视频;支持穿山甲新版插屏;升级第三方SDK（穿山甲,汇量,Google,Unity等） |
 
 <div STYLE="page-break-after: always;"></div>
 
@@ -73,7 +74,7 @@
 
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
-pod 'ADSuyiSDK', '~> 3.1.5.0'								# 主SDK  #必选
+pod 'ADSuyiSDK', '~> 3.2.0.0'								# 主SDK  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt'     	# 优量汇
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile' # ADMobile  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu'		# baidu
@@ -139,6 +140,8 @@ Accelerate.framework
 libc++.tbd
 libsqlite3.tbd
 ImageIO.framework
+libbz2.tbd
+libz.tbd
 ```
 
 <div STYLE="page-break-after: always;"></div>

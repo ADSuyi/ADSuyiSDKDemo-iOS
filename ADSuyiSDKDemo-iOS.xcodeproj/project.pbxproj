@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0315BF102625BE4A006BDB9B /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		0384A89D2649555B005B1F93 /* ADSuyiSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0384A89C2649555B005B1F93 /* ADSuyiSDK.xcframework */; };
 		03B70B8926214B9100D699F1 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		03B70B8B26214B9100D699F1 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		03B70B8F26214B9100D699F1 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
@@ -55,6 +56,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0384A89C2649555B005B1F93 /* ADSuyiSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ADSuyiSDK.xcframework; path = Pods/ADSuyiSDK/ADSuyiSDK/Classes/core/ADSuyiSDK.xcframework; sourceTree = "<group>"; };
 		03ED19112637A7C200089CF2 /* FullScreenAdSetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullScreenAdSetTableViewController.h; sourceTree = "<group>"; };
 		03ED19122637A7C200089CF2 /* DrawAdSetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawAdSetTableViewController.h; sourceTree = "<group>"; };
 		03ED19132637A7C200089CF2 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0384A89D2649555B005B1F93 /* ADSuyiSDK.xcframework in Frameworks */,
 				0315BF102625BE4A006BDB9B /* (null) in Frameworks */,
 				03B70B9126214B9100D699F1 /* (null) in Frameworks */,
 				6012F9759F8BCC5230C3F3D1 /* libPods-ADSuyiSDKDemo-iOS.a in Frameworks */,
@@ -204,6 +207,7 @@
 		66890375DE678EA9A920BD13 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0384A89C2649555B005B1F93 /* ADSuyiSDK.xcframework */,
 				82085D7925E8937C00FCE89F /* AdSupport.framework */,
 				82085D7725E8937500FCE89F /* AppTrackingTransparency.framework */,
 				422C7AE40E8567B741DE7A2F /* libPods-ADSuyiSDKDemo-iOS.a */,
