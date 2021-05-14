@@ -1,6 +1,6 @@
 
 
-# ADmobile ADSuyiSDK iOS接入文档 v3.2.0.03051
+# ADmobile ADSuyiSDK iOS接入文档 v3.2.0.03311
 
 
 
