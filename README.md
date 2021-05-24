@@ -1,6 +1,6 @@
 
 
-# ADmobile ADSuyiSDK iOS接入文档 v3.2.0.03311
+# ADmobile ADSuyiSDK iOS接入文档 v3.2.1.04221
 
 
 
@@ -50,7 +50,8 @@
 | v3.1.2   | 2021-02-18 | 适配快手内容页;支持广点通v+开屏广告;升级第三方SDK（优量汇、穿山甲、快手联盟等） |
 | v3.1.3   | 2021-03-01 | 适配Vungle横幅广告，插屏广告，激励视频广告;升级第三方SDK（Google、穿山甲、汇量等） |
 | v3.1.5   | 2021-03-05 | 部分平台激励视频支持服务端验证;升级第三方SDK（优量汇、穿山甲等） |
-| v3.2.0   | 2021-03-31 | 1、新增admobile模板信息流广告（上图下文，上文下图，左图右文，左文右图，纯图）；2、优量汇平台新增模板2.0激励视频；3、升级三方广告SDK。|
+| v3.2.0   | 2021-03-31 | admobile支持模板信息流;支持优量汇模板2.0激励视频;支持穿山甲新版插屏;升级第三方SDK（穿山甲,汇量,Google,Unity等） |
+| v3.2.1   | 2021-04-22 | 升级第三方SDK（穿山甲，百度，优量汇，Google，汇量，vungle等），部分功能优化 |
 
 <div STYLE="page-break-after: always;"></div>
 
@@ -74,7 +75,7 @@
 
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
-pod 'ADSuyiSDK', '~> 3.2.0.0'								# 主SDK  #必选
+pod 'ADSuyiSDK', '~> 3.2.1.0'								# 主SDK  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt'     	# 优量汇
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile' # ADMobile  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu'		# baidu
@@ -92,7 +93,7 @@ pod 'ADSuyiLocationManagerGPS'// 含有系统定位代码
 推荐使用导入命令
 
 ```ruby
-pod 'ADSuyiSDK', '~> 3.2.0.0'								# 主SDK  #必选	
+pod 'ADSuyiSDK', '~> 3.2.1.0'								# 主SDK  #必选	
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt'			# 优量汇
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile'	# ADMobile  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu'		# baidu
@@ -132,16 +133,24 @@ CoreMedia.framework
 头条还需要添加依赖库：
 
 ```
-libresolv.9.tbd
-MobileCoreServices.framework
-MediaPlayer.framework
-CoreMotion.framework
 Accelerate.framework
-libc++.tbd
-libsqlite3.tbd
+AudioToolbox.framework
+CoreGraphics.framework
+CoreImage.framework
+CoreMotion.framework
+CoreText.framework
 ImageIO.framework
+JavaScriptCore.framework
+MapKit.framework
+MediaPlayer.framework
+MobileCoreServices.framework
+UIKit.framework
 libbz2.tbd
-libz.tbd
+libc++.tbd
+libiconv.tbd
+libresolv.9.tbd
+libsqlite3.tbd
+libc++abi.tbd
 ```
 
 <div STYLE="page-break-after: always;"></div>
@@ -292,6 +301,15 @@ SKAdNetwork 是接收iOS端营销推广活动归因数据的一种方法。
     <dict>
       <key>SKAdNetworkIdentifier</key>
       <string>22mmun2rn5.skadnetwork</string>
+    </dict>
+    <dict>
+      <key>SKAdNetworkIdentifier</key>
+      <string>x2jnk7ly8j.skadnetwork</string>
+    </dict>
+    // 优量汇广告（ADSuyiGDT）
+    <dict>
+      <key>SKAdNetworkIdentifier</key>
+      <string>f7s53z58qe.skadnetwork</string>
     </dict>
     // 谷歌广告（ADSuyiGoogle）
     <dict>
