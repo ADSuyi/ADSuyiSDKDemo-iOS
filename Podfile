@@ -13,7 +13,7 @@ target 'ADSuyiSDKDemo-iOS' do
   pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile'
   pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu'
   pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu'
-  pod 'ADSuyiSDK/ADSuyiSDKPlatforms/google'
+#  pod 'ADSuyiSDK/ADSuyiSDKPlatforms/google'
   pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi'
   pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks'
   pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg'

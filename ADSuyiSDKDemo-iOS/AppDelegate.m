@@ -39,15 +39,7 @@ ADSuyiSDKSplashAdDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-//    获取idfa权限 建议启动就获取权限 不获取权限会影响收益
-    if (@available(iOS 14.0, *)) {
-        [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
-            
-        }];
-    }
-    NSString *idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
-    NSLog(@"idaf===%@",idfa);
+
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     _window.rootViewController = [[NavigationViewController alloc] initWithRootViewController:[ViewController new]];
     [_window makeKeyAndVisible];
@@ -281,6 +273,12 @@ ADSuyiSDKSplashAdDelegate
     UIAlertAction *agree = [UIAlertAction actionWithTitle:@"同意并继续" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
         // 记录是否第一次启动
         [self writeAppLoad];
+        //    获取idfa权限 建议启动就获取权限 不获取权限会影响收益
+        if (@available(iOS 14.0, *)) {
+            [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
+                
+            }];
+        }
         // 用户同意隐私后 初始化
         [self initADSuyiSDK];
         
@@ -300,7 +298,7 @@ ADSuyiSDKSplashAdDelegate
     // 设置日志输出等级
     [ADSuyiSDK setLogLevel:ADSuyiKitLogLevelDebug];
     // ADSuyiSDK初始化
-    [ADSuyiSDK initWithAppId:@"3437764" completionBlock:^(NSError * _Nonnull error) {
+    [ADSuyiSDK initWithAppId:@"3766846" completionBlock:^(NSError * _Nonnull error) {
         if (error) {
             NSLog(@"SDK 初始化失败：%@", error.localizedDescription);
         }
