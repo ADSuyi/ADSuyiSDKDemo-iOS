@@ -1,6 +1,6 @@
 
 
-# ADmobile ADSuyiSDK iOS接入文档 v3.2.1.04221
+# ADmobile ADSuyiSDK iOS接入文档 v3.2.2.05251
 
 
 
@@ -52,6 +52,7 @@
 | v3.1.5   | 2021-03-05 | 部分平台激励视频支持服务端验证;升级第三方SDK（优量汇、穿山甲等） |
 | v3.2.0   | 2021-03-31 | admobile支持模板信息流;支持优量汇模板2.0激励视频;支持穿山甲新版插屏;升级第三方SDK（穿山甲,汇量,Google,Unity等） |
 | v3.2.1   | 2021-04-22 | 升级第三方SDK（穿山甲，百度，优量汇，Google，汇量，vungle等），部分功能优化 |
+| v3.2.2   | 2021-05-25 | admobile合规优化;支持优量汇插屏模板2.0;支持百度模板及自渲染 信息流;新增云码平台;升级第三方SDK（穿山甲，优量汇，快手等）；部分功能优化 |
 
 <div STYLE="page-break-after: always;"></div>
 
@@ -71,11 +72,11 @@
 
 ## 2.1 采用cocoapods进行SDK的导入
 
-推荐使用pod命令
+推荐使用pod命令，使用[集成工具](https://app.admobile.top/#/adsdk/adsdk)获取导入命令
 
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
-pod 'ADSuyiSDK', '~> 3.2.1.0'								# 主SDK  #必选
+pod 'ADSuyiSDK', '~> 3.2.2.0'								# 主SDK  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt'     	# 优量汇
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile' # ADMobile  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu'		# baidu
@@ -86,6 +87,7 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks'				# 快手
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/unity'		# Unity
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg'			# Mobvista(汇量)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/vungle'		# vungle
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/cloudcode'    # 云码
 // 推荐导入，通过系统定位获取定位信息
 pod 'ADSuyiLocationManagerGPS'// 含有系统定位代码
 ```
@@ -93,7 +95,7 @@ pod 'ADSuyiLocationManagerGPS'// 含有系统定位代码
 推荐使用导入命令
 
 ```ruby
-pod 'ADSuyiSDK', '~> 3.2.1.0'								# 主SDK  #必选	
+pod 'ADSuyiSDK', '~> 3.2.2.0'								# 主SDK  #必选	
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt'			# 优量汇
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile'	# ADMobile  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu'		# baidu
@@ -104,6 +106,7 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks'				# 快手
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/unity'		# Unity
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg'			# Mobvista(汇量)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/vungle'		# vungle
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/cloudcode'    # 云码
 ```
 
 <div STYLE="page-break-after: always;"></div>
@@ -273,8 +276,9 @@ NSLocationAlwaysAndWhenInUseUsageDeion
     // 无需对授权状态进行处理
   }];
 }
-// 建议启动App就获取权限或者请求广告前获取
+// 建议启动App用户同意协议后就获取权限或者请求广告前获取
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // 用户同意协议后获取
   	[self requestIDFA];
 }
 
