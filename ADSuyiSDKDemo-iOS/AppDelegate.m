@@ -44,11 +44,6 @@ ADSuyiSDKSplashAdDelegate
     _window.rootViewController = [[NavigationViewController alloc] initWithRootViewController:[ViewController new]];
     [_window makeKeyAndVisible];
     [self setThirtyPartySdk];
-    /*
-     * 推荐在AppDelegate中的最后加载开屏广告
-     * 其他的接入方式会有需要特殊注意的方式，遇到过的相关问题在SDK相关问题的文档中有提到
-     */
-    [self loadSplashAd];
     
     return YES;
 }
@@ -303,6 +298,11 @@ ADSuyiSDKSplashAdDelegate
             NSLog(@"SDK 初始化失败：%@", error.localizedDescription);
         }
     }];
+    /*
+     * 推荐在AppDelegate中的最后加载开屏广告
+     * 其他的接入方式会有需要特殊注意的方式，遇到过的相关问题在SDK相关问题的文档中有提到
+     */
+    [self loadSplashAd];
     
 }
 
