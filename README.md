@@ -1,6 +1,6 @@
 
 
-# ADmobile ADSuyiSDK iOS接入文档 v3.2.2.05251
+# ADmobile ADSuyiSDK iOS接入文档 v3.2.3.06182
 
 
 
@@ -53,6 +53,7 @@
 | v3.2.0   | 2021-03-31 | admobile支持模板信息流;支持优量汇模板2.0激励视频;支持穿山甲新版插屏;升级第三方SDK（穿山甲,汇量,Google,Unity等） |
 | v3.2.1   | 2021-04-22 | 升级第三方SDK（穿山甲，百度，优量汇，Google，汇量，vungle等），部分功能优化 |
 | v3.2.2   | 2021-05-25 | admobile合规优化;支持优量汇插屏模板2.0;支持百度模板及自渲染 信息流;新增云码平台;升级第三方SDK（穿山甲，优量汇，快手等）；部分功能优化 |
+| v3.2.3   | 2021-06-18 | 适配Gromore平台;支持快手非内容版本;升级第三方SDK（穿山甲，优量汇，Google，汇量，百度，云码等）；部分功能优化 |
 
 <div STYLE="page-break-after: always;"></div>
 
@@ -76,18 +77,20 @@
 
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
-pod 'ADSuyiSDK', '~> 3.2.2.0'								# 主SDK  #必选
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt'     	# 优量汇（广点通）
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile' # ADMobile(艾狄墨搏)  #必选
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu'		# baidu（百度）
+pod 'ADSuyiSDK', '~> 3.2.3.0'								# 主SDK  #必选
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt'     	# 优量汇
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile' # ADMobile  #必选
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu'		# baidu
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu'   		# 穿山甲(头条)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/google'   # 谷歌
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi'   # Inmobi
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks'				# 快手
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks'				# 快手(非内容版本，内容与非内容版本不可同时导入)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ksfull'		# 快手(内容版本)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/unity'		# Unity
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg'			# Mobvista(汇量)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/vungle'		# vungle
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/cloudcode'    # 云码
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/cloudcode'# 云码
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore'  # gromore
 // 推荐导入，通过系统定位获取定位信息
 pod 'ADSuyiLocationManagerGPS'// 含有系统定位代码
 ```
@@ -95,18 +98,20 @@ pod 'ADSuyiLocationManagerGPS'// 含有系统定位代码
 推荐使用导入命令
 
 ```ruby
-pod 'ADSuyiSDK', '~> 3.2.2.0'								# 主SDK  #必选	
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt'			# 优量汇（广点通）
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile'	# ADMobile（艾狄墨搏）  #必选
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu'		# baidu（百度）
+pod 'ADSuyiSDK', '~> 3.2.3.0'								# 主SDK  #必选	
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt'			# 优量汇
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile'	# ADMobile  #必选
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu'		# baidu
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu'				# 穿山甲(头条)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/google'		# 谷歌
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi'		# Inmobi
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks'				# 快手
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks'				# 快手(非内容版本，内容与非内容版本不可同时导入)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ksfull'		# 快手(内容版本)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/unity'		# Unity
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg'			# Mobvista(汇量)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/vungle'		# vungle
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/cloudcode'    # 云码
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore'    # gromore
 ```
 
 <div STYLE="page-break-after: always;"></div>
@@ -961,7 +966,7 @@ OC请求横幅广告请求示例：
 
 ## 4.4 信息流广告 - ADSuyiSDKNativeAd
 
-信息流广告，具备自渲染和模板两种广告样式：自渲染是SDK将返回广告标题、描述、Icon、图片、多媒体视图等信息，开发者可通过自行拼装渲染成喜欢的样式；模板样式则是返回拼装好的广告视图，开发者只需将视图添加到相应容器即可，模板样式的容器高度建议是自适应。**请务必确保自渲染类型广告渲染时包含广告创意素材（至少包含一张图片）、平台logo、广告标识、关闭按钮；模板广告不得被遮挡。** **注意，信息流广告点击关闭时，开发者需要在- (void)adsy_nativeAdClose:回调中将广告视图隐藏或移除，避免如穿山甲渠道点击关闭后视图依旧存在问题****
+信息流广告，具备自渲染和模板两种广告样式：自渲染是SDK将返回广告标题、描述、Icon、图片、多媒体视图等信息，开发者可通过自行拼装渲染成喜欢的样式；模板样式则是返回拼装好的广告视图，开发者只需将视图添加到相应容器即可，模板样式的容器高度建议是自适应。**请务必确保自渲染类型广告渲染时包含广告创意素材（至少包含一张图片）、平台logo、广告标识、关闭按钮；模板广告不得被遮挡。** **注意，信息流广告点击关闭时，开发者需要在- (void)adsy_nativeAdClose:回调中将广告视图隐藏或移除，避免如穿山甲渠道点击关闭后视图依旧存在问题**
 
 `OC请求信息流广告代码示例：`[[信息流广告代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS/blob/master/ADSuyiSDKDemo-iOS/SuyiAds/NativeAd/AdSuyiNativeViewController.m)
 
