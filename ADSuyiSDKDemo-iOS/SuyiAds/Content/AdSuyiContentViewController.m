@@ -10,6 +10,7 @@
 #import <ADSuyiSDK/ADSuyiSDKContentAd.h>
 #import "AdSuyiBaseContentViewController.h"
 #import <MJRefresh/MJRefresh.h>
+#import "UIView+Toast.h"
 @interface AdSuyiContentViewController ()<ADSuyiSDKContentAdDelegate,UITableViewDelegate,UITableViewDataSource>
 {
     CGFloat _contentAdWidth;
@@ -22,6 +23,8 @@
 @property (nonatomic, strong) ADSuyiSDKContentAd *contentAd;
 
 @property (nonatomic, strong) UIView<ADSuyiSDKContentAdViewProtocol> *contentView;
+
+@property (nonatomic, strong) UIButton *customBtn;
 
 @end
 
@@ -49,8 +52,37 @@
     _tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         [weakSelf loadContentAd];
     }];
+    
+    [self.view addSubview:self.customBtn];
+    self.customBtn.frame = CGRectMake(UIScreen.mainScreen.bounds.size.width/2 - 100, UIScreen.mainScreen.bounds.size.height - 80, 200, 50);
+    [self.view bringSubviewToFront:self.customBtn];
+    
     [self loadContentAd];
     // Do any additional setup after loading the view.
+}
+
+- (UIButton *)customBtn {
+    if (!_customBtn) {
+        _customBtn = [UIButton new];
+        [_customBtn setTitle:@"自定义视图进入内容页" forState:UIControlStateNormal];
+        _customBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+        _customBtn.backgroundColor = UIColor.lightGrayColor;
+        _customBtn.layer.cornerRadius = 4;
+        [_customBtn addTarget:self action:@selector(enterContentVc) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _customBtn;
+}
+
+#pragma mark - Action
+
+- (void)enterContentVc {
+    if (!self.items.firstObject) {
+        [self.view makeToast:@"内容加载失败"];
+        return;
+    }
+//    模拟点击 会回调- (void)adsy_contentAdClicked:(ADSuyiSDKContentAd *)contentAd contentDetailPage:(UIViewController *)contentPageVc方法 (适用于不使用返回内容view情况)
+//    contentView  加载成功回调中返回的view
+    [_contentAd clickContentPageWithContentView:self.items.firstObject];
 }
 
 - (void)loadContentAd {
