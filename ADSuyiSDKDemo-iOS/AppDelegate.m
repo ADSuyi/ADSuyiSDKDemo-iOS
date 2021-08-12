@@ -117,7 +117,7 @@ ADSuyiSDKSplashAdDelegate
     // 4、开屏广告机型适配
     CGFloat bottomViewHeight;
     if (kADSYCurveScreen) { // 刘海屏
-        bottomViewHeight = [UIScreen mainScreen].bounds.size.height * 0.25;
+        bottomViewHeight = [UIScreen mainScreen].bounds.size.height * 0.1;
     } else {
         bottomViewHeight = [UIScreen mainScreen].bounds.size.height - [UIScreen mainScreen].bounds.size.width * (960 / 640.0);
     }

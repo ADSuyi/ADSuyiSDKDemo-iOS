@@ -97,9 +97,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor colorWithRed:225/255.0 green:233/255.0 blue:239/255.0 alpha:1];
     cell.contentView.backgroundColor = [UIColor colorWithRed:225/255.0 green:233/255.0 blue:239/255.0 alpha:1];
     NSString *title = [self.dataArray adsy_objectOrNilAtIndex:indexPath.row];
-    
+    cell.contentView.clipsToBounds = YES;
+    cell.clipsToBounds = YES;
+    cell.contentView.layer.cornerRadius = 6;
+    cell.layer.cornerRadius = 6;
     UIView *view = [cell.contentView viewWithTag:999];
     if (view) {
         [view removeFromSuperview];
@@ -112,6 +116,7 @@
     labTitle.textColor = [UIColor adsy_colorWithHexString:@"#666666"];
     labTitle.tag = 999;
     labTitle.text = title;
+    labTitle.clipsToBounds = YES;
     [cell.contentView addSubview:labTitle];
     labTitle.frame = CGRectMake(16, 8, self.view.bounds.size.width - 32, 32);
     labTitle.layer.cornerRadius = 4;
