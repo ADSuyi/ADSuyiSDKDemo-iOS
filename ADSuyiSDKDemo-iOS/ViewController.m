@@ -88,6 +88,8 @@
     label.textAlignment = NSTextAlignmentCenter;
     label.textColor = [UIColor colorWithRed:36/255.0 green:132/255.0 blue:207/255.0 alpha:1];
     label.text = [ADSuyiSDK getSDKVersion];
+    
+    
     return label;
 }
 
