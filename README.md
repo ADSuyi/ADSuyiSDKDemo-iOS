@@ -1,6 +1,6 @@
 
 
-# ADmobile ADSuyiSDK iOS接入文档 v3.2.3.06183
+# ADmobile ADSuyiSDK iOS接入文档 v3.3.0.07201
 
 
 
@@ -54,6 +54,7 @@
 | v3.2.1   | 2021-04-22 | 升级第三方SDK（穿山甲，百度，优量汇，Google，汇量，vungle等），部分功能优化 |
 | v3.2.2   | 2021-05-25 | admobile合规优化;支持优量汇插屏模板2.0;支持百度模板及自渲染 信息流;新增云码平台;升级第三方SDK（穿山甲，优量汇，快手等）；部分功能优化 |
 | v3.2.3   | 2021-06-18 | 适配Gromore平台;支持快手非内容版本;升级第三方SDK（穿山甲，优量汇，Google，汇量，百度，云码等）；部分功能优化 |
+| v3.3.0   | 2021-07-20 | 新增开屏保底（可选）(支持穿山甲，优量汇，快手，百度，汇量）; 浮窗广告支持百度，快手平台；升级第三方SDK（穿山甲，优量汇，Google，汇量，百度，快手等）；部分功能优化 |
 
 <div STYLE="page-break-after: always;"></div>
 
@@ -77,9 +78,10 @@
 
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
-pod 'ADSuyiSDK', '~> 3.2.3.0'								# 主SDK  #必选
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt'     	# 优量汇
+pod 'ADSuyiSDK', '~> 3.3.0.0'								# 主SDK  #必选
+pod 'ADSuyiAdMaterials'											# 素材库  #新增必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile' # ADMobile  #必选
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt'     	# 优量汇(广点通）
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu'		# baidu
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu'   		# 穿山甲(头条)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/google'   # 谷歌
@@ -91,6 +93,12 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg'			# Mobvista(汇量)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/vungle'		# vungle
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/cloudcode'# 云码
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore'  # gromore
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/kj'			  # 铠甲
+
+#对接铠甲平台需要导入指定版本三方库
+pod 'Ads-CN'，'3.7.0.5'
+pod 'GDTMobSDK','4.12.81'
+
 // 推荐导入，通过系统定位获取定位信息
 pod 'ADSuyiLocationManagerGPS'// 含有系统定位代码
 ```
@@ -98,9 +106,10 @@ pod 'ADSuyiLocationManagerGPS'// 含有系统定位代码
 推荐使用导入命令
 
 ```ruby
-pod 'ADSuyiSDK', '~> 3.2.3.0'								# 主SDK  #必选	
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt'			# 优量汇
+pod 'ADSuyiSDK', '~> 3.3.0.0'								# 主SDK  #必选	
+pod 'ADSuyiAdMaterials'											# 素材库  #新增必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile'	# ADMobile  #必选
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt'			# 优量汇(广点通)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu'		# baidu
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu'				# 穿山甲(头条)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/google'		# 谷歌
@@ -112,6 +121,11 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg'			# Mobvista(汇量)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/vungle'		# vungle
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/cloudcode'    # 云码
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore'    # gromore
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/kj'			# 铠甲
+
+#对接铠甲平台需要导入指定版本三方库
+pod 'Ads-CN'，'3.7.0.5'
+pod 'GDTMobSDK','4.12.81'
 ```
 
 <div STYLE="page-break-after: always;"></div>
@@ -162,6 +176,23 @@ libc++abi.tbd
 ```
 
 <div STYLE="page-break-after: always;"></div>
+
+铠甲平台还需要添加依赖库：
+
+```
+CoreMedia.framework
+MobileCoreServices.framework 
+Accelerate.framework
+libresolv.9.tbd
+libc++.tbd
+libsqlite3.tbd
+libbz2.tbd
+libiconv.tbd
+```
+
+<div STYLE="page-break-after: always;"></div>
+
+
 
 
 ## 3.1 工程环境配置
@@ -412,6 +443,19 @@ SKAdNetwork 是接收iOS端营销推广活动归因数据的一种方法。
         <key>SKAdNetworkIdentifier</key>
         <string>hs6bdukanm.skadnetwork</string>
     </dict>
+    // 铠甲平台
+    <dict>
+      <key>SKAdNetworkIdentifier</key> 
+      <string>238da6jt44.skadnetwork</string>
+    </dict> 
+    <dict>
+			<key>SKAdNetworkIdentifier</key>
+			<string>22mmun2rn5.skadnetwork</string> 
+    </dict>
+		<dict>
+			<key>SKAdNetworkIdentifier</key>
+			<string>f7s53z58qe.skadnetwork</string> 
+    </dict>
   </array>
 ```
 
@@ -499,6 +543,18 @@ viewControllerForPresentingModalView
  跳过按钮的类型，可以通过此接口替换开屏广告的跳过按钮样式
  */
 @property (nonatomic, strong, null_resettable) UIView<ADSuyiAdapterSplashSkipViewProtocol> *skipView;
+
+/**
+设置保底开屏 （可选）
+（App初次启动及suyiSDK未初始化状态保证开屏填充，支持平台：穿山甲、优量汇、快手、百度）
+@param suyiId suyi平台广告源id
+@param platformListId admobile后台配置查看networkAdPosListID
+@param appId 广告平台AppId，非suyiAPPid
+@param appKey 广告平台AppKey,没有传nil
+@param platformPosid 三方广告平台广告位id
+@param renderType 平台广告类型，如：原生，模板等。
+*/
+- (void)setBottomSplashWithSuyiPosid:(NSString *)suyiId platformListId:(NSString *)platformListId platform:(NSString *)platform appId:(NSString *)appId appKey:(nullable NSString *)appKey platformPosid:(NSString *)platformPosid renderType:(ADSuyiSplashRenderType)renderType;
 
 /**
 加载开屏广告
@@ -658,7 +714,7 @@ OC请求开屏广告代码示例：
     // 4、开屏广告机型适配
     CGFloat bottomViewHeight;
     if (kADSYCurveScreen) { // 刘海屏
-        bottomViewHeight = [UIScreen mainScreen].bounds.size.height * 0.25;
+        bottomViewHeight = [UIScreen mainScreen].bounds.size.height * 0.15;
     } else {
         bottomViewHeight = [UIScreen mainScreen].bounds.size.height - [UIScreen mainScreen].bounds.size.width * (960 / 640.0);
     }
@@ -670,12 +726,19 @@ OC请求开屏广告代码示例：
     UIImageView *logoImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"ADMob_Logo.png"]];
     logoImageView.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width-135)/2, (bottomViewHeight-46)/2, 135, 46);
     [bottomView addSubview:logoImageView];
-    
-    // 6、加载开屏广告
+  // 6、设置开屏保底逻辑（可选）
+    /**
+     *功能说明：App在首次启动时，需要先请求获取广告位配置文件后，然后再去请求开屏广告，也就是首次加载开屏广告时需要两次串行网络请求，因此很容易因超时导致开屏广告展示失败。
+     *解决方案：为避免开屏超时问题，开放此设置给开发者，开发者可以根据实际需求选择一家广告平台，通过API接口将必需参数传递给Suyi聚合SDK。（该设置只能指定一家广告平台，并且首次启动时只会请求该平台的广告，但App首次开屏广告将不受ADmobile后台控制，包括下载提示，广告位关闭。）
+     *该设置仅会在首次加载开屏广告时，SDK会使用开发者传入的参数进行广告请求，同时获取后台配置文件的广告配置信息缓存到本地（首次请求广告平台广告和获取配置信息时并发进行），后续的开屏广告将按照缓存缓存的后台广告位配置顺序进行开屏广告请求。
+     *支持穿山甲、优量汇、快手、百度、汇量
+     */
+    [self.splashAd setBottomSplashWithSuyiPosid:@"73128265daffdd6a1d" platformListId:@"3827" platform:@"ksad" appId:@"90010" appKey:@"" platformPosid:@"4000000041" renderType:ADSuyiSplashRenderTypeExpressPro];
+    // 7、加载开屏广告
     [self.splashAd loadAndShowInWindow:_window withBottomView:bottomView];
 }
 
-// 7、代理回调
+// 8、代理回调
 #pragma mark - ADSuyiSDKSplashAdDelegate
 /**
  开屏展现成功
