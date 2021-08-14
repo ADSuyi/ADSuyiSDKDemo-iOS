@@ -78,22 +78,22 @@
 
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
-pod 'ADSuyiSDK', '~> 3.3.0.0'								# 主SDK  #必选
-pod 'ADSuyiAdMaterials'											# 素材库  #新增必选
+pod 'ADSuyiSDK', '~> 3.3.0.0'	# 主SDK  #必选
+pod 'ADSuyiAdMaterials'	# 素材库  #新增必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile' # ADMobile  #必选
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt'     	# 优量汇(广点通）
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu'		# baidu
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu'   		# 穿山甲(头条)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/google'   # 谷歌
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi'   # Inmobi
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks'				# 快手(非内容版本，内容与非内容版本不可同时导入)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ksfull'		# 快手(内容版本)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/unity'		# Unity
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg'			# Mobvista(汇量)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/vungle'		# vungle
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/cloudcode'# 云码
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore'  # gromore
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/kj'			  # 铠甲
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt' # 优量汇(广点通）
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu' # baidu
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu' # 穿山甲(头条)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/google' # 谷歌
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi' # Inmobi
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks'	# 快手(非内容版本，内容与非内容版本不可同时导入)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ksfull' # 快手(内容版本)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/unity' # Unity
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg' # Mobvista(汇量)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/vungle'	# vungle
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/cloudcode' # 云码
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore' # gromore
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/kj'	# 铠甲
 
 #对接铠甲平台需要导入指定版本三方库
 pod 'Ads-CN'，'3.7.0.5'
@@ -106,22 +106,22 @@ pod 'ADSuyiLocationManagerGPS'// 含有系统定位代码
 推荐使用导入命令
 
 ```ruby
-pod 'ADSuyiSDK', '~> 3.3.0.0'								# 主SDK  #必选	
-pod 'ADSuyiAdMaterials'											# 素材库  #新增必选
+pod 'ADSuyiSDK', '~> 3.3.0.0'	# 主SDK  #必选	
+pod 'ADSuyiAdMaterials'	# 素材库  #新增必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile'	# ADMobile  #必选
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt'			# 优量汇(广点通)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu'		# baidu
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu'				# 穿山甲(头条)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/google'		# 谷歌
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi'		# Inmobi
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks'				# 快手(非内容版本，内容与非内容版本不可同时导入)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ksfull'		# 快手(内容版本)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/unity'		# Unity
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg'			# Mobvista(汇量)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/vungle'		# vungle
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/cloudcode'    # 云码
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore'    # gromore
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/kj'			# 铠甲
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt' # 优量汇(广点通)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu' # baidu
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu'	# 穿山甲(头条)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/google'	# 谷歌
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi'	# Inmobi
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks' # 快手(非内容版本，内容与非内容版本不可同时导入)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ksfull'	# 快手(内容版本)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/unity' # Unity
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg' # Mobvista(汇量)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/vungle'	# vungle
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/cloudcode' # 云码
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore' # gromore
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/kj'	# 铠甲
 
 #对接铠甲平台需要导入指定版本三方库
 pod 'Ads-CN'，'3.7.0.5'
