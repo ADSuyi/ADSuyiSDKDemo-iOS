@@ -1,6 +1,6 @@
 
 
-# ADmobile ADSuyiSDK iOS接入文档 v3.3.0.07201
+# ADmobile ADSuyiSDK iOS接入文档 v3.3.1.08051
 
 
 
@@ -55,6 +55,7 @@
 | v3.2.2   | 2021-05-25 | admobile合规优化;支持优量汇插屏模板2.0;支持百度模板及自渲染 信息流;新增云码平台;升级第三方SDK（穿山甲，优量汇，快手等）；部分功能优化 |
 | v3.2.3   | 2021-06-18 | 适配Gromore平台;支持快手非内容版本;升级第三方SDK（穿山甲，优量汇，Google，汇量，百度，云码等）；部分功能优化 |
 | v3.3.0   | 2021-07-20 | 新增开屏保底（可选）(支持穿山甲，优量汇，快手，百度，汇量）; 浮窗广告支持百度，快手平台；升级第三方SDK（穿山甲，优量汇，Google，汇量，百度，快手等）；部分功能优化 |
+| v3.3.1   | 2021-08-31 | 升级第三方SDK（穿山甲，优量汇，Google，汇量，百度，快手等）；部分功能优化 |
 
 <div STYLE="page-break-after: always;"></div>
 
@@ -78,21 +79,21 @@
 
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
-pod 'ADSuyiSDK', '~> 3.3.0.0'	# 主SDK  #必选
+pod 'ADSuyiSDK', '~> 3.3.1.0'								# 主SDK  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile' # ADMobile  #必选
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt' # 优量汇(广点通）
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu' # baidu
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu' # 穿山甲(头条)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/google' # 谷歌
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi' # Inmobi
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks'	# 快手(非内容版本，内容与非内容版本不可同时导入)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ksfull' # 快手(内容版本)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/unity' # Unity
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg' # Mobvista(汇量)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/vungle'	# vungle
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/cloudcode' # 云码
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore' # gromore
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/kj'	# 铠甲
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt'     	# 优量汇(广点通）
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu'		# baidu
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu'   		# 穿山甲(头条)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/google'   # 谷歌
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi'   # Inmobi
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks'				# 快手(非内容版本，内容与非内容版本不可同时导入)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ksfull'		# 快手(内容版本)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/unity'		# Unity
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg'			# Mobvista(汇量)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/vungle'		# vungle
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/cloudcode'# 云码
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore'  # gromore
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/kj'			  # 铠甲
 
 #对接铠甲平台需要导入指定版本三方库
 pod 'Ads-CN'，'3.7.0.5'
@@ -105,21 +106,21 @@ pod 'ADSuyiLocationManagerGPS'// 含有系统定位代码
 推荐使用导入命令
 
 ```ruby
-pod 'ADSuyiSDK', '~> 3.3.0.0'	# 主SDK  #必选	
+pod 'ADSuyiSDK', '~> 3.3.1.0'								# 主SDK  #必选	
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile'	# ADMobile  #必选
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt' # 优量汇(广点通)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu' # baidu
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu'	# 穿山甲(头条)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/google'	# 谷歌
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi'	# Inmobi
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks' # 快手(非内容版本，内容与非内容版本不可同时导入)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ksfull'	# 快手(内容版本)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/unity' # Unity
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg' # Mobvista(汇量)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/vungle'	# vungle
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/cloudcode' # 云码
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore' # gromore
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/kj'	# 铠甲
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt'			# 优量汇(广点通)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu'		# baidu
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu'				# 穿山甲(头条)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/google'		# 谷歌
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi'		# Inmobi
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks'				# 快手(非内容版本，内容与非内容版本不可同时导入)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ksfull'		# 快手(内容版本)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/unity'		# Unity
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg'			# Mobvista(汇量)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/vungle'		# vungle
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/cloudcode'    # 云码
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore'    # gromore
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/kj'			# 铠甲
 
 #对接铠甲平台需要导入指定版本三方库
 pod 'Ads-CN'，'3.7.0.5'
@@ -731,7 +732,7 @@ OC请求开屏广告代码示例：
      *该设置仅会在首次加载开屏广告时，SDK会使用开发者传入的参数进行广告请求，同时获取后台配置文件的广告配置信息缓存到本地（首次请求广告平台广告和获取配置信息时并发进行），后续的开屏广告将按照缓存缓存的后台广告位配置顺序进行开屏广告请求。
      *支持穿山甲、优量汇、快手、百度、汇量
      */
-    [self.splashAd setBottomSplashWithSuyiPosid:@"73128265daffdd6a1d" platformListId:@"3827" platform:@"ksad" appId:@"90010" appKey:@"" platformPosid:@"4000000041" renderType:ADSuyiSplashRenderTypeExpressPro];
+    [self.splashAd setBottomSplashWithSuyiPosid:@"73128265daffdd6a1d" platformListId:@"3827" platform:@"ksad" appId:@"90010" appKey:nil platformPosid:@"4000000041" renderType:ADSuyiSplashRenderTypeExpressPro];
     // 7、加载开屏广告
     [self.splashAd loadAndShowInWindow:_window withBottomView:bottomView];
 }

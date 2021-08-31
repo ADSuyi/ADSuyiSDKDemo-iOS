@@ -8,15 +8,18 @@ target 'ADSuyiSDKDemo-iOS' do
   # Comment the next line if you don't want to use dynamic frameworks
 
   # Pods for ADSuyiSDKDemo-iOS
-  pod 'ADSuyiSDK', '~> 3.3.0.0'
-  pod 'ADSuyiAdMaterials'
-  pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt' 
+  pod 'ADSuyiSDK', '~> 3.3.1.0'
+#  pod 'ADSuyiAdMaterials'
+  pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt'
   pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile'
-  pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu'
+#  pod 'ADSuyiSDK/ADSuyiSDKPlatforms/kj'
+#  pod 'Ads-CN','3.7.0.5'
+#  pod 'GDTMobSDK','4.12.81'
   pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu'
-#  pod 'ADSuyiSDK/ADSuyiSDKPlatforms/google'
+  #pod 'ADSuyiSDK/ADSuyiSDKPlatforms/google'
+  pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu'
   pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi'
-  pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks'
+  pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ksfull'
   pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg'
   pod 'ADSuyiSDK/ADSuyiSDKPlatforms/vungle'
   pod 'ADSuyiSDK/ADSuyiSDKPlatforms/unity'
@@ -25,5 +28,7 @@ target 'ADSuyiSDKDemo-iOS' do
 #  pod 'ADSuyiStarRd'
 
   pod 'MJRefresh'
+#  微信探针工具
+  pod 'matrix-wechat'
 
 end
