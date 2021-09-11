@@ -98,6 +98,8 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore'  # gromore
 pod 'ADSuyiLocationManagerGPS'// 含有系统定位代码
 ```
 
+
+
 推荐使用导入命令
 
 ```ruby
@@ -166,22 +168,7 @@ libc++abi.tbd
 
 <div STYLE="page-break-after: always;"></div>
 
-铠甲平台还需要添加依赖库：
-
-```
-CoreMedia.framework
-MobileCoreServices.framework 
-Accelerate.framework
-libresolv.9.tbd
-libc++.tbd
-libsqlite3.tbd
-libbz2.tbd
-libiconv.tbd
-```
-
 <div STYLE="page-break-after: always;"></div>
-
-
 
 
 ## 3.1 工程环境配置
