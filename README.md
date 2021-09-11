@@ -93,11 +93,6 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg'			# Mobvista(汇量)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/vungle'		# vungle
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/cloudcode'# 云码
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore'  # gromore
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/kj'			  # 铠甲
-
-#对接铠甲平台需要导入指定版本三方库
-pod 'Ads-CN'，'3.7.0.5'
-pod 'GDTMobSDK','4.12.81'
 
 // 推荐导入，通过系统定位获取定位信息
 pod 'ADSuyiLocationManagerGPS'// 含有系统定位代码
@@ -120,11 +115,6 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg'			# Mobvista(汇量)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/vungle'		# vungle
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/cloudcode'    # 云码
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore'    # gromore
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/kj'			# 铠甲
-
-#对接铠甲平台需要导入指定版本三方库
-pod 'Ads-CN'，'3.7.0.5'
-pod 'GDTMobSDK','4.12.81'
 ```
 
 <div STYLE="page-break-after: always;"></div>
