@@ -66,7 +66,6 @@
         self.bannerView.scenesId = [SetConfigManager sharedManager].bannerAdScenceId;
     // 4、可先展示再请求
     [self.view addSubview:self.bannerView];
-    self.bannerView.backgroundColor = [UIColor redColor];
     // 5、加载并展示
     [self.bannerView loadAndShowWithError:nil];
 }
