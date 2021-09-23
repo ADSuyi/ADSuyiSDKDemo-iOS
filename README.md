@@ -419,19 +419,6 @@ SKAdNetwork 是接收iOS端营销推广活动归因数据的一种方法。
         <key>SKAdNetworkIdentifier</key>
         <string>hs6bdukanm.skadnetwork</string>
     </dict>
-    // 铠甲平台
-    <dict>
-      <key>SKAdNetworkIdentifier</key> 
-      <string>238da6jt44.skadnetwork</string>
-    </dict> 
-    <dict>
-			<key>SKAdNetworkIdentifier</key>
-			<string>22mmun2rn5.skadnetwork</string> 
-    </dict>
-		<dict>
-			<key>SKAdNetworkIdentifier</key>
-			<string>f7s53z58qe.skadnetwork</string> 
-    </dict>
   </array>
 ```
 
