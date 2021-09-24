@@ -414,13 +414,12 @@ SKAdNetwork 是接收iOS端营销推广活动归因数据的一种方法。
   </array>
 ```
 
-<div STYLE="page-break-after: alway
+<div STYLE="page-break-after: alway;"></div>
 
 ## 4.1 集合SDK的初始化
 
 `申请的appid必须与您的包名一一对应`
 
-ADSuyiSDK初始化
 
 ```obj-c
 // ADSuyiSDK初始化
