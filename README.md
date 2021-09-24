@@ -416,8 +416,6 @@ SKAdNetwork 是接收iOS端营销推广活动归因数据的一种方法。
 
 <div STYLE="page-break-after: alway
 
-
-
 ## 4.1 集合SDK的初始化
 
 `申请的appid必须与您的包名一一对应`
