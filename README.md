@@ -422,10 +422,10 @@ SKAdNetwork 是接收iOS端营销推广活动归因数据的一种方法。
 
 `申请的appid必须与您的包名一一对应`
 
+ADSuyiSDK初始化
+
 ```obj-c
 // ADSuyiSDK初始化
-
-
 [ADSuyiSDK initWithAppId:@"3993370" completionBlock:^(NSError * _Nonnull error) {
     if (error) {
         NSLog(@"SDK 初始化失败：%@", error.localizedDescription);
