@@ -72,6 +72,7 @@
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
 pod 'ADSuyiSDK', '~> 3.3.2.0'								# 主SDK  #必选
+pod 'ADSuyiAdMaterials' #素材库 #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile' # ADMobile  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt'     	# 优量汇(广点通）
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu'		# baidu
@@ -94,6 +95,7 @@ pod 'ADSuyiLocationManagerGPS'// 含有系统定位代码
 
 ```ruby
 pod 'ADSuyiSDK', '~> 3.3.2.0'								# 主SDK  #必选	
+pod 'ADSuyiAdMaterials' #素材库 #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile'	# ADMobile  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt'			# 优量汇(广点通)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu'		# baidu
