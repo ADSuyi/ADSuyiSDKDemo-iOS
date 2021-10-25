@@ -284,8 +284,11 @@ NSLocationAlwaysAndWhenInUseUsageDeion
 }
 // 建议启动App用户同意协议后就获取权限或者请求广告前获取
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // 用户同意协议后获取
-  	[self requestIDFA];
+ 		// 针对iOS15中不弹窗被拒解决方案，权限申请延迟1s即可
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), 			dispatch_get_main_queue(), ^{
+            // 用户同意协议后获取
+  					[self requestIDFA];
+        });
 }
 
 ```
