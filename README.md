@@ -1611,7 +1611,8 @@ OC请求插屏代码示例：
 
 ```
 
-<div STYLE="page-break-after: always;"></div>
+<div STYLE="page-break-after: always;"></div> 
+
 ## 4.7 全屏视频广告 - ADSuyiSDKFullScreenVodAd
 
 类似激励视频，与激励视频不同的是，全屏视频广告在观看一定时长（通常为5s）后即可跳过广告，无需全部观看完成，有视频跳过回调，但是没有激励回调。
