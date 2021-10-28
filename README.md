@@ -284,13 +284,19 @@ NSLocationAlwaysAndWhenInUseUsageDeion
 }
 // 建议启动App用户同意协议后就获取权限或者请求广告前获取
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
- 		// 针对iOS15中不弹窗被拒解决方案，权限申请延迟1s即可
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), 			dispatch_get_main_queue(), ^{
+ 		// 针对iOS15中不弹窗被拒解决方案，方案1：经测试可能无效
+    //dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), 			dispatch_get_main_queue(), ^{
             // 用户同意协议后获取
-  					[self requestIDFA];
-        });
+  					//[self requestIDFA];
+        //});
 }
-
+// 方案2：根据官方文档调整权限申请时机
+// 根据官方开发文档选择在此方法中进行权限申请
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    // 用户同意协议后获取
+  	[self requestIDFA];
+}
+// 建议方案1与2一起使用，可正常通过审核。
 ```
 
 <div STYLE="page-break-after: always;"></div>
