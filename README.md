@@ -1,6 +1,6 @@
 
 
-# ADmobile ADSuyiSDK iOS接入文档 v3.3.2.08251
+# ADmobile ADSuyiSDK iOS接入文档 v3.4.0.10201
 
 
 
@@ -47,7 +47,9 @@
 | v3.2.3   | 2021-06-18 | 适配Gromore平台;支持快手非内容版本;升级第三方SDK（穿山甲，优量汇，Google，汇量，百度，云码等）；部分功能优化 |
 | v3.3.0   | 2021-07-20 | 新增开屏保底（可选）(支持穿山甲，优量汇，快手，百度，汇量）; 浮窗广告支持百度，快手平台；升级第三方SDK（穿山甲，优量汇，Google，汇量，百度，快手等）；部分功能优化 |
 | v3.3.1   | 2021-08-31 | 升级第三方SDK（穿山甲，优量汇，Google，汇量，百度，快手等）；部分功能优化 |
-| v3.3.2   | 2021-09-23 |新增开屏热区及跳过按钮控制开关；升级第三方SDK（穿山甲，优量汇，Vungle，汇量，百度，快手等）；部分功能优化 |
+| v3.3.2   | 2021-09-23 | 新增开屏热区及跳过按钮控制开关；升级第三方SDK（穿山甲，优量汇，Vungle，汇量，百度，快手等）；部分功能优化 |
+| v3.4.0   | 2021-11-04 | 新增开屏自定义跳过按钮位置调整(支持穿山甲,admobile)；新增快手插屏广告；升级第三方SDK（穿山甲，优量汇，Vungle，汇量，Google，快手等）；部分功能优化 |
+
 
 <div STYLE="page-break-after: always;"></div>
 
@@ -71,44 +73,40 @@
 
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
-pod 'ADSuyiSDK', '~> 3.3.2.0'								# 主SDK  #必选
-pod 'ADSuyiAdMaterials' #素材库 #必选
+pod 'ADSuyiSDK','~> 3.4.0.0' # 主SDK 必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile' # ADMobile  #必选
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt'     	# 优量汇(广点通）
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu'		# baidu
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu'   		# 穿山甲(头条)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/google'   # 谷歌
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi'   # Inmobi
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks'				# 快手(非内容版本，内容与非内容版本不可同时导入)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ksfull'		# 快手(内容版本)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/unity'		# Unity
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg'			# Mobvista(汇量)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/vungle'		# vungle
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/cloudcode'# 云码
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore'  # gromore
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt' # 优量汇(广点通）
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu' # baidu
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu' # 穿山甲(头条)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/google' # 谷歌
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi' # Inmobi
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks' # 快手(非内容版本，内容与非内容版本不可同时导入)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ksfull' # 快手(内容版本)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/unity' # Unity
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg'	 # Mobvista(汇量)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/vungle' # vungle
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/cloudcode' # 云码
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore' # gromore
 
-// 推荐导入，通过系统定位获取定位信息
-pod 'ADSuyiLocationManagerGPS'// 含有系统定位代码
 ```
 
 推荐使用导入命令
 
 ```ruby
-pod 'ADSuyiSDK', '~> 3.3.2.0'								# 主SDK  #必选	
-pod 'ADSuyiAdMaterials' #素材库 #必选
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile'	# ADMobile  #必选
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt'			# 优量汇(广点通)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu'		# baidu
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu'				# 穿山甲(头条)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/google'		# 谷歌
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi'		# Inmobi
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks'				# 快手(非内容版本，内容与非内容版本不可同时导入)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ksfull'		# 快手(内容版本)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/unity'		# Unity
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg'			# Mobvista(汇量)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/vungle'		# vungle
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/cloudcode'    # 云码
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore'    # gromore
+pod 'ADSuyiSDK', '~> 3.4.0.0' # 主SDK  #必选	
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile' # ADMobile  #必选
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt'	 # 优量汇(广点通)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu' # baidu
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu'	# 穿山甲(头条)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/google'	# 谷歌
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi'	# Inmobi
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks'	# 快手(非内容版本，内容与非内容版本不可同时导入)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ksfull'	# 快手(内容版本)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/unity' # Unity
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg'	 # Mobvista(汇量)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/vungle' # vungle
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/cloudcode' # 云码
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore' # gromore
 ```
 
 <div STYLE="page-break-after: always;"></div>
@@ -137,7 +135,7 @@ CoreMedia.framework
 
 头条还需要添加依赖库：
 
-```
+```obj-c
 Accelerate.framework
 AudioToolbox.framework
 CoreGraphics.framework
@@ -250,7 +248,7 @@ NSLocationAlwaysAndWhenInUseUsageDeion
 由于iOS14中对于权限和隐私内容有一定程度的修改，而且和广告业务关系较大，请按照如下步骤适配，如果未适配。不会导致运行异常或者崩溃等情况，但是会一定程度上影响广告收入。敬请知悉。
 
 1. 应用编译环境升级至 Xcode 12.0 及以上版本；
-2. 升级ADSuyiSDK 3.0.8及以上版本；
+2. 升级ADSuyiSDK 3.1.5及以上版本；
 3. 设置SKAdNetwork和IDFA权限；
 
 
@@ -510,6 +508,11 @@ viewControllerForPresentingModalView
 @property (nonatomic, strong, null_resettable) UIView<ADSuyiAdapterSplashSkipViewProtocol> *skipView;
 
 /**
+ 是否使用右下角跳过按钮，默认为右上角（仅针对穿山甲<头条>平台生效）
+ */
+@property (nonatomic, assign) BOOL needBottomSkipButton;
+
+/**
 设置保底开屏 （可选）
 （App初次启动及suyiSDK未初始化状态保证开屏填充，支持平台：穿山甲、优量汇、快手、百度）
 @param suyiId suyi平台广告源id
@@ -666,6 +669,8 @@ OC请求开屏广告代码示例：
     self.splashAd.controller = _window.rootViewController;
     // 2、设置开屏的广告位id
     self.splashAd.posId = @"d11c2ef29dcb7e6e62";
+   // 3、设置是否使用右下角跳过按钮，默认为右上角（仅针对穿山甲<头条>平台生效）
+   self.splashAd.needBottomSkipButton = YES;
     /**
     开屏请求总超时时间:所有平台轮询的请求等待总时长（不包括图片渲染时间），单位秒，推荐设置为4s，最小值为3s
     开屏各平台分配逻辑:(目前只有开屏需要分配时间，并且理论上分配给到各平台的超时时间不会完全耗尽)
@@ -673,10 +678,10 @@ OC请求开屏广告代码示例：
     2、tolerateTimeout>=5:轮询首位平台的超时时间为(tolerateTimeout-2)s，次位为3s，如果后续还有平台统一为2s;
     */
     self.splashAd.tolerateTimeout = 4;
-    // 3、设置默认启动图(一般设置启动图的平铺颜色为背景颜色，使得视觉效果更加平滑)
+    // 4、设置默认启动图(一般设置启动图的平铺颜色为背景颜色，使得视觉效果更加平滑)
     self.splashAd.backgroundColor = [UIColor adsy_getColorWithImage:[UIImage imageNamed:@"750x1334.png"] withNewSize:[UIScreen mainScreen].bounds.size];
     
-    // 4、开屏广告机型适配
+    // 5、开屏广告机型适配
     CGFloat bottomViewHeight;
     if (kADSYCurveScreen) { // 刘海屏
         bottomViewHeight = [UIScreen mainScreen].bounds.size.height * 0.15;
@@ -684,14 +689,14 @@ OC请求开屏广告代码示例：
         bottomViewHeight = [UIScreen mainScreen].bounds.size.height - [UIScreen mainScreen].bounds.size.width * (960 / 640.0);
     }
     
-    // 5、底部视图设置，非必选项
+    // 6、底部视图设置，非必选项
     UIView *bottomView = [[UIView alloc] init];
     bottomView.backgroundColor = [UIColor whiteColor];
     bottomView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, bottomViewHeight);
     UIImageView *logoImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"ADMob_Logo.png"]];
     logoImageView.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width-135)/2, (bottomViewHeight-46)/2, 135, 46);
     [bottomView addSubview:logoImageView];
-  // 6、设置开屏保底逻辑（可选）
+  // 7、设置开屏保底逻辑（可选）
     /**
      *功能说明：App在首次启动时，需要先请求获取广告位配置文件后，然后再去请求开屏广告，也就是首次加载开屏广告时需要两次串行网络请求，因此很容易因超时导致开屏广告展示失败。
      *解决方案：为避免开屏超时问题，开放此设置给开发者，开发者可以根据实际需求选择一家广告平台，通过API接口将必需参数传递给Suyi聚合SDK。（该设置只能指定一家广告平台，并且首次启动时只会请求该平台的广告，但App首次开屏广告将不受ADmobile后台控制，包括下载提示，广告位关闭。）
@@ -699,11 +704,11 @@ OC请求开屏广告代码示例：
      *支持穿山甲、优量汇、快手、百度、汇量
      */
     [self.splashAd setBottomSplashWithSuyiPosid:@"73128265daffdd6a1d" platformListId:@"3827" platform:@"ksad" appId:@"90010" appKey:nil platformPosid:@"4000000041" renderType:ADSuyiSplashRenderTypeExpressPro];
-    // 7、加载开屏广告
+    // 8、加载开屏广告
     [self.splashAd loadAndShowInWindow:_window withBottomView:bottomView];
 }
 
-// 8、代理回调
+// 9、代理回调
 #pragma mark - ADSuyiSDKSplashAdDelegate
 /**
  开屏展现成功
@@ -1611,8 +1616,7 @@ OC请求插屏代码示例：
 
 ```
 
-<div STYLE="page-break-after: always;"></div> 
-
+<div STYLE="page-break-after: always;"></div>
 ## 4.7 全屏视频广告 - ADSuyiSDKFullScreenVodAd
 
 类似激励视频，与激励视频不同的是，全屏视频广告在观看一定时长（通常为5s）后即可跳过广告，无需全部观看完成，有视频跳过回调，但是没有激励回调。
@@ -2138,9 +2142,9 @@ OC请求沉浸式视频代码示例：
 
 ## 作者
 
-huacai@admobile.top
-
 bale@admobile.top
+
+xianggua@admobile.top
 
 ## 商务合作
 
