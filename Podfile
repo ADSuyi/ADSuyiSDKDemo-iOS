@@ -12,7 +12,6 @@ target 'ADSuyiSDKDemo-iOS' do
   pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt'
   pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile'
   pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu'
-#  pod 'ADSuyiSDK/ADSuyiSDKPlatforms/google'
   pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu'
   pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi'
 #  pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ksfull'#快手内容版本

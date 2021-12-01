@@ -78,7 +78,6 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile' # ADMobile  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt' # 优量汇(广点通）
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu' # baidu
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu' # 穿山甲(头条)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/google' # 谷歌
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi' # Inmobi
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks' # 快手(非内容版本，内容与非内容版本不可同时导入)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ksfull' # 快手(内容版本)
@@ -98,7 +97,6 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile' # ADMobile  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt'	 # 优量汇(广点通)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu' # baidu
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu'	# 穿山甲(头条)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/google'	# 谷歌
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi'	# Inmobi
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks'	# 快手(非内容版本，内容与非内容版本不可同时导入)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ksfull'	# 快手(内容版本)
