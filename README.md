@@ -41,14 +41,14 @@
 | 文档版本 | 修订日期   | 修订说明                                                     |
 | -------- | ---------- | ------------------------------------------------------------ |
 | v3.1.5   | 2021-03-05 | 部分平台激励视频支持服务端验证;升级第三方SDK（优量汇、穿山甲等） |
-| v3.2.0   | 2021-03-31 | admobile支持模板信息流;支持优量汇模板2.0激励视频;支持穿山甲新版插屏;升级第三方SDK（穿山甲,汇量,Google,Unity等） |
-| v3.2.1   | 2021-04-22 | 升级第三方SDK（穿山甲，百度，优量汇，Google，汇量，vungle等），部分功能优化 |
+| v3.2.0   | 2021-03-31 | admobile支持模板信息流;支持优量汇模板2.0激励视频;支持穿山甲新版插屏;升级第三方SDK（穿山甲,汇量,Unity等） |
+| v3.2.1   | 2021-04-22 | 升级第三方SDK（穿山甲，百度，优量汇，汇量等），部分功能优化 |
 | v3.2.2   | 2021-05-25 | admobile合规优化;支持优量汇插屏模板2.0;支持百度模板及自渲染 信息流;新增云码平台;升级第三方SDK（穿山甲，优量汇，快手等）；部分功能优化 |
-| v3.2.3   | 2021-06-18 | 适配Gromore平台;支持快手非内容版本;升级第三方SDK（穿山甲，优量汇，Google，汇量，百度，云码等）；部分功能优化 |
-| v3.3.0   | 2021-07-20 | 新增开屏保底（可选）(支持穿山甲，优量汇，快手，百度，汇量）; 浮窗广告支持百度，快手平台；升级第三方SDK（穿山甲，优量汇，Google，汇量，百度，快手等）；部分功能优化 |
-| v3.3.1   | 2021-08-31 | 升级第三方SDK（穿山甲，优量汇，Google，汇量，百度，快手等）；部分功能优化 |
-| v3.3.2   | 2021-09-23 | 新增开屏热区及跳过按钮控制开关；升级第三方SDK（穿山甲，优量汇，Vungle，汇量，百度，快手等）；部分功能优化 |
-| v3.4.0   | 2021-11-04 | 新增开屏自定义跳过按钮位置调整(支持穿山甲,admobile)；新增快手插屏广告；升级第三方SDK（穿山甲，优量汇，Vungle，汇量，Google，快手等）；部分功能优化 |
+| v3.2.3   | 2021-06-18 | 适配Gromore平台;支持快手非内容版本;升级第三方SDK（穿山甲，优量汇，汇量，百度，云码等）；部分功能优化 |
+| v3.3.0   | 2021-07-20 | 新增开屏保底（可选）(支持穿山甲，优量汇，快手，百度，汇量）; 浮窗广告支持百度，快手平台；升级第三方SDK（穿山甲，优量汇，汇量，百度，快手等）；部分功能优化 |
+| v3.3.1   | 2021-08-31 | 升级第三方SDK（穿山甲，优量汇，汇量，百度，快手等）；部分功能优化 |
+| v3.3.2   | 2021-09-23 | 新增开屏热区及跳过按钮控制开关；升级第三方SDK（穿山甲，优量汇，汇量，百度，快手等）；部分功能优化 |
+| v3.4.0   | 2021-11-04 | 新增开屏自定义跳过按钮位置调整(支持穿山甲,admobile)；新增快手插屏广告；升级第三方SDK（穿山甲，优量汇，汇量，快手等）；部分功能优化 |
 
 
 <div STYLE="page-break-after: always;"></div>
@@ -76,14 +76,12 @@
 pod 'ADSuyiSDK','~> 3.4.0.0' # 主SDK 必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile' # ADMobile  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt' # 优量汇(广点通）
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu' # baidu
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu' # 百度
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu' # 穿山甲(头条)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi' # Inmobi
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks' # 快手(非内容版本，内容与非内容版本不可同时导入)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ksfull' # 快手(内容版本)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/unity' # Unity
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg'	 # Mobvista(汇量)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/vungle' # vungle
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/cloudcode' # 云码
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore' # gromore
 
@@ -95,14 +93,12 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore' # gromore
 pod 'ADSuyiSDK', '~> 3.4.0.0' # 主SDK  #必选	
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile' # ADMobile  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt'	 # 优量汇(广点通)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu' # baidu
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu' # 百度
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu'	# 穿山甲(头条)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi'	# Inmobi
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks'	# 快手(非内容版本，内容与非内容版本不可同时导入)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ksfull'	# 快手(内容版本)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/unity' # Unity
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg'	 # Mobvista(汇量)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/vungle' # vungle
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/cloudcode' # 云码
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore' # gromore
 ```

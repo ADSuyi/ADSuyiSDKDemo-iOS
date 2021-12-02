@@ -8,43 +8,6 @@
 #import "PlatformTableViewController.h"
 #import "SetConfigManager.h"
 #import <ADSuyiSDK/ADSuyiSDK.h>
-
-@interface ADSuyiAdapterCommonClassLoader : NSObject
-
-+ (instancetype)sharedInstance;
-
-@property (nonatomic, strong) NSMutableDictionary<NSString *, Class> *routers;
-
-@end
-
-@interface ADSuyiAdapterSplashClassLoader : ADSuyiAdapterCommonClassLoader
-
-@end
-
-@interface ADSuyiAdapterBannerClassLoader : ADSuyiAdapterCommonClassLoader
-
-@end
-
-@interface ADSuyiAdapterRewardVodClassLoader : ADSuyiAdapterCommonClassLoader
-
-@end
-
-@interface ADSuyiAdapterInterstitialClassLoader : ADSuyiAdapterCommonClassLoader
-
-@end
-
-@interface ADSuyiAdapterDrawvodClassLoader : ADSuyiAdapterCommonClassLoader
-
-@end
-
-@interface ADSuyiAdapterFullScreenVodClassLoader : ADSuyiAdapterCommonClassLoader
-
-@end
-
-@interface ADSuyiAdapterNativeClassLoader : ADSuyiAdapterCommonClassLoader
-
-@end
-
 @interface PlatformTableViewController ()
 @property (nonatomic, strong) NSArray *platformArray;
 @property(nonatomic ,assign) NSInteger selectIndex;
@@ -58,7 +21,7 @@
     self.title = @"广告平台选择";
     self.tableView.backgroundColor = [UIColor colorWithRed:225/255.0 green:233/255.0 blue:239/255.0 alpha:1];
     self.tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
-    self.platformArray = @[@"默认所有",@"admobile",@"优量汇",@"穿山甲",@"百度",@"汇量",@"快手",@"inmobi",@"芒果",@"讯飞",@"unity",@"vungle",@"yunma"];
+    self.platformArray = @[@"默认所有",@"admobile",@"优量汇",@"穿山甲",@"百度",@"汇量",@"快手",@"inmobi",@"云码"];
     self.platformDic = @{
         @"admobile" :@"admobile",
         @"广点通":@"gdt",
@@ -67,10 +30,7 @@
         @"汇量":@"mintegral",
         @"快手":@"ksad",
         @"inmobi":@"inmobi",
-        @"芒果":@"mgad",
-        @"讯飞":@"ifly",
-        @"unity":@"unity",
-        @"vungle":@"vungle"
+        @"云码":@"yunma"
     };
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -79,13 +39,16 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+#warning Incomplete implementation, return the number of sections
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+#warning Incomplete implementation, return the number of rows
     return self.platformArray.count;
 }
 
@@ -136,15 +99,6 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     if (_selectIndex == 0) {
-        [self resetClassLoaderArr:@[
-            ADSuyiAdapterSplashClassLoader.sharedInstance,
-            ADSuyiAdapterBannerClassLoader.sharedInstance,
-            ADSuyiAdapterNativeClassLoader.sharedInstance,
-            ADSuyiAdapterDrawvodClassLoader.sharedInstance,
-            ADSuyiAdapterFullScreenVodClassLoader.sharedInstance,
-            ADSuyiAdapterRewardVodClassLoader.sharedInstance,
-            ADSuyiAdapterInterstitialClassLoader.sharedInstance
-        ]];
         return;
     }
     if (self.selectedBlock) {
@@ -153,21 +107,6 @@
     [SetConfigManager sharedManager].platform = self.platformArray[_selectIndex];
     [ADSuyiSDK setOnlyPlatform:self.platformDic[self.platformArray[_selectIndex]]];
     
-}
-
-- (void)resetClassLoaderArr:(NSArray<ADSuyiAdapterCommonClassLoader *>*)arr {
-    static dispatch_once_t onceToken;
-    static NSMapTable<ADSuyiAdapterCommonClassLoader*, NSMutableDictionary*> *_cache;
-    dispatch_once(&onceToken, ^{
-        _cache = [NSMapTable new];
-        for (ADSuyiAdapterCommonClassLoader *loader in arr) {
-            [_cache setObject:loader.routers.mutableCopy forKey:loader];
-        }
-    });
-    
-    for (ADSuyiAdapterCommonClassLoader *loader in arr) {
-        loader.routers = [[_cache objectForKey:loader] mutableCopy];
-    }
 }
 
 /*
@@ -196,7 +135,7 @@
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }
 }
 */
 
