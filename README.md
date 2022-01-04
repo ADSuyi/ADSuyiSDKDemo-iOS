@@ -1,6 +1,6 @@
 
 
-# ADmobile ADSuyiSDK iOS接入文档 v3.4.1.11161
+# ADmobile ADSuyiSDK iOS接入文档 v3.4.2.12161
 
 
 
@@ -50,6 +50,7 @@
 | v3.3.2   | 2021-09-23 | 新增开屏热区及跳过按钮控制开关；升级第三方SDK（穿山甲，优量汇，汇量，百度，快手等）；部分功能优化 |
 | v3.4.0   | 2021-11-04 | 新增开屏自定义跳过按钮位置调整(支持穿山甲,admobile)；新增快手插屏广告；升级第三方SDK（穿山甲，优量汇，汇量，快手等）；部分功能优化 |
 | v3.4.1   | 2021-12-09 | 新增百度插屏广告支持；穿山甲，优量汇插屏全屏视频合并加载接口；升级第三方SDK（穿山甲，优量汇，汇量，百度，Gromore等）；部分功能优化 |
+| v3.4.2  | 2022-01-04 | Admobile插屏样式修改；升级第三方SDK（穿山甲，优量汇，快手，百度，Gromore等）；部分功能优化 |
 
 
 <div STYLE="page-break-after: always;"></div>
@@ -74,7 +75,7 @@
 
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
-pod 'ADSuyiSDK','~> 3.4.1.0' # 主SDK 必选
+pod 'ADSuyiSDK','~> 3.4.2.0' # 主SDK 必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile' # ADMobile  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt' # 优量汇(广点通）
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu' # 百度
@@ -91,7 +92,7 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore' # gromore
 推荐使用导入命令
 
 ```ruby
-pod 'ADSuyiSDK', '~> 3.4.1.0' # 主SDK  #必选	
+pod 'ADSuyiSDK', '~> 3.4.2.0' # 主SDK  #必选	
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile' # ADMobile  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt'	 # 优量汇(广点通)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu' # 百度
@@ -109,7 +110,7 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore' # gromore
 
 ## 2.2 手动导入SDK方式
 
-[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_34111161_9516934a6dea84d152c85aec22c6b6dc.zip)下载各SDK拖入到工程中
+[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_34212161_1c36319711a0b0d25ab3be7a60f072fb.zip)下载各SDK拖入到工程中
 
 手动方式导入,需要添加如下依赖库:
 
@@ -323,20 +324,6 @@ SKAdNetwork 是接收iOS端营销推广活动归因数据的一种方法。
       <key>SKAdNetworkIdentifier</key>
       <string>f7s53z58qe.skadnetwork</string>
     </dict>
-    // 谷歌广告（ADSuyiGoogle）
-    <dict>
-      <key>SKAdNetworkIdentifier</key>
-      <string>cstr6suwn9.skadnetwork</string>
-    </dict>
-    // Unity广告（ADSuyiUnity）
-    <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>4DZT52R2T5.skadnetwork</string>
-    </dict>
-    <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>bvpn9ufa9b.skadnetwork</string>
-    </dict>
     // 汇量广告（ADSuyiMTG）
     <dict>
       <key>SKAdNetworkIdentifier</key>
@@ -427,7 +414,7 @@ SKAdNetwork 是接收iOS端营销推广活动归因数据的一种方法。
 
 ```obj-c
 // ADSuyiSDK初始化
-[ADSuyiSDK initWithAppId:@"3993370" completionBlock:^(NSError * _Nonnull error) {
+[ADSuyiSDK initWithAppId:@"3427764" completionBlock:^(NSError * _Nonnull error) {
     if (error) {
         NSLog(@"SDK 初始化失败：%@", error.localizedDescription);
     }
