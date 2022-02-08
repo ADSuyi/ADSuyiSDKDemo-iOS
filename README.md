@@ -113,7 +113,7 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore' # gromore
 
 ## 2.2 手动导入SDK方式
 
-[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_34212161_1c36319711a0b0d25ab3be7a60f072fb.zip)下载各SDK拖入到工程中
+[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_35001161_29eb8bad6da88cc7f017788dfe6262a4.zip)下载各SDK拖入到工程中
 
 手动方式导入,需要添加如下依赖库:
 
@@ -1447,6 +1447,8 @@ OC请求激励视频代码示例：
 ## 4.6 插屏广告 - ADSuyiSDKIntertitialAd
 
 插屏广告是移动广告的一种常见形式，在应用流程中弹出，当应用展示插屏广告时，用户可以选择点击广告，访问其目标网址，也可以将其关闭并返回应用。在应用执行流程的自然停顿点，适合投放这类广告。
+
+<font color='red'>**注意：穿山甲插屏广告禁止App启动即请求，建议在首页控制器viewDidLoad方法中2~3s后请求展示，否则会有明显数据影响，将会存在约50%数据异常。** </font>
 
 `OC请求插屏广告代码示例：`[[插屏广告代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS/blob/master/ADSuyiSDKDemo-iOS/SuyiAds/InterstitialAd/AdSuyiInterstitialViewController.m)
 
