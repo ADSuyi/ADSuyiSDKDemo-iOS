@@ -98,15 +98,17 @@
     fvc.tabBarItem.title = @"测试";
 
     EcookHomeViewController *evc = [EcookHomeViewController new];
-    evc.showBackButton = NO;
+    evc.showBackButton = YES;
+    evc.tabBarItem.title = @"菜谱";
 
-    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:evc];
-    nvc.navigationBarHidden = YES;
-    nvc.tabBarItem.title = @"菜谱";
-    nvc.hidesBottomBarWhenPushed = YES;
-    tc.viewControllers = @[fvc, nvc];
-    
-    [UIApplication sharedApplication].keyWindow.rootViewController = tc;
+//    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:evc];
+//    nvc.navigationBarHidden = YES;
+//    nvc.tabBarItem.title = @"菜谱";
+//    nvc.hidesBottomBarWhenPushed = YES;
+    tc.viewControllers = @[evc,fvc];
+    self.navigationController.navigationBarHidden = YES;
+    [self.navigationController pushViewController:tc animated:YES];
+//    [UIApplication sharedApplication].keyWindow.rootViewController = tc;
 }
 
 - (void)novelBtnClick {
