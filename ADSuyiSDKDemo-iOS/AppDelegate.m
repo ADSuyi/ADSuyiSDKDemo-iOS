@@ -17,6 +17,8 @@
 #import <AppTrackingTransparency/AppTrackingTransparency.h>
 #import <AdSupport/AdSupport.h>
 #import "NavigationViewController.h"
+
+#import <EcookSDK/EcookSDKManager.h>
 // 支持广点通开屏广告v+
 #define SUPPORT_SPLASH_ZOOMOUT 1
 
@@ -296,6 +298,7 @@ ADSuyiSDKSplashAdDelegate
     }else {
         [self initADSuyiSDK];
     }
+    [self initEcookSDK];
 }
 - (void)initADSuyiSDK {
     // 设置日志输出等级
@@ -312,6 +315,16 @@ ADSuyiSDKSplashAdDelegate
      */
     [self loadSplashAd];
     
+}
+-(void)initEcookSDK{
+    [EcookSDKManager initWithConfig:@{
+    @"appid":@"100602",
+    @"appkey":@"29e1eb7f0710e44be02694e66f4e9272"}];
+
+    // 设置菜谱SDK内广告位id（仅支持插屏，横幅，信息流广告）
+    EcookSDKManager.intertitialAdPosId = @"9535af29514e548fe0";//插屏广告位
+    EcookSDKManager.bannerAdPosId = @"9ca1e179e38ca5a35c";//横幅广告位
+    EcookSDKManager.nativeAdPosId = @"e9eaffb6b9d97cd813";//原生信息流广告位
 }
 
 #pragma mark -- helper
