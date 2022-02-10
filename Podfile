@@ -18,6 +18,8 @@ target 'ADSuyiSDKDemo-iOS' do
   pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks'#快手简版
   pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg'
   pod 'ADSuyiSDK/ADSuyiSDKPlatforms/cloudcode'
+  
+  pod 'EcookSDK'
 #  小说SDK
 #  pod 'ADSuyiStarRd'
 

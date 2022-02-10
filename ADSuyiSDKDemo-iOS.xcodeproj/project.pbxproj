@@ -38,6 +38,7 @@
 		820EC7E6254A9F77001C7C88 /* BlankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 820EC7E3254A9F77001C7C88 /* BlankViewController.m */; };
 		820EC7E7254A9F77001C7C88 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 820EC7E4254A9F77001C7C88 /* TableViewController.m */; };
 		824AD25525C11A5200BD1105 /* ADSuyiGroupAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 824AD25425C11A5200BD1105 /* ADSuyiGroupAdViewController.m */; };
+		BAB1330727B4B0640099BCED /* EcookSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB1330627B4B0640099BCED /* EcookSDK.xcframework */; };
 		BF279CDA249B134700C38704 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF279CD9249B134700C38704 /* LaunchScreen.storyboard */; };
 		BFEA086D247E4CCC001815E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA086C247E4CCC001815E3 /* AppDelegate.m */; };
 		BFEA0873247E4CCC001815E3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA0872247E4CCC001815E3 /* ViewController.m */; };
@@ -104,6 +105,7 @@
 		820EC7E5254A9F77001C7C88 /* BlankViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlankViewController.h; sourceTree = "<group>"; };
 		824AD25325C11A5200BD1105 /* ADSuyiGroupAdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADSuyiGroupAdViewController.h; sourceTree = "<group>"; };
 		824AD25425C11A5200BD1105 /* ADSuyiGroupAdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADSuyiGroupAdViewController.m; sourceTree = "<group>"; };
+		BAB1330627B4B0640099BCED /* EcookSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = EcookSDK.xcframework; path = Pods/EcookSDK/EcookSDK/Classes/EcookSDK.xcframework; sourceTree = "<group>"; };
 		BF279CD9249B134700C38704 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFEA0868247E4CCC001815E3 /* ADSuyiSDKDemo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ADSuyiSDKDemo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEA086B247E4CCC001815E3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				6012F9759F8BCC5230C3F3D1 /* libPods-ADSuyiSDKDemo-iOS.a in Frameworks */,
 				03B70B8F26214B9100D699F1 /* (null) in Frameworks */,
 				03B70B8B26214B9100D699F1 /* (null) in Frameworks */,
+				BAB1330727B4B0640099BCED /* EcookSDK.xcframework in Frameworks */,
 				82085D7825E8937500FCE89F /* AppTrackingTransparency.framework in Frameworks */,
 				03F0CF77264E6DEB00B0DF18 /* libMJRefresh.a in Frameworks */,
 				03B70B8926214B9100D699F1 /* (null) in Frameworks */,
@@ -222,6 +225,7 @@
 		66890375DE678EA9A920BD13 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BAB1330627B4B0640099BCED /* EcookSDK.xcframework */,
 				03F0CF76264E6DEB00B0DF18 /* libMJRefresh.a */,
 				03F0CF62264E6DCF00B0DF18 /* ADSuyiSDK.xcframework */,
 				82085D7925E8937C00FCE89F /* AdSupport.framework */,
