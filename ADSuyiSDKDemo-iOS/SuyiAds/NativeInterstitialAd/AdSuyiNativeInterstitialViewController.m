@@ -9,12 +9,15 @@
 #import "AdSuyiNativeInterstitialViewController.h"
 #import <ADSuyiSDK/ADSuyiSDKNativeAd.h>
 #import <ADSuyiKit/ADSuyiKit.h>
+#import "UIView+Toast.h"
 @interface AdSuyiNativeInterstitialViewController ()<ADSuyiSDKNativeAdDelegate>
 @property (nonatomic, strong) ADSuyiSDKNativeAd *nativeAd;
 
 @property (nonatomic, strong) UIButton *closeBtn;
 
 @property (nonatomic, strong) UIView *backgroundView;
+
+@property (nonatomic, strong) UIView *adBgView;
 
 @end
 
@@ -37,7 +40,7 @@
     if (!_closeBtn) {
         _closeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_closeBtn setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
-        [_closeBtn addTarget:self action:@selector(closeAd) forControlEvents:UIControlEventTouchUpInside];
+        [_closeBtn addTarget:self action:@selector(closeAdAction) forControlEvents:UIControlEventTouchUpInside];
         
     }
     return _closeBtn;
@@ -47,25 +50,44 @@
         _backgroundView = [UIView new];
         _backgroundView.frame = UIScreen.mainScreen.bounds;
         _backgroundView.backgroundColor = [UIColor.blackColor colorWithAlphaComponent:0.7];
+        _backgroundView.userInteractionEnabled = YES;
     }
     return _backgroundView;
 }
 
+//- (UIView *)adBgView {
+//    if (!_adBgView) {
+//        _adBgView = [UIView new];
+//        _adBgView.backgroundColor = UIColor.clearColor;
+//        _adBgView.userInteractionEnabled = YES;
+//    }
+//    return _adBgView;
+//}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"信息流插屏";
-    // Do any additional setup after loading the view.
-    self.view.backgroundColor = UIColor.whiteColor;
-    [self loadNativeAd];
+    [UIView appearance].exclusiveTouch = YES;
+    self.view.backgroundColor = [UIColor colorWithRed:225/255.0 green:233/255.0 blue:239/255.0 alpha:1];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    UIButton *loadBtn = [UIButton new];
+    loadBtn.layer.cornerRadius = 10;
+    loadBtn.clipsToBounds = YES;
+    loadBtn.backgroundColor = UIColor.whiteColor;
+    [loadBtn setTitle:@"加载信息流插屏" forState:(UIControlStateNormal)];
+    [loadBtn setTitleColor:UIColor.blackColor forState:(UIControlStateNormal)];
+    loadBtn.titleLabel.font = [UIFont systemFontOfSize:18];
+    [self.view addSubview:loadBtn];
+    loadBtn.frame = CGRectMake(30, UIScreen.mainScreen.bounds.size.height/2-60, UIScreen.mainScreen.bounds.size.width-60, 60);
+    [loadBtn addTarget:self action:@selector(loadNativeAd) forControlEvents:(UIControlEventTouchUpInside)];
     
 }
-
 - (void)loadNativeAd {
     [self.nativeAd load:1];
 }
 
-- (void)closeAd {
+- (void)closeAdAction {
     [self.backgroundView removeFromSuperview];
+    [self.adBgView removeFromSuperview];
 }
 
 #pragma mark - ADSuyiNativeAdDelegate
@@ -95,7 +117,8 @@
 
 - (void)adsy_nativeAdFailToLoad:(ADSuyiSDKNativeAd *)nativeAd
                      errorModel:(ADSuyiAdapterErrorDefine *)errorModel {
-    
+    [self.view makeToast:@"广告加载失败"];
+
 }
 
 - (void)adsy_nativeAdViewRenderOrRegistSuccess:(UIView<ADSuyiAdapterNativeAdViewDelegate> *)adView {
@@ -117,75 +140,30 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [adView adsy_unRegistView];
     });
-    [self closeAd];
+    [self closeAdAction];
 }
 
 - (void)adsy_nativeAdExposure:(ADSuyiSDKNativeAd *)nativeAd
                        adView:(__kindof UIView<ADSuyiAdapterNativeAdViewDelegate> *)adView {
     
 }
-
-- (CGSize)getImageSizeWithURL:(id)URL{
-    NSURL * url = nil;
-    if ([URL isKindOfClass:[NSURL class]]) {
-        url = URL;
-    }
-    if ([URL isKindOfClass:[NSString class]]) {
-        url = [NSURL URLWithString:URL];
-    }
-    if (!URL) {
-        return CGSizeZero;
-    }
-    CGImageSourceRef imageSourceRef =     CGImageSourceCreateWithURL((CFURLRef)url, NULL);
-    CGFloat width = 0, height = 0;
-    if (imageSourceRef) {
-        CFDictionaryRef imageProperties = CGImageSourceCopyPropertiesAtIndex(imageSourceRef, 0, NULL);
-      if (imageProperties != NULL) {
-          CFNumberRef widthNumberRef = CFDictionaryGetValue(imageProperties, kCGImagePropertyPixelWidth);
-          if (widthNumberRef != NULL) {
-              CFNumberGetValue(widthNumberRef, kCFNumberFloat64Type, &width);
-          }
-          CFNumberRef heightNumberRef = CFDictionaryGetValue(imageProperties, kCGImagePropertyPixelHeight);
-          if (heightNumberRef != NULL) {
-            CFNumberGetValue(heightNumberRef, kCFNumberFloat64Type, &height);
-        }
-        CFRelease(imageProperties);
-    }
-    CFRelease(imageSourceRef);
-    }
-    return CGSizeMake(width, height);
-}
 - (void)setUpUnifiedSplahAdView:(UIView<ADSuyiAdapterNativeAdViewDelegate> *)adView {
+    self.adBgView = [UIView new];
+    self.adBgView.userInteractionEnabled = YES;
+    self.adBgView.layer.cornerRadius = 5;
+    self.adBgView.backgroundColor = UIColor.whiteColor;
+    self.adBgView.clipsToBounds = YES;
+    
+    
     // 设计的adView实际大小，其中宽度和高度可以自己根据自己的需求设置
-    CGFloat adWidth = self.backgroundView.frame.size.width;
-    CGFloat adHeight = self.backgroundView.frame.size.height;
-    CGFloat adViewY = adHeight/2 - (adWidth - 17 * 2) / 16.0 * 9/2 - 8 - 8;
-
-    adView.frame = CGRectMake(0, 0, self.backgroundView.frame.size.width, self.backgroundView.frame.size.height);
-    [self.backgroundView addSubview:adView];
-
-    //设置关闭按钮
-    CGFloat closeBtnWidth = 30;
-    CGFloat closeBtnHeight = closeBtnWidth;
-    self.closeBtn.frame = CGRectMake(CGRectGetMaxX(self.backgroundView.frame) - closeBtnWidth - 20, 200, closeBtnWidth, closeBtnHeight);
-    [adView addSubview:self.closeBtn];
+    CGFloat adWidth = self.backgroundView.frame.size.width - 17 * 2;
+    CGFloat adHeight = adWidth / 16.0 * 9;
+    CGFloat adBgViewHeight = adHeight + 130;
     
-    
-
-    // 设置标题文字（可选，但强烈建议带上）
-    UILabel *titlabel = [UILabel new];
-    [adView addSubview:titlabel];
-    titlabel.font = [UIFont adsy_PingFangMediumFont:14];
-    titlabel.textColor = [UIColor adsy_colorWithHexString:@"#FFFFFF"];
-    titlabel.numberOfLines = 2;
-    titlabel.text = adView.data.title;
-    CGSize textSize = [titlabel sizeThatFits:CGSizeMake(adWidth - 17 * 2, 999)];
-    titlabel.frame = CGRectMake(17, adViewY, adWidth - 17 * 2, textSize.height);
-    
-    CGFloat height = textSize.height + adViewY + 15;
+    adView.frame = CGRectMake(0, 0, adWidth, adHeight);
     
     // 设置主图/视频（主图可选，但强烈建议带上,如果有视频试图，则必须带上）
-    CGRect mainFrame = CGRectMake(17, height, adWidth - 17 * 2, (adWidth - 17 * 2) / 16.0 * 9);
+    CGRect mainFrame = CGRectMake(0, 0, adWidth, adHeight);
     if(adView.data.shouldShowMediaView) {
         UIView *mediaView = [adView adsy_mediaViewForWidth:mainFrame.size.width];
         mediaView.frame = mainFrame;
@@ -211,32 +189,36 @@
         UIImageView *logoImage = [UIImageView new];
         [adView addSubview:logoImage];
         [adView adsy_platformLogoImageDarkMode:NO loadImageBlock:^(UIImage * _Nullable image) {
-            CGFloat maxWidth = 40;
+            CGFloat maxWidth = 30;
             CGFloat logoHeight = maxWidth / image.size.width * image.size.height;
-            logoImage.frame = CGRectMake(adWidth - maxWidth - 20, CGRectGetMaxY(mainFrame) - logoHeight - 5, maxWidth, logoHeight);
+            logoImage.frame = CGRectMake(adWidth - maxWidth, adHeight - logoHeight - 5, maxWidth, logoHeight);
             logoImage.image = image;
         }];
     }
     
-    // 设置广告标识（可选）
-    height += (adWidth - 17 * 2) / 16.0 * 9 + 9;
-    UILabel *adLabel = [[UILabel alloc]init];
-    adLabel.backgroundColor = [UIColor adsy_colorWithHexString:@"#CCCCCC"];
-    adLabel.textColor = [UIColor adsy_colorWithHexString:@"#FFFFFF"];
-    adLabel.font = [UIFont adsy_PingFangLightFont:12];
-    adLabel.text = @"广告";
-    [adView addSubview:adLabel];
-    adLabel.frame = CGRectMake(17, height, 36, 18);
-    adLabel.textAlignment = NSTextAlignmentCenter;
-    
     // 设置广告描述(可选)
     UILabel *descLabel = [UILabel new];
-    descLabel.textColor = [UIColor adsy_colorWithHexString:@"#FFFFFF"];
-    descLabel.font = [UIFont adsy_PingFangLightFont:12];
-    descLabel.textAlignment = NSTextAlignmentLeft;
-    descLabel.text = adView.data.desc;
-    [adView addSubview:descLabel];
-    descLabel.frame = CGRectMake(17 + 36 + 4, height, self.view.frame.size.width - 57 - 17 - 20, 18);
+    descLabel.textColor = [UIColor adsy_colorWithHexString:@"#333333"];
+    descLabel.font = [UIFont adsy_PingFangRegularFont:18];
+    descLabel.textAlignment = NSTextAlignmentCenter;
+    descLabel.numberOfLines = 2;
+//    descLabel.text = adView.data.title;
+    descLabel.text = @"这里是信息流自渲染适配插屏，需要开发者自行设计样式";
+    [self.adBgView addSubview:descLabel];
+    descLabel.frame = CGRectMake(0, adHeight + 15, adWidth, 60);
+    
+   
+    self.adBgView.frame = CGRectMake(17, (self.backgroundView.frame.size.height - adBgViewHeight)/2, adWidth, adBgViewHeight);
+    
+    [self.adBgView addSubview:adView];
+    [self.backgroundView addSubview:self.adBgView];
+    
+    //设置关闭按钮
+    CGFloat closeBtnWidth = 40;
+    CGFloat closeBtnHeight = closeBtnWidth;
+    self.closeBtn.frame = CGRectMake((adWidth - closeBtnWidth)/2, CGRectGetHeight(self.adBgView.frame) - closeBtnHeight, closeBtnWidth, closeBtnHeight);
+    [self.adBgView addSubview:self.closeBtn];
+
 }
 
 

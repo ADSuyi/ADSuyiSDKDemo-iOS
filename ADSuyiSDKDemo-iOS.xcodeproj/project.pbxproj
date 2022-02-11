@@ -40,6 +40,7 @@
 		824AD25525C11A5200BD1105 /* ADSuyiGroupAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 824AD25425C11A5200BD1105 /* ADSuyiGroupAdViewController.m */; };
 		BAB1330727B4B0640099BCED /* EcookSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB1330627B4B0640099BCED /* EcookSDK.xcframework */; };
 		BAB1331227B5FBA80099BCED /* AdSuyiNativeInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB1331127B5FBA80099BCED /* AdSuyiNativeInterstitialViewController.m */; };
+		BAB1331927B665AA0099BCED /* AdSuyiNativeMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB1331827B665AA0099BCED /* AdSuyiNativeMainViewController.m */; };
 		BF279CDA249B134700C38704 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF279CD9249B134700C38704 /* LaunchScreen.storyboard */; };
 		BFEA086D247E4CCC001815E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA086C247E4CCC001815E3 /* AppDelegate.m */; };
 		BFEA0873247E4CCC001815E3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA0872247E4CCC001815E3 /* ViewController.m */; };
@@ -109,6 +110,8 @@
 		BAB1330627B4B0640099BCED /* EcookSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = EcookSDK.xcframework; path = Pods/EcookSDK/EcookSDK/Classes/EcookSDK.xcframework; sourceTree = "<group>"; };
 		BAB1331027B5FBA80099BCED /* AdSuyiNativeInterstitialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdSuyiNativeInterstitialViewController.h; sourceTree = "<group>"; };
 		BAB1331127B5FBA80099BCED /* AdSuyiNativeInterstitialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdSuyiNativeInterstitialViewController.m; sourceTree = "<group>"; };
+		BAB1331727B665AA0099BCED /* AdSuyiNativeMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdSuyiNativeMainViewController.h; sourceTree = "<group>"; };
+		BAB1331827B665AA0099BCED /* AdSuyiNativeMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdSuyiNativeMainViewController.m; sourceTree = "<group>"; };
 		BF279CD9249B134700C38704 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFEA0868247E4CCC001815E3 /* ADSuyiSDKDemo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ADSuyiSDKDemo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEA086B247E4CCC001815E3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -342,6 +345,8 @@
 				BFEA088C247E5430001815E3 /* AdSuyiNativeViewCell.m */,
 				BFEA088D247E5430001815E3 /* AdSuyiNativeViewController.h */,
 				BFEA088B247E5430001815E3 /* AdSuyiNativeViewController.m */,
+				BAB1331727B665AA0099BCED /* AdSuyiNativeMainViewController.h */,
+				BAB1331827B665AA0099BCED /* AdSuyiNativeMainViewController.m */,
 			);
 			path = NativeAd;
 			sourceTree = "<group>";
@@ -545,6 +550,7 @@
 				BFEA0873247E4CCC001815E3 /* ViewController.m in Sources */,
 				BFEA08A9247E5430001815E3 /* AdSuyiInterstitialViewController.m in Sources */,
 				BFEA086D247E4CCC001815E3 /* AppDelegate.m in Sources */,
+				BAB1331927B665AA0099BCED /* AdSuyiNativeMainViewController.m in Sources */,
 				824AD25525C11A5200BD1105 /* ADSuyiGroupAdViewController.m in Sources */,
 				820EC7E7254A9F77001C7C88 /* TableViewController.m in Sources */,
 				03FC883A26461C660059037E /* ADSuyiSplashSkipView.m in Sources */,

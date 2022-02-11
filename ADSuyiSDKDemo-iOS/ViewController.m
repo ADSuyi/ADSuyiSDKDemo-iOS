@@ -29,6 +29,7 @@
 #import "AdSuyiContentViewController.h"
 #import "ADSuyiNativeSplashViewController.h"
 #import "AdSuyiNativeInterstitialViewController.h"
+#import "AdSuyiNativeMainViewController.h"
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *mainTableView;
@@ -56,7 +57,7 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.dataArray = @[@"开屏广告", @"开屏V+广告", @"信息流开屏广告",@"原生信息流广告", @"Banner横幅广告",@"激励视频",@"信息流插屏广告",@"插屏广告",@"Draw视频",@"全屏视频",@"内容组件",@"组合广告",@"快手内容"];
+    self.dataArray = @[@"开屏广告", @"开屏V+广告",@"信息流广告", @"Banner横幅广告",@"激励视频",@"插屏广告",@"Draw视频",@"全屏视频",@"内容组件",@"组合广告",@"快手内容"];
     
     [self.mainTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     [self.view addSubview:self.mainTableView];
@@ -114,7 +115,7 @@
     }
     
     UILabel *labTitle = [[UILabel alloc]init];
-    labTitle.font = [UIFont adsy_PingFangRegularFont:14];
+    labTitle.font = [UIFont adsy_PingFangRegularFont:18];
     labTitle.backgroundColor = [UIColor whiteColor];
     labTitle.textAlignment = NSTextAlignmentCenter;
     labTitle.textColor = [UIColor adsy_colorWithHexString:@"#666666"];
@@ -122,8 +123,8 @@
     labTitle.text = title;
     labTitle.clipsToBounds = YES;
     [cell.contentView addSubview:labTitle];
-    labTitle.frame = CGRectMake(16, 8, self.view.bounds.size.width - 32, 32);
-    labTitle.layer.cornerRadius = 4;
+    labTitle.frame = CGRectMake(16, 8, self.view.bounds.size.width - 32, 60);
+    labTitle.layer.cornerRadius = 10;
     labTitle.layer.borderWidth = 1;
     labTitle.layer.borderColor = [UIColor adsy_colorWithHexString:@"#E5E5EA"].CGColor;
     labTitle.layer.shadowColor = [UIColor adsy_colorWithHexString:@"#000000" alphaComponent:0.1].CGColor;
@@ -135,7 +136,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 48;
+    return 76;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -150,52 +151,43 @@
             break;
         }
         case 2: {
-            [self.navigationController pushViewController:[ADSuyiNativeSplashViewController new] animated:YES];
+            [self.navigationController pushViewController:[AdSuyiNativeMainViewController new] animated:YES];
             break;
         }
         case 3: {
-            AdSuyiNativeViewController *vc = [AdSuyiNativeViewController new];
-            [self.navigationController pushViewController:vc animated:YES];
-            break;
-        }
-        case 4: {
             [self.navigationController pushViewController:[AdSuyiBannerViewController new] animated:YES];
             break;
         }
-        case 5: {
+        case 4: {
             [self.navigationController pushViewController:[AdSuyiRewardvodViewController new] animated:YES];
             break;
         }
-        case 6: {
-            [self.navigationController pushViewController:[AdSuyiNativeInterstitialViewController new] animated:YES];
-            break;
-        }
-        case 7: {
+        case 5: {
             [self.navigationController pushViewController:[AdSuyiInterstitialViewController new] animated:YES];
             break;
         }
-        case 8: {
+        case 6: {
             [self.navigationController pushViewController:[AdSuyiDrawvodViewController new] animated:YES];
             break;
         }
-        case 9: {
+        case 7: {
             [self.navigationController pushViewController:[AdSuyiFullScreenvodViewController new] animated:YES];
             break;
         }
-        case 10:{
+        case 8:{
             //contain使用场景示例
             AdSuyiContainViewController *containVc = [[AdSuyiContainViewController alloc]init];
             [self.navigationController pushViewController:containVc animated:YES];
             break;
         }
-        case 11:{
+        case 9:{
             ADSuyiGroupAdViewController *groupVc = [ADSuyiGroupAdViewController new];
             groupVc.nativePosid = @"177a790a315eeb7053";
             groupVc.rewardPosid = @"47d196ffaaa92ae93c";
             [self.navigationController pushViewController:groupVc animated:YES];
             break;
         }
-        case 12: {
+        case 10: {
             AdSuyiContentViewController *contentVc = [AdSuyiContentViewController new];
             [self.navigationController pushViewController:contentVc animated:YES];
             break;
