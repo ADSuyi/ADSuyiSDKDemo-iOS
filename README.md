@@ -2125,7 +2125,7 @@ OC请求沉浸式视频代码示例：
 <div STYLE="page-break-after: always;"></div>
 
 ## 4.11 菜谱内容
-[菜谱内容功能对接文档](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS/blob/master/README_Ecook.md)
+[菜谱内容功能对接文档](README_Ecook.md)
 
 ## 作者
 
