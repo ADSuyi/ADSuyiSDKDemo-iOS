@@ -26,24 +26,26 @@
     self.view.backgroundColor = [UIColor colorWithRed:225/255.0 green:233/255.0 blue:239/255.0 alpha:1];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     UIButton *loadBtn = [UIButton new];
-    loadBtn.layer.cornerRadius = 3;
+    loadBtn.layer.cornerRadius = 10;
     loadBtn.clipsToBounds = YES;
     loadBtn.backgroundColor = UIColor.whiteColor;
     [loadBtn setTitle:@"加载插屏" forState:(UIControlStateNormal)];
     [loadBtn setTitleColor:UIColor.blackColor forState:(UIControlStateNormal)];
+    loadBtn.titleLabel.font = [UIFont systemFontOfSize:18];
     [self.view addSubview:loadBtn];
-    loadBtn.frame = CGRectMake(30, UIScreen.mainScreen.bounds.size.height/2-60, UIScreen.mainScreen.bounds.size.width-60, 40);
+    loadBtn.frame = CGRectMake(30, UIScreen.mainScreen.bounds.size.height/2-60, UIScreen.mainScreen.bounds.size.width-60, 60);
     [loadBtn addTarget:self action:@selector(loadInterstitialAd) forControlEvents:(UIControlEventTouchUpInside)];
     
     UIButton *showBtn = [UIButton new];
-    showBtn.layer.cornerRadius = 3;
+    showBtn.layer.cornerRadius = 10;
     showBtn.clipsToBounds = YES;
     showBtn.backgroundColor = UIColor.whiteColor;
     [showBtn setTitle:@"展示插屏" forState:(UIControlStateNormal)];
     [showBtn setTitleColor:UIColor.blackColor forState:(UIControlStateNormal)];
+    showBtn.titleLabel.font = [UIFont systemFontOfSize:18];
     [self.view addSubview:showBtn];
     [showBtn addTarget:self action:@selector(showInterstitialAd) forControlEvents:(UIControlEventTouchUpInside)];
-    showBtn.frame = CGRectMake(30, UIScreen.mainScreen.bounds.size.height/2+20, UIScreen.mainScreen.bounds.size.width-60, 40);
+    showBtn.frame = CGRectMake(30, UIScreen.mainScreen.bounds.size.height/2+20, UIScreen.mainScreen.bounds.size.width-60, 60);
     _isReady = NO;
 }
 
