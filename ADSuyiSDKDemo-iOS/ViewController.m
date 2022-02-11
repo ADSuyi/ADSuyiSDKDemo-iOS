@@ -28,6 +28,7 @@
 #import "AdSuyiContainViewController.h"
 #import "AdSuyiContentViewController.h"
 #import "ADSuyiNativeSplashViewController.h"
+#import "AdSuyiNativeInterstitialViewController.h"
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *mainTableView;
@@ -55,7 +56,7 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.dataArray = @[@"开屏广告", @"开屏V+广告", @"信息流开屏广告",@"原生信息流广告", @"Banner横幅广告",@"激励视频",@"插屏广告",@"Draw视频",@"全屏视频",@"内容组件",@"组合广告",@"快手内容"];
+    self.dataArray = @[@"开屏广告", @"开屏V+广告", @"信息流开屏广告",@"原生信息流广告", @"Banner横幅广告",@"激励视频",@"信息流插屏广告",@"插屏广告",@"Draw视频",@"全屏视频",@"内容组件",@"组合广告",@"快手内容"];
     
     [self.mainTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     [self.view addSubview:self.mainTableView];
@@ -166,31 +167,35 @@
             break;
         }
         case 6: {
-            [self.navigationController pushViewController:[AdSuyiInterstitialViewController new] animated:YES];
+            [self.navigationController pushViewController:[AdSuyiNativeInterstitialViewController new] animated:YES];
             break;
         }
         case 7: {
-            [self.navigationController pushViewController:[AdSuyiDrawvodViewController new] animated:YES];
+            [self.navigationController pushViewController:[AdSuyiInterstitialViewController new] animated:YES];
             break;
         }
         case 8: {
+            [self.navigationController pushViewController:[AdSuyiDrawvodViewController new] animated:YES];
+            break;
+        }
+        case 9: {
             [self.navigationController pushViewController:[AdSuyiFullScreenvodViewController new] animated:YES];
             break;
         }
-        case 9:{
+        case 10:{
             //contain使用场景示例
             AdSuyiContainViewController *containVc = [[AdSuyiContainViewController alloc]init];
             [self.navigationController pushViewController:containVc animated:YES];
             break;
         }
-        case 10:{
+        case 11:{
             ADSuyiGroupAdViewController *groupVc = [ADSuyiGroupAdViewController new];
             groupVc.nativePosid = @"177a790a315eeb7053";
             groupVc.rewardPosid = @"47d196ffaaa92ae93c";
             [self.navigationController pushViewController:groupVc animated:YES];
             break;
         }
-        case 11: {
+        case 12: {
             AdSuyiContentViewController *contentVc = [AdSuyiContentViewController new];
             [self.navigationController pushViewController:contentVc animated:YES];
             break;

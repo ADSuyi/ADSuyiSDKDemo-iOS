@@ -39,6 +39,7 @@
 		820EC7E7254A9F77001C7C88 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 820EC7E4254A9F77001C7C88 /* TableViewController.m */; };
 		824AD25525C11A5200BD1105 /* ADSuyiGroupAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 824AD25425C11A5200BD1105 /* ADSuyiGroupAdViewController.m */; };
 		BAB1330727B4B0640099BCED /* EcookSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB1330627B4B0640099BCED /* EcookSDK.xcframework */; };
+		BAB1331227B5FBA80099BCED /* AdSuyiNativeInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB1331127B5FBA80099BCED /* AdSuyiNativeInterstitialViewController.m */; };
 		BF279CDA249B134700C38704 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF279CD9249B134700C38704 /* LaunchScreen.storyboard */; };
 		BFEA086D247E4CCC001815E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA086C247E4CCC001815E3 /* AppDelegate.m */; };
 		BFEA0873247E4CCC001815E3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA0872247E4CCC001815E3 /* ViewController.m */; };
@@ -106,6 +107,8 @@
 		824AD25325C11A5200BD1105 /* ADSuyiGroupAdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADSuyiGroupAdViewController.h; sourceTree = "<group>"; };
 		824AD25425C11A5200BD1105 /* ADSuyiGroupAdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADSuyiGroupAdViewController.m; sourceTree = "<group>"; };
 		BAB1330627B4B0640099BCED /* EcookSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = EcookSDK.xcframework; path = Pods/EcookSDK/EcookSDK/Classes/EcookSDK.xcframework; sourceTree = "<group>"; };
+		BAB1331027B5FBA80099BCED /* AdSuyiNativeInterstitialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdSuyiNativeInterstitialViewController.h; sourceTree = "<group>"; };
+		BAB1331127B5FBA80099BCED /* AdSuyiNativeInterstitialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdSuyiNativeInterstitialViewController.m; sourceTree = "<group>"; };
 		BF279CD9249B134700C38704 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFEA0868247E4CCC001815E3 /* ADSuyiSDKDemo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ADSuyiSDKDemo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEA086B247E4CCC001815E3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -266,6 +269,15 @@
 			path = GroupAd;
 			sourceTree = "<group>";
 		};
+		BAB1331327B61CF40099BCED /* NativeInterstitialAd */ = {
+			isa = PBXGroup;
+			children = (
+				BAB1331027B5FBA80099BCED /* AdSuyiNativeInterstitialViewController.h */,
+				BAB1331127B5FBA80099BCED /* AdSuyiNativeInterstitialViewController.m */,
+			);
+			path = NativeInterstitialAd;
+			sourceTree = "<group>";
+		};
 		BFEA085F247E4CCC001815E3 = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +319,7 @@
 		BFEA0888247E5430001815E3 /* SuyiAds */ = {
 			isa = PBXGroup;
 			children = (
+				BAB1331327B61CF40099BCED /* NativeInterstitialAd */,
 				032EE28A27B34D3700BF58BE /* NativeSplash */,
 				13CC792F25DE541D00D77DE5 /* Content */,
 				824AD25225C119F200BD1105 /* GroupAd */,
@@ -538,6 +551,7 @@
 				BFEA08AA247E5430001815E3 /* AdSuyiRewardvodViewController.m in Sources */,
 				BFEA08A4247E5430001815E3 /* AdSuyiBannerViewController.m in Sources */,
 				03ED192B2637A7C200089CF2 /* NavigationViewController.m in Sources */,
+				BAB1331227B5FBA80099BCED /* AdSuyiNativeInterstitialViewController.m in Sources */,
 				BFEA08A2247E5430001815E3 /* AdSuyiNativeViewController.m in Sources */,
 				03ED19312637A7C200089CF2 /* NotificationAdSetViewController.m in Sources */,
 				03ED19292637A7C200089CF2 /* DrawAdSetTableViewController.m in Sources */,
