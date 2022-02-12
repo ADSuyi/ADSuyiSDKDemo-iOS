@@ -119,6 +119,7 @@
     for (UIView<ADSuyiAdapterNativeAdViewDelegate> *adView in adViewArray) {
         // 4、判断信息流广告是否为自渲染类型（可选实现） 可仿照所示样式demo实现 如无所需样式则需自行实现
         // 如果单纯只配置了模版信息流，那么不需要实现，如果配置了自渲染信息流，那么需要实现
+        NSInteger tt = adView.renderType;
         if(adView.renderType == ADSuyiAdapterRenderTypeNative) {
             // 4.1、信息流绘制开屏广告样式
             [self setUpUnifiedSplahAdView:adView];

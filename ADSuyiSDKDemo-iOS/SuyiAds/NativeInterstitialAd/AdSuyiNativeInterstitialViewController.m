@@ -97,9 +97,13 @@
     for (UIView<ADSuyiAdapterNativeAdViewDelegate> *adView in adViewArray) {
         // 4、判断信息流广告是否为自渲染类型（可选实现） 可仿照所示样式demo实现 如无所需样式则需自行实现
         // 如果单纯只配置了模版信息流，那么不需要实现，如果配置了自渲染信息流，那么需要实现
+        NSInteger pp = adView.renderType;
         if(adView.renderType == ADSuyiAdapterRenderTypeNative) {
             // 4.1、信息流绘制开屏广告样式
             [self setUpUnifiedSplahAdView:adView];
+        }else{
+            adView.frame = CGRectMake((CGRectGetWidth(self.backgroundView.frame) - adView.frame.size.width)/2, (CGRectGetHeight(self.backgroundView.frame) - adView.frame.size.height)/2, adView.frame.size.width, adView.frame.size.height);
+            [self.backgroundView addSubview:adView];
         }
         // 5、注册，自渲染：注册点击事件，模板：render，重要
         [adView adsy_registViews:@[adView]];

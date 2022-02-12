@@ -81,8 +81,6 @@
     _textView.frame = CGRectMake(30, 280, UIScreen.mainScreen.bounds.size.width-60, 250);
     _textView.editable = NO;
     
-    
-    
 }
 
 - (void)removeAdView {
