@@ -102,8 +102,15 @@
             // 4.1、信息流绘制开屏广告样式
             [self setUpUnifiedSplahAdView:adView];
         }else{
-            adView.frame = CGRectMake((CGRectGetWidth(self.backgroundView.frame) - adView.frame.size.width)/2, (CGRectGetHeight(self.backgroundView.frame) - adView.frame.size.height)/2, adView.frame.size.width, adView.frame.size.height);
-            [self.backgroundView addSubview:adView];
+            self.adBgView = [UIView new];
+            self.adBgView.userInteractionEnabled = YES;
+            self.adBgView.layer.cornerRadius = 5;
+            self.adBgView.backgroundColor = UIColor.clearColor;
+            self.adBgView.clipsToBounds = YES;
+            self.adBgView.frame = CGRectMake((CGRectGetWidth(self.backgroundView.frame) - adView.frame.size.width)/2, (CGRectGetHeight(self.backgroundView.frame) - adView.frame.size.height)/2, adView.frame.size.width, adView.frame.size.height);
+            adView.frame = CGRectMake(0, 0, adView.frame.size.width, adView.frame.size.height);
+            [self.adBgView addSubview:adView];
+            [self.backgroundView addSubview:self.adBgView];
         }
         // 5、注册，自渲染：注册点击事件，模板：render，重要
         [adView adsy_registViews:@[adView]];

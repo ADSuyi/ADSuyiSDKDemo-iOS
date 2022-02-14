@@ -85,7 +85,6 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.dataArray.count;
 }
-
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     UILabel *label = [UILabel new];
     label.textAlignment = NSTextAlignmentCenter;
@@ -96,9 +95,9 @@
     return label;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 45;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+//    return 45;
+//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
@@ -123,7 +122,7 @@
     labTitle.text = title;
     labTitle.clipsToBounds = YES;
     [cell.contentView addSubview:labTitle];
-    labTitle.frame = CGRectMake(16, 8, self.view.bounds.size.width - 32, 60);
+    labTitle.frame = CGRectMake(16, 8, self.view.bounds.size.width - 32, 55);
     labTitle.layer.cornerRadius = 10;
     labTitle.layer.borderWidth = 1;
     labTitle.layer.borderColor = [UIColor adsy_colorWithHexString:@"#E5E5EA"].CGColor;
@@ -136,7 +135,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 76;
+    return 63;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
