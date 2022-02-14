@@ -11,6 +11,8 @@
 #import <ADSuyiKit/ADSuyiKit.h>
 #import "UIView+Toast.h"
 @interface AdSuyiNativeInterstitialViewController ()<ADSuyiSDKNativeAdDelegate>
+@property (nonatomic, strong) UIViewController *presendVc;
+
 @property (nonatomic, strong) ADSuyiSDKNativeAd *nativeAd;
 
 @property (nonatomic, strong) UIButton *closeBtn;
@@ -49,20 +51,23 @@
     if (!_backgroundView) {
         _backgroundView = [UIView new];
         _backgroundView.frame = UIScreen.mainScreen.bounds;
-        _backgroundView.backgroundColor = [UIColor.blackColor colorWithAlphaComponent:0.7];
+        _backgroundView.backgroundColor = [UIColor.blackColor colorWithAlphaComponent:0.5];
         _backgroundView.userInteractionEnabled = YES;
     }
     return _backgroundView;
 }
+- (UIView *)adBgView
+{
+    if (!_adBgView) {
+        _adBgView = [UIView new];
+        _adBgView.userInteractionEnabled = YES;
+        _adBgView.layer.cornerRadius = 5;
+        _adBgView.backgroundColor = UIColor.clearColor;
+        _adBgView.clipsToBounds = YES;
+    }
+    return _adBgView;
+}
 
-//- (UIView *)adBgView {
-//    if (!_adBgView) {
-//        _adBgView = [UIView new];
-//        _adBgView.backgroundColor = UIColor.clearColor;
-//        _adBgView.userInteractionEnabled = YES;
-//    }
-//    return _adBgView;
-//}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"信息流插屏";
@@ -82,14 +87,22 @@
     
 }
 - (void)loadNativeAd {
+    [self removeAllSubviewsWithView:self.adBgView];
+    [self removeAllSubviewsWithView:self.backgroundView];
     [self.nativeAd load:1];
 }
 
 - (void)closeAdAction {
-    [self.backgroundView removeFromSuperview];
-    [self.adBgView removeFromSuperview];
+    [_presendVc dismissViewControllerAnimated:YES completion:^{
+        
+    }];
 }
-
+- (void)removeAllSubviewsWithView:(UIView *)view{
+    NSArray *viewsToRemove = [view subviews];
+    for (UIView *removeView in viewsToRemove) {
+        [removeView removeFromSuperview];
+    }
+}
 #pragma mark - ADSuyiNativeAdDelegate
 
 - (void)adsy_nativeAdSucessToLoad:(ADSuyiSDKNativeAd *)nativeAd
@@ -97,18 +110,13 @@
     for (UIView<ADSuyiAdapterNativeAdViewDelegate> *adView in adViewArray) {
         // 4、判断信息流广告是否为自渲染类型（可选实现） 可仿照所示样式demo实现 如无所需样式则需自行实现
         // 如果单纯只配置了模版信息流，那么不需要实现，如果配置了自渲染信息流，那么需要实现
-        NSInteger pp = adView.renderType;
         if(adView.renderType == ADSuyiAdapterRenderTypeNative) {
             // 4.1、信息流绘制开屏广告样式
             [self setUpUnifiedSplahAdView:adView];
         }else{
-            self.adBgView = [UIView new];
-            self.adBgView.userInteractionEnabled = YES;
-            self.adBgView.layer.cornerRadius = 5;
-            self.adBgView.backgroundColor = UIColor.clearColor;
-            self.adBgView.clipsToBounds = YES;
-            self.adBgView.frame = CGRectMake((CGRectGetWidth(self.backgroundView.frame) - adView.frame.size.width)/2, (CGRectGetHeight(self.backgroundView.frame) - adView.frame.size.height)/2, adView.frame.size.width, adView.frame.size.height);
+           
             adView.frame = CGRectMake(0, 0, adView.frame.size.width, adView.frame.size.height);
+            self.adBgView.frame = CGRectMake((CGRectGetWidth(self.backgroundView.frame) - adView.frame.size.width)/2, (CGRectGetHeight(self.backgroundView.frame) - adView.frame.size.height)/2, adView.frame.size.width, adView.frame.size.height);
             [self.adBgView addSubview:adView];
             [self.backgroundView addSubview:self.adBgView];
         }
@@ -134,7 +142,11 @@
 
 - (void)adsy_nativeAdViewRenderOrRegistSuccess:(UIView<ADSuyiAdapterNativeAdViewDelegate> *)adView {
     // 6、注册或渲染成功，此时高度正常，可以展示
-    [[UIApplication sharedApplication].keyWindow addSubview:self.backgroundView];
+    _presendVc = [UIViewController new];
+    _presendVc.modalPresentationStyle = UIModalPresentationOverFullScreen;
+    _presendVc.view.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.1];
+    [_presendVc.view addSubview:self.backgroundView];
+    [self presentViewController:_presendVc animated:YES completion:nil];
 }
 
 - (void)adsy_nativeAdViewRenderOrRegistFail:(UIView<ADSuyiAdapterNativeAdViewDelegate> *)adView {
