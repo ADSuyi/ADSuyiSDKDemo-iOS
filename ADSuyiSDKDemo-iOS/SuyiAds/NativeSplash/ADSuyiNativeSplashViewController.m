@@ -123,6 +123,19 @@
         if(adView.renderType == ADSuyiAdapterRenderTypeNative) {
             // 4.1、信息流绘制开屏广告样式
             [self setUpUnifiedSplahAdView:adView];
+        } else {
+            [self.backgroundView addSubview:adView];
+            adView.frame = CGRectMake(self.backgroundView.bounds.size.width/2 - adView.bounds.size.width/2, self.backgroundView.bounds.size.height/2 - adView.bounds.size.height/2, adView.bounds.size.width, adView.bounds.size.height);
+            [self.backgroundView addSubview:self.skipLable];
+            self.skipLable.userInteractionEnabled = YES;
+            self.skipLable.frame = CGRectMake(self.view.bounds.size.width - self.skipLable.bounds.size.width - 30, 44, self.skipLable.bounds.size.width, self.skipLable.bounds.size.height);
+            self.skipLable.text = [NSString stringWithFormat:@" 跳过 | %ld ",(long)_skipCount];
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:adView action:@selector(adsy_close)];
+            [self.skipLable addGestureRecognizer:tap];
+            
+            
+            [self.backgroundView addSubview:self.customClickLabel];
+            self.customClickLabel.frame = CGRectMake(self.view.bounds.size.width/2 - 150, self.view.bounds.size.height - 50 - 50, 300, 40);
         }
         // 5、注册，自渲染：注册点击事件，模板：render，重要
         [adView adsy_registViews:@[adView]];
