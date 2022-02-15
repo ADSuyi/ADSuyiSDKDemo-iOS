@@ -22,6 +22,8 @@
 
 @property (nonatomic, strong) UILabel *customClickLabel;
 
+@property (nonatomic, strong) UIViewController *splashViewController;
+
 @end
 
 @implementation ADSuyiNativeSplashViewController
@@ -109,6 +111,7 @@
 }
 
 - (void)closeAd {
+    [_splashViewController dismissViewControllerAnimated:YES completion:nil];
     [self.backgroundView removeFromSuperview];
 }
 
@@ -158,7 +161,11 @@
 
 - (void)adsy_nativeAdViewRenderOrRegistSuccess:(UIView<ADSuyiAdapterNativeAdViewDelegate> *)adView {
     // 6、注册或渲染成功，此时高度正常，可以展示
-    [[UIApplication sharedApplication].keyWindow addSubview:self.backgroundView];
+    // 建议采用控制器承载广告视图，部分平台有监测父视图，window承载时无法点击
+    _splashViewController = [UIViewController new];
+    _splashViewController.modalPresentationStyle = UIModalPresentationOverFullScreen;
+    [_splashViewController.view addSubview:self.backgroundView];
+    [self presentViewController:_splashViewController animated:nil completion:nil];
     _timer = [ADSuyiKitTimer timerWithTimeInterval:1 target:self selector:@selector(timerAction:) repeats:YES];
     [_timer scheduleImmediately:NO];
     
