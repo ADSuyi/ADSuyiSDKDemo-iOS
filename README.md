@@ -111,7 +111,7 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore' # gromore
 
 ## 2.2 手动导入SDK方式
 
-[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_35001161_91e3be81994328cd4338525868592b88.zip)下载各SDK拖入到工程中
+[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_35001162_9fb6898d2d886ff6c055f05a0ade8a95.zip)下载各SDK拖入到工程中
 
 手动方式导入,需要添加如下依赖库:
 
