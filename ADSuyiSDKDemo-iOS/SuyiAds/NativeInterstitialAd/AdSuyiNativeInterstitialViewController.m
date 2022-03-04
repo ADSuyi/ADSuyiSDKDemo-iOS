@@ -147,7 +147,10 @@
     _presendVc.modalPresentationStyle = UIModalPresentationOverFullScreen;
     _presendVc.view.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.1];
     [_presendVc.view addSubview:self.backgroundView];
-    [[UIViewController topViewController] presentViewController:_presendVc animated:YES completion:nil];
+//    [self presentViewController:_presendVc animated:YES completion:nil];
+    [self presentViewController:_presendVc animated:YES completion:^{
+        self.nativeAd.controller = [UIViewController topViewController];
+    }];
 }
 
 - (void)adsy_nativeAdViewRenderOrRegistFail:(UIView<ADSuyiAdapterNativeAdViewDelegate> *)adView {
