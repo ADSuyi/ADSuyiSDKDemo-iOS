@@ -106,8 +106,8 @@
     NSString *title = [self.dataArray adsy_objectOrNilAtIndex:indexPath.row];
     cell.contentView.clipsToBounds = YES;
     cell.clipsToBounds = YES;
-    cell.contentView.layer.cornerRadius = 6;
-    cell.layer.cornerRadius = 6;
+    cell.contentView.layer.cornerRadius = 10;
+    cell.layer.cornerRadius = 10;
     UIView *view = [cell.contentView viewWithTag:999];
     if (view) {
         [view removeFromSuperview];

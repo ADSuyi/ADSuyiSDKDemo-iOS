@@ -41,6 +41,7 @@
 		BAB1330727B4B0640099BCED /* EcookSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB1330627B4B0640099BCED /* EcookSDK.xcframework */; };
 		BAB1331227B5FBA80099BCED /* AdSuyiNativeInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB1331127B5FBA80099BCED /* AdSuyiNativeInterstitialViewController.m */; };
 		BAB1331927B665AA0099BCED /* AdSuyiNativeMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB1331827B665AA0099BCED /* AdSuyiNativeMainViewController.m */; };
+		BAEEB97327D1E7BD0027685B /* UIViewController+TYTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAEEB97227D1E7BD0027685B /* UIViewController+TYTopView.m */; };
 		BF279CDA249B134700C38704 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF279CD9249B134700C38704 /* LaunchScreen.storyboard */; };
 		BFEA086D247E4CCC001815E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA086C247E4CCC001815E3 /* AppDelegate.m */; };
 		BFEA0873247E4CCC001815E3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA0872247E4CCC001815E3 /* ViewController.m */; };
@@ -112,6 +113,8 @@
 		BAB1331127B5FBA80099BCED /* AdSuyiNativeInterstitialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdSuyiNativeInterstitialViewController.m; sourceTree = "<group>"; };
 		BAB1331727B665AA0099BCED /* AdSuyiNativeMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdSuyiNativeMainViewController.h; sourceTree = "<group>"; };
 		BAB1331827B665AA0099BCED /* AdSuyiNativeMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdSuyiNativeMainViewController.m; sourceTree = "<group>"; };
+		BAEEB97127D1E7BD0027685B /* UIViewController+TYTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TYTopView.h"; sourceTree = "<group>"; };
+		BAEEB97227D1E7BD0027685B /* UIViewController+TYTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TYTopView.m"; sourceTree = "<group>"; };
 		BF279CD9249B134700C38704 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFEA0868247E4CCC001815E3 /* ADSuyiSDKDemo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ADSuyiSDKDemo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEA086B247E4CCC001815E3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -182,6 +185,8 @@
 			children = (
 				03ED19112637A7C200089CF2 /* FullScreenAdSetTableViewController.h */,
 				03ED19122637A7C200089CF2 /* DrawAdSetTableViewController.h */,
+				BAEEB97127D1E7BD0027685B /* UIViewController+TYTopView.h */,
+				BAEEB97227D1E7BD0027685B /* UIViewController+TYTopView.m */,
 				03ED19132637A7C200089CF2 /* UIView+Toast.h */,
 				03ED19142637A7C200089CF2 /* SplashSetTableViewController.h */,
 				03ED19152637A7C200089CF2 /* SetTableViewController.h */,
@@ -557,6 +562,7 @@
 				BFEA08AA247E5430001815E3 /* AdSuyiRewardvodViewController.m in Sources */,
 				BFEA08A4247E5430001815E3 /* AdSuyiBannerViewController.m in Sources */,
 				03ED192B2637A7C200089CF2 /* NavigationViewController.m in Sources */,
+				BAEEB97327D1E7BD0027685B /* UIViewController+TYTopView.m in Sources */,
 				BAB1331227B5FBA80099BCED /* AdSuyiNativeInterstitialViewController.m in Sources */,
 				BFEA08A2247E5430001815E3 /* AdSuyiNativeViewController.m in Sources */,
 				03ED19312637A7C200089CF2 /* NotificationAdSetViewController.m in Sources */,
@@ -755,7 +761,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sangshen.ADSuyiSDKDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ctl.student;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -778,7 +784,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.sangshen.ADSuyiSDKDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ctl.student;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

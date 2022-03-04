@@ -10,6 +10,7 @@
 #import <ADSuyiSDK/ADSuyiSDKNativeAd.h>
 #import <ADSuyiKit/ADSuyiKit.h>
 #import "UIView+Toast.h"
+#import "UIViewController+TYTopView.h"
 @interface AdSuyiNativeInterstitialViewController ()<ADSuyiSDKNativeAdDelegate>
 @property (nonatomic, strong) UIViewController *presendVc;
 
@@ -146,7 +147,7 @@
     _presendVc.modalPresentationStyle = UIModalPresentationOverFullScreen;
     _presendVc.view.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.1];
     [_presendVc.view addSubview:self.backgroundView];
-    [self presentViewController:_presendVc animated:YES completion:nil];
+    [[UIViewController topViewController] presentViewController:_presendVc animated:YES completion:nil];
 }
 
 - (void)adsy_nativeAdViewRenderOrRegistFail:(UIView<ADSuyiAdapterNativeAdViewDelegate> *)adView {
@@ -171,13 +172,6 @@
     
 }
 - (void)setUpUnifiedSplahAdView:(UIView<ADSuyiAdapterNativeAdViewDelegate> *)adView {
-    self.adBgView = [UIView new];
-    self.adBgView.userInteractionEnabled = YES;
-    self.adBgView.layer.cornerRadius = 5;
-    self.adBgView.backgroundColor = UIColor.whiteColor;
-    self.adBgView.clipsToBounds = YES;
-    
-    
     // 设计的adView实际大小，其中宽度和高度可以自己根据自己的需求设置
     CGFloat adWidth = self.backgroundView.frame.size.width - 17 * 2;
     CGFloat adHeight = adWidth / 16.0 * 9;
