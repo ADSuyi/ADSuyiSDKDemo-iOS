@@ -9,6 +9,8 @@
 #import "ADSuyiNativeSplashViewController.h"
 #import <ADSuyiSDK/ADSuyiSDKNativeAd.h>
 #import <ADSuyiKit/ADSuyiKit.h>
+
+#import "UIViewController+TYTopView.h"
 @interface ADSuyiNativeSplashViewController ()<ADSuyiSDKNativeAdDelegate>
 @property (nonatomic, strong) ADSuyiSDKNativeAd *nativeAd;
 
@@ -80,14 +82,22 @@
     }
     return _customClickLabel;
 }
-
+- (UIViewController *)splashViewController{
+    if (!_splashViewController) {
+        _splashViewController = [UIViewController new];
+        _splashViewController.modalPresentationStyle = UIModalPresentationOverFullScreen;
+    }
+    return _splashViewController;
+}
 
 - (void)timerAction:(ADSuyiKitTimer *)timer {
     _skipCount--;
+    _skipCount = _skipCount < 0 ? 0 : _skipCount;
     self.skipLable.text = [NSString stringWithFormat:@" 跳过 | %ld ",(long)_skipCount];
-    if (_skipCount==0) {
+    if (_skipCount==0 && [[UIViewController topViewController] isEqual:self.splashViewController]) {
         [self closeAd];
     }
+    
     
 }
 
@@ -162,9 +172,8 @@
 - (void)adsy_nativeAdViewRenderOrRegistSuccess:(UIView<ADSuyiAdapterNativeAdViewDelegate> *)adView {
     // 6、注册或渲染成功，此时高度正常，可以展示
     // 建议采用控制器承载广告视图，部分平台有监测父视图，window承载时无法点击
-    _splashViewController = [UIViewController new];
-    _splashViewController.modalPresentationStyle = UIModalPresentationOverFullScreen;
-    [_splashViewController.view addSubview:self.backgroundView];
+    
+    [self.splashViewController.view addSubview:self.backgroundView];
     [self presentViewController:_splashViewController animated:nil completion:nil];
     _timer = [ADSuyiKitTimer timerWithTimeInterval:1 target:self selector:@selector(timerAction:) repeats:YES];
     [_timer scheduleImmediately:NO];

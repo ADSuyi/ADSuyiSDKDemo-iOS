@@ -10,7 +10,6 @@
 #import <ADSuyiSDK/ADSuyiSDKNativeAd.h>
 #import <ADSuyiKit/ADSuyiKit.h>
 #import "UIView+Toast.h"
-#import "UIViewController+TYTopView.h"
 @interface AdSuyiNativeInterstitialViewController ()<ADSuyiSDKNativeAdDelegate>
 @property (nonatomic, strong) UIViewController *presendVc;
 
@@ -34,7 +33,8 @@
         _nativeAd = [[ADSuyiSDKNativeAd alloc] initWithAdSize:CGSizeMake(self.view.frame.size.width, 10)];
         // 2、传入posId，重要
         _nativeAd.delegate = self;
-        _nativeAd.controller = self;
+//        _nativeAd.controller = self;
+        _nativeAd.controller = self.presendVc;
         _nativeAd.posId = @"e9eaffb6b9d97cd813";
     }
     return _nativeAd;
@@ -143,13 +143,10 @@
 
 - (void)adsy_nativeAdViewRenderOrRegistSuccess:(UIView<ADSuyiAdapterNativeAdViewDelegate> *)adView {
     // 6、注册或渲染成功，此时高度正常，可以展示
-    _presendVc = [UIViewController new];
-    _presendVc.modalPresentationStyle = UIModalPresentationOverFullScreen;
-    _presendVc.view.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.1];
+  
     [_presendVc.view addSubview:self.backgroundView];
 //    [self presentViewController:_presendVc animated:YES completion:nil];
     [self presentViewController:_presendVc animated:YES completion:^{
-        self.nativeAd.controller = [UIViewController topViewController];
     }];
 }
 
@@ -159,6 +156,7 @@
 
 - (void)adsy_nativeAdClicked:(ADSuyiSDKNativeAd *)nativeAd
                       adView:(__kindof UIView<ADSuyiAdapterNativeAdViewDelegate> *)adView {
+    NSLog(@"点击");
     
 }
 
@@ -242,6 +240,14 @@
 }
 
 
-
+-(UIViewController *)presendVc
+{
+    if (!_presendVc) {
+        _presendVc = [UIViewController new];
+        _presendVc.modalPresentationStyle = UIModalPresentationOverFullScreen;
+        _presendVc.view.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.1];
+    }
+    return _presendVc;
+}
 
 @end
