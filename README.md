@@ -1,4 +1,4 @@
-# ADmobile ADSuyiSDK iOS接入文档 v3.5.0.01161
+# ADmobile ADSuyiSDK iOS接入文档 v3.5.1.02251
 
 
 
@@ -50,8 +50,7 @@
 | v3.4.1   | 2021-12-09 | 新增百度插屏广告支持；穿山甲，优量汇插屏全屏视频合并加载接口；升级第三方SDK（穿山甲，优量汇，汇量，百度，Gromore等）；部分功能优化 |
 | v3.4.2  | 2022-01-04 | Admobile插屏样式修改；升级第三方SDK（穿山甲，优量汇，快手，百度，Gromore等）；部分功能优化 |
 | V3.5.0 | 2022-02-08 | 汇量平台头部竞价支持；适配优量汇沉浸式视频广告；插屏广告；激励视频增加静音api（部分平台支持）；三方平台升级（穿山甲，优量汇，快手，汇量，百度）；部分功能优化 |
-
-
+| V3.5.1 | 2022-03-17 | 广点通，穿山甲增加信息流开屏广告；新增测试日志输出插件（摇一摇出现选择按钮）；全类型增加关闭落地页回调（支持平台添加）；三方平台升级（穿山甲，广点通，Gromore，快手简版）；部分功能优化 |
 
 
 <div STYLE="page-break-after: always;"></div>
@@ -76,7 +75,7 @@
 
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
-pod 'ADSuyiSDK','~> 3.5.0.0' # 主SDK 必选
+pod 'ADSuyiSDK','~> 3.5.1.0' # 主SDK 必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile' # ADMobile  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt' # 优量汇(广点通）
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu' # 百度
@@ -93,7 +92,7 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore' # gromore
 推荐使用导入命令
 
 ```ruby
-pod 'ADSuyiSDK', '~> 3.5.0.0' # 主SDK  #必选	
+pod 'ADSuyiSDK', '~> 3.5.1.0' # 主SDK  #必选	
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile' # ADMobile  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt'	 # 优量汇(广点通)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu' # 百度
@@ -111,7 +110,7 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore' # gromore
 
 ## 2.2 手动导入SDK方式
 
-[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_35001162_9fb6898d2d886ff6c055f05a0ade8a95.zip)下载各SDK拖入到工程中
+[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_35102251_d40967ed1737220c9216cbf656a03cd8.zip)下载各SDK拖入到工程中
 
 手动方式导入,需要添加如下依赖库:
 
