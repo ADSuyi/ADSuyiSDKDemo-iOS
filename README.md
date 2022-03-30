@@ -1,4 +1,4 @@
-# ADmobile ADSuyiSDK iOS接入文档 v3.5.1.02251
+# ADmobile ADSuyiSDK iOS接入文档 v3.5.2.03111
 
 
 
@@ -51,7 +51,7 @@
 | v3.4.2  | 2022-01-04 | Admobile插屏样式修改；升级第三方SDK（穿山甲，优量汇，快手，百度，Gromore等）；部分功能优化 |
 | V3.5.0 | 2022-02-08 | 汇量平台头部竞价支持；适配优量汇沉浸式视频广告；插屏广告；激励视频增加静音api（部分平台支持）；三方平台升级（穿山甲，优量汇，快手，汇量，百度）；部分功能优化 |
 | V3.5.1 | 2022-03-17 | 广点通，穿山甲增加信息流开屏广告；全类型增加关闭落地页回调（支持平台添加）；三方平台升级（穿山甲，广点通，Gromore，快手简版）；部分功能优化 |
-
+| V3.5.2 | 2022-03-30 | 优量汇HB实时竞价支持（客户端）；三方平台升级（穿山甲，广点通，汇量）；部分功能优化 |
 
 <div STYLE="page-break-after: always;"></div>
 
@@ -75,7 +75,7 @@
 
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
-pod 'ADSuyiSDK','~> 3.5.1.0' # 主SDK 必选
+pod 'ADSuyiSDK','~> 3.5.2.0' # 主SDK 必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile' # ADMobile  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt' # 优量汇(广点通）
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu' # 百度
@@ -83,7 +83,7 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu' # 穿山甲(头条)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi' # Inmobi
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks' # 快手(非内容版本，内容与非内容版本不可同时导入)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ksfull' # 快手(内容版本)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg'	 # Mobvista(汇量)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg'     # Mobvista(汇量)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/cloudcode' # 云码
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore' # gromore
 
@@ -92,15 +92,15 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore' # gromore
 推荐使用导入命令
 
 ```ruby
-pod 'ADSuyiSDK', '~> 3.5.1.0' # 主SDK  #必选	
+pod 'ADSuyiSDK', '~> 3.5.2.0' # 主SDK  #必选    
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile' # ADMobile  #必选
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt'	 # 优量汇(广点通)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt'     # 优量汇(广点通)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu' # 百度
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu'	# 穿山甲(头条)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi'	# Inmobi
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks'	# 快手(非内容版本，内容与非内容版本不可同时导入)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ksfull'	# 快手(内容版本)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg'	 # Mobvista(汇量)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu'    # 穿山甲(头条)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi'    # Inmobi
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks'    # 快手(非内容版本，内容与非内容版本不可同时导入)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ksfull'    # 快手(内容版本)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg'     # Mobvista(汇量)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/cloudcode' # 云码
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore' # gromore
 ```
@@ -110,7 +110,7 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore' # gromore
 
 ## 2.2 手动导入SDK方式
 
-[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_35102251_d40967ed1737220c9216cbf656a03cd8.zip)下载各SDK拖入到工程中
+[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_35203111_17ec8195d2c2b908ef95698208966f4c.zip)下载各SDK拖入到工程中
 
 手动方式导入,需要添加如下依赖库:
 
@@ -278,17 +278,17 @@ NSLocationAlwaysAndWhenInUseUsageDeion
 }
 // 建议启动App用户同意协议后就获取权限或者请求广告前获取
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
- 		// 针对iOS15中不弹窗被拒解决方案，方案1：经测试可能无效
-    //dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), 			dispatch_get_main_queue(), ^{
+         // 针对iOS15中不弹窗被拒解决方案，方案1：经测试可能无效
+    //dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)),             dispatch_get_main_queue(), ^{
             // 用户同意协议后获取
-  					//[self requestIDFA];
+                      //[self requestIDFA];
         //});
 }
 // 方案2：根据官方文档调整权限申请时机
 // 根据官方开发文档选择在此方法中进行权限申请
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // 用户同意协议后获取
-  	[self requestIDFA];
+      [self requestIDFA];
 }
 // 建议方案1与2一起使用，可正常通过审核。
 ```
@@ -1373,8 +1373,8 @@ OC请求激励视频代码示例：
     self.rewardvodAd.tolerateTimeout = 5;
     self.rewardvodAd.controller = self;
     self.rewardvodAd.posId = @"e9e0f8d1fe21873695";
-  	// 以下参数如不需服务端验证可不传
-  	self.rewardvodAd.userId = @"xxx";
+      // 以下参数如不需服务端验证可不传
+      self.rewardvodAd.userId = @"xxx";
     self.rewardvodAd.extraInfo = @"这是一个激励视频生效验证";
     self.rewardvodAd.rewardName = @"看视频得金币";
     self.rewardvodAd.rewardAmount = [NSNumber numberWithInt:2];
@@ -2104,7 +2104,7 @@ OC请求沉浸式视频代码示例：
 - (void)adsy_contentAdSucessToLoad:(ADSuyiSDKContentAd *)contentAd contentAdView:(__kindof UIView<ADSuyiSDKContentAdViewProtocol> *)contentAdView {
     _contentAdWidth = contentAdView.contentAdSize.width;
     _contentAdHeight = contentAdView.contentAdSize.height;
-	  [contentAdView adsy_registView:nil];
+      [contentAdView adsy_registView:nil];
     [self.items addObject:contentAdView];
     [self.tableView reloadData];
 }
