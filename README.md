@@ -121,6 +121,8 @@ QuartzCore.framework
 SystemConfiguration.framework
 CoreTelephony.framework
 libz.tbd
+libc++.tbd
+libresolv.9.tbd
 WebKit.framework (Optional)
 libxml2.tbd
 Security.framework
@@ -145,9 +147,7 @@ MediaPlayer.framework
 MobileCoreServices.framework
 UIKit.framework
 libbz2.tbd
-libc++.tbd
 libiconv.tbd
-libresolv.9.tbd
 libsqlite3.tbd
 libc++abi.tbd
 ```
