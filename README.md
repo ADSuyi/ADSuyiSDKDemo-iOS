@@ -33,7 +33,6 @@
 
 
 
-
 ## 修订历史
 
 | 文档版本 | 修订日期   | 修订说明                                                     |
@@ -86,7 +85,6 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks' # 快手(非内容版本，内容与非内
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ksfull' # 快手(内容版本)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg'     # Mobvista(汇量)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore' # gromore
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/cloudcode' # 云码
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi' # Inmobi
 
 ```
@@ -104,7 +102,6 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks'    # 快手(非内容版本，内容与非
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ksfull'    # 快手(内容版本)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg'     # Mobvista(汇量)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore' # gromore
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/cloudcode' # 云码
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi'    # Inmobi
 
 ```
@@ -114,7 +111,7 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi'    # Inmobi
 
 ## 2.2 手动导入SDK方式
 
-[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_36004141_08da68d5063f875abd85c6deda162c00.zip)下载各SDK拖入到工程中
+[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_36004141_a6f1ca4e06d23188d482e9be951c0d27.zip)下载各SDK拖入到工程中
 
 手动方式导入,需要添加如下依赖库:
 
