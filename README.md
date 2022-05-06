@@ -1,4 +1,4 @@
-# ADmobile ADSuyiSDK iOS接入文档 v3.5.3.03312
+# ADmobile ADSuyiSDK iOS接入文档 v3.6.0.04141
 
 
 
@@ -53,6 +53,7 @@
 | V3.5.1 | 2022-03-17 | 广点通，穿山甲增加信息流开屏广告；全类型增加关闭落地页回调（支持平台添加）；三方平台升级（穿山甲，广点通，Gromore，快手简版）；部分功能优化 |
 | V3.5.2 | 2022-03-30 | 优量汇HB实时竞价支持（客户端）；三方平台升级（穿山甲，广点通，汇量）；部分功能优化 |
 | V3.5.3 | 2022-04-18 | 天目支持竞价功能（支持开屏，模板&自渲染信息流，插屏，激励视频）；三方平台升级（穿山甲，广点通，汇量，百度）；部分功能优化 |
+| V3.6.0 | 2022-05-06 |1、新增支持关闭个性化广告，支持平台：穿山甲、优量汇、百度、快手、汇量、天目、Gromore<br>2、三方平台升级（优量汇、汇量、百度）|
 <div STYLE="page-break-after: always;"></div>
 
 
@@ -75,34 +76,37 @@
 
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
-pod 'ADSuyiSDK','~> 3.5.3.0' # 主SDK 必选
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile' # ADMobile  #必选
+pod 'ADSuyiSDK','~> 3.6.0.0' # 主SDK 必选
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/tianmu' # 天目  #必选
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu' # 穿山甲(头条)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt' # 优量汇(广点通）
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu' # 百度
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu' # 穿山甲(头条)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi' # Inmobi
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile' # ADMobile 
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks' # 快手(非内容版本，内容与非内容版本不可同时导入)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ksfull' # 快手(内容版本)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg'     # Mobvista(汇量)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/cloudcode' # 云码
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore' # gromore
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/cloudcode' # 云码
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi' # Inmobi
 
 ```
 
 推荐使用导入命令
 
 ```ruby
-pod 'ADSuyiSDK', '~> 3.5.3.0' # 主SDK  #必选    
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile' # ADMobile  #必选
+pod 'ADSuyiSDK', '~> 3.6.0.0' # 主SDK  #必选    
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/tianmu' # 天目  #必选
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu'    # 穿山甲(头条)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt'     # 优量汇(广点通)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu' # 百度
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu'    # 穿山甲(头条)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi'    # Inmobi
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/admobile' # ADMobile 
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks'    # 快手(非内容版本，内容与非内容版本不可同时导入)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ksfull'    # 快手(内容版本)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg'     # Mobvista(汇量)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/cloudcode' # 云码
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore' # gromore
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/cloudcode' # 云码
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi'    # Inmobi
+
 ```
 
 <div STYLE="page-break-after: always;"></div>
