@@ -21,14 +21,15 @@
     self.title = @"广告平台选择";
     self.tableView.backgroundColor = [UIColor colorWithRed:225/255.0 green:233/255.0 blue:239/255.0 alpha:1];
     self.tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
-    self.platformArray = @[@"默认所有",@"admobile",@"优量汇",@"穿山甲",@"百度",@"汇量",@"快手",@"inmobi",@"云码"];
+    self.platformArray = @[@"默认所有",@"天目",@"优量汇",@"穿山甲",@"百度",@"快手",@"汇量",@"admobile",@"inmobi",@"云码"];
     self.platformDic = @{
-        @"admobile" :@"admobile",
-        @"广点通":@"gdt",
+        @"天目":@"tianmu",
+        @"优量汇":@"gdt",
         @"穿山甲":@"toutiao",
         @"百度":@"baidu",
-        @"汇量":@"mintegral",
         @"快手":@"ksad",
+        @"汇量":@"mintegral",
+        @"admobile" :@"admobile",
         @"inmobi":@"inmobi",
         @"云码":@"yunma"
     };
