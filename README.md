@@ -1,4 +1,4 @@
-# ADmobile ADSuyiSDK iOS接入文档 v3.6.0.04144
+# ADmobile ADSuyiSDK iOS接入文档 v3.6.0.04145
 
 
 
@@ -75,7 +75,7 @@
 
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
-pod 'ADSuyiSDK','~> 3.6.0.04144' # 主SDK 必选
+pod 'ADSuyiSDK','~> 3.6.0.04145' # 主SDK 必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/tianmu' # 天目  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu' # 穿山甲(头条)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt' # 优量汇(广点通）
