@@ -170,54 +170,82 @@ NSLocationAlwaysAndWhenInUseUsageDeion
 ```obj-c
 <key>LSApplicationQueriesSchemes</key>
     <array>
-        <string>dianping</string>
-        <string>imeituan</string>
-        <string>com.suning.SuningEBuy</string>
-        <string>openapp.jdmobile</string>
-        <string>vipshop</string>
-        <string>snssdk141</string>
-        <string>ctrip</string>
-        <string>suning</string>
-        <string>qunariphone</string>
-        <string>QunarAlipay</string>
-        <string>qunaraphone</string>
-        <string>yohobuy</string>
-        <string>kaola</string>
-        <string>agoda</string>
-        <string>openapp.xzdz</string>
-        <string>beibeiapp</string>
-        <string>taobao</string>
-        <string>tmall</string>
-        <string>openjd</string>
-        <string>jhs</string>
-        <string>yhd</string>
-        <string>wireless1688</string>
-        <string>GomeEShop</string>
-        <string>wbmain</string>
-        <string>xhsdiscover</string>
-        <string>douyin</string>
-        <string>pinduoduo</string>
-        <string>jdmobile</string>
-        <string>tbopen</string>
-        <string>pddopen</string>
-        <string>mogujie</string>
-        <string>koubei</string>
-        <string>eleme</string>
-        <string>youku</string>
-        <string>gengmei</string>
-        <string>airbnb</string>
-        <string>alipays</string>
-        <string>didicommon</string>
-        <string>OneTravel</string>
-        <string>farfetchCN</string>
-        <string>farfetch</string>
-        <string>snssdk1112</string>
-        <string>snssdk1128</string>
-        <string>miguvideo</string>
-        <string>kfcapplinkurl</string>
-        <string>iqiyi</string>
-        <string>uclink</string>
-        <string>app.soyoung</string>
+        // 电商及生活
+        <string>com.suning.SuningEBuy</string>  苏宁
+        <string>openapp.jdmobile</string> //  京东
+        <string>openjd</string> // 京东 
+        <string>jdmobile</string> // 京东
+        <string>vmall</string>
+        <string>vipshop</string>  //  维品汇
+        <string>suning</string> // 苏宁
+        <string>yohobuy</string> // 有货
+        <string>kaola</string> // 网易考拉
+        <string>yanxuan</string> // 网易严选
+        <string>wbmain</string>  // 58同城
+        <string>dianping</string>  // 大众点评
+        <string>imeituan</string>  // 美团
+        <string>beibeiapp</string> // 贝贝
+        <string>taobao</string> // 淘宝
+        <string>tmall</string>  // 天猫
+        <string>wireless1688</string> // 阿里巴巴1688
+        <string>tbopen</string> // 淘宝
+        <string>taobaolite</string> // 淘特
+        <string>taobaoliveshare</string> // 淘宝直播
+        <string>koubei</string> // 口碑
+        <string>eleme</string> // 饿了么
+        <string>alipays</string> // 支付宝
+        <string>kfcapplinkurl</string> // KFC
+        <string>pddopen</string> // 拼多多
+        <string>pinduoduo</string> // 拼多多
+        <string>mogujie</string> // 蘑菇街
+        <string>lianjiabeike</string> // 链家贝壳
+        <string>lianjia</string> // 链家
+        <string>openanjuke</string>  // 安居客
+        <string>zhuanzhuan</string>  // 转转
+        <string>farfetchCN <string> // 发发奇全球时尚购物
+        // 社交社区
+        <string>weibo</string> // 微博
+        <string>xhsdiscover</string>  // 小红书
+        <string>uclink</string> // uc浏览器
+        <string>momochat</string> // 陌陌
+        <string>blued</string> // Blued
+        <string>zhihu</string>  // 知乎
+        <string>baiduboxapp</string> // 手机百度
+        <string>yidui</string>  // 伊对
+        // 资讯及阅读   
+        <string>sinanews</string>   // 新浪新闻
+        <string>snssdk141</string>  // 今日头条
+        <string>newsapp</string> // 网易新闻
+        <string>igetApp</string>  // 得到 
+        <string>kuaikan</string> // 快看漫画
+        // 短视频及音乐        
+        <string>youku</string> // 优酷
+        <string>snssdk1128</string> // 抖音
+        <string>gifshow</string> // 快手
+        <string>snssdk1112</string> // 火山
+        <string>miguvideo</string> // 咪咕视频
+        <string>iqiyi</string> // 爱奇艺
+        <string>bilibili</string> // B站  
+        <string>tenvideo</string> // 腾讯视频
+        <string>baiduhaokan</string>    // 百度好看
+        <string>yykiwi</string>   // 虎牙直播
+        <string>qqmusic</string> //  qq音乐
+        <string>orpheus</string> // 网易云音乐
+        <string>kugouURL</string> // 酷狗  
+        <string>qmkege</string> // 全民K歌 
+        <string>changba</string> // 唱吧
+        <string>iting</string> // 喜马拉雅
+        // 出行                
+        <string>ctrip</string>  // 携程
+        <string>QunarAlipay</string>  // 去哪儿旅行
+        <string>diditaxi</string> // 滴滴出行
+        <string>didicommon</string> // 滴滴出行
+        <string>taobaotravel</string> // 飞猪
+        <string>OneTravel</string> // 海南航空
+        <string>kfhxztravel</string> // 花小猪
+        // 医美            
+        <string>gengmei</string>  // 更美
+        <string>app.soyoung</string> // 新氧医美
     </array>
 ```
 
