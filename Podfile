@@ -8,7 +8,7 @@ target 'ADSuyiSDKDemo-iOS' do
   # Comment the next line if you don't want to use dynamic frameworks
 
   # Pods for ADSuyiSDKDemo-iOS
-  pod 'ADSuyiSDK', '~>3.6.0.04145'#必选
+  pod 'ADSuyiSDK', '~>3.6.0.04146'#必选
   pod 'ADSuyiSDK/ADSuyiSDKPlatforms/tianmu'#必选
   pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt'
   pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu'
