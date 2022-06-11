@@ -1,4 +1,4 @@
-# ADmobile ADSuyiSDK iOS接入文档 v3.6.0.04146
+# ADmobile ADSuyiSDK iOS接入文档 v3.6.1.05191
 
 
 
@@ -53,6 +53,7 @@
 | V3.5.2 | 2022-03-30 | 优量汇HB实时竞价支持（客户端）；三方平台升级（穿山甲，广点通，汇量）；部分功能优化 |
 | V3.5.3 | 2022-04-18 | 天目支持竞价功能（支持开屏，模板&自渲染信息流，插屏，激励视频）；三方平台升级（穿山甲，广点通，汇量，百度）；部分功能优化 |
 | V3.6.0 | 2022-05-06 | 新增支持关闭个性化广告，支持平台：穿山甲、优量汇、百度、快手、汇量、天目、Gromore；三方平台升级（优量汇、汇量、百度）|
+| V3.6.1 | 2022-06-10 | 三方平台升级（穿山甲、优量汇、汇量、百度、Gromore）|
 <div STYLE="page-break-after: always;"></div>
 
 
@@ -75,7 +76,7 @@
 
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
-pod 'ADSuyiSDK','~> 3.6.0.04146' # 主SDK 必选
+pod 'ADSuyiSDK','~> 3.6.1.05191' # 主SDK 必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/tianmu' # 天目  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu' # 穿山甲(头条)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt' # 优量汇(广点通）
@@ -449,8 +450,20 @@ NSString *sdkVersion = [ADSuyiSDK getSDKVersion];
 
 <div STYLE="page-break-after: always;"></div>
 
+## 4.2 个性化开关
 
-## 4.2 开屏广告 - ADSuyiSDKSplashAd
+ADSuyi的个性化开关可统一控制第三方广告SDK的个性化开关接口，目前支持天目、穿山甲、优量汇、百度、快手、汇量、Gromore;
+
+```obj-c
+// 是否开启个性化广告；默认YES，建议初始化SDK之前设置
+   ADSuyiSDK.enablePersonalAd = NO;
+```
+
+<div STYLE="page-break-after: always;"></div>
+
+
+
+## 4.3 开屏广告 - ADSuyiSDKSplashAd
 
 开屏广告会在您的应用开启时加载展示，拥有固定展示时间，展示完毕后自动关闭并进入您的应用主界面。
 
@@ -810,7 +823,7 @@ OC请求开屏广告代码示例：
 <div STYLE="page-break-after: always;"></div>
 
 
-## 4.3 Banner横幅广告 - ADSuyiSDKBannerAdView
+## 4.4 Banner横幅广告 - ADSuyiSDKBannerAdView
 
 Banner广告(横幅广告)位于app顶部、中部、底部任意一处，横向贯穿整个app页面；当用户与app互动时，Banner广告会停留在屏幕上，并可在一段时间后自动刷新。
 
@@ -991,7 +1004,7 @@ OC请求横幅广告请求示例：
 <div STYLE="page-break-after: always;"></div>
 
 
-## 4.4 信息流广告 - ADSuyiSDKNativeAd
+## 4.5 信息流广告 - ADSuyiSDKNativeAd
 
 信息流广告，具备自渲染和模板两种广告样式：自渲染是SDK将返回广告标题、描述、Icon、图片、多媒体视图等信息，开发者可通过自行拼装渲染成喜欢的样式；模板样式则是返回拼装好的广告视图，开发者只需将视图添加到相应容器即可，模板样式的容器高度建议是自适应。**请务必确保自渲染类型广告渲染时包含广告创意素材（至少包含一张图片）、平台logo、广告标识、关闭按钮；模板广告不得被遮挡。** **注意，信息流广告点击关闭时，开发者需要在- (void)adsy_nativeAdClose:回调中将广告视图隐藏或移除，避免如穿山甲渠道点击关闭后视图依旧存在问题**
 
@@ -1184,7 +1197,7 @@ if(!_nativeAd) {
 <div STYLE="page-break-after: always;"></div>
 
 
-## 4.5 激励视频广告 - ADSuyiSDKRewardvodAd
+## 4.6 激励视频广告 - ADSuyiSDKRewardvodAd
 
 将短视频融入到APP场景当中，用户观看短视频广告后可以给予一些应用内奖励。常出现在游戏的复活、任务等位置，或者网服类APP的一些增值服务场景。
 
@@ -1453,7 +1466,7 @@ OC请求激励视频代码示例：
 <div STYLE="page-break-after: always;"></div>
 
 
-## 4.6 插屏广告 - ADSuyiSDKIntertitialAd
+## 4.7 插屏广告 - ADSuyiSDKIntertitialAd
 
 插屏广告是移动广告的一种常见形式，在应用流程中弹出，当应用展示插屏广告时，用户可以选择点击广告，访问其目标网址，也可以将其关闭并返回应用。在应用执行流程的自然停顿点，适合投放这类广告。
 
@@ -1614,7 +1627,7 @@ OC请求插屏代码示例：
 
 <div STYLE="page-break-after: always;"></div>
 
-## 4.7 全屏视频广告 - ADSuyiSDKFullScreenVodAd
+## 4.8 全屏视频广告 - ADSuyiSDKFullScreenVodAd
 
 类似激励视频，与激励视频不同的是，全屏视频广告在观看一定时长（通常为5s）后即可跳过广告，无需全部观看完成，有视频跳过回调，但是没有激励回调。
 
@@ -1800,7 +1813,7 @@ OC请求全屏视频广告代码示例：
 <div STYLE="page-break-after: always;"></div> 
 
 
-## 4.8 沉浸式视频广告 - ADSuyiSDKDrawvodAd
+## 4.9 沉浸式视频广告 - ADSuyiSDKDrawvodAd
 
 类似抖音、快手小视频一样的视频广告，目前仅有穿山甲和快手联盟拥有该样式。
 
@@ -1973,7 +1986,7 @@ OC请求沉浸式视频代码示例：
 <div STYLE="page-break-after: always;"></div> 
 
 
-## 4.9 浮窗广告 - ADSuyiSDKNotificationAd
+## 4.10 浮窗广告 - ADSuyiSDKNotificationAd
 
 浮窗广告正常情况下不需要手动调用任何相关代码，如果需要展示请联系媒介处理。
 
@@ -1992,7 +2005,7 @@ OC请求沉浸式视频代码示例：
 <div STYLE="page-break-after: always;"></div> 
 
 
-## 4.10 快手内容 - ADSuyiContentAd
+## 4.11 快手内容 - ADSuyiContentAd
 
 快手小视频一样的视频广告，点击进入快手的内容页面
 
@@ -2135,7 +2148,7 @@ OC请求沉浸式视频代码示例：
 
 <div STYLE="page-break-after: always;"></div>
 
-## 4.11 菜谱内容
+## 4.12 菜谱内容
 [菜谱内容功能对接文档](README_Ecook.md)
 
 ## 作者
