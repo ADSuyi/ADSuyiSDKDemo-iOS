@@ -112,7 +112,7 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi' # Inmobi
 
 ## 2.2 手动导入SDK方式
 
-[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_36105194_7510d529903909b779ff7f37d3ee5960.zip)下载各SDK拖入到工程中
+[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_36206231_5c1216fc4767c1895786de235b2d5564.zip)下载各SDK拖入到工程中
 
 手动方式导入,需要添加如下依赖库:
 
