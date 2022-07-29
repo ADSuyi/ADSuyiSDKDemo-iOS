@@ -21,11 +21,6 @@ target 'ADSuyiSDKDemo-iOS' do
     'ADSuyiSDKPlatforms/gromore', # gromore
     'ADSuyiSDKPlatforms/inmobi' # Inmobi
   ]
-
-  pod 'EcookSDK'#菜谱sdk 未使用不必导入
-#  小说SDK
-#  pod 'ADSuyiStarRd'
-
   pod 'MJRefresh'
 
 end
