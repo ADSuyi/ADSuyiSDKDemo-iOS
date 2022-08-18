@@ -13,6 +13,7 @@
 #import "SetConfigManager.h"
 #import "ADSuyiSplashSkipView.h"
 #import "ADSuyiRingProgressView.h"
+#import "AdMacros.h"
 @interface AdSuyiSplashViewController ()<ADSuyiSDKSplashAdDelegate>
 
 @property (nonatomic, strong) ADSuyiSDKSplashAd *splashAd;
@@ -43,7 +44,7 @@
     self.splashAd = [[ADSuyiSDKSplashAd alloc]init];
     self.splashAd.delegate = self;
     self.splashAd.controller = self;
-    self.splashAd.posId = @"73128265daffdd6a1d";
+    self.splashAd.posId = Suyi_Demo_splashAd_PosId;
     self.splashAd.tolerateTimeout = 4;
     self.splashAd.backgroundColor = [UIColor adsy_getColorWithImage:[UIImage imageNamed:@"750x1334.png"] withNewSize:[UIScreen mainScreen].bounds.size];
     

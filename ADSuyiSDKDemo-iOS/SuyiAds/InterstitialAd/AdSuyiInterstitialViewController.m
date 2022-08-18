@@ -10,6 +10,7 @@
 #import <ADSuyiSDK/ADSuyiSDKIntertitialAd.h>
 #import "UIView+Toast.h"
 #import "SetConfigManager.h"
+#import "AdMacros.h"
 @interface AdSuyiInterstitialViewController ()<ADSuyiSDKIntertitialAdDelegate>
 
 @property (nonatomic, strong) ADSuyiSDKIntertitialAd *intertitialAd;
@@ -54,7 +55,7 @@
     // 1、初始化插屏广告
     self.intertitialAd = [ADSuyiSDKIntertitialAd new];
     self.intertitialAd.controller = self;
-    self.intertitialAd.posId = @"9535af29514e548fe0";
+    self.intertitialAd.posId = Suyi_Demo_intertitialAd_PosId;
     self.intertitialAd.delegate = self;
     self.intertitialAd.tolerateTimeout = 4;
     if (![[SetConfigManager sharedManager].fullAdAdScenceId isEqualToString:@""])

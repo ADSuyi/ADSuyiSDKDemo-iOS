@@ -142,6 +142,7 @@
 		BFEA08A0247E5430001815E3 /* AdSuyiRewardvodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdSuyiRewardvodViewController.m; sourceTree = "<group>"; };
 		BFEA08A1247E5430001815E3 /* AdSuyiRewardvodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdSuyiRewardvodViewController.h; sourceTree = "<group>"; };
 		E9D0A8A4477F8E6405A1F4EC /* Pods-ADSuyiSDKDemo-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADSuyiSDKDemo-iOS.debug.xcconfig"; path = "Target Support Files/Pods-ADSuyiSDKDemo-iOS/Pods-ADSuyiSDKDemo-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		FACF6DFB28AE28D4002A83F3 /* AdMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdMacros.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,6 +313,7 @@
 				BFEA0877247E4CCF001815E3 /* Assets.xcassets */,
 				BFEA087C247E4CCF001815E3 /* Info.plist */,
 				BFEA087D247E4CCF001815E3 /* main.m */,
+				FACF6DFB28AE28D4002A83F3 /* AdMacros.h */,
 			);
 			path = "ADSuyiSDKDemo-iOS";
 			sourceTree = "<group>";

@@ -18,6 +18,8 @@
 #import <AdSupport/AdSupport.h>
 #import "NavigationViewController.h"
 
+#import "AdMacros.h"
+
 // 支持广点通开屏广告v+
 #define SUPPORT_SPLASH_ZOOMOUT 1
 
@@ -104,7 +106,7 @@ ADSuyiSDKSplashAdDelegate
 #endif
     self.splashAd.controller = _window.rootViewController;
     // 2、设置开屏的广告位id
-    self.splashAd.posId = @"73128265daffdd6a1d";
+    self.splashAd.posId = Suyi_Demo_splashAd_PosId;
     /**
     开屏请求总超时时间:所有平台轮询的请求等待总时长（不包括图片渲染时间），单位秒，推荐设置为4s，最小值为3s
     开屏各平台分配逻辑:(目前只有开屏需要分配时间，并且理论上分配给到各平台的超时时间不会完全耗尽)
@@ -302,7 +304,7 @@ ADSuyiSDKSplashAdDelegate
     // 设置日志输出等级
     [ADSuyiSDK setLogLevel:ADSuyiKitLogLevelDebug];
     // ADSuyiSDK初始化
-    [ADSuyiSDK initWithAppId:@"3437764" completionBlock:^(NSError * _Nonnull error) {
+    [ADSuyiSDK initWithAppId:Suyi_Demo_APPID completionBlock:^(NSError * _Nonnull error) {
         if (error) {
             NSLog(@"SDK 初始化失败：%@", error.localizedDescription);
         }
@@ -312,7 +314,6 @@ ADSuyiSDKSplashAdDelegate
      * 其他的接入方式会有需要特殊注意的方式，遇到过的相关问题在SDK相关问题的文档中有提到
      */
     [self loadSplashAd];
-    
 }
 
 #pragma mark -- helper
