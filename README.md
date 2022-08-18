@@ -1,4 +1,4 @@
-# ADmobile ADSuyiSDK iOS接入文档 v3.6.2.06232
+# ADmobile ADSuyiSDK iOS接入文档 v3.6.2.06234
 
 
 
@@ -74,7 +74,7 @@
 ## 1.2 ADSuyiSDK&三方广告平台适配器版本(以日志输出为准)
 | Name         | 版本号      |  
 |--------------|-------------|           
-| ADSuyiSDK | 3.6.2.06232 |    
+| ADSuyiSDK | 3.6.2.06234 |    
 | tianmu | 1.3.1.1.06231 | 
 | jiguang | 5.0.6.06231 |   
 | baidu | 4.88.06231 |    
@@ -93,7 +93,7 @@
 
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
-pod 'ADSuyiSDK','~> 3.6.2.06232' # 主SDK 必选
+pod 'ADSuyiSDK','~> 3.6.2.06234' # 主SDK 必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/tianmu' # 天目  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu' # 穿山甲(头条)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt' # 优量汇(广点通）
@@ -110,9 +110,27 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi' # Inmobi
 <div STYLE="page-break-after: always;"></div>
 
 
+### 2.1.1 注意事项
+
+`pod 'ADSuyiSDK/ADSuyiSDKPlatforms/xxxx'` 默认集成了一个固定版本的三方SDK，如果因为项目中也使用了相同的三方广告SDK而发生冲突，可通过以下方法尝试避免或解决；
+
+
+- 通过 Pod 我们的 __xxx-without__ 依赖，该方式没有绑定三方广告SDK，开发者可自行集成三方广告SDK，但是需要注意，我们的AdapterSdk是基于三方广告SDK某个版本开发的，如果自行集成三方广告SDK，需要承担三方广告SDK版本不一致可能引起的兼容性和其他不可预知问题；
+
+
+
+    ```
+    # 例如：
+    
+    pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt-without'        # 优量汇(广点通）
+    
+    ```
+
+
+
 ## 2.2 手动导入SDK方式
 
-[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_36206232_4e3034eec341f53167972cdd0d4c3161.zip)下载各SDK拖入到工程中
+[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_36206234_7865f1ee7372253cc030d432f8f84ab7.zip)下载各SDK拖入到工程中
 
 手动方式导入,需要添加如下依赖库:
 
