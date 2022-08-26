@@ -1,4 +1,4 @@
-# ADmobile ADSuyiSDK iOS接入文档 v3.6.2.06234
+# ADmobile ADSuyiSDK iOS接入文档 v3.6.5.07281
 
 
 
@@ -55,6 +55,7 @@
 | V3.6.0 | 2022-05-06 | 新增支持关闭个性化广告，支持平台：穿山甲、优量汇、百度、快手、汇量、天目、Gromore；三方平台升级（优量汇、汇量、百度）|
 | V3.6.1 | 2022-06-10 | 三方平台升级（天目、穿山甲、优量汇、汇量、百度、Gromore）|
 | V3.6.2 | 2022-07-13 |1、新增浮窗支持主动触发 2、新增支持极光联盟平台，支持广告类型：横幅、插屏、模板&自渲染信息流 3、三方平台升级（天目、穿山甲、优量汇、汇量、百度、Gromore）|
+| V3.6.5 | 2022-08-26 | 1、快手支持Bindding竞价功能，支持广告类型：开屏、插屏、激励视频、信息流模板&自渲染 2、广告位Bidding与瀑布流请求模式支持串行、并行 3、Bidding新增支持最低出价限制 4、三方平台升级（天目、穿山甲、优量汇、汇量、百度、快手、Gromore）备注：1、因优量汇信息流修改，请将信息流传入高度设置为0，则为自适应高度；|
 <div STYLE="page-break-after: always;"></div>
 
 
@@ -74,16 +75,16 @@
 ## 1.2 ADSuyiSDK&三方广告平台适配器版本(以日志输出为准)
 | Name         | 版本号      |  
 |--------------|-------------|           
-| ADSuyiSDK | 3.6.2.06234 |    
-| tianmu | 1.3.1.1.06231 | 
+| ADSuyiSDK | 3.6.5.07281 |    
+| tianmu | 1.3.2.1.07281 | 
 | jiguang | 5.0.6.06231 |   
-| baidu | 4.88.06231 |    
-| gdt | 4.13.71.06232 |    
-| ksad | 3.3.23.06231 |    
-| mintegral | 7.1.7.06231 |    
-| toutiao | 4.5.1.6.06231 | 
+| baidu | 4.881.07281 |    
+| gdt | 4.13.81.07281 |    
+| ksad | 3.3.27.07281 |    
+| mintegral | 7.1.8.07281 |    
+| toutiao | 4.6.0.7.07281 | 
 | admobile | 3.6.2.06231.2 | 
-| gromore | 3.5.0.0.06231 | 
+| gromore | 3.5.1.3.07281 | 
 | inmobi | 7.5.0.01071 |  
                   
 
@@ -93,7 +94,7 @@
 
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
-pod 'ADSuyiSDK','~> 3.6.2.06234' # 主SDK 必选
+pod 'ADSuyiSDK','~> 3.6.5.07281' # 主SDK 必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/tianmu' # 天目  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu' # 穿山甲(头条)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt' # 优量汇(广点通）
@@ -130,7 +131,7 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi' # Inmobi
 
 ## 2.2 手动导入SDK方式
 
-[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_36206234_7865f1ee7372253cc030d432f8f84ab7.zip)下载各SDK拖入到工程中
+[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_36507281_819bc0dcbeba0419a357ca17239bf079.zip)下载各SDK拖入到工程中
 
 手动方式导入,需要添加如下依赖库:
 

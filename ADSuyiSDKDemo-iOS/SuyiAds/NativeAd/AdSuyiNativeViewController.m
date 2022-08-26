@@ -122,8 +122,8 @@
     }
     
     if(!_nativeAd) {
-        // 1、信息流广告初始化
-        _nativeAd = [[ADSuyiSDKNativeAd alloc] initWithAdSize:CGSizeMake(self.tableView.frame.size.width, 10)];
+        // 1、信息流广告初始化 建议高度设置为0，为自适应
+        _nativeAd = [[ADSuyiSDKNativeAd alloc] initWithAdSize:CGSizeMake(self.tableView.frame.size.width, 0)];
         // 2、传入posId，重要
         _nativeAd.delegate = self;
         _nativeAd.controller = self;
