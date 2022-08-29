@@ -55,7 +55,7 @@
 | V3.6.0 | 2022-05-06 | 新增支持关闭个性化广告，支持平台：穿山甲、优量汇、百度、快手、汇量、天目、Gromore；三方平台升级（优量汇、汇量、百度）|
 | V3.6.1 | 2022-06-10 | 三方平台升级（天目、穿山甲、优量汇、汇量、百度、Gromore）|
 | V3.6.2 | 2022-07-13 |1、新增浮窗支持主动触发 2、新增支持极光联盟平台，支持广告类型：横幅、插屏、模板&自渲染信息流 3、三方平台升级（天目、穿山甲、优量汇、汇量、百度、Gromore）|
-| V3.6.5 | 2022-08-26 | 1、快手支持Bindding竞价功能，支持广告类型：开屏、插屏、激励视频、信息流模板&自渲染 2、广告位Bidding与瀑布流请求模式支持串行、并行 3、Bidding新增支持最低出价限制 4、三方平台升级（天目、穿山甲、优量汇、汇量、百度、快手、Gromore）备注：1、因优量汇信息流修改，请将信息流传入高度设置为0，则为自适应高度；|
+| V3.6.5 | 2022-08-26 | 1、快手支持Bindding竞价功能，支持广告类型：开屏、插屏、激励视频、信息流模板&自渲染 2、广告位Bidding与瀑布流请求模式支持串行、并行 3、Bidding新增支持最低出价限制 4、广告超时时间逻辑修改，支持后端下发 5、新增广告位填充上报 6、三方平台升级（天目、穿山甲、优量汇、汇量、百度、快手、Gromore）备注：因优量汇信息流修改，请将信息流传入高度设置为0，则为自适应高度；|
 <div STYLE="page-break-after: always;"></div>
 
 
@@ -1176,8 +1176,8 @@ OC请求信息流广告请求示例：
 #import <ADSuyiSDK/ADSuyiSDKNativeAd.h>
 
 if(!_nativeAd) {
-   // 1、信息流广告初始化
-   _nativeAd = [[ADSuyiSDKNativeAd alloc] initWithAdSize:CGSizeMake(self.tableView.frame.size.width, 10)];
+   // 1、信息流广告初始化 建议将高度设置为0
+   _nativeAd = [[ADSuyiSDKNativeAd alloc] initWithAdSize:CGSizeMake(self.tableView.frame.size.width, 0)];
    // 2、传入posId，重要
    _nativeAd.posId = self.posId;
    _nativeAd.delegate = self;
