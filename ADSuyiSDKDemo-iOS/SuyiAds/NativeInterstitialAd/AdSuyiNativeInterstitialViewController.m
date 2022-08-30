@@ -10,6 +10,8 @@
 #import <ADSuyiSDK/ADSuyiSDKNativeAd.h>
 #import <ADSuyiKit/ADSuyiKit.h>
 #import "UIView+Toast.h"
+#import "AdMacros.h"
+
 @interface AdSuyiNativeInterstitialViewController ()<ADSuyiSDKNativeAdDelegate>
 @property (nonatomic, strong) UIViewController *presendVc;
 
@@ -35,7 +37,7 @@
         _nativeAd.delegate = self;
 //        _nativeAd.controller = self;
         _nativeAd.controller = self.presendVc;
-        _nativeAd.posId = @"e9eaffb6b9d97cd813";
+        _nativeAd.posId = Suyi_Demo_flowAd_Native_PosId;
     }
     return _nativeAd;
 }

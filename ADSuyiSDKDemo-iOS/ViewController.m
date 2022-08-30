@@ -30,6 +30,7 @@
 #import "ADSuyiNativeSplashViewController.h"
 #import "AdSuyiNativeInterstitialViewController.h"
 #import "AdSuyiNativeMainViewController.h"
+#import "AdMacros.h"
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *mainTableView;
@@ -181,7 +182,7 @@
         }
         case 9:{
             ADSuyiGroupAdViewController *groupVc = [ADSuyiGroupAdViewController new];
-            groupVc.nativePosid = @"177a790a315eeb7053";
+            groupVc.nativePosid = Suyi_Demo_flowAd_PosId;
             groupVc.rewardPosid = @"47d196ffaaa92ae93c";
             [self.navigationController pushViewController:groupVc animated:YES];
             break;

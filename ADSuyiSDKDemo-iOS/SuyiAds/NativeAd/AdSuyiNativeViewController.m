@@ -14,6 +14,7 @@
 #import <ADSuyiKit/UIColor+ADSuyiKit.h>
 #import <ADSuyiKit/ADSuyiKitMacros.h>
 #import "SetConfigManager.h"
+#import "AdMacros.h"
 @interface AdSuyiNativeViewController () <UITableViewDelegate, UITableViewDataSource, ADSuyiSDKNativeAdDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -75,7 +76,7 @@
 - (void)showTypeSelect {
     UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:@"" message:@"选择信息流类型" preferredStyle:(UIAlertControllerStyleActionSheet)];
     UIAlertAction *expressType = [UIAlertAction actionWithTitle:@"模板" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-        self.posId = @"177a790a315eeb7053";
+        self.posId = Suyi_Demo_flowAd_PosId;
         [self cleanAllAd];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             self->_nativeAd.delegate = nil;
@@ -84,7 +85,7 @@
         });
     }];
     UIAlertAction *nativeType = [UIAlertAction actionWithTitle:@"自渲染" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-        self.posId = @"e9eaffb6b9d97cd813";
+        self.posId = Suyi_Demo_flowAd_Native_PosId;
         [self cleanAllAd];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             self->_nativeAd.delegate = nil;
@@ -120,7 +121,7 @@
  */
 - (void)loadNative{
     if (kADSYStringIsEmpty(self.posId)) {
-        self.posId = @"177a790a315eeb7053";
+        self.posId = Suyi_Demo_flowAd_PosId;
     }
     
     if(!_nativeAd) {
@@ -148,13 +149,7 @@
         return 44;
     }
 }
-
-- (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if([cell isKindOfClass:[AdSuyiNativeViewCell class]]) {
-        [(AdSuyiNativeViewCell *)cell setAdView:nil];
-    }
-}
-
+    
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

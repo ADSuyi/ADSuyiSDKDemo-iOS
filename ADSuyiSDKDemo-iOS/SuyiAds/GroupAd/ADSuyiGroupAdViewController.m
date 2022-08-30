@@ -13,6 +13,7 @@
 #import <ADSuyiKit/ADSuyiKitMacros.h>
 #import <ADSuyiSDK/ADSuyiSDKRewardvodAd.h>
 #import "UIView+Toast.h"
+#import "AdMacros.h"
 @interface ADSuyiGroupAdViewController ()<ADSuyiSDKNativeAdDelegate,ADSuyiSDKRewardvodAdDelegate>
 
 @property (nonatomic, strong) ADSuyiSDKNativeAd *nativeAd;
@@ -89,7 +90,7 @@
 
 - (void)loadNormal {
     _nativeAd = nil;
-    _nativePosid = @"177a790a315eeb7053";
+    _nativePosid = Suyi_Demo_flowAd_PosId;
     [self requestNativeAd];
     _logString = [NSString stringWithFormat:@"%@开始获取DL广告\n",_logString];
     self.textView.text = _logString;

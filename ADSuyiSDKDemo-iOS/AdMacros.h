@@ -18,8 +18,8 @@
 #define Suyi_Demo_intertitialAd_PosId @"9535af29514e548fe0"
 
 // Flow
-#define Suyi_Demo_flowAd_PosId @""
-#define Suyi_Demo_flowAd_Native_PosId @""
+#define Suyi_Demo_flowAd_PosId @"177a790a315eeb7053"
+#define Suyi_Demo_flowAd_Native_PosId @"e9eaffb6b9d97cd813"
 
 // Banner
 #define Suyi_Demo_bannerAd_PosId_100 @""

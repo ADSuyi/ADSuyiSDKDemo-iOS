@@ -9,8 +9,9 @@
 #import "ADSuyiNativeSplashViewController.h"
 #import <ADSuyiSDK/ADSuyiSDKNativeAd.h>
 #import <ADSuyiKit/ADSuyiKit.h>
-
 #import "UIViewController+TYTopView.h"
+#import "AdMacros.h"
+
 @interface ADSuyiNativeSplashViewController ()<ADSuyiSDKNativeAdDelegate>
 @property (nonatomic, strong) ADSuyiSDKNativeAd *nativeAd;
 
@@ -39,7 +40,7 @@
         // 2、传入posId，重要
         _nativeAd.delegate = self;
         _nativeAd.controller = self;
-        _nativeAd.posId = @"e9eaffb6b9d97cd813";
+        _nativeAd.posId = Suyi_Demo_flowAd_Native_PosId;
     }
     return _nativeAd;
 }
