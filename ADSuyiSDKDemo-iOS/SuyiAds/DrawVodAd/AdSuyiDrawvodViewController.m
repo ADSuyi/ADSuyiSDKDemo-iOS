@@ -161,7 +161,9 @@ static NSString *identifier = @"cell";
 - (void)adsy_drawvodAdDidClick:(ADSuyiAdapterDrawvodAdView *)drawvodAdView {
     
 }
-
+- (void)adsy_drawvodAdCloseLandingPage:(ADSuyiAdapterDrawvodAdView *)drawvodAdView {
+   
+}
 #pragma mark - Lazy load
 
 - (ADSuyiSDKDrawvodAd *)drawvodAd {

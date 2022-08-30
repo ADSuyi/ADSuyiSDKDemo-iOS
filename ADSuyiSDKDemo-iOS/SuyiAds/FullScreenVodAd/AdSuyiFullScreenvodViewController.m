@@ -177,4 +177,14 @@ ADSuyiSDKFullScreenVodAd播放完成回调
 - (void)adsy_fullScreenVodAdPlayComplete:(ADSuyiSDKFullScreenVodAd *)fullScreenVodAd didFailed:(NSError *_Nullable)error{
     
 }
+
+/**
+ADSuyiSDKFullScreenVodAd关闭落地页回调
+
+ @param fullScreenVodAd 广告实例
+*/
+- (void)adsy_fullScreenVodAdCloseLandingPage:(ADSuyiSDKFullScreenVodAd *)fullScreenVodAd {
+    
+}
+
 @end

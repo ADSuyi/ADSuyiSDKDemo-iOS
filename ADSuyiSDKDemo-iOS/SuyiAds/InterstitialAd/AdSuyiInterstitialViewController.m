@@ -142,4 +142,13 @@
 - (void)adsy_interstitialAdExposure:(ADSuyiSDKIntertitialAd *)interstitialAd{
     
 }
+
+/**
+ ADSuyiSDKIntertitialAd关闭落地页回调
+ 
+ @param interstitialAd 广告实例
+ */
+-(void)adsy_interstitialAdCloseLandingPage:(ADSuyiSDKIntertitialAd *)interstitialAd{
+    
+}
 @end

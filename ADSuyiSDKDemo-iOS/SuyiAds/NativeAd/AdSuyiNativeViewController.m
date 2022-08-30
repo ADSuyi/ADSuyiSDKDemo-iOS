@@ -35,7 +35,7 @@
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
     UIButton *setAdConfigBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
-//    [setAdConfigBtn setTitle:@"设置" forState:(UIControlStateNormal)];
+    //    [setAdConfigBtn setTitle:@"设置" forState:(UIControlStateNormal)];
     [setAdConfigBtn setImage:[UIImage imageNamed:@"set"] forState:(UIControlStateNormal)];
     [setAdConfigBtn setTitleColor:UIColor.whiteColor forState:(UIControlStateNormal)];
     setAdConfigBtn.titleLabel.font = [UIFont systemFontOfSize:15];
@@ -78,6 +78,7 @@
         self.posId = @"177a790a315eeb7053";
         [self cleanAllAd];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            self->_nativeAd.delegate = nil;
             self->_nativeAd = nil;
             [self loadNative];
         });
@@ -86,6 +87,7 @@
         self.posId = @"e9eaffb6b9d97cd813";
         [self cleanAllAd];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            self->_nativeAd.delegate = nil;
             self->_nativeAd = nil;
             [self loadNative];
         });
@@ -168,6 +170,11 @@
     if([item conformsToProtocol:@protocol(ADSuyiAdapterNativeAdViewDelegate)]) {
         AdSuyiNativeViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"adcell" forIndexPath:indexPath];
         cell.adView = item;
+        //备注：如果是自渲染信息流，建议将关闭按钮添加到和adView同一层级，切勿将关闭按钮添加到adView上 (必要)
+        UIView<ADSuyiAdapterNativeAdViewDelegate> *adView = item;
+        if(!adView.adsy_closeButtonExist) {
+            cell.closeBtnView = [self getCloseButtonWithAdItem:item];
+        }
         return cell;
     } else {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
@@ -186,12 +193,12 @@
         // 如果单纯只配置了模版信息流，那么不需要实现，如果配置了自渲染信息流，那么需要实现
         if(adView.renderType == ADSuyiAdapterRenderTypeNative) {
             // 4.1、如果是自渲染类型则可样式自定义(3种示例demo样式见下)
-                // 1、常规样式
+            // 1、常规样式
             [self setUpUnifiedTopImageNativeAdView:adView];
-                // 2、纯图样式
-//            [self setUpUnifiedOnlyImageNativeAdView:adView];
-                // 3、上图下文
-//            [self setUpUnifiedTopImageNativeAdView:adView];
+            // 2、纯图样式
+            //            [self setUpUnifiedOnlyImageNativeAdView:adView];
+            // 3、上图下文
+            //            [self setUpUnifiedTopImageNativeAdView:adView];
         }
         // 5、注册，自渲染：注册点击事件，模板：render，重要
         [adView adsy_registViews:@[adView]];
@@ -253,6 +260,9 @@
     
 }
 
+-(void)adsy_nativeAdCloseLandingPage:(ADSuyiSDKNativeAd *)nativeAd adView:(__kindof UIView<ADSuyiAdapterNativeAdViewDelegate> *)adView{
+    
+}
 #pragma mark - Helper 自渲染类型信息流处理方法（以下广告样式根据需求选择） 1、setUpUnifiedNativeAdView常规样式 2、setUpUnifiedOnlyImageNativeAdView纯图样式  3、setUpUnifiedTopImageNativeAdView上图下文样式
 
 // 1、常规信息流示例样式
@@ -261,14 +271,6 @@
     CGFloat adWidth = self.view.frame.size.width;
     CGFloat adHeight = (adWidth - 17 * 2) / 16.0 * 9 + 67 + 38;
     adView.frame = CGRectMake(0, 0, adWidth, adHeight);
-    
-    // 展示关闭按钮（必要）
-    UIButton *closeButton = [UIButton new];
-    [adView addSubview:closeButton];
-    closeButton.frame = CGRectMake(adWidth - 44, 0, 44, 44);
-    [closeButton setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
-    // adsy_close该方法为协议中方法 直接添加target即可 无需实现
-    [closeButton addTarget:adView action:@selector(adsy_close) forControlEvents:UIControlEventTouchUpInside];
     
     // 显示logo图片（必要）
     if(![adView.adsy_platform isEqualToString:ADSuyiAdapterPlatformGDT]) { // 优量汇（广点通）会自带logo，不需要添加
@@ -366,18 +368,11 @@
         }
     }
     
-    // 展示关闭按钮（必要）
-    UIButton *closeButton = [UIButton new];
-    [adView addSubview:closeButton];
-    closeButton.frame = CGRectMake(adWidth - 44, 0, 44, 44);
-    [closeButton setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
-    [closeButton addTarget:adView action:@selector(adsy_close) forControlEvents:UIControlEventTouchUpInside];
-    
     // 显示logo图片（必要）
     if(![adView.adsy_platform isEqualToString:ADSuyiAdapterPlatformGDT]) { // 优量汇（广点通）会自带logo，不需要添加
         UIImageView *logoImage = [UIImageView new];
         [adView addSubview:logoImage];
-//        [adView bringSubviewToFront:logoImage];
+        //        [adView bringSubviewToFront:logoImage];
         [adView adsy_platformLogoImageDarkMode:NO loadImageBlock:^(UIImage * _Nullable image) {
             CGFloat maxWidth = 40;
             CGFloat logoHeight = maxWidth / image.size.width * image.size.height;
@@ -385,7 +380,7 @@
             logoImage.image = image;
         }];
     }
-
+    
 }
 
 // 3、上图下文样式
@@ -458,15 +453,11 @@
     CGSize textSize = [titlabel sizeThatFits:CGSizeMake(adWidth - 17 * 2, 999)];
     titlabel.frame = CGRectMake(17, (adWidth - 17 * 2) / 16.0 * 9 + 30, adWidth - 17 * 2, textSize.height);
     
-    // 展示关闭按钮（必要）
-    UIButton *closeButton = [UIButton new];
-    [adView addSubview:closeButton];
-    [adView bringSubviewToFront:closeButton];
-    closeButton.frame = CGRectMake(adWidth - 44, 0, 44, 44);
-    [closeButton setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
-    // adsy_close方法为协议中方法 直接添加target即可 无需实现
-    [closeButton addTarget:adView action:@selector(adsy_close) forControlEvents:UIControlEventTouchUpInside];
-    
 }
-
+- (UIButton *)getCloseButtonWithAdItem:(id)item{
+    UIButton *closeButton = [UIButton new];
+    [closeButton setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
+    [closeButton addTarget:item action:@selector(adsy_close) forControlEvents:UIControlEventTouchUpInside];
+    return closeButton;
+}
 @end

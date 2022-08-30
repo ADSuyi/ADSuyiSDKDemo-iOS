@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, nullable) UIView *adView;
 
+@property (nonatomic, strong) UIView *closeBtnView;//只有自渲染广告类型才使用到的关闭按钮
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -64,8 +64,6 @@
     self.bannerView.refershTime = [SetConfigManager sharedManager].bannerAdInterval;
     if (![[SetConfigManager sharedManager].bannerAdScenceId isEqualToString:@""])
         self.bannerView.scenesId = [SetConfigManager sharedManager].bannerAdScenceId;
-    // 可设置bannerview的背景色，请按需添加修改该行代码
-    //    self.bannerView.backgroundColor = UIColor.redColor;
     // 4、可先展示再请求
     [self.view addSubview:self.bannerView];
     // 5、加载并展示
@@ -121,6 +119,14 @@
     
 }
 
+/**
+ 关闭落地页
+ 
+ @param bannerView 广告实例
+ */
+- (void)adsy_bannerAdCloseLandingPage:(ADSuyiSDKBannerAdView *)bannerView{
+    
+}
 #pragma mark - Touch event
 
 - (void)clickLoadBannerButton:(UIButton *)btn {

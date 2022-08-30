@@ -87,7 +87,9 @@
  @param rewardvodAd 广告实例
  */
 - (void)adsy_rewardvodAdReadyToPlay:(ADSuyiSDKRewardvodAd *)rewardvodAd{
-    _isReadyToplay = YES;
+    if ([self.rewardvodAd rewardvodAdIsReady]) {
+        _isReadyToplay = YES;
+    }
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.view makeToast:@"激励视频准备完成"];
     });
@@ -177,12 +179,31 @@
     
 }
 
+/**
+ 视频广告激励服务验证成功（需等待服务器返回结果后判断是否激励生效）
+ 
+ @param rewardvodAd 广告实例
+ */
 - (void)adsy_rewardvodAdServerDidSucceed:(ADSuyiSDKRewardvodAd *)rewardvodAd {
     
 }
 
+/**
+ 视频广告完成激励服务验证失败
+ 
+ @param rewardvodAd 广告实例
+ @param errorModel 认证失败错误信息
+ */
 - (void)adsy_rewardvodAdServerDidFailed:(ADSuyiSDKRewardvodAd *)rewardvodAd errorModel:(ADSuyiAdapterErrorDefine *)errorModel {
     
 }
 
+/**
+ 激励视频关闭落地页回调
+ 
+ @param rewardvodAd 广告实例
+ */
+- (void)adsy_rewardvodAdCloseLandingPage:(ADSuyiSDKRewardvodAd *)rewardvodAd{
+    
+}
 @end
