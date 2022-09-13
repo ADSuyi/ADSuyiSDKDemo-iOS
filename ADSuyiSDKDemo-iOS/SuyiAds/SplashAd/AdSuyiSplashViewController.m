@@ -22,6 +22,8 @@
 
 @property (nonatomic, strong) ADSuyiRingProgressView *skipRingView;
 
+@property (nonatomic, assign) BOOL isReady;
+
 @end
 
 @implementation AdSuyiSplashViewController
@@ -34,13 +36,54 @@
     self.title = @"开屏广告";
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    UIButton *loadBtn = [UIButton new];
+    loadBtn.layer.cornerRadius = 3;
+    loadBtn.clipsToBounds = YES;
+    loadBtn.backgroundColor = UIColor.whiteColor;
+    [loadBtn setTitle:@"加载开屏" forState:(UIControlStateNormal)];
+    [loadBtn setTitleColor:UIColor.blackColor forState:(UIControlStateNormal)];
+    [self.view addSubview:loadBtn];
+    loadBtn.frame = CGRectMake(30, UIScreen.mainScreen.bounds.size.height/2-80, UIScreen.mainScreen.bounds.size.width-60, 40);
+    [loadBtn addTarget:self action:@selector(loadSplashAd) forControlEvents:(UIControlEventTouchUpInside)];
     
-    [self loadSplashAd];
+    UIButton *showBtn = [UIButton new];
+    showBtn.layer.cornerRadius = 3;
+    showBtn.clipsToBounds = YES;
+    showBtn.backgroundColor = UIColor.whiteColor;
+    [showBtn setTitle:@"展示开屏" forState:(UIControlStateNormal)];
+    [showBtn setTitleColor:UIColor.blackColor forState:(UIControlStateNormal)];
+    [self.view addSubview:showBtn];
+    [showBtn addTarget:self action:@selector(showSplashAd) forControlEvents:(UIControlEventTouchUpInside)];
+    showBtn.frame = CGRectMake(30, UIScreen.mainScreen.bounds.size.height/2 - 20, UIScreen.mainScreen.bounds.size.width-60, 40);
+    
+    UIButton *loadAndShowBtn = [UIButton new];
+    loadAndShowBtn.layer.cornerRadius = 3;
+    loadAndShowBtn.clipsToBounds = YES;
+    loadAndShowBtn.backgroundColor = UIColor.whiteColor;
+    [loadAndShowBtn setTitle:@"加载和展示开屏" forState:(UIControlStateNormal)];
+    [loadAndShowBtn setTitleColor:UIColor.blackColor forState:(UIControlStateNormal)];
+    [self.view addSubview:loadAndShowBtn];
+    loadAndShowBtn.frame = CGRectMake(30, UIScreen.mainScreen.bounds.size.height/2+60, UIScreen.mainScreen.bounds.size.width-60, 40);
+    [loadAndShowBtn addTarget:self action:@selector(loadAndShowSplashAd) forControlEvents:(UIControlEventTouchUpInside)];
 }
 
-
-// 开屏测试id 518f5daa123ec3e866
+- (void)loadAndShowSplashAd{
+    [self requestSplashAd];
+    [self.splashAd loadAndShowInWindow:[UIApplication sharedApplication].keyWindow withBottomView:[self getBottonView]];
+}
 - (void)loadSplashAd{
+    [self requestSplashAd];
+    [self.splashAd loadAdInWindow:[UIApplication sharedApplication].keyWindow withBottomView:[self getBottonView]];
+}
+- (void)showSplashAd{
+    if (_isReady) {
+        [self.splashAd showAdInWindow:[UIApplication sharedApplication].keyWindow];
+    }else{
+        
+    }
+}
+// 开屏测试id 518f5daa123ec3e866
+- (void)requestSplashAd{
     self.splashAd = [[ADSuyiSDKSplashAd alloc]init];
     self.splashAd.delegate = self;
     self.splashAd.controller = self;
@@ -71,8 +114,34 @@
     }
     [self.splashAd loadAndShowInWindow:[UIApplication sharedApplication].keyWindow withBottomView:bottomView];
 }
+- (UIView *)getBottonView{
+    CGFloat bottomViewHeight;
+    if (kADSYCurveScreen) {
+        bottomViewHeight = [UIScreen mainScreen].bounds.size.height * 0.15;
+    } else {
+        bottomViewHeight = [UIScreen mainScreen].bounds.size.height - [UIScreen mainScreen].bounds.size.width * (960 / 640.0);
+    }
+    
+    UIView *bottomView = [[UIView alloc] init];
+    bottomView.backgroundColor = [UIColor whiteColor];
+    bottomView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, bottomViewHeight);
+    UIImageView *logoImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"ADMob_Logo.png"]];
+    logoImageView.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width-135)/2, (bottomViewHeight-46)/2, 135, 46);
+    [bottomView addSubview:logoImageView];
+    return bottomView;
+}
 
 #pragma mark - ADSuyiSDKSplashAdDelegate
+/**
+ 开屏加载成功
+ 
+ @param splashAd 广告实例
+ */
+- (void)adsy_splashAdSuccessToLoadAd:(ADSuyiSDKSplashAd *)splashAd{
+    _isReady = YES;
+   
+}
+
 /**
  开屏展现成功
  
