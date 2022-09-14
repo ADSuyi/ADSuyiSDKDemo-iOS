@@ -32,7 +32,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor colorWithRed:225/255.0 green:233/255.0 blue:239/255.0 alpha:1];
     self.title = @"开屏广告";
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
@@ -112,7 +112,6 @@
         // 3、 可以选择不设置跳过视图 加载默认跳过样式
         self.splashAd.skipView = _skipRingView;
     }
-    [self.splashAd loadAndShowInWindow:[UIApplication sharedApplication].keyWindow withBottomView:bottomView];
 }
 - (UIView *)getBottonView{
     CGFloat bottomViewHeight;
