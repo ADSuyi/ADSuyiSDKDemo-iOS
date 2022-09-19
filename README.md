@@ -3,13 +3,10 @@
 
 
 ⚠️注：Xcode 14 打包环境需要升级穿山甲至 4.7.1.1，请务必检查SDK输出的版本信息，低版本穿山甲在 Xcode 14 打包后，存在奔溃问题；
-
 ```
-
 *** -[NSKeyedUnarchiver validateAllowedClass:forKey:] allowed unarchiving safe plist type ''NSString' (0x1ff598948) [/System/Library/Frameworks/Foundation.framework]' for key 'NS.objects', even though it was not explicitly included in the client allowed classes set: '{(
     "'NSDictionary' (0x1ff591178) [/System/Library/Frameworks/CoreFoundation.framework]"
 )}'. This will be disallowed in the future.
-
 ```
 
 
