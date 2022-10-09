@@ -21,7 +21,7 @@
     self.title = @"广告平台选择";
     self.tableView.backgroundColor = [UIColor colorWithRed:225/255.0 green:233/255.0 blue:239/255.0 alpha:1];
     self.tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
-    self.platformArray = @[@"默认所有",@"天目",@"优量汇",@"穿山甲",@"百度",@"快手",@"汇量",@"admobile",@"inmobi"];
+    self.platformArray = @[@"默认所有",@"天目",@"优量汇",@"穿山甲",@"百度",@"快手",@"汇量",@"inmobi"];
     self.platformDic = @{
         @"天目":@"tianmu",
         @"优量汇":@"gdt",
@@ -29,7 +29,6 @@
         @"百度":@"baidu",
         @"快手":@"ksad",
         @"汇量":@"mintegral",
-        @"admobile" :@"admobile",
         @"inmobi":@"inmobi",
     };
     // Uncomment the following line to preserve selection between presentations.
