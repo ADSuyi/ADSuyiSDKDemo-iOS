@@ -1,39 +1,10 @@
 # Admobile ADSuyiSDK iOS接入文档 v3.6.6.08246
 
 
-
-⚠️注：**Xcode 14** 开发环境需要升级**穿山甲**至 **4.7.1.1**，请务必检查SDK输出的版本信息，确保穿山甲版本为 4.7.1.1；
-
+::: warning
+注：**Xcode 14** 开发环境需要升级**穿山甲**版本大于 **4.7.1.1**，请务必检查SDK输出的版本信息，确保穿山甲版本大于 4.7.1.1；  
 低版本穿山甲在 **Xcode 14** 开发环境，存在崩溃问题；
-
-
----
-
-
-
-
-
-
-[TOC]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+::: 
 
 
 
@@ -57,17 +28,17 @@
 
 
 ## 1.2 ADSuyiSDK&三方广告平台适配器版本(以日志输出为准)
-| Name         | 版本号      |  
-|--------------|-------------|           
-| ADSuyiSDK | 3.6.6.08246 |    
-| tianmu | 1.3.2.5.08241 | 
-| baidu | 4.89.08242 |    
-| gdt | 4.13.81.08242 |    
-| ksad | 3.3.28.08241 |    
-| mintegral | 7.1.9.08241 |    
-| toutiao | 4.7.1.1.08243 | 
-| gromore | 3.5.1.3.07281 | 
-| inmobi | 7.5.0.01071 |  
+| Name      | 版本号        |
+| --------- | ------------- |
+| ADSuyiSDK | 3.6.6.08246   |
+| tianmu    | 1.3.2.5.08241 |
+| baidu     | 4.89.08242    |
+| gdt       | 4.13.81.08242 |
+| ksad      | 3.3.28.08241  |
+| mintegral | 7.1.9.08241   |
+| toutiao   | 4.7.1.1.08243 |
+| gromore   | 3.5.1.3.07281 |
+| inmobi    | 7.5.0.01071   |
                   
 
 ## 2.1 采用cocoapods进行SDK的导入
@@ -112,7 +83,7 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi' # Inmobi
 
 ## 2.2 手动导入SDK方式
 
-[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_36608246_75bfd0a2dc16305f9b59ebe8b96a675d.zip)下载各SDK拖入到工程中
+[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_36608246_1763e3a354109a1791a6e1589577efdb.zip)下载各SDK拖入到工程中
 
 手动方式导入,需要添加如下依赖库:
 
@@ -1487,7 +1458,7 @@ OC请求激励视频代码示例：
 
 插屏广告是移动广告的一种常见形式，在应用流程中弹出，当应用展示插屏广告时，用户可以选择点击广告，访问其目标网址，也可以将其关闭并返回应用。在应用执行流程的自然停顿点，适合投放这类广告。
 
-<font color='red'>**注意：穿山甲插屏广告禁止App启动即请求，建议在首页控制器viewDidLoad方法中2~3s后请求展示，否则会有明显数据影响，将会存在约50%数据异常。** </font>
+<p style="color:red;">**注意：穿山甲插屏广告禁止App启动即请求，建议在首页控制器viewDidLoad方法中2~3s后请求展示，否则会有明显数据影响，将会存在约50%数据异常。** </p>
 
 `OC请求插屏广告代码示例：`[[插屏广告代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS/blob/master/ADSuyiSDKDemo-iOS/SuyiAds/InterstitialAd/AdSuyiInterstitialViewController.m)
 
