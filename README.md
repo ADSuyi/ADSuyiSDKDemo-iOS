@@ -677,12 +677,7 @@ OC请求开屏广告代码示例：
     self.splashAd.backgroundColor = [UIColor adsy_getColorWithImage:[UIImage imageNamed:@"750x1334.png"] withNewSize:[UIScreen mainScreen].bounds.size];
     
     // 5、开屏广告机型适配
-    CGFloat bottomViewHeight;
-    if (kADSYCurveScreen) { // 刘海屏
-        bottomViewHeight = [UIScreen mainScreen].bounds.size.height * 0.15;
-    } else {
-        bottomViewHeight = [UIScreen mainScreen].bounds.size.height - [UIScreen mainScreen].bounds.size.width * (960 / 640.0);
-    }
+    CGFloat bottomViewHeight = [UIScreen mainScreen].bounds.size.height * 0.15;
     
     // 6、底部视图设置，非必选项
     UIView *bottomView = [[UIView alloc] init];

@@ -118,12 +118,7 @@ ADSuyiSDKSplashAdDelegate
     self.splashAd.backgroundColor = [UIColor adsy_getColorWithImage:[UIImage imageNamed:@"750x1334.png"] withNewSize:[UIScreen mainScreen].bounds.size];
     
     // 4、开屏广告机型适配
-    CGFloat bottomViewHeight;
-    if (kADSYCurveScreen) { // 刘海屏
-        bottomViewHeight = [UIScreen mainScreen].bounds.size.height * 0.15;
-    } else {
-        bottomViewHeight = [UIScreen mainScreen].bounds.size.height - [UIScreen mainScreen].bounds.size.width * (960 / 640.0);
-    }
+    CGFloat bottomViewHeight = [UIScreen mainScreen].bounds.size.height * 0.15;
     
     // 5、底部视图设置，非必选项
     UIView *bottomView = [[UIView alloc] init];
