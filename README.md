@@ -1,4 +1,4 @@
-# Admobile ADSuyiSDK iOS接入文档 v3.6.6.08246
+# Admobile ADSuyiSDK iOS接入文档 v3.6.6.08248
 
 
 ::: warning
@@ -30,8 +30,8 @@
 ## 1.2 ADSuyiSDK&三方广告平台适配器版本(以日志输出为准)
 | Name      | 版本号        |
 | --------- | ------------- |
-| ADSuyiSDK | 3.6.6.08246   |
-| tianmu    | 1.3.2.5.08241 |
+| ADSuyiSDK | 3.6.6.08248   |
+| tianmu    | 1.3.2.6.08241 |
 | baidu     | 4.89.08242    |
 | gdt       | 4.13.81.08242 |
 | ksad      | 3.3.28.08241  |

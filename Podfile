@@ -8,10 +8,9 @@ target 'ADSuyiSDKDemo-iOS' do
   # Comment the next line if you don't want to use dynamic frameworks
 
   # Pods for ADSuyiSDKDemo-iOS
-  pod 'ADSuyiSDK', '~> 3.6.6.08246'
-  pod 'ADSuyiSDK', '~> 3.6.6.08246', :subspecs => [
+  pod 'ADSuyiSDK', '~> 3.6.6.08248'
+  pod 'ADSuyiSDK', '~> 3.6.6.08248', :subspecs => [
     'ADSuyiSDKPlatforms/tianmu', # 天目  #必选
-    'ADSuyiSDKPlatforms/jiguang', # 极光联盟
     'ADSuyiSDKPlatforms/bu', # 穿山甲(头条)
     'ADSuyiSDKPlatforms/gdt', # 优量汇(广点通）
     'ADSuyiSDKPlatforms/baidu', # 百度
@@ -21,5 +20,13 @@ target 'ADSuyiSDKDemo-iOS' do
     'ADSuyiSDKPlatforms/inmobi' # Inmobi
   ]
   pod 'MJRefresh'
+  
+  
+  # 模拟器无法运行时，可添加该代码 pod install
+  post_install do |installer|
+    installer.pods_project.build_configurations.each do |config|
+      config.build_settings[“EXCLUDED_ARCHS[SDK=iphonesimulator*]”] = “arm64”
+    end
+  end
 
 end
