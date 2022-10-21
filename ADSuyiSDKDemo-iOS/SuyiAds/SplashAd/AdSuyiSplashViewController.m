@@ -91,7 +91,12 @@
     self.splashAd.tolerateTimeout = 4;
     self.splashAd.backgroundColor = [UIColor adsy_getColorWithImage:[UIImage imageNamed:@"750x1334.png"] withNewSize:[UIScreen mainScreen].bounds.size];
     
-    CGFloat bottomViewHeight = [UIScreen mainScreen].bounds.size.height * 0.15;
+    CGFloat bottomViewHeight;
+//    if (kADSYCurveScreen) {
+        bottomViewHeight = [UIScreen mainScreen].bounds.size.height * 0.15;
+//    } else {
+//        bottomViewHeight = [UIScreen mainScreen].bounds.size.height - [UIScreen mainScreen].bounds.size.width * (960 / 640.0);
+//    }
     
     UIView *bottomView = [[UIView alloc] init];
     bottomView.backgroundColor = [UIColor whiteColor];
@@ -109,8 +114,13 @@
     }
 }
 - (UIView *)getBottonView{
-    CGFloat bottomViewHeight = [UIScreen mainScreen].bounds.size.height * 0.15;
-    
+    CGFloat bottomViewHeight;
+//    if (kADSYCurveScreen) {
+        bottomViewHeight = [UIScreen mainScreen].bounds.size.height * 0.15;
+//    } else {
+//        bottomViewHeight = [UIScreen mainScreen].bounds.size.height - [UIScreen mainScreen].bounds.size.width * (960 / 640.0);
+//    }
+//    
     UIView *bottomView = [[UIView alloc] init];
     bottomView.backgroundColor = [UIColor whiteColor];
     bottomView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, bottomViewHeight);
