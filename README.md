@@ -427,6 +427,9 @@ SKAdNetwork 是接收iOS端营销推广活动归因数据的一种方法。
 用户日志输出等级
 
 ```obj-c
+添加头文件
+#import <ADSuyiKit/ADSuyiKitLogging.h>
+
 // 设置日志输出等级
 [ADSuyiSDK setLogLevel:ADSuyiKitLogLevelDebug];
 ```
