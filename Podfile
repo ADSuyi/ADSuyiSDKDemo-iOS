@@ -21,13 +21,5 @@ target 'ADSuyiSDKDemo-iOS' do
 #    'ADSuyiSDKPlatforms/inmobi' # Inmobi
   ]
   pod 'MJRefresh'
-  
-  
-  # M1 模拟器无法运行时，可添加该代码 pod install
-  # post_install do |installer|
-  #   installer.pods_project.build_configurations.each do |config|
-  #     config.build_settings[“EXCLUDED_ARCHS[SDK=iphonesimulator*]”] = “arm64”
-  #   end
-  # end
 
 end
