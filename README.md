@@ -109,6 +109,7 @@ CoreMedia.framework
 头条还需要添加依赖库：
 
 ```obj-c
+DeviceCheck.framework
 Accelerate.framework
 AudioToolbox.framework
 CoreGraphics.framework
