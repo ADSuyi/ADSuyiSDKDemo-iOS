@@ -9,8 +9,8 @@ target 'ADSuyiSDKDemo-iOS' do
 
   # Pods for ADSuyiSDKDemo-iOS
 
-  pod 'ADSuyiSDK', '~> 3.6.8.10261'
-  pod 'ADSuyiSDK', '~> 3.6.8.10261', :subspecs => [
+  pod 'ADSuyiSDK', '~> 3.6.9.11211'
+  pod 'ADSuyiSDK', '~> 3.6.9.11211', :subspecs => [
     'ADSuyiSDKPlatforms/tianmu', # 天目  #必选
     'ADSuyiSDKPlatforms/bu', # 穿山甲(头条)
     'ADSuyiSDKPlatforms/gdt', # 优量汇(广点通）
