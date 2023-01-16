@@ -2,13 +2,6 @@
 # Admobile ADSuyiSDK iOS接入文档 v3.6.9.11211
 
 
-::: warning
-注：**Xcode 14** 开发环境需要升级**穿山甲**版本大于 **4.7.1.1**，请务必检查SDK输出的版本信息，确保穿山甲版本大于 4.7.1.1；  
-低版本穿山甲在 **Xcode 14** 开发环境，存在崩溃问题；
-::: 
-
-
-
 ## 修订历史
 
 [SDK版本更新日志](https://doc.admobile.top/ssp/4changelog/2-iOSchangelog.html)
@@ -2135,19 +2128,7 @@ OC请求沉浸式视频代码示例：
 
 ```
 
-<div STYLE="page-break-after: always;"></div>
-
-## 4.12 菜谱内容
-[菜谱内容功能对接文档](README_Ecook.md)
-
-## 作者
-
-jiangyou@admobile.top
-
-bale@admobile.top
-
-xianggua@admobile.top
 
 ## 商务合作
 
-tomato@admobile.top
+邮箱：yangyu@admobile.top
