@@ -1,5 +1,9 @@
-
-# Admobile ADSuyiSDK iOS接入文档 v3.7.0.12221
+---
+title: TianmuSDK iOS接入文档
+date: 2023-01-31
+permalink: /pages/suyisdkios/
+---
+# Admobile ADSuyiSDK iOS接入文档 v3.7.1.02031
 
 
 ## 修订历史
@@ -27,14 +31,14 @@
 
 | Name         | 版本号      |  
 |--------------|-------------|           
-| ADSuyiSDK | 3.7.0.12221 |    
-| tianmu | 2.0.0.1.11211 | 
-| baidu | 5.11.12221 |    
-| gdt | 4.14.02.12221 |    
-| ksad | 3.3.36.12221 |    
-| mintegral | 7.2.8.10261 |    
-| toutiao | 5.0.0.4.10261 | 
-| gromore | 3.9.0.2.12222 | 
+| ADSuyiSDK | 3.7.1.02031 |    
+| tianmu | 2.0.1.1.02031 | 
+| baidu | 5.11.02031 |    
+| gdt | 4.14.10.12221 |    
+| ksad | 3.3.38.1.02031 |    
+| mintegral | 7.2.9.10263 |    
+| toutiao | 5.0.0.5.10261 | 
+| gromore | 4.0.0.1.12222 | 
 | inmobi | 7.5.0.01071 |  
                   
 
@@ -44,7 +48,7 @@
 
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
-pod 'ADSuyiSDK','~> 3.7.0.12221' # 主SDK 必选
+pod 'ADSuyiSDK','~> 3.7.1.02031' # 主SDK 必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/tianmu' # 天目  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu' # 穿山甲(头条)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt' # 优量汇(广点通）
