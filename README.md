@@ -1,8 +1,3 @@
----
-title: TianmuSDK iOS接入文档
-date: 2023-01-31
-permalink: /pages/suyisdkios/
----
 # Admobile ADSuyiSDK iOS接入文档 v3.7.1.02031
 
 
