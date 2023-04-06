@@ -298,7 +298,7 @@ ADSuyiSDKSplashAdDelegate
 - (void)initADSuyiSDK {
     // 设置日志输出等级
     [ADSuyiSDK setLogLevel:ADSuyiKitLogLevelDebug];
-    // ADSuyiSDK初始化
+    // ADSuyiSDK初始化, 需在主线程初始化
     [ADSuyiSDK initWithAppId:Suyi_Demo_APPID completionBlock:^(NSError * _Nonnull error) {
         if (error) {
             NSLog(@"SDK 初始化失败：%@", error.localizedDescription);
