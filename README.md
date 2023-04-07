@@ -1,4 +1,4 @@
-# Admobile ADSuyiSDK iOS接入文档 v3.7.2.02202
+# Admobile ADSuyiSDK iOS接入文档 v3.7.2.02203
 
 
 ## 修订历史
@@ -26,7 +26,7 @@
 
 | Name         | 版本号      |  
 |--------------|-------------|           
-| ADSuyiSDK | 3.7.2.02202 |    
+| ADSuyiSDK | 3.7.2.02203 |    
 | tianmu | 2.0.2.1.02201 | 
 | baidu | 5.12.02031 |    
 | gdt | 4.14.12.12221 |    
@@ -43,7 +43,7 @@
 
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
-pod 'ADSuyiSDK','~> 3.7.2.02202' # 主SDK 必选
+pod 'ADSuyiSDK','~> 3.7.2.02203' # 主SDK 必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/tianmu' # 天目  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu' # 穿山甲(头条)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt' # 优量汇(广点通）
