@@ -1,4 +1,4 @@
-# Admobile ADSuyiSDK iOS接入文档 v3.7.2.02203
+# Admobile ADSuyiSDK iOS接入文档 v3.7.3.03231
 
 
 ## 修订历史
@@ -26,13 +26,13 @@
 
 | Name         | 版本号      |  
 |--------------|-------------|           
-| ADSuyiSDK | 3.7.2.02203 |    
-| tianmu | 2.0.2.1.02201 | 
-| baidu | 5.12.02031 |    
+| ADSuyiSDK | 3.7.3.03231 |    
+| tianmu | 2.0.3.1.02201 | 
+| baidu | 5.13.02031 |    
 | gdt | 4.14.12.12221 |    
 | ksad | 3.3.38.1.02031 |    
-| mintegral | 7.2.9.02032 |    
-| toutiao | 5.1.0.5.02201 | 
+| mintegral | 7.3.4.02032 |    
+| toutiao | 5.1.1.0.03231 | 
 | gromore | 4.0.0.1.02031 | 
 | inmobi | 7.5.0.01071 |  
                   
@@ -43,7 +43,7 @@
 
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
-pod 'ADSuyiSDK','~> 3.7.2.02203' # 主SDK 必选
+pod 'ADSuyiSDK','~> 3.7.3.03231' # 主SDK 必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/tianmu' # 天目  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu' # 穿山甲(头条)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt' # 优量汇(广点通）
@@ -79,7 +79,7 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi' # Inmobi
 
 ## 2.2 手动导入SDK方式
 
-[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_37202203_d43d27993236d23b308ceeac11aab150.zip)下载各SDK拖入到工程中
+[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_37303231_64797b23ef72211adb423055fff71317.zip)下载各SDK拖入到工程中
 
 手动方式导入,需要添加如下依赖库:
 
