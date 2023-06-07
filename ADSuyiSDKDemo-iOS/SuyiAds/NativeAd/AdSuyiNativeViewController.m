@@ -195,7 +195,7 @@
             // 3、上图下文
             //            [self setUpUnifiedTopImageNativeAdView:adView];
         }
-        // 5、注册，自渲染：注册点击事件，模板：render，重要
+        // 5、重要
         [adView adsy_registViews:@[adView]];
         
         // 广点通视频信息流广告会给mediaView添加事件，点击会出现半屏广告，以下为广点通官方给予的解决方案
