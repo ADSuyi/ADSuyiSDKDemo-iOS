@@ -2,14 +2,14 @@
 
 source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, '9.0'
+platform :ios, '10.0'
 
 target 'ADSuyiSDKDemo-iOS' do
   # Comment the next line if you don't want to use dynamic frameworks
 
   # Pods for ADSuyiSDKDemo-iOS
-  pod 'ADSuyiSDK', '~> 3.7.4.04272'
-  pod 'ADSuyiSDK', '~> 3.7.4.04272', :subspecs => [
+  pod 'ADSuyiSDK', '~> 3.7.5.05231'
+  pod 'ADSuyiSDK', '~> 3.7.5.05231', :subspecs => [
     'ADSuyiSDKPlatforms/tianmu', # 天目  #必选
     'ADSuyiSDKPlatforms/bu', # 穿山甲(头条)
     'ADSuyiSDKPlatforms/gdt', # 优量汇(广点通）

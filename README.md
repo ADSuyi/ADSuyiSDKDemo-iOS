@@ -1,4 +1,4 @@
-# Admobile ADSuyiSDK iOS接入文档 v3.7.4.04272
+# Admobile ADSuyiSDK iOS接入文档 v3.7.5.05231
 
 
 ## 修订历史
@@ -11,7 +11,7 @@
 
 尊敬的开发者朋友，欢迎您使用ADmobile 苏伊士广告SDK。通过本文档，您可以在几分钟之内轻松完成广告的集成过程。
 
-操作系统： iOS 9.0 及以上版本
+操作系统： iOS 10.0 及以上版本
 
 运行设备：iPhone （iPad上可能部分广告正常展示，但是存在填充很低或者平台不支持等问题，建议不要在iPad上展示广告，穿山甲等平台开屏广告iPad端展示异常）
 
@@ -26,15 +26,15 @@
 
 | Name         | 版本号      |  
 |--------------|-------------|           
-| ADSuyiSDK | 3.7.4.04272 |    
-| tianmu | 2.0.4.1.02201 | 
-| baidu | 5.14.04271 |    
-| gdt | 4.14.22.04271 |    
+| ADSuyiSDK | 3.7.5.05231 |    
+| tianmu | 2.0.5.1.02201 | 
+| baidu | 5.30.05231 |    
+| gdt | 4.14.30.05231 |    
 | ksad | 3.3.44.04271 |    
-| mintegral | 7.3.5.02032 |    
-| toutiao | 5.2.0.5.04271 | 
-| gromore | 4.1.0.2.02031 | 
-| inmobi | 7.5.0.01071 |  
+| mintegral | 7.3.6.02032 |    
+| toutiao | 5.3.0.4.05231 | 
+| gromore | 4.2.0.2.02031 | 
+| inmobi | 7.5.0.01071 |   
                   
 
 ## 2.1 采用cocoapods进行SDK的导入
@@ -43,7 +43,7 @@
 
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
-pod 'ADSuyiSDK','~> 3.7.4.04272' # 主SDK 必选
+pod 'ADSuyiSDK','~> 3.7.5.05231' # 主SDK 必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/tianmu' # 天目  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu' # 穿山甲(头条)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt' # 优量汇(广点通）
@@ -79,7 +79,7 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi' # Inmobi
 
 ## 2.2 手动导入SDK方式
 
-[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_37404271_3198b3efe72efb6fa1b58fbf40cbc828.zip)下载各SDK拖入到工程中
+[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_37505231_6849f5dc37d1919460c6494905b10f9c.zip)下载各SDK拖入到工程中
 
 手动方式导入,需要添加如下依赖库:
 
