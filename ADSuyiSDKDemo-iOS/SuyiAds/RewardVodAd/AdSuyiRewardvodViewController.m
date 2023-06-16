@@ -89,6 +89,8 @@
 - (void)adsy_rewardvodAdReadyToPlay:(ADSuyiSDKRewardvodAd *)rewardvodAd{
     if ([self.rewardvodAd rewardvodAdIsReady]) {
         _isReadyToplay = YES;
+        // 建议在这个时机进行展示 也可根据需求在合适的时机进行展示
+        // [self.rewardvodAd showRewardvodAd];
     }
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.view makeToast:@"激励视频准备完成"];
@@ -102,7 +104,6 @@
  @param rewardvodAd 广告实例
  */
 - (void)adsy_rewardvodAdVideoLoadSuccess:(ADSuyiSDKRewardvodAd *)rewardvodAd{
-//    [self.rewardvodAd showRewardvodAd];
 }
 /**
  视频播放页即将展示回调
