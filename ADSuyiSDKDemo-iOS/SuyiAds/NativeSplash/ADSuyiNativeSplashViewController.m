@@ -39,7 +39,7 @@
         _nativeAd = [[ADSuyiSDKNativeAd alloc] initWithAdSize:CGSizeMake(self.view.frame.size.width, 10)];
         // 2、传入posId，重要
         _nativeAd.delegate = self;
-        _nativeAd.controller = self;
+        _nativeAd.controller = self.splashViewController;
         _nativeAd.posId = Suyi_Demo_flowAd_Native_PosId;
     }
     return _nativeAd;
