@@ -152,7 +152,17 @@ Privacy - Location Always and When In Use Usage Description
 Privacy - Location Always Usage Description
 ```
 
-5. Info.plist推荐设置白名单，可提高广告收益
+5. Info.plist 添加获取本地网络权限字段
+    ```obj-c
+    <key>Privacy - Local Network Usage Description</key>
+    <string>广告投放及广告监测归因、反作弊</string>
+    <key>Bonjour services</key>
+    <array>
+        <string>_apple-mobdev2._tcp.local</string>
+   </array>
+    ```
+
+6. Info.plist推荐设置白名单，可提高广告收益
 
 ```obj-c
 <key>LSApplicationQueriesSchemes</key>
