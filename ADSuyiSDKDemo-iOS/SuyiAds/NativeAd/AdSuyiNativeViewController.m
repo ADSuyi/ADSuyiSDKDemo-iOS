@@ -188,7 +188,7 @@
         if(adView.renderType == ADSuyiAdapterRenderTypeNative) {
             // 自渲染广告位, 需自行进行 UI 搭建, 可参考下面示例 ↓
             // 1、常规样式示例:
-            [self setUpUnifiedTopImageNativeAdView:adView];
+            [self setUpUnifiedNativeAdView:adView];
             // 2、纯图样式示例 :[self setUpUnifiedOnlyImageNativeAdView:adView];
             // 3、上图下文示例 :[self setUpUnifiedTopImageNativeAdView:adView];
         }
