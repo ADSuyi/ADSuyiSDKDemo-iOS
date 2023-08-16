@@ -72,6 +72,8 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi' # Inmobi
     
     pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt-without'        # 优量汇(广点通）
     
+    重要‼️ 如需使用优量汇4.14.40及以上版本，请务必将sdk升级至ADSuyiSDK 3.7.7.07142及以上版本；
+    
     ```
 
 
