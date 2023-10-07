@@ -1,4 +1,4 @@
-# Admobile ADSuyiSDK iOS接入文档 v3.7.7.07142
+# Admobile ADSuyiSDK iOS接入文档 v3.7.8.08141
 
 
 ## 修订历史
@@ -26,14 +26,14 @@
 
 | Name         | 版本号      |  
 |--------------|-------------|           
-| ADSuyiSDK | 3.7.7.07142 |    
-| tianmu | 2.0.7.1.02202 | 
-| baidu | 5.31.05231 |    
-| gdt | 4.14.32.05232 |    
-| ksad | 3.3.47.07141 |    
-| mintegral | 7.3.9.07141 |    
-| toutiao | 5.4.0.5.05231 | 
-| gromore | 4.3.0.1.1.07141 | 
+| ADSuyiSDK | 3.7.8.08141 |    
+| tianmu | 2.0.8.1.08141 | 
+| baidu | 5.313.08141 |    
+| gdt | 4.14.40.08141 |    
+| ksad | 3.3.51.1.08141 |    
+| mintegral | 7.4.2.08141 |    
+| toutiao | 5.4.1.1.08141 | 
+| gromore | 4.3.0.2.1.08141 | 
                   
 
 ## 2.1 采用cocoapods进行SDK的导入
@@ -42,7 +42,7 @@
 
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
-pod 'ADSuyiSDK','~> 3.7.7.07142' # 主SDK 必选
+pod 'ADSuyiSDK','~> 3.7.8.08141' # 主SDK 必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/tianmu' # 天目  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu' # 穿山甲(头条)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt' # 优量汇(广点通）
@@ -80,7 +80,9 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi' # Inmobi
 
 ## 2.2 手动导入SDK方式
 
-[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_37707141_9ca01ee1dd437c09b0024eb2fd644c0d.zip)下载各SDK拖入到工程中
+[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_37808141_606128b8776817b9e635f4adb6a57992.zip)下载各SDK拖入到工程中
+
+打开项目的 app target，查看 General 中的 Frameworks, Libraries, and Embedded Content 选项，将KSAdSDK置为Embed & Sign
 
 手动方式导入,需要添加如下依赖库:
 
@@ -489,8 +491,6 @@ ADSuyiSDK.enablePersonalAd = NO;
 | userId | NSString | 用户id （用户在App内的userID，用于激励视频服务器验证，如无需服务器验证可不传）  |
 | extra | NSString | 其他信息 （服务器端验证回调中包含的可选自定义奖励字符串，可选）  |
 | tolerateTimeout | NSInteger | 开屏请求总超时时间 |
-| zoomOutViewDelegate | id\<ADSuyiSDKSplashAdZoomOutViewDelegate> | zoomOutView代理回调(如果需要支持广点通v+视频开屏广告，需要实现此协议，其他情况暂时不需要实现) |
-| splashZoomOutView | UIView\<ADSuyiSDKSplashAdZoomOutViewProtocol> | 当广告命中开屏视频V+时，会存在 |
 
 | <center>接口</center> | <center>说明</center>|
 |:-----------|:--------|
@@ -515,14 +515,6 @@ ADSuyiSDK.enablePersonalAd = NO;
 | adsy_splashAdCloseLandingPage: | 开屏关闭落地页  |
 | adsy_splashAdDidRewardEffective: info: | 开屏达到激励条件 （开启服务器验证后请使用服务端验证判断是否达到条件，无需使用本回调做激励达成判断） 备注：仅支持优量汇平台 |
 
-**ADSuyiSDKSplashAdZoomOutViewDelegate**：v+开屏代理方法
-| <center>回调函数</center> | <center>回调说明</center>|
-|:-----------|:--------|
-| adsy_splashZoomOutViewDidClick:splashZoomOutView: | ZoomOutView 点击  |
-| adsy_splashZoomOutViewAdDidClose:splashZoomOutView: | ZoomOutView 关闭  |
-| adsy_splashZoomOutViewAdVideoFinished:splashZoomOutView: | ZoomOutView 播放完成 |
-| adsy_splashZoomOutViewAdDidPresentFullScreenModal:splashZoomOutView: | ZoomOutView 进入视频详情页 |
-| adsy_splashZoomOutViewAdDidDismissFullScreenModal:splashZoomOutView:| ZoomOutView 退出视频详情页 |
 
 
 ```obj-c
@@ -549,16 +541,12 @@ OC请求开屏广告代码示例：
  * 推荐在AppDelegate中的最后加载开屏广告
  * 其他的接入方式会有需要特殊注意的方式，遇到过的相关问题在SDK相关问题的文档中有提到
  * 不建议在开屏展示过程中做控制器的切换（如：开屏广告关闭回调时切换当前window的根控制器或者present另外一个控制器）
- * SUPPORT_SPLASH_ZOOMOUT，是否需要支持V+视频开屏广告取决于开发者，不选择v+开屏则可以不去适配
  */
 
 - (void)loadSplashAd{
     // 1、初始化开屏广告实例对象
     self.splashAd = [[ADSuyiSDKSplashAd alloc]init];
     self.splashAd.delegate = self;
-#ifdef SUPPORT_SPLASH_ZOOMOUT
-    self.splashAd.zoomOutViewDelegate = self;
-#endif
     self.splashAd.controller = _window.rootViewController;
     // 2、设置开屏的广告位id
     self.splashAd.posId = @"d11c2ef29dcb7e6e62";
@@ -602,12 +590,7 @@ OC请求开屏广告代码示例：
  @param splashAd 广告实例
  */
 - (void)adsy_splashAdSuccessToPresentScreen:(ADSuyiSDKSplashAd *)splashAd{
-#ifdef SUPPORT_SPLASH_ZOOMOUT
-    if(splashAd.splashZoomOutView) {
-        UIViewController *rootVc = [UIApplication sharedApplication].keyWindow.rootViewController;
-        [rootVc.view addSubview:splashAd.splashZoomOutView];
-    }
-#endif
+
 }
 
 /**
@@ -635,12 +618,7 @@ OC请求开屏广告代码示例：
  @param splashAd 广告实例
  */
 - (void)adsy_splashAdClosed:(ADSuyiSDKSplashAd *)splashAd{
-#ifdef SUPPORT_SPLASH_ZOOMOUT
-    if(_splashAd.splashZoomOutView == nil)
-        _splashAd = nil;
-#else
     _splashAd = nil;
-#endif
 }
 
 /**
@@ -652,51 +630,6 @@ OC请求开屏广告代码示例：
     
 }
 
-#ifdef SUPPORT_SPLASH_ZOOMOUT
-
-#pragma mark - ADSuyiSDKSplashAdZoomOutViewDelegate
-
-/**
- ZoomOutView被点击
- */
-- (void)adsy_splashZoomOutViewDidClick:(ADSuyiSDKSplashAd *)splashAd
-                     splashZoomOutView:(__kindof UIView <ADSuyiSDKSplashAdZoomOutViewProtocol>*)splashZoomOutView {
-    
-}
-
-/**
- ZoomOutView 被关闭
- */
-- (void)adsy_splashZoomOutViewAdDidClose:(ADSuyiSDKSplashAd *)splashAd
-                       splashZoomOutView:(__kindof UIView <ADSuyiSDKSplashAdZoomOutViewProtocol>*)splashZoomOutView {
-    
-}
-
-/**
- ZoomOutView 播放完成
- */
-- (void)adsy_splashZoomOutViewAdVideoFinished:(ADSuyiSDKSplashAd *)splashAd
-                            splashZoomOutView:(__kindof UIView <ADSuyiSDKSplashAdZoomOutViewProtocol>*)splashZoomOutView {
-    
-}
-
-/**
- ZoomOutView 进入视频详情页
- */
-- (void)adsy_splashZoomOutViewAdDidPresentFullScreenModal:(ADSuyiSDKSplashAd *)splashAd
-                                        splashZoomOutView:(__kindof UIView <ADSuyiSDKSplashAdZoomOutViewProtocol>*)splashZoomOutView {
-    
-}
-
-/**
- ZoomOutView 退出视频详情页
- */
-- (void)adsy_splashZoomOutViewAdDidDismissFullScreenModal:(ADSuyiSDKSplashAd *)splashAd
-                                        splashZoomOutView:(__kindof UIView <ADSuyiSDKSplashAdZoomOutViewProtocol>*)splashZoomOutView {
-    _splashAd = nil;
-}
-
-#endif
 ```
 
 <div STYLE="page-break-after: always;"></div>
@@ -1095,7 +1028,6 @@ OC请求激励视频代码示例：
 | tolerateTimeout | NSTimeInterval | 请求超时时间,默认为4s,需要设置3s及以上  |
 | isMuted | BOOL | 是否静音，默认静音 <br>支持平台：优量汇，汇量，快手，Gromore <br/> 特殊平台：穿山甲（需在穿山甲后台广告位配置处设置） |
 | detailPageVideoMuted | BOOL | 是否静音，默认静音 <br>支持平台：优量汇  |
-| adSize | CGSize | 广告尺寸，需与平台所申请广告位比例一致，否则会导致素材压缩（仅支持部分平台）  |
 
 | <center>接口</center> | <center>说明</center>|
 |:-----------|:--------|
