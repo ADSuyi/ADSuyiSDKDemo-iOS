@@ -104,14 +104,6 @@
     UIImageView *logoImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"ADMob_Logo.png"]];
     logoImageView.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width-135)/2, (bottomViewHeight-46)/2, 135, 46);
     [bottomView addSubview:logoImageView];
-    if ([SetConfigManager sharedManager].isCustomSkipView) {
-        // 1、常规跳过按钮 Eg: x秒 | 跳过
-        _skipNormalView = [ADSuyiSplashSkipView new];
-        // 2、圆形进度条样式
-        _skipRingView = [ADSuyiRingProgressView new];
-        // 3、 可以选择不设置跳过视图 加载默认跳过样式
-        self.splashAd.skipView = _skipRingView;
-    }
 }
 - (UIView *)getBottonView{
     CGFloat bottomViewHeight;

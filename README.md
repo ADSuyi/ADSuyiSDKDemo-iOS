@@ -315,7 +315,7 @@ Privacy - Location Always Usage Description
 
 SKAdNetwork 是接收iOS端营销推广活动归因数据的一种方法。
 
-1. 将下列SKAdNetwork ID 添加到 info.plist 中，以保证 SKAdNetwork 的正确运行。根据对接平台添加相应SKAdNetworkID，若无对接平台SKNetworkID则无需添加。
+1. 将下列SKAdNetwork ID（供参考，需以穿山甲和汇量官网为准）添加到 info.plist 中，以保证 SKAdNetwork 的正确运行。根据对接平台添加相应SKAdNetworkID，若无对接平台SKNetworkID则无需添加。
 
 ```xml
 <key>SKAdNetworkItems</key>
@@ -332,11 +332,6 @@ SKAdNetwork 是接收iOS端营销推广活动归因数据的一种方法。
     <dict>
       <key>SKAdNetworkIdentifier</key>
       <string>x2jnk7ly8j.skadnetwork</string>
-    </dict>
-    // 优量汇广告（ADSuyiGDT）
-    <dict>
-      <key>SKAdNetworkIdentifier</key>
-      <string>f7s53z58qe.skadnetwork</string>
     </dict>
     // 汇量广告（ADSuyiMTG）
     <dict>
