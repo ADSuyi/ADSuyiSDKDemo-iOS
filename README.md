@@ -84,7 +84,7 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi' # Inmobi
 
 若有KSAdSDK，打开项目的 app target，查看 General 中的 Frameworks, Libraries, and Embedded Content 选项，将KSAdSDK置为Embed & Sign
 
-若需要在模拟器运行，打开项目的 app target，查看 Build Settings选项，设置Excluded Architectures下的 Any ios Simulator SDK 值为 arm64
+若需要在模拟器运行，打开项目的 app target，查看 Build Settings选项，设置Excluded Architectures下的 Any iOS Simulator SDK 值为 arm64
 
 手动方式导入,需要添加如下依赖库:
 
