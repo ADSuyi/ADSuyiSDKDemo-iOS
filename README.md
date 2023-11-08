@@ -1,4 +1,4 @@
-# Admobile ADSuyiSDK iOS接入文档 v3.7.8.08141
+# Admobile ADSuyiSDK iOS接入文档 v3.7.8.08142
 
 
 ## 修订历史
@@ -26,10 +26,10 @@
 
 | Name         | 版本号      |  
 |--------------|-------------|           
-| ADSuyiSDK | 3.7.8.08141 |    
+| ADSuyiSDK | 3.7.8.08142 |    
 | tianmu | 2.0.8.1.08141 | 
 | baidu | 5.313.08141 |    
-| gdt | 4.14.40.08141 |    
+| gdt | 4.14.45.08142 |    
 | ksad | 3.3.51.1.08141 |    
 | mintegral | 7.4.2.08141 |    
 | toutiao | 5.4.1.1.08141 | 
@@ -42,7 +42,7 @@
 
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
-pod 'ADSuyiSDK','~> 3.7.8.08141' # 主SDK 必选
+pod 'ADSuyiSDK','~> 3.7.8.08142' # 主SDK 必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/tianmu' # 天目  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu' # 穿山甲(头条)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt' # 优量汇(广点通）
@@ -72,7 +72,7 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi' # Inmobi
     
     pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt-without'        # 优量汇(广点通）
     
-    重要‼️ 如需使用优量汇4.14.40及以上版本，请务必将sdk升级至ADSuyiSDK 3.7.7.07142及以上版本；
+    重要‼️ 如需使用优量汇4.14.40及以上版本，请务必将sdk升级至ADSuyiSDK 3.7.8.08142及以上版本；
     
     ```
 
