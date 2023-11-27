@@ -1,4 +1,4 @@
-# Admobile ADSuyiSDK iOS接入文档 v3.7.8.08142
+# Admobile ADSuyiSDK iOS接入文档 v3.7.9.10301
 
 
 ## 修订历史
@@ -26,14 +26,14 @@
 
 | Name         | 版本号      |  
 |--------------|-------------|           
-| ADSuyiSDK | 3.7.8.08142 |    
-| tianmu | 2.0.8.1.08141 | 
-| baidu | 5.313.08141 |    
+| ADSuyiSDK | 3.7.9.10301 |    
+| tianmu | 2.0.9.1.08141 | 
+| baidu | 5.324.08141 |    
 | gdt | 4.14.45.08142 |    
-| ksad | 3.3.51.1.08141 |    
-| mintegral | 7.4.2.08141 |    
-| toutiao | 5.4.1.1.08141 | 
-| gromore | 4.3.0.2.08141 | 
+| ksad | 3.3.53.08141 |    
+| mintegral | 7.4.7.10301 |    
+| toutiao | 5.7.0.7.10301 | 
+| gromore | 5.7.0.8.10301 | 
                   
 
 ## 2.1 采用cocoapods进行SDK的导入
@@ -42,17 +42,28 @@
 
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
-pod 'ADSuyiSDK','~> 3.7.8.08142' # 主SDK 必选
+pod 'ADSuyiSDK','~> 3.7.9.10301' # 主SDK 必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/tianmu' # 天目  #必选
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu' # 穿山甲(头条)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt' # 优量汇(广点通）
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu' # 百度
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks' # 快手(非内容版本，内容与非内容版本不可同时导入)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ksfull' # 快手(内容版本)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks' # 快手
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg'     # Mobvista(汇量)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore' # gromore
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi' # Inmobi
 
+# ab二选一
+# a.不需要gromore
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu' # 穿山甲(头条)
+# b.需要gromore
+# pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu-without' # 穿山甲(头条)
+# pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore' # gromore
+
+# 以下为gromore的三方适配器，按需导入（优量汇已导入，无需额外导入）
+# pod 'CSJMAdmobAdapter',      '10.0.0.0'
+# pod 'CSJMKsAdapter',         '3.3.51.1.0'
+# pod 'CSJMUnityAdapter',      '4.3.0.0'
+# pod 'CSJMBaiduAdapter',      '5.322.0'
+# pod 'CSJMMintegralAdapter',  '7.3.6.0.2'
+# pod 'CSJMKlevinAdapter',     '2.11.0.211.1'
+# pod 'CSJMSigmobAdapter',     '4.9.4.0'
 ```
 
 <div STYLE="page-break-after: always;"></div>
@@ -80,7 +91,9 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/inmobi' # Inmobi
 
 ## 2.2 手动导入SDK方式
 
-[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_37808142_24bbd685a17f99c26e4ec474b56b592b.zip)下载各SDK拖入到工程中
+[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_37910301_6dfe944edd6efeaff0d0988225dd0322.zip)下载各SDK拖入到工程中
+
+若要集成gromore，需删除bu文件
 
 若有KSAdSDK，打开项目的 app target，查看 General 中的 Frameworks, Libraries, and Embedded Content 选项，将KSAdSDK置为Embed & Sign
 
