@@ -47,8 +47,8 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/tianmu' # 天目  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt' # 优量汇(广点通）
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu' # 百度
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks' # 快手
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg'     # Mobvista(汇量)
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/jad'     # 京媒
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg' # Mobvista(汇量)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/jad' # 京媒
 
 # ab二选一
 # a.不需要gromore
