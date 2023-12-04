@@ -15,7 +15,6 @@ target 'ADSuyiSDKDemo-iOS' do
     'ADSuyiSDKPlatforms/baidu', # 百度
     'ADSuyiSDKPlatforms/ks', # 快手(非内容版本，内容与非内容版本不可同时导入)
     'ADSuyiSDKPlatforms/mtg', # Mobvista(汇量)
-    'ADSuyiSDKPlatforms/jad', # 京媒
     
  # ab二选一
  # a.不需要gromore
