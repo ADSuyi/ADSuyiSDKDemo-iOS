@@ -91,7 +91,7 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu' # 穿山甲(头条)
 
 ## 2.2 手动导入SDK方式
 
-[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_37910301_6dfe944edd6efeaff0d0988225dd0322.zip)下载各SDK拖入到工程中
+[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_37910302_6ef6db35a7db9dd3041e4731596c1171.zip)下载各SDK拖入到工程中
 
 若要集成gromore，需删除bu文件
 
