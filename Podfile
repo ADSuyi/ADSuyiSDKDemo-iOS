@@ -18,10 +18,10 @@ target 'ADSuyiSDKDemo-iOS' do
     
  # ab二选一
  # a.不需要gromore
-   # 'ADSuyiSDKPlatforms/bu', # 穿山甲(头条)
+    'ADSuyiSDKPlatforms/bu', # 穿山甲(头条)
  # b.需要gromore
-    'ADSuyiSDKPlatforms/bu-without', # 穿山甲(头条)
-    'ADSuyiSDKPlatforms/gromore', # gromore
+#    'ADSuyiSDKPlatforms/bu-without', # 穿山甲(头条)
+#    'ADSuyiSDKPlatforms/gromore', # gromore
   ]
  # 以下为gromore的三方适配器，按需导入（优量汇已导入，无需额外导入）
   #pod 'CSJMAdmobAdapter',      '10.0.0.0'
