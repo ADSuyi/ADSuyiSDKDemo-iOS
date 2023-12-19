@@ -58,6 +58,7 @@
     
     __weak typeof(self) weakSelf = self;
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        weakSelf.nativeAd = nil;
         [weakSelf cleanAllAd];
         [weakSelf loadNative];
     }];

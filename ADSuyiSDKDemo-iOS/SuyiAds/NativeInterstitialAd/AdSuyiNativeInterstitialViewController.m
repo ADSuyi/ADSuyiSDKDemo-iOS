@@ -92,6 +92,7 @@
 - (void)loadNativeAd {
     [self removeAllSubviewsWithView:self.adBgView];
     [self removeAllSubviewsWithView:self.backgroundView];
+    _nativeAd = nil;
     [self.nativeAd load:1];
 }
 
