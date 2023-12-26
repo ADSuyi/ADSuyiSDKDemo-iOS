@@ -31,6 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.adTypeArray = @[@"开屏广告",@"信息流广告",@"横幅广告",@"Draw广告",@"插屏广告/全屏广告",@"浮窗广告"];
     self.tableView.tableFooterView = [UIView new];
     self.tableView.backgroundColor = [UIColor colorWithRed:225/255.0 green:233/255.0 blue:239/255.0 alpha:1];
