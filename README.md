@@ -1,4 +1,4 @@
-# Admobile ADSuyiSDK iOS接入文档 v3.8.0.11271
+# Admobile ADSuyiSDK iOS接入文档 v3.8.1.01121
 
 
 ## 修订历史
@@ -26,14 +26,15 @@
 
 | Name         | 版本号      |  
 |--------------|-------------|           
-| ADSuyiSDK | 3.8.0.11271 |    
-| tianmu | 2.1.0.1.11271 | 
-| baidu | 5.33.11271 |    
-| gdt | 4.14.50.08142 |    
-| ksad | 3.3.55.08141 |    
-| mintegral | 7.5.1.11271 |    
-| toutiao | 5.7.1.1.10303 | 
-| gromore | 5.7.0.8.10303 | 
+| ADSuyiSDK | 3.8.1.01121 |    
+| tianmu | 2.1.1.1.01121 | 
+| baidu | 5.331.01121 |    
+| gdt | 4.14.62.01121 |    
+| ksad | 3.3.57.01121 |    
+| mintegral | 7.5.4.11271 |    
+| toutiao | 5.8.1.2.01121 | 
+| gromore | 5.8.1.0.01121 | 
+| jadyun | 2.5.4.10301 | 
                   
 
 ## 2.1 采用cocoapods进行SDK的导入
@@ -42,12 +43,13 @@
 
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
-pod 'ADSuyiSDK','~> 3.8.0.11271' # 主SDK 必选
+pod 'ADSuyiSDK','~> 3.8.1.01121' # 主SDK 必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/tianmu' # 天目  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt' # 优量汇(广点通）
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu' # 百度
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks' # 快手
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg' # Mobvista(汇量)
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/jad' # 京媒
 
 # ab二选一
 # a.不需要gromore
@@ -91,7 +93,7 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu' # 穿山甲(头条)
 
 ## 2.2 手动导入SDK方式
 
-[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_38011271_b4d4f8eed6c5b96eda7c40811d83d328.zip)下载各SDK拖入到工程中
+[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_38101121_2428bc0a23bbe02fb330de23939e3180.zip)下载各SDK拖入到工程中
 
 若要集成gromore，需删除bu文件
 
