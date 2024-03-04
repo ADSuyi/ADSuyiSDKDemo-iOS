@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -86,7 +86,7 @@
 		03ED19262637A7C200089CF2 /* NotificationAdSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationAdSetViewController.m; sourceTree = "<group>"; };
 		03ED194F2637C21100089CF2 /* AdSuyiContainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdSuyiContainViewController.h; sourceTree = "<group>"; };
 		03ED19502637C21100089CF2 /* AdSuyiContainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdSuyiContainViewController.m; sourceTree = "<group>"; };
-		03F0CF62264E6DCF00B0DF18 /* ADSuyiSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ADSuyiSDK.xcframework; path = Pods/ADSuyiSDK/ADSuyiSDK/Classes/core/ADSuyiSDK.xcframework; sourceTree = "<group>"; };
+		03F0CF62264E6DCF00B0DF18 /* ADSuyiSDK.xcframework */ = {isa = PBXFileReference; expectedSignature = "SelfSigned:CA7681C5FBDEBC8DC49DAF61EA01C228BE7F8DF06869CD09ECD9730F761AFC12"; lastKnownFileType = wrapper.xcframework; name = ADSuyiSDK.xcframework; path = Pods/ADSuyiSDK/ADSuyiSDK/Classes/core/ADSuyiSDK.xcframework; sourceTree = "<group>"; };
 		03FC883626461C660059037E /* ADSuyiSplashSkipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADSuyiSplashSkipView.h; sourceTree = "<group>"; };
 		03FC883726461C660059037E /* ADSuyiRingProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADSuyiRingProgressView.h; sourceTree = "<group>"; };
 		03FC883826461C660059037E /* ADSuyiSplashSkipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADSuyiSplashSkipView.m; sourceTree = "<group>"; };

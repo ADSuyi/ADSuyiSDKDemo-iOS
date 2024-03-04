@@ -8,8 +8,8 @@ target 'ADSuyiSDKDemo-iOS' do
   # Comment the next line if you don't want to use dynamic frameworks
 
   # Pods for ADSuyiSDKDemo-iOS
-  pod 'ADSuyiSDK', '~> 3.8.1.01121'
-  pod 'ADSuyiSDK', '~> 3.8.1.01121', :subspecs => [
+  pod 'ADSuyiSDK', '~> 3.9.0.01301'
+  pod 'ADSuyiSDK', '~> 3.9.0.01301', :subspecs => [
     'ADSuyiSDKPlatforms/tianmu', # 天目  #必选
     'ADSuyiSDKPlatforms/gdt', # 优量汇(广点通）
     'ADSuyiSDKPlatforms/baidu', # 百度
@@ -31,7 +31,7 @@ target 'ADSuyiSDKDemo-iOS' do
   #pod 'CSJMBaiduAdapter',      '5.322.0'
   #pod 'CSJMMintegralAdapter',  '7.3.6.0.2'
   #pod 'CSJMKlevinAdapter',     '2.11.0.211.1'
-  #pod 'CSJMSigmobAdapter',     '4.10.0.0'
+  #pod 'CSJMSigmobAdapter',     '4.11.1.0'
   
   pod 'MJRefresh'
 
