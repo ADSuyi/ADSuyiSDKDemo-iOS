@@ -1,4 +1,4 @@
-# Admobile ADSuyiSDK iOS接入文档 v3.9.0.01301
+# Admobile ADSuyiSDK iOS接入文档 v3.9.0.01302
 
 
 ## 修订历史
@@ -26,7 +26,7 @@
 
 | Name         | 版本号      |  
 |--------------|-------------|           
-| ADSuyiSDK | 3.9.0.01301 |    
+| ADSuyiSDK | 3.9.0.01302 |    
 | tianmu | 2.2.0.1.01301 | 
 | baidu | 5.331.01121 |    
 | gdt | 4.14.63.01301 |    
@@ -43,7 +43,7 @@
 
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
-pod 'ADSuyiSDK','~> 3.9.0.01301' # 主SDK 必选
+pod 'ADSuyiSDK','~> 3.9.0.01302' # 主SDK 必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/tianmu' # 天目  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt' # 优量汇(广点通）
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu' # 百度
@@ -93,7 +93,7 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu' # 穿山甲(头条)
 
 ## 2.2 手动导入SDK方式
 
-[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_39001301_d4f0892f8768c9f060c2645258ec28c5.zip)下载各SDK拖入到工程中
+[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_39001302_630191b4e9e0e01fef51354d20162c7f.zip)下载各SDK拖入到工程中
 
 若要集成gromore，需删除bu文件
 
@@ -904,7 +904,7 @@ if(!_nativeAd) {
 | rewardAmount | NSString | 奖励数量 （用于激励视频服务器验证参数，可选）  |
 | extraInfo | NSString | 其他信息 （服务器端验证回调中包含的可选自定义奖励字符串，可选）|
 | tolerateTimeout | NSInteger | 请求超时时间,默认为4s,需要设置3s及以上  |
-| isMuted | BOOL | 是否静音，默认静音 <br>支持平台：优量汇，汇量，快手，Gromore  |
+| isMuted | BOOL | 是否静音，默认静音 <br>支持平台：天目，优量汇，汇量，快手，Gromore  |
 
 | <center>接口</center> | <center>说明</center>|
 |:-----------|:--------|
@@ -1039,7 +1039,7 @@ OC请求激励视频代码示例：
 | posId | NSString | 广告位id  |
 | scenesId | NSString | 场景id  |
 | tolerateTimeout | NSTimeInterval | 请求超时时间,默认为4s,需要设置3s及以上  |
-| isMuted | BOOL | 是否静音，默认静音 <br>支持平台：优量汇，汇量，快手，Gromore <br/> 特殊平台：穿山甲（需在穿山甲后台广告位配置处设置） |
+| isMuted | BOOL | 是否静音，默认静音 <br>支持平台：天目，优量汇，汇量，快手，Gromore <br/> 特殊平台：穿山甲（需在穿山甲后台广告位配置处设置） |
 | detailPageVideoMuted | BOOL | 是否静音，默认静音 <br>支持平台：优量汇  |
 
 | <center>接口</center> | <center>说明</center>|
