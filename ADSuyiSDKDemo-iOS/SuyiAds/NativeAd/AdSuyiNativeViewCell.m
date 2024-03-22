@@ -11,17 +11,19 @@
 @implementation AdSuyiNativeViewCell
 
 - (void)setAdView:(UIView *)adView {
-    [_adView removeFromSuperview];
+    for(UIView *view in self.contentView.subviews){
+        [view removeFromSuperview];
+    }
     
     _adView = adView;
     [self.contentView addSubview:_adView];
 }
+
 - (void)setCloseBtnView:(UIView *)closeBtnView{
-    [_closeBtnView removeFromSuperview];
     _closeBtnView = closeBtnView;
     //frame根据需求进行自行调整
     _closeBtnView.frame = CGRectMake(UIScreen.mainScreen.bounds.size.width-60, 10, 60, 30);
     [self.contentView addSubview:_closeBtnView];
-    
 }
+
 @end
