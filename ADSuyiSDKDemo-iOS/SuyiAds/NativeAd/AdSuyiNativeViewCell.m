@@ -16,6 +16,7 @@
     }
     
     _adView = adView;
+    _adView.frame = self.contentView.bounds;
     [self.contentView addSubview:_adView];
 }
 
