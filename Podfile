@@ -8,8 +8,8 @@ target 'ADSuyiSDKDemo-iOS' do
   # Comment the next line if you don't want to use dynamic frameworks
 
   # Pods for ADSuyiSDKDemo-iOS
-  pod 'ADSuyiSDK', '~> 3.9.0.01302'
-  pod 'ADSuyiSDK', '~> 3.9.0.01302', :subspecs => [
+  pod 'ADSuyiSDK', '~> 3.9.1.03141'
+  pod 'ADSuyiSDK', '~> 3.9.1.03141', :subspecs => [
     'ADSuyiSDKPlatforms/tianmu', # 天目  #必选
     'ADSuyiSDKPlatforms/gdt', # 优量汇(广点通）
     'ADSuyiSDKPlatforms/baidu', # 百度

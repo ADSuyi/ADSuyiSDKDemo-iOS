@@ -1,4 +1,4 @@
-# Admobile ADSuyiSDK iOS接入文档 v3.9.0.01302
+# Admobile ADSuyiSDK iOS接入文档 v3.9.1.03141
 
 
 ## 修订历史
@@ -26,15 +26,15 @@
 
 | Name         | 版本号      |  
 |--------------|-------------|           
-| ADSuyiSDK | 3.9.0.01302 |    
-| tianmu | 2.2.0.2.01301 | 
-| baidu | 5.331.01121 |    
-| gdt | 4.14.63.01301 |    
+| ADSuyiSDK | 3.9.1.03141 |    
+| tianmu | 2.2.1.1.03141 | 
+| baidu | 5.34.01121 |    
+| gdt | 4.14.70.01301 |    
 | ksad | 3.3.61.01301 |    
-| mintegral | 7.5.5.11271 |    
-| toutiao | 5.9.1.1.01121 | 
-| gromore | 5.9.0.8.01121 | 
-| jadyun | 2.5.6.10301 | 
+| mintegral | 7.5.9.11271 |    
+| toutiao | 5.9.1.6.01121 | 
+| gromore | 5.9.1.5.01121 | 
+| jadyun | 2.5.8.10301 | 
                   
 
 ## 2.1 采用cocoapods进行SDK的导入
@@ -43,7 +43,7 @@
 
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
-pod 'ADSuyiSDK','~> 3.9.0.01302' # 主SDK 必选
+pod 'ADSuyiSDK','~> 3.9.1.03141' # 主SDK 必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/tianmu' # 天目  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt' # 优量汇(广点通）
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu' # 百度
@@ -93,7 +93,7 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu' # 穿山甲(头条)
 
 ## 2.2 手动导入SDK方式
 
-[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_39001302_630191b4e9e0e01fef51354d20162c7f.zip)下载各SDK拖入到工程中
+[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_39103141_0d05a1858bd1d52e3da8ad20fc6eaf69.zip)下载各SDK拖入到工程中
 
 若要集成gromore，需删除bu文件
 

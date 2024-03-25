@@ -11,7 +11,7 @@
 @implementation AdSuyiNativeViewCell
 
 - (void)setAdView:(UIView *)adView {
-    for(UIView *view in self.contentView.subviews){
+    for (UIView *view in self.contentView.subviews) {
         [view removeFromSuperview];
     }
     
