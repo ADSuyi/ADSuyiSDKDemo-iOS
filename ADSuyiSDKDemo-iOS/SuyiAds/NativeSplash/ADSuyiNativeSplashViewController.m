@@ -153,14 +153,6 @@
         }
         // 5、注册，自渲染：注册点击事件，模板：render，重要
         [adView adsy_registViews:@[adView]];
-        
-        // 广点通视频信息流广告会给mediaView添加事件，点击会出现半屏广告，以下为广点通官方给予的解决方案
-        if([adView.adsy_platform isEqualToString:ADSuyiAdapterPlatformGDT]
-           && adView.renderType == ADSuyiAdapterRenderTypeNative
-           && adView.data.shouldShowMediaView) {
-            UIView *mediaView = [adView adsy_mediaViewForWidth:0.0];
-            mediaView.userInteractionEnabled = NO;
-        }
     }
 
 }
