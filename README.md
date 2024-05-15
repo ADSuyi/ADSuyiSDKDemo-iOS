@@ -30,10 +30,10 @@
 | tianmu | 2.2.1.3.03141 | 
 | baidu | 5.35.01121 |    
 | gdt | 4.14.76.01301 |    
-| ksad | 3.3.64.5.01301 |    
+| ksad | 3.3.65.01301 |    
 | mintegral | 7.5.9.11271 |    
-| toutiao | 5.9.1.6.01121 | 
-| gromore | 5.9.1.5.01121 | 
+| toutiao | 6.1.1.0.01121 | 
+| gromore | 6.1.1.0.01121 | 
 | jadyun | 2.5.8.10301 | 
                   
 
@@ -59,13 +59,9 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu' # 穿山甲(头条)
 # pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore' # gromore
 
 # 以下为gromore的三方适配器，按需导入（优量汇已导入，无需额外导入）
-# pod 'CSJMAdmobAdapter',      '10.0.0.0'
-# pod 'CSJMKsAdapter',         '3.3.53.0.1'
-# pod 'CSJMUnityAdapter',      '4.3.0.0'
-# pod 'CSJMBaiduAdapter',      '5.322.0'
-# pod 'CSJMMintegralAdapter',  '7.3.6.0.2'
-# pod 'CSJMKlevinAdapter',     '2.11.0.211.1'
-# pod 'CSJMSigmobAdapter',     '4.11.1.0'
+# pod 'CSJMKsAdapter',         '3.3.61.0.1'
+# pod 'CSJMBaiduAdapter',      '5.35.0'
+# pod 'CSJMMintegralAdapter',  '7.6.3.0'
 ```
 
 <div STYLE="page-break-after: always;"></div>
@@ -91,7 +87,7 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu' # 穿山甲(头条)
 
 ## 2.2 手动导入SDK方式
 
-[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_39103144_60997a10c1d8646c7f6a7b67fc68ec18.zip)下载各SDK拖入到工程中
+[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_39103144_5c127f544553d48308c04ea2970c0cb1.zip)下载各SDK拖入到工程中
 
 若要集成gromore，需删除bu文件
 
