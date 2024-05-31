@@ -11,15 +11,15 @@ target 'ADSuyiSDKDemo-iOS' do
   pod 'ADSuyiSDK', '~> 3.9.1.03144'
   pod 'ADSuyiSDK', '~> 3.9.1.03144', :subspecs => [
     'ADSuyiSDKPlatforms/tianmu', # 天目  #必选
-    'ADSuyiSDKPlatforms/gdt', # 优量汇(广点通）
-    'ADSuyiSDKPlatforms/baidu', # 百度
-    'ADSuyiSDKPlatforms/ks', # 快手(非内容版本，内容与非内容版本不可同时导入)
-    'ADSuyiSDKPlatforms/mtg', # Mobvista(汇量)
-    'ADSuyiSDKPlatforms/jad',     # 京媒
+#    'ADSuyiSDKPlatforms/gdt', # 优量汇(广点通）
+#    'ADSuyiSDKPlatforms/baidu', # 百度
+#    'ADSuyiSDKPlatforms/ks', # 快手(非内容版本，内容与非内容版本不可同时导入)
+#    'ADSuyiSDKPlatforms/mtg', # Mobvista(汇量)
+#    'ADSuyiSDKPlatforms/jad',     # 京媒
     
  # ab二选一
  # a.不需要gromore
-    'ADSuyiSDKPlatforms/bu', # 穿山甲(头条)
+#    'ADSuyiSDKPlatforms/bu', # 穿山甲(头条)
  # b.需要gromore
 #    'ADSuyiSDKPlatforms/bu-without', # 穿山甲(头条)
 #    'ADSuyiSDKPlatforms/gromore', # gromore

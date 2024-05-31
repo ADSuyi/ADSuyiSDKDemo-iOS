@@ -1,10 +1,22 @@
 # Admobile ADSuyiSDK iOS接入文档 v3.9.1.03144
 
+```
+SDK名称: ADSuyi广告聚合SDK
+开发者: 杭州艾狄墨搏信息服务有限公司
+更新日期: 2024-05-30
+功能介绍: ADSuyi广告聚合SDK集成了多种广告类型和主流广告平台，提供广告数据统计功能，帮助开发者轻松实现应用内广告的接入和管理，提升应用盈利和用户体验。
+```
 
-## 修订历史
 
-[SDK版本更新日志](https://doc.admobile.top/ssp/4changelog/2-iOSchangelog.html)
-<div STYLE="page-break-after: always;"></div>
+[查看更新日志](https://doc.admobile.top/ssp/4changelog/2-iOSchangelog.html)
+
+[查看接入文档](https://doc.admobile.top/ssp/pages/suyisdkios/)
+
+[隐私政策](https://www.admobile.top/privacyPolicy.html)
+
+[合规指引](https://doc.admobile.top/ssp/1Start/7_compliance_guide.html)
+
+[用户协议](https://doc.admobile.top/ssp/pages/contract/)
 
 
 ## 1.1 概述
