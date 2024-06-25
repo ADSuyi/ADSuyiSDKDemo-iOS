@@ -641,8 +641,8 @@ OC请求开屏广告代码示例：
 
 ```
 
-- `Github: Swift请求开屏广告代码示例：`[[开屏代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS-Swift/blob/master/ADSuyiSDKDemo-iOS-Swift/AppDelegate.swift)
-- `Gitee: Swift请求开屏广告代码示例：`[[开屏代码示例]](https://gitee.com/admobile/ADSuyiSDKDemo-iOS-Swift/blob/master/ADSuyiSDKDemo-iOS-Swift/AppDelegate.swift)
+- `Github: Swift请求开屏广告代码示例：`[[开屏代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS-Swift/blob/master/ADSuyiSDKDemo-iOS-Swift/SuyiAds/SplashProAd/ADSuyiSplashProViewController.swift)
+- `Gitee: Swift请求开屏广告代码示例：`[[开屏代码示例]](https://gitee.com/admobile/ADSuyiSDKDemo-iOS-Swift/blob/master/ADSuyiSDKDemo-iOS-Swift/SuyiAds/SplashProAd/ADSuyiSplashProViewController.swift)
 
 OC请求开屏广告代码示例：
 
