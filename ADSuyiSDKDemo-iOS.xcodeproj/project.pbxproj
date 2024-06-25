@@ -31,6 +31,7 @@
 		03FC883B26461C660059037E /* ADSuyiRingProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FC883926461C660059037E /* ADSuyiRingProgressView.m */; };
 		13CC793425DE542800D77DE5 /* AdSuyiBaseContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CC793025DE542800D77DE5 /* AdSuyiBaseContentViewController.m */; };
 		13CC793525DE542800D77DE5 /* AdSuyiContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CC793125DE542800D77DE5 /* AdSuyiContentViewController.m */; };
+		36557A982C2AD8260079D415 /* AdSuyiSplashProViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36557A972C2AD8260079D415 /* AdSuyiSplashProViewController.m */; };
 		6012F9759F8BCC5230C3F3D1 /* libPods-ADSuyiSDKDemo-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 422C7AE40E8567B741DE7A2F /* libPods-ADSuyiSDKDemo-iOS.a */; };
 		82085D7825E8937500FCE89F /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82085D7725E8937500FCE89F /* AppTrackingTransparency.framework */; };
 		82085D7A25E8937C00FCE89F /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82085D7925E8937C00FCE89F /* AdSupport.framework */; };
@@ -96,6 +97,8 @@
 		13CC793225DE542800D77DE5 /* AdSuyiContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdSuyiContentViewController.h; sourceTree = "<group>"; };
 		13CC793325DE542800D77DE5 /* AdSuyiBaseContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdSuyiBaseContentViewController.h; sourceTree = "<group>"; };
 		2F224B5F4E4E0DCAE1105072 /* Pods-ADSuyiSDKDemo-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADSuyiSDKDemo-iOS.release.xcconfig"; path = "Target Support Files/Pods-ADSuyiSDKDemo-iOS/Pods-ADSuyiSDKDemo-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		36557A962C2AD8260079D415 /* AdSuyiSplashProViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdSuyiSplashProViewController.h; sourceTree = "<group>"; };
+		36557A972C2AD8260079D415 /* AdSuyiSplashProViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdSuyiSplashProViewController.m; sourceTree = "<group>"; };
 		422C7AE40E8567B741DE7A2F /* libPods-ADSuyiSDKDemo-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ADSuyiSDKDemo-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82085D7725E8937500FCE89F /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
 		82085D7925E8937C00FCE89F /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
@@ -228,6 +231,15 @@
 			path = Content;
 			sourceTree = "<group>";
 		};
+		36557A952C2AD7EE0079D415 /* SplashProAd */ = {
+			isa = PBXGroup;
+			children = (
+				36557A962C2AD8260079D415 /* AdSuyiSplashProViewController.h */,
+				36557A972C2AD8260079D415 /* AdSuyiSplashProViewController.m */,
+			);
+			path = SplashProAd;
+			sourceTree = "<group>";
+		};
 		66890375DE678EA9A920BD13 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +341,7 @@
 				BFEA0889247E5430001815E3 /* NativeAd */,
 				BFEA088E247E5430001815E3 /* BannerAd */,
 				BFEA0891247E5430001815E3 /* SplashAd */,
+				36557A952C2AD7EE0079D415 /* SplashProAd */,
 				BFEA0894247E5430001815E3 /* DrawVodAd */,
 				BFEA0899247E5430001815E3 /* FullScreenVodAd */,
 				BFEA089C247E5430001815E3 /* InterstitialAd */,
@@ -539,6 +552,7 @@
 				BFEA08A4247E5430001815E3 /* AdSuyiBannerViewController.m in Sources */,
 				03ED192B2637A7C200089CF2 /* NavigationViewController.m in Sources */,
 				BAEEB97C27D216020027685B /* UIViewController+TYTopView.m in Sources */,
+				36557A982C2AD8260079D415 /* AdSuyiSplashProViewController.m in Sources */,
 				BAB1331227B5FBA80099BCED /* AdSuyiNativeInterstitialViewController.m in Sources */,
 				BFEA08A2247E5430001815E3 /* AdSuyiNativeViewController.m in Sources */,
 				03ED19312637A7C200089CF2 /* NotificationAdSetViewController.m in Sources */,

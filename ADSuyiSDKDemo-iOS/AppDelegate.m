@@ -158,6 +158,15 @@
 }
 
 /**
+ 开屏被跳过
+ 
+ @param splashAd 广告实例
+ */
+- (void)adsy_splashAdSkip:(ADSuyiSDKSplashAd *)splashAd{
+    
+}
+
+/**
  开屏被关闭
  
  @param splashAd 广告实例

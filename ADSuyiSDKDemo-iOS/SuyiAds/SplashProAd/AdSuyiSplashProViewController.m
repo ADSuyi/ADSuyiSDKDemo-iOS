@@ -1,22 +1,22 @@
 //
-//  AdSuyiSplashViewController.m
-//  ADSuyiSDKDemo
+//  AdSuyiSplashProViewController.m
+//  ADSuyiSDKDemo-iOS
 //
-//  Created by 陈坤 on 2020/4/21.
-//  Copyright © 2020 陈坤. All rights reserved.
+//  Created by apple on 2024/6/25.
+//  Copyright © 2024 陈坤. All rights reserved.
 //
 
-#import "AdSuyiSplashViewController.h"
-#import <ADSuyiSDK/ADSuyiSDKSplashAd.h>
+#import "AdSuyiSplashProViewController.h"
+#import <ADSuyiSDK/ADSuyiSDKSplashProAd.h>
 #import <ADSuyiKit/UIColor+ADSuyiKit.h>
 #import <ADSuyiKit/ADSuyiKitMacros.h>
 #import "SetConfigManager.h"
 #import "ADSuyiSplashSkipView.h"
 #import "ADSuyiRingProgressView.h"
 #import "AdMacros.h"
-@interface AdSuyiSplashViewController ()<ADSuyiSDKSplashAdDelegate>
+@interface AdSuyiSplashProViewController ()<ADSuyiSDKSplashProAdDelegate>
 
-@property (nonatomic, strong) ADSuyiSDKSplashAd *splashAd;
+@property (nonatomic, strong) ADSuyiSDKSplashProAd *splashAd;
 
 @property (nonatomic, strong) ADSuyiSplashSkipView *skipNormalView;
 
@@ -26,7 +26,7 @@
 
 @end
 
-@implementation AdSuyiSplashViewController
+@implementation AdSuyiSplashProViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -84,7 +84,7 @@
 }
 // 开屏测试id 518f5daa123ec3e866
 - (void)requestSplashAd{
-    self.splashAd = [[ADSuyiSDKSplashAd alloc]init];
+    self.splashAd = [[ADSuyiSDKSplashProAd alloc]init];
     self.splashAd.delegate = self;
     self.splashAd.controller = self;
     self.splashAd.posId = Suyi_Demo_splashAd_PosId;
@@ -112,7 +112,7 @@
 //    } else {
 //        bottomViewHeight = [UIScreen mainScreen].bounds.size.height - [UIScreen mainScreen].bounds.size.width * (960 / 640.0);
 //    }
-//    
+//
     UIView *bottomView = [[UIView alloc] init];
     bottomView.backgroundColor = [UIColor whiteColor];
     bottomView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, bottomViewHeight);
@@ -122,13 +122,13 @@
     return bottomView;
 }
 
-#pragma mark - ADSuyiSDKSplashAdDelegate
+#pragma mark - ADSuyiSDKSplashProAdDelegate
 /**
  开屏加载成功
  
  @param splashAd 广告实例
  */
-- (void)adsy_splashAdSuccessToLoadAd:(ADSuyiSDKSplashAd *)splashAd{
+- (void)adsy_splashAdSuccessToLoadAd:(ADSuyiSDKSplashProAd *)splashAd{
     _isReady = YES;
    
 }
@@ -138,7 +138,7 @@
  
  @param splashAd 广告实例
  */
-- (void)adsy_splashAdSuccessToPresentScreen:(ADSuyiSDKSplashAd *)splashAd{
+- (void)adsy_splashAdSuccessToPresentScreen:(ADSuyiSDKSplashProAd *)splashAd{
     
 }
 
@@ -148,7 +148,7 @@
  @param splashAd 广告实例
  @param error 具体错误信息
  */
-- (void)adsy_splashAdFailToPresentScreen:(ADSuyiSDKSplashAd *)splashAd failToPresentScreen:(ADSuyiAdapterErrorDefine *)error{
+- (void)adsy_splashAdFailToPresentScreen:(ADSuyiSDKSplashProAd *)splashAd failToPresentScreen:(ADSuyiAdapterErrorDefine *)error{
     _splashAd = nil;
 }
 
@@ -157,7 +157,7 @@
  
  @param splashAd 广告实例
  */
-- (void)adsy_splashAdClicked:(ADSuyiSDKSplashAd *)splashAd{
+- (void)adsy_splashAdClicked:(ADSuyiSDKSplashProAd *)splashAd{
     
 }
 
@@ -166,7 +166,7 @@
  
  @param splashAd 广告实例
  */
-- (void)adsy_splashAdSkip:(ADSuyiSDKSplashAd *)splashAd {
+- (void)adsy_splashAdSkip:(ADSuyiSDKSplashProAd *)splashAd{
     
 }
 
@@ -175,7 +175,7 @@
  
  @param splashAd 广告实例
  */
-- (void)adsy_splashAdClosed:(ADSuyiSDKSplashAd *)splashAd{
+- (void)adsy_splashAdClosed:(ADSuyiSDKSplashProAd *)splashAd{
     _splashAd = nil;
 }
 
@@ -184,7 +184,7 @@
  
  @param splashAd 广告实例
  */
-- (void)adsy_splashAdEffective:(ADSuyiSDKSplashAd *)splashAd{
+- (void)adsy_splashAdEffective:(ADSuyiSDKSplashProAd *)splashAd{
 }
 
 @end

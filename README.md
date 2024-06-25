@@ -1,9 +1,9 @@
-# Admobile ADSuyiSDK iOS接入文档 v3.9.1.03144
+# Admobile ADSuyiSDK iOS接入文档 v3.9.3.05231
 
 ```
 SDK名称: ADSuyi广告聚合SDK
 开发者: 杭州艾狄墨搏信息服务有限公司
-更新日期: 2024-05-30
+更新日期: 2024-06-25
 功能介绍: ADSuyi广告聚合SDK集成了多种广告类型和主流广告平台，提供广告数据统计功能，帮助开发者轻松实现应用内广告的接入和管理，提升应用盈利和用户体验。
 ```
 
@@ -38,15 +38,14 @@ SDK名称: ADSuyi广告聚合SDK
 
 | Name         | 版本号      |  
 |--------------|-------------|           
-| ADSuyiSDK | 3.9.1.03144 |    
-| tianmu | 2.2.1.3.03141 | 
-| baidu | 5.35.01121 |    
-| gdt | 4.14.76.01301 |    
-| ksad | 3.3.65.01301 |    
-| mintegral | 7.5.9.11271 |    
-| toutiao | 6.1.1.0.01121 | 
-| gromore | 6.1.1.0.01121 | 
-| jadyun | 2.5.8.10301 | 
+| ADSuyiSDK | 3.9.3.05231 |    
+| tianmu | 2.2.3.1.05231 | 
+| baidu | 5.35.05231 |    
+| gdt | 4.14.76.05231 |    
+| ksad | 3.3.65.05231 |    
+| toutiao | 6.1.1.0.05231 | 
+| gromore | 6.1.1.0.05231 | 
+| jadyun | 6.1.1.0.05231 | 
                   
 
 ## 2.1 采用cocoapods进行SDK的导入
@@ -55,12 +54,11 @@ SDK名称: ADSuyi广告聚合SDK
 
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
-pod 'ADSuyiSDK','~> 3.9.1.03144' # 主SDK 必选
+pod 'ADSuyiSDK','~> 3.9.3.05231' # 主SDK 必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/tianmu' # 天目  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt' # 优量汇(广点通）
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu' # 百度
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks' # 快手
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/mtg' # Mobvista(汇量)
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/jad' # 京媒
 
 # ab二选一
@@ -69,11 +67,6 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu' # 穿山甲(头条)
 # b.需要gromore
 # pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu-without' # 穿山甲(头条)
 # pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gromore' # gromore
-
-# 以下为gromore的三方适配器，按需导入（优量汇已导入，无需额外导入）
-# pod 'CSJMKsAdapter',         '3.3.61.0.1'
-# pod 'CSJMBaiduAdapter',      '5.35.0'
-# pod 'CSJMMintegralAdapter',  '7.6.3.0'
 ```
 
 <div STYLE="page-break-after: always;"></div>
@@ -99,7 +92,7 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu' # 穿山甲(头条)
 
 ## 2.2 手动导入SDK方式
 
-[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_39103144_5c127f544553d48308c04ea2970c0cb1.zip)下载各SDK拖入到工程中
+[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_39305231_eee6cb685fe58ca6596f202f17a8f5eb.zip)下载各SDK拖入到工程中
 
 若要集成gromore，需删除bu文件
 
@@ -336,7 +329,7 @@ Privacy - Location Always Usage Description
 
 SKAdNetwork 是接收iOS端营销推广活动归因数据的一种方法。
 
-1. 将下列SKAdNetwork ID（供参考，需以穿山甲和汇量官网为准）添加到 info.plist 中，以保证 SKAdNetwork 的正确运行。根据对接平台添加相应SKAdNetworkID，若无对接平台SKNetworkID则无需添加。
+1. 将下列SKAdNetwork ID（供参考，需以穿山甲官网为准）添加到 info.plist 中，以保证 SKAdNetwork 的正确运行。根据对接平台添加相应SKAdNetworkID，若无对接平台SKNetworkID则无需添加。
 
 ```xml
 <key>SKAdNetworkItems</key>
@@ -353,84 +346,6 @@ SKAdNetwork 是接收iOS端营销推广活动归因数据的一种方法。
     <dict>
       <key>SKAdNetworkIdentifier</key>
       <string>x2jnk7ly8j.skadnetwork</string>
-    </dict>
-    // 汇量广告（ADSuyiMTG）
-    <dict>
-      <key>SKAdNetworkIdentifier</key>
-      <string>KBD757YWX3.skadnetwork</string>
-    </dict>
-    // 汇量广告 合作伙伴（ADSuyiMTG）
-    <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>wg4vff78zm.skadnetwork</string>
-    </dict>
-    <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>737z793b9f.skadnetwork</string>
-    </dict>
-    <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>ydx93a7ass.skadnetwork</string>
-    </dict>
-    <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>prcb7njmu6.skadnetwork</string>
-    </dict>
-    <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>7UG5ZH24HU.skadnetwork</string>
-    </dict>
-    <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>44jx6755aq.skadnetwork</string>
-    </dict>
-    <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>2U9PT9HC89.skadnetwork</string>
-    </dict>
-    <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>W9Q455WK68.skadnetwork</string>
-    </dict>
-    <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>YCLNXRL5PM.skadnetwork</string>
-    </dict>
-    <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>TL55SBB4FM.skadnetwork</string>
-    </dict>
-    <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>8s468mfl3y.skadnetwork</string>
-    </dict>
-    <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>GLQZH8VGBY.skadnetwork</string>
-    </dict>
-    <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>c6k4g5qg8m.skadnetwork</string>
-    </dict>
-    <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>mlmmfzh3r3.skadnetwork</string>
-    </dict>
-    <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>4PFYVQ9L8R.skadnetwork</string>
-    </dict>
-    <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>av6w8kgt66.skadnetwork</string>
-    </dict>
-    <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>6xzpu9s2p8.skadnetwork</string>
-    </dict>
-    <dict>
-        <key>SKAdNetworkIdentifier</key>
-        <string>hs6bdukanm.skadnetwork</string>
     </dict>
   </array>
 ```
@@ -473,7 +388,7 @@ NSString *sdkVersion = [ADSuyiSDK getSDKVersion];
 
 ## 4.2 个性化开关
 
-ADSuyi的个性化开关可统一控制第三方广告SDK的个性化开关接口，目前支持天目、穿山甲、优量汇、百度、快手、汇量、Gromore;
+ADSuyi的个性化开关可统一控制第三方广告SDK的个性化开关接口，目前支持天目、穿山甲、优量汇、百度、快手、Gromore;
 
 ```obj-c
 // 是否开启个性化广告；默认YES，建议初始化SDK之前设置
@@ -512,8 +427,7 @@ ADSuyiSDK.enablePersonalAd = NO;
 
 | <center>接口</center> | <center>说明</center>|
 |:-----------|:--------|
-| setBottomSplashWithSuyiPosid: platformListId: platform: appId: appKey: platformPosid: renderType: | 设置保底开屏 <br>支持平台：优量汇、快手、百度、汇量 （可选） |
-| setBottomSplashWithSuyiPosid: platformListId: platform: appId: appKey: platformPosid: renderType: | 设置保底开屏 <br>支持平台：穿山甲、优量汇、快手、百度、汇量 （可选） |
+| setBottomSplashWithSuyiPosid: platformListId: platform: appId: appKey: platformPosid: renderType: | 设置保底开屏 <br>支持平台：穿山甲、优量汇、快手、百度 （可选） |
 | loadAndShowInWindow: | 加载并展示开屏广告 |
 | loadAndShowInWindow: withBottomView: | 加载并展示开屏广告；底部logo视图, 高度不能超过屏幕的25%，可传nil |
 | loadAdInWindow: | 加载开屏广告 |
@@ -530,6 +444,7 @@ ADSuyiSDK.enablePersonalAd = NO;
 | adsy_splashAdFailToPresentScreen: | 开屏展示失败  |
 | adsy_splashAdEffective: | 开屏曝光  |
 | adsy_splashAdClicked: | 开屏点击  |
+| adsy_splashAdSkip: | 开屏跳过  |
 | adsy_splashAdClosed: | 开屏关闭  |
 | adsy_splashAdCloseLandingPage: | 开屏关闭落地页  |
 | adsy_splashAdDidRewardEffective: info: | 开屏达到激励条件 （开启服务器验证后请使用服务端验证判断是否达到条件，无需使用本回调做激励达成判断） 备注：仅支持优量汇平台 |
@@ -594,7 +509,7 @@ OC请求开屏广告代码示例：
      *功能说明：App在首次启动时，需要先请求获取广告位配置文件后，然后再去请求开屏广告，也就是首次加载开屏广告时需要两次串行网络请求，因此很容易因超时导致开屏广告展示失败。
      *解决方案：为避免开屏超时问题，开放此设置给开发者，开发者可以根据实际需求选择一家广告平台，通过API接口将必需参数传递给Suyi聚合SDK。（该设置只能指定一家广告平台，并且首次启动时只会请求该平台的广告，但App首次开屏广告将不受ADmobile后台控制，包括下载提示，广告位关闭。）
      *该设置仅会在首次加载开屏广告时，SDK会使用开发者传入的参数进行广告请求，同时获取后台配置文件的广告配置信息缓存到本地（首次请求广告平台广告和获取配置信息时并发进行），后续的开屏广告将按照缓存缓存的后台广告位配置顺序进行开屏广告请求。
-     *支持穿山甲、优量汇、快手、百度、汇量
+     *支持穿山甲、优量汇、快手、百度
      */
     [self.splashAd setBottomSplashWithSuyiPosid:@"73128265daffdd6a1d" platformListId:@"3827" platform:@"ksad" appId:@"90010" appKey:nil platformPosid:@"4000000041" renderType:ADSuyiSplashRenderTypeExpressPro];
     // 7、加载开屏广告
@@ -632,6 +547,15 @@ OC请求开屏广告代码示例：
 }
 
 /**
+ 开屏被跳过
+ 
+ @param splashAd 广告实例
+ */
+- (void)adsy_splashAdSkip:(ADSuyiSDKSplashAd *)splashAd{
+    
+}
+
+/**
  开屏被关闭
  
  @param splashAd 广告实例
@@ -646,6 +570,185 @@ OC请求开屏广告代码示例：
  @param splashAd 广告实例
  */
 - (void)adsy_splashAdEffective:(ADSuyiSDKSplashAd *)splashAd{
+    
+}
+
+```
+
+<div STYLE="page-break-after: always;"></div>
+
+
+## 4.3.1 开屏广告2.0 - ADSuyiSDKSplashProAd
+
+开屏广告会在您的应用开启时加载展示，拥有固定展示时间，展示完毕后自动关闭并进入您的应用主界面。
+
+开屏广告建议在闪屏页进行展示，开屏广告的宽度和高度取决于容器的宽高，都是会撑满广告容器；**开屏广告的高度必须大于等于屏幕高度（手机屏幕完整高度，包括状态栏之类）的75%**，否则可能会影响收益计费。
+
+推荐在 `AppDelegate`的 `didFinishLaunchingWithOptions`方法的 `return YES`之前调用开屏。
+
+- `Github: OC请求开屏代码示例：`[[开屏代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS/blob/master/ADSuyiSDKDemo-iOS/SuyiAds/SplashProAd/AdSuyiSplashProViewController.m)
+- `Gitee : OC请求开屏代码示例：`[[开屏代码示例]](https://gitee.com/admobile/ADSuyiSDKDemo-iOS/blob/master/ADSuyiSDKDemo-iOS/SuyiAds/SplashProAd/AdSuyiSplashProViewController.m)
+
+- `Github: Swift请求开屏代码示例：`[[开屏代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS-Swift/blob/master/ADSuyiSDKDemo-iOS-Swift/SuyiAds/SplashProAd/ADSuyiSplashProViewController.swift)
+- `Gitee : Swift请求开屏代码示例：`[[开屏代码示例]](https://gitee.com/admobile/ADSuyiSDKDemo-iOS-Swift/blob/master/ADSuyiSDKDemo-iOS-Swift/SuyiAds/SplashProAd/ADSuyiSplashProViewController.swift)
+
+ **ADSuyiSDKSplashProAd**: 开屏广告的加载类
+| <center>属性</center> | <center>类型</center>  | <center>说明</center>|
+|:-----------|:--|:--------|
+| delegate | id\<ADSuyiSDKSplashProAdDelegate> | 委托对象 |
+| controller | UIViewController | [必选]开发者需传入用来弹出目标页的ViewController，一般为当前ViewController  |
+| posId | NSString | 广告位id  |
+| scenesId | NSString | 场景id（可选）  |
+| backgroundColor | UIColor | 开屏的默认背景色,或者启动页,为nil则代表透明  |
+| userId | NSString | 用户id （用户在App内的userID，用于激励视频服务器验证，如无需服务器验证可不传）  |
+| extra | NSString | 其他信息 （服务器端验证回调中包含的可选自定义奖励字符串，可选）  |
+| tolerateTimeout | NSInteger | 开屏请求总超时时间 |
+
+| <center>接口</center> | <center>说明</center>|
+|:-----------|:--------|
+| setBottomSplashWithSuyiPosid: platformListId: platform: appId: appKey: platformPosid: renderType: | 设置保底开屏 <br>支持平台：穿山甲、优量汇、快手、百度 （可选） |
+| loadAndShowInWindow: | 加载并展示开屏广告 |
+| loadAndShowInWindow: withBottomView: | 加载并展示开屏广告；底部logo视图, 高度不能超过屏幕的25%，可传nil |
+| loadAdInWindow: | 加载开屏广告 |
+| loadAdInWindow: withBottomView: | 加载开屏广告；底部logo视图, 高度不能超过屏幕的25%，可传nil |
+| showAdInWindow: | 展示开屏广告 |
+| rewardAdCanServerVerrify | 开屏广告是否支持服务端验证<br>支持平台：优量汇 |
+
+
+**ADSuyiSDKSplashProAdDelegate**：开屏代理方法
+| <center>回调函数</center> | <center>回调说明</center>|
+|:-----------|:--------|
+| adsy_splashAdSuccessToLoadAd: | 开屏加载成功  |
+| adsy_splashAdSuccessToPresentScreen: | 开屏展示成功  |
+| adsy_splashAdFailToPresentScreen: | 开屏展示失败  |
+| adsy_splashAdEffective: | 开屏曝光  |
+| adsy_splashAdClicked: | 开屏点击  |
+| adsy_splashAdSkip: | 开屏跳过  |
+| adsy_splashAdClosed: | 开屏关闭  |
+| adsy_splashAdCloseLandingPage: | 开屏关闭落地页  |
+| adsy_splashAdDidRewardEffective: info: | 开屏达到激励条件 （开启服务器验证后请使用服务端验证判断是否达到条件，无需使用本回调做激励达成判断） 备注：仅支持优量汇平台 |
+
+
+
+```obj-c
+特殊说明
+/** 
+ 开屏请求总超时时间:所有平台轮询的请求等待总时长（不包括图片渲染时间），单位秒，推荐设置为4s，最小值为3s
+ 开屏各平台分配逻辑:(目前只有开屏需要分配时间，并且理论上分配给到各平台的超时时间不会完全耗尽)
+ 1、3<=tolerateTimeout<=4:轮询首位平台的超时时间为(tolerateTimeout-1)s，次位为2s，如果后续还有平台统一为1s;
+ 2、tolerateTimeout>=5:轮询首位平台的超时时间为(tolerateTimeout-2)s，次位为3s，如果后续还有平台统一为2s;
+ */
+
+```
+
+- `Github: Swift请求开屏广告代码示例：`[[开屏代码示例]](https://github.com/ADSuyi/ADSuyiSDKDemo-iOS-Swift/blob/master/ADSuyiSDKDemo-iOS-Swift/AppDelegate.swift)
+- `Gitee: Swift请求开屏广告代码示例：`[[开屏代码示例]](https://gitee.com/admobile/ADSuyiSDKDemo-iOS-Swift/blob/master/ADSuyiSDKDemo-iOS-Swift/AppDelegate.swift)
+
+OC请求开屏广告代码示例：
+
+```obj-c
+#import <ADSuyiSDK/ADSuyiSDKSplashProAd.h>
+#import <ADSuyiKit/ADSuyiKit.h>
+
+/*
+ * 推荐在AppDelegate中的最后加载开屏广告
+ * 其他的接入方式会有需要特殊注意的方式，遇到过的相关问题在SDK相关问题的文档中有提到
+ * 不建议在开屏展示过程中做控制器的切换（如：开屏广告关闭回调时切换当前window的根控制器或者present另外一个控制器）
+ */
+
+- (void)loadSplashAd{
+    // 1、初始化开屏广告实例对象
+    self.splashAd = [[ADSuyiSDKSplashProAd alloc]init];
+    self.splashAd.delegate = self;
+    self.splashAd.controller = _window.rootViewController;
+    // 2、设置开屏的广告位id
+    self.splashAd.posId = @"d11c2ef29dcb7e6e62";
+    /**
+    开屏请求总超时时间:所有平台轮询的请求等待总时长（不包括图片渲染时间），单位秒，推荐设置为4s，最小值为3s
+    开屏各平台分配逻辑:(目前只有开屏需要分配时间，并且理论上分配给到各平台的超时时间不会完全耗尽)
+    1、3<=tolerateTimeout<=4:轮询首位平台的超时时间为(tolerateTimeout-1)s，次位为2s，如果后续还有平台统一为1s;
+    2、tolerateTimeout>=5:轮询首位平台的超时时间为(tolerateTimeout-2)s，次位为3s，如果后续还有平台统一为2s;
+    */
+    self.splashAd.tolerateTimeout = 4;
+    // 3、设置默认启动图(一般设置启动图的平铺颜色为背景颜色，使得视觉效果更加平滑)
+    self.splashAd.backgroundColor = [UIColor adsy_getColorWithImage:[UIImage imageNamed:@"750x1334.png"] withNewSize:[UIScreen mainScreen].bounds.size];
+    
+    // 4、开屏广告机型适配
+    CGFloat bottomViewHeight = [UIScreen mainScreen].bounds.size.height * 0.15;
+    
+    // 5、底部视图设置，非必选项
+    UIView *bottomView = [[UIView alloc] init];
+    bottomView.backgroundColor = [UIColor whiteColor];
+    bottomView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, bottomViewHeight);
+    UIImageView *logoImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"ADMob_Logo.png"]];
+    logoImageView.frame = CGRectMake(([UIScreen mainScreen].bounds.size.width-135)/2, (bottomViewHeight-46)/2, 135, 46);
+    [bottomView addSubview:logoImageView];
+  // 6、设置开屏保底逻辑（可选）
+    /**
+     *功能说明：App在首次启动时，需要先请求获取广告位配置文件后，然后再去请求开屏广告，也就是首次加载开屏广告时需要两次串行网络请求，因此很容易因超时导致开屏广告展示失败。
+     *解决方案：为避免开屏超时问题，开放此设置给开发者，开发者可以根据实际需求选择一家广告平台，通过API接口将必需参数传递给Suyi聚合SDK。（该设置只能指定一家广告平台，并且首次启动时只会请求该平台的广告，但App首次开屏广告将不受ADmobile后台控制，包括下载提示，广告位关闭。）
+     *该设置仅会在首次加载开屏广告时，SDK会使用开发者传入的参数进行广告请求，同时获取后台配置文件的广告配置信息缓存到本地（首次请求广告平台广告和获取配置信息时并发进行），后续的开屏广告将按照缓存缓存的后台广告位配置顺序进行开屏广告请求。
+     *支持穿山甲、优量汇、快手、百度
+     */
+    [self.splashAd setBottomSplashWithSuyiPosid:@"73128265daffdd6a1d" platformListId:@"3827" platform:@"ksad" appId:@"90010" appKey:nil platformPosid:@"4000000041" renderType:ADSuyiSplashRenderTypeExpressPro];
+    // 7、加载开屏广告
+    [self.splashAd loadAndShowInWindow:_window withBottomView:bottomView];
+}
+
+// 8、代理回调
+#pragma mark - ADSuyiSDKSplashProAdDelegate
+/**
+ 开屏展现成功
+ 
+ @param splashAd 广告实例
+ */
+- (void)adsy_splashAdSuccessToPresentScreen:(ADSuyiSDKSplashProAd *)splashAd{
+
+}
+
+/**
+ 开屏展现失败
+ 
+ @param splashAd 广告实例
+ @param error 具体错误信息
+ */
+- (void)adsy_splashAdFailToPresentScreen:(ADSuyiSDKSplashProAd *)splashAd failToPresentScreen:(ADSuyiAdapterErrorDefine *)error{
+    _splashAd = nil;
+}
+
+/**
+ 开屏广告点击
+ 
+ @param splashAd 广告实例
+ */
+- (void)adsy_splashAdClicked:(ADSuyiSDKSplashProAd *)splashAd{
+    
+}
+
+/**
+ 开屏被跳过
+ 
+ @param splashAd 广告实例
+ */
+- (void)adsy_splashAdSkip:(ADSuyiSDKSplashProAd *)splashAd{
+    
+}
+
+/**
+ 开屏被关闭
+ 
+ @param splashAd 广告实例
+ */
+- (void)adsy_splashAdClosed:(ADSuyiSDKSplashProAd *)splashAd{
+    _splashAd = nil;
+}
+
+/**
+ 开屏展示
+ 
+ @param splashAd 广告实例
+ */
+- (void)adsy_splashAdEffective:(ADSuyiSDKSplashProAd *)splashAd{
     
 }
 
@@ -673,7 +776,7 @@ Banner广告(横幅广告)位于app顶部、中部、底部任意一处，横向
 | controller | UIViewController | [必选]开发者需传入用来弹出目标页的ViewController，一般为当前ViewController  |
 | posId | NSString | 广告位id  |
 | scenesId | NSString | 场景id（可选）  |
-| refershTime | NSInteger | banner刷新时间间隔，30-120s之间；默认不刷新；<br>支持平台：穿山甲、百度、优量汇、汇量 |
+| refershTime | NSInteger | banner刷新时间间隔，30-120s之间；默认不刷新；<br>支持平台：穿山甲、百度、优量汇 |
 | tolerateTimeout | NSInteger | 请求超时时间,默认为4s,需要设置3s及以上  |
 
 | <center>接口</center> | <center>说明</center>|
@@ -796,7 +899,7 @@ OC请求横幅广告请求示例：
 | posId | NSString | 广告位id  |
 | scenesId | NSString | 场景id  |
 | tolerateTimeout | NSTimeInterval | 请求超时时间,默认为4s,需要设置3s及以上  |
-| muted | BOOL | 是否静音播放视频 默认YES <br>支持平台：天目、优量汇、百度、快手、汇量、Gromore<br/> 特殊平台：穿山甲（需在穿山甲后台广告位配置处设置） |
+| muted | BOOL | 是否静音播放视频 默认YES <br>支持平台：天目、优量汇、百度、快手、Gromore<br/> 特殊平台：穿山甲（需在穿山甲后台广告位配置处设置） |
 | detailPageVideoMuted | BOOL | 是否静音播放详情页视频 默认YES <br>支持平台：优量汇 |
 | autoPlay | BOOL | 信息流自动播放，默认WiFi自动播放 开启后WiFi/4G自动播放  |
 | status | ADSuyiSDKNativeAdStatus | 开发者可通过状态值来判断当前广告对象是否正在加载广告  |
@@ -910,7 +1013,7 @@ if(!_nativeAd) {
 | rewardAmount | NSString | 奖励数量 （用于激励视频服务器验证参数，可选）  |
 | extraInfo | NSString | 其他信息 （服务器端验证回调中包含的可选自定义奖励字符串，可选）|
 | tolerateTimeout | NSInteger | 请求超时时间,默认为4s,需要设置3s及以上  |
-| isMuted | BOOL | 是否静音，默认静音 <br>支持平台：天目，优量汇，汇量，快手，Gromore  |
+| isMuted | BOOL | 是否静音，默认静音 <br>支持平台：天目，优量汇，快手，Gromore  |
 
 | <center>接口</center> | <center>说明</center>|
 |:-----------|:--------|
@@ -918,7 +1021,7 @@ if(!_nativeAd) {
 | showRewardvodAd | 展示激励视频广告 |
 | rewardvodAdIsValid | 激励视频广告物料是否有效 |
 | rewardvodAdIsReady | 激励视频广告是否准备好 |
-| rewardvodAdCanServerVerrify | 激励视频广告是否支持服务端验证 <br>支持平台：穿山甲、优量汇、百度、快手、汇量、Gromore |
+| rewardvodAdCanServerVerrify | 激励视频广告是否支持服务端验证 <br>支持平台：穿山甲、优量汇、百度、快手、Gromore |
 
 **ADSuyiSDKRewardvodAdDelegate**：激励视频代理方法
 
@@ -1045,7 +1148,7 @@ OC请求激励视频代码示例：
 | posId | NSString | 广告位id  |
 | scenesId | NSString | 场景id  |
 | tolerateTimeout | NSTimeInterval | 请求超时时间,默认为4s,需要设置3s及以上  |
-| isMuted | BOOL | 是否静音，默认静音 <br>支持平台：天目，优量汇，汇量，快手，Gromore <br/> 特殊平台：穿山甲（需在穿山甲后台广告位配置处设置） |
+| isMuted | BOOL | 是否静音，默认静音 <br>支持平台：天目，优量汇，快手，Gromore <br/> 特殊平台：穿山甲（需在穿山甲后台广告位配置处设置） |
 | detailPageVideoMuted | BOOL | 是否静音，默认静音 <br>支持平台：优量汇  |
 
 | <center>接口</center> | <center>说明</center>|
