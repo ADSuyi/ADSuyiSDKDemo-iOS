@@ -61,7 +61,6 @@
     self.bannerView.controller = self;
     // 3、设置广告位id，重要
     self.bannerView.posId = posId;
-    self.bannerView.refershTime = [SetConfigManager sharedManager].bannerAdInterval;
     if (![[SetConfigManager sharedManager].bannerAdScenceId isEqualToString:@""])
         self.bannerView.scenesId = [SetConfigManager sharedManager].bannerAdScenceId;
     // 4、可先展示再请求

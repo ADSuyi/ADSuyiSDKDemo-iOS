@@ -1,4 +1,4 @@
-# Admobile ADSuyiSDK iOS接入文档 v3.9.3.05231
+# Admobile ADSuyiSDK iOS接入文档 v3.9.4.06261
 
 ```
 SDK名称: ADSuyi广告聚合SDK
@@ -38,14 +38,14 @@ SDK名称: ADSuyi广告聚合SDK
 
 | Name         | 版本号      |  
 |--------------|-------------|           
-| ADSuyiSDK | 3.9.3.05231 |    
-| tianmu | 2.2.3.1.05231 | 
-| baidu | 5.35.05231 |    
-| gdt | 4.14.76.05231 |    
-| ksad | 3.3.65.05231 |    
-| toutiao | 6.1.1.0.05231 | 
-| gromore | 6.1.1.0.05231 | 
-| jadyun | 6.1.1.0.05231 | 
+| ADSuyiSDK | 3.9.4.06261 |    
+| tianmu | 2.2.4.1.06261 | 
+| baidu | 5.352.06261 |    
+| gdt | 4.14.81.06261 |    
+| ksad | 3.3.66.06261 |    
+| toutiao | 6.1.3.4.06261 | 
+| gromore | 6.2.0.7.06261 | 
+| jadyun | 2.5.8.05231 | 
                   
 
 ## 2.1 采用cocoapods进行SDK的导入
@@ -54,7 +54,7 @@ SDK名称: ADSuyi广告聚合SDK
 
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
-pod 'ADSuyiSDK','~> 3.9.3.05231' # 主SDK 必选
+pod 'ADSuyiSDK','~> 3.9.4.06261' # 主SDK 必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/tianmu' # 天目  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt' # 优量汇(广点通）
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu' # 百度
@@ -92,7 +92,7 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu' # 穿山甲(头条)
 
 ## 2.2 手动导入SDK方式
 
-[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_39305231_eee6cb685fe58ca6596f202f17a8f5eb.zip)下载各SDK拖入到工程中
+[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_39406261_2619ee9fa908ca635a6f622d575b15dc.zip)下载各SDK拖入到工程中
 
 若要集成gromore，需删除bu文件
 
@@ -776,7 +776,6 @@ Banner广告(横幅广告)位于app顶部、中部、底部任意一处，横向
 | controller | UIViewController | [必选]开发者需传入用来弹出目标页的ViewController，一般为当前ViewController  |
 | posId | NSString | 广告位id  |
 | scenesId | NSString | 场景id（可选）  |
-| refershTime | NSInteger | banner刷新时间间隔，30-120s之间；默认不刷新；<br>支持平台：穿山甲、百度、优量汇 |
 | tolerateTimeout | NSInteger | 请求超时时间,默认为4s,需要设置3s及以上  |
 
 | <center>接口</center> | <center>说明</center>|
@@ -818,7 +817,6 @@ OC请求横幅广告请求示例：
     self.bannerView.controller = self;
     // 3、设置广告位id，重要
     self.bannerView.posId = posId;
-    self.bannerView.refershTime = 30;
     // 4、可先展示再请求
     [self.view addSubview:self.bannerView];
     self.bannerView.backgroundColor = [UIColor redColor];
