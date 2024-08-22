@@ -33,7 +33,7 @@
     // Do any additional setup after loading the view.
     
     self.view.backgroundColor = [UIColor colorWithRed:225/255.0 green:233/255.0 blue:239/255.0 alpha:1];
-    self.title = @"开屏广告";
+    self.title = @"开屏广告2.0";
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     UIButton *loadBtn = [UIButton new];
