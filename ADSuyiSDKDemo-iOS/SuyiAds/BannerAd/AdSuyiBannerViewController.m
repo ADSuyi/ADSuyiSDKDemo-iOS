@@ -57,16 +57,14 @@
     // 1、初始化banner视图，并给定frame值，rate取值根据banner的尺寸
     self.bannerView = [[ADSuyiSDKBannerAdView alloc] initWithFrame:CGRectMake(0, 250, kADSYScreenWidth, kADSYScreenWidth / rate)];
     self.bannerView.delegate = self;
-    // 2、设置控制器，用来弹出落地页，重要
-    self.bannerView.controller = self;
-    // 3、设置广告位id，重要
+    // 2、设置广告位id，重要
     self.bannerView.posId = posId;
     if (![[SetConfigManager sharedManager].bannerAdScenceId isEqualToString:@""])
         self.bannerView.scenesId = [SetConfigManager sharedManager].bannerAdScenceId;
-    // 4、可先展示再请求
+    // 3、可先展示再请求
     [self.view addSubview:self.bannerView];
-    // 5、加载并展示
-    [self.bannerView loadAndShowWithError:nil];
+    // 4、加载并展示；设置控制器，用来弹出落地页，重要
+    [self.bannerView loadAndShow:self];
 }
 
 #pragma mark - ADSuyiSDKBannerAdViewDelegate

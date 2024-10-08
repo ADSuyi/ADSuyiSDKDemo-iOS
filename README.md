@@ -1,4 +1,4 @@
-# Admobile ADSuyiSDK iOS接入文档 v3.9.5.07221
+# Admobile ADSuyiSDK iOS接入文档 v3.9.6.08301
 
 ```
 SDK名称: ADSuyi广告聚合SDK
@@ -38,13 +38,13 @@ SDK名称: ADSuyi广告聚合SDK
 
 | Name         | 版本号      |  
 |--------------|-------------|           
-| ADSuyiSDK | 3.9.5.07221 |    
-| tianmu | 2.2.5.2.07221 | 
-| baidu | 5.36.07221 |    
-| gdt | 4.14.90.07221 |    
-| ksad | 3.3.66.3.07221 |    
-| toutiao | 6.2.0.9.07221 | 
-| gromore | 6.3.0.1.07221 | 
+| ADSuyiSDK | 3.9.6.08301 |    
+| tianmu | 2.2.6.1.08301 | 
+| baidu | 5.371.08301 |    
+| gdt | 4.15.02.07221 |    
+| ksad | 3.3.69.07221 |    
+| toutiao | 6.4.1.0.07221 | 
+| gromore | 6.4.1.0.08301 | 
 | jadyun | 2.5.8.07221 | 
                   
 
@@ -54,7 +54,7 @@ SDK名称: ADSuyi广告聚合SDK
 
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
-pod 'ADSuyiSDK','~> 3.9.5.07221' # 主SDK 必选
+pod 'ADSuyiSDK','~> 3.9.6.08301' # 主SDK 必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/tianmu' # 天目  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt' # 优量汇(广点通）
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu' # 百度
@@ -92,7 +92,7 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu' # 穿山甲(头条)
 
 ## 2.2 手动导入SDK方式
 
-[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_39507221_2b1363c5d9152ff56f898021f430b0c8.zip)下载各SDK拖入到工程中
+[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_39608301_377c87a3fd7c4d539687d3e45a52b300.zip)下载各SDK拖入到工程中
 
 若要集成gromore，需删除bu文件
 
@@ -780,8 +780,7 @@ Banner广告(横幅广告)位于app顶部、中部、底部任意一处，横向
 
 | <center>接口</center> | <center>说明</center>|
 |:-----------|:--------|
-| loadAndShow | 加载并展示广告 |
-| loadAndShowWithError: | 加载并展示广告,已废弃请使用loadAndShow代替 |
+| loadAndShow: | 加载并展示广告，controller用来弹出目标页的ViewController，一般为当前ViewController |
 
 
 **ADSuyiSDKBannerAdViewDelegate**：横幅代理方法
@@ -813,15 +812,13 @@ OC请求横幅广告请求示例：
     // 1、初始化banner视图，并给定frame值，rate取值根据banner的尺寸
     self.bannerView = [[ADSuyiSDKBannerAdView alloc] initWithFrame:CGRectMake(0, 250, kADSYScreenWidth, kADSYScreenWidth / rate)];
     self.bannerView.delegate = self;
-    // 2、设置控制器，用来弹出落地页，重要
-    self.bannerView.controller = self;
-    // 3、设置广告位id，重要
+    // 2、设置广告位id，重要
     self.bannerView.posId = posId;
-    // 4、可先展示再请求
+    // 3、可先展示再请求
     [self.view addSubview:self.bannerView];
     self.bannerView.backgroundColor = [UIColor redColor];
-    // 5、加载并展示
-    [self.bannerView loadAndShow];
+    // 4、加载并展示；设置控制器，用来弹出落地页，重要
+    [self.bannerView loadAndShow:self];
 }
 
 // 5、代理回调
