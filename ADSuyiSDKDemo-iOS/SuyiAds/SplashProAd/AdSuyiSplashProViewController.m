@@ -116,7 +116,8 @@
  */
 - (void)adsy_splashAdSuccessToLoadAd:(ADSuyiSDKSplashProAd *)splashAd{
     _isReady = YES;
-   
+    ADSuyiSDKExtInfo *extInfo = [splashAd adsy_extInfo];
+    NSLog(@"ecpm=%@, ecpmType=%ld", extInfo.ecpm, extInfo.ecpmType);
 }
 
 /**

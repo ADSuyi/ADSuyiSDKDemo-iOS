@@ -131,6 +131,8 @@ static NSString *identifier = @"cell";
 
 - (void)adsy_drawvodAdSuccessToLoad:(ADSuyiSDKDrawvodAd *)drawvodAd drawvodAdArray:(NSArray<ADSuyiAdapterDrawvodAdView *> *)drawvodAdViewArray {
     for (ADSuyiAdapterDrawvodAdView *adView in drawvodAdViewArray) {
+        ADSuyiSDKExtInfo *extInfo = [adView adsy_extInfo];
+        NSLog(@"ecpm=%@, ecpmType=%ld", extInfo.ecpm, extInfo.ecpmType);
         // 3、渲染沉浸式广告
         [adView render];
     }

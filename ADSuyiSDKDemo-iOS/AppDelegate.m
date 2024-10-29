@@ -129,6 +129,17 @@
 }
 
 #pragma mark - ADSuyiSDKSplashAdDelegate
+
+/**
+ 开屏加载成功
+ 
+ @param splashAd 广告实例
+ */
+- (void)adsy_splashAdSuccessToLoadAd:(ADSuyiSDKSplashAd *)splashAd{
+    ADSuyiSDKExtInfo *extInfo = [splashAd adsy_extInfo];
+    NSLog(@"ecpm=%@, ecpmType=%ld", extInfo.ecpm, extInfo.ecpmType);
+}
+
 /**
  开屏展现成功
  

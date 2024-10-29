@@ -84,7 +84,8 @@
  @param fullScreenVodAd 全屏视频广告实例对象
 */
 - (void)adsy_fullScreenVodAdSuccedToLoad:(ADSuyiSDKFullScreenVodAd *)fullScreenVodAd{
-    
+    ADSuyiSDKExtInfo *extInfo = [fullScreenVodAd adsy_extInfo];
+    NSLog(@"ecpm=%@, ecpmType=%ld", extInfo.ecpm, extInfo.ecpmType);
 }
 
 /**

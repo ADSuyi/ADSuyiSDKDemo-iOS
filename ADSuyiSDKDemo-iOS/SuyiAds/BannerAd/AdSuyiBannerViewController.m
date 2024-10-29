@@ -74,7 +74,8 @@
  @param bannerView banner实例
  */
 - (void)adsy_bannerViewDidReceived:(ADSuyiSDKBannerAdView *)bannerView{
-    
+    ADSuyiSDKExtInfo *extInfo = [bannerView adsy_extInfo];
+    NSLog(@"ecpm=%@, ecpmType=%ld", extInfo.ecpm, extInfo.ecpmType);
 }
 
 /**

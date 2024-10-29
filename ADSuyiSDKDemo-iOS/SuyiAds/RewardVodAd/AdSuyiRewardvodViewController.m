@@ -78,7 +78,8 @@
  @param rewardvodAd 广告实例
  */
 - (void)adsy_rewardvodAdLoadSuccess:(ADSuyiSDKRewardvodAd *)rewardvodAd{
-    
+    ADSuyiSDKExtInfo *extInfo = [rewardvodAd adsy_extInfo];
+    NSLog(@"ecpm=%@, ecpmType=%ld", extInfo.ecpm, extInfo.ecpmType);
 }
 
 /**

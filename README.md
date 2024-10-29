@@ -520,6 +520,16 @@ OC请求开屏广告代码示例：
 // 8、代理回调
 #pragma mark - ADSuyiSDKSplashAdDelegate
 /**
+ 开屏加载成功
+ 
+ @param splashAd 广告实例
+ */
+- (void)adsy_splashAdSuccessToLoadAd:(ADSuyiSDKSplashAd *)splashAd{
+    _isReady = YES;
+    ADSuyiSDKExtInfo *extInfo = [splashAd adsy_extInfo];
+    NSLog(@"ecpm=%@, ecpmType=%ld", extInfo.ecpm, extInfo.ecpmType);
+}
+/**
  开屏展现成功
  
  @param splashAd 广告实例
@@ -699,6 +709,17 @@ OC请求开屏广告代码示例：
 // 8、代理回调
 #pragma mark - ADSuyiSDKSplashProAdDelegate
 /**
+ 开屏加载成功
+ 
+ @param splashAd 广告实例
+ */
+- (void)adsy_splashAdSuccessToLoadAd:(ADSuyiSDKSplashProAd *)splashAd{
+    _isReady = YES;
+    ADSuyiSDKExtInfo *extInfo = [splashAd adsy_extInfo];
+    NSLog(@"ecpm=%@, ecpmType=%ld", extInfo.ecpm, extInfo.ecpmType);
+}
+
+/**
  开屏展现成功
  
  @param splashAd 广告实例
@@ -830,7 +851,8 @@ OC请求横幅广告请求示例：
  @param bannerView banner实例
  */
 - (void)adsy_bannerViewDidReceived:(ADSuyiSDKBannerAdView *)bannerView{
-    
+    ADSuyiSDKExtInfo *extInfo = [bannerView adsy_extInfo];
+    NSLog(@"ecpm=%@, ecpmType=%ld", extInfo.ecpm, extInfo.ecpmType);
 }
 
 /**
@@ -944,6 +966,8 @@ if(!_nativeAd) {
 - (void)adsy_nativeAdSucessToLoad:(ADSuyiSDKNativeAd *)nativeAd
                       adViewArray:(NSArray<__kindof UIView<ADSuyiAdapterNativeAdViewDelegate> *> *)adViewArray {
     for (UIView<ADSuyiAdapterNativeAdViewDelegate> *adView in adViewArray) {
+        ADSuyiSDKExtInfo *extInfo = [adView adsy_extInfo];
+        NSLog(@"ecpm=%@, ecpmType=%ld", extInfo.ecpm, extInfo.ecpmType);
         // 4、判断信息流广告是否为自渲染类型
         if(adView.renderType == ADSuyiAdapterRenderTypeNative) {
             // 4.1、如果是自渲染类型则可样式自定义
@@ -1063,6 +1087,16 @@ OC请求激励视频代码示例：
     
     // 2、加载激励视频广告
     [self.rewardvodAd loadRewardvodAd];
+}
+
+/**
+ 广告数据加载成功回调
+ 
+ @param rewardvodAd 广告实例
+ */
+- (void)adsy_rewardvodAdLoadSuccess:(ADSuyiSDKRewardvodAd *)rewardvodAd{
+    ADSuyiSDKExtInfo *extInfo = [rewardvodAd adsy_extInfo];
+    NSLog(@"ecpm=%@, ecpmType=%ld", extInfo.ecpm, extInfo.ecpmType);
 }
 
 /**
@@ -1191,6 +1225,8 @@ OC请求插屏代码示例：
  @param interstitialAd 插屏广告实例对象
 */
 - (void)adsy_interstitialAdSuccedToLoad:(ADSuyiSDKIntertitialAd *)interstitialAd{
+    ADSuyiSDKExtInfo *extInfo = [interstitialAd adsy_extInfo];
+    NSLog(@"ecpm=%@, ecpmType=%ld", extInfo.ecpm, extInfo.ecpmType);
     // 3、展示插屏广告
     [self.intertitialAd show];
 }
@@ -1278,6 +1314,16 @@ OC请求全屏视频广告代码示例：
     // 2、加载全屏视频广告
     [self.fullScreenvodAd loadAdData];
     
+}
+
+/**
+ ADSuyiSDKFullScreenVodAd请求成功回调
+ 
+ @param fullScreenVodAd 全屏视频广告实例对象
+*/
+- (void)adsy_fullScreenVodAdSuccedToLoad:(ADSuyiSDKFullScreenVodAd *)fullScreenVodAd{
+    ADSuyiSDKExtInfo *extInfo = [fullScreenVodAd adsy_extInfo];
+    NSLog(@"ecpm=%@, ecpmType=%ld", extInfo.ecpm, extInfo.ecpmType);
 }
 
 /**
@@ -1387,6 +1433,8 @@ OC请求沉浸式视频代码示例：
 
 - (void)adsy_drawvodAdSuccessToLoad:(ADSuyiSDKDrawvodAd *)drawvodAd drawvodAdArray:(NSArray<ADSuyiAdapterDrawvodAdView *> *)drawvodAdViewArray {
     for (ADSuyiAdapterDrawvodAdView *adView in drawvodAdViewArray) {
+        ADSuyiSDKExtInfo *extInfo = [adView adsy_extInfo];
+        NSLog(@"ecpm=%@, ecpmType=%ld", extInfo.ecpm, extInfo.ecpmType);
         // 3、渲染沉浸式广告
         [adView render];
     }

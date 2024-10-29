@@ -80,6 +80,8 @@
  @param interstitialAd 插屏广告实例对象
 */
 - (void)adsy_interstitialAdSuccedToLoad:(ADSuyiSDKIntertitialAd *)interstitialAd{
+    ADSuyiSDKExtInfo *extInfo = [interstitialAd adsy_extInfo];
+    NSLog(@"ecpm=%@, ecpmType=%ld", extInfo.ecpm, extInfo.ecpmType);
     // 3、展示插屏广告
     _isReady = YES;
     [self.view makeToast:@"广告准备好"];

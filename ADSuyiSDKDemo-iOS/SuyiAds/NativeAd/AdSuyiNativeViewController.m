@@ -185,6 +185,8 @@
 - (void)adsy_nativeAdSucessToLoad:(ADSuyiSDKNativeAd *)nativeAd
                       adViewArray:(NSArray<__kindof UIView<ADSuyiAdapterNativeAdViewDelegate> *> *)adViewArray {
     for (UIView<ADSuyiAdapterNativeAdViewDelegate> *adView in adViewArray) {
+        ADSuyiSDKExtInfo *extInfo = [adView adsy_extInfo];
+        NSLog(@"ecpm=%@, ecpmType=%ld", extInfo.ecpm, extInfo.ecpmType);
         // 4、判断信息流广告是否为自渲染类型（可选实现）
         if(adView.renderType == ADSuyiAdapterRenderTypeNative) {
             // 自渲染广告位, 需自行进行 UI 搭建, 可参考下面示例 ↓
