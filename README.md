@@ -1,4 +1,4 @@
-# Admobile ADSuyiSDK iOS接入文档 v3.9.6.08303
+# Admobile ADSuyiSDK iOS接入文档 v3.9.6.08304
 
 ```
 SDK名称: ADSuyi广告聚合SDK
@@ -38,8 +38,8 @@ SDK名称: ADSuyi广告聚合SDK
 
 | Name         | 版本号      |  
 |--------------|-------------|           
-| ADSuyiSDK | 3.9.6.08303 |    
-| tianmu | 2.2.6.1.08301 | 
+| ADSuyiSDK | 3.9.6.08304 |    
+| tianmu | 2.2.6.2.08301 | 
 | baidu | 5.371.08301 |    
 | gdt | 4.15.10.07221 |    
 | ksad | 3.3.69.3.07221 |    
@@ -54,7 +54,7 @@ SDK名称: ADSuyi广告聚合SDK
 
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
-pod 'ADSuyiSDK','~> 3.9.6.08303' # 主SDK 必选
+pod 'ADSuyiSDK','~> 3.9.6.08304' # 主SDK 必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/tianmu' # 天目  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt' # 优量汇(广点通）
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu' # 百度
@@ -92,7 +92,7 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu' # 穿山甲(头条)
 
 ## 2.2 手动导入SDK方式
 
-[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_39608303_eb5130b9192af1c815cb15c0c87ab2b7.zip)下载各SDK拖入到工程中
+[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_39608304_273f82d79e5f86342248b9e55c33d58b.zip)下载各SDK拖入到工程中
 
 若要集成gromore，需删除bu文件
 
