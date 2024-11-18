@@ -425,6 +425,7 @@ ADSuyiSDK.enablePersonalAd = NO;
 | userId | NSString | 用户id （用户在App内的userID，用于激励视频服务器验证，如无需服务器验证可不传）  |
 | extra | NSString | 其他信息 （服务器端验证回调中包含的可选自定义奖励字符串，可选）  |
 | tolerateTimeout | NSInteger | 开屏请求总超时时间 |
+| disableMotion | BOOL | 屏蔽摇一摇、扭转手机 默认NO <br>支持平台：天目、优量汇(仅支持屏蔽摇一摇)、快手 |
 
 | <center>接口</center> | <center>说明</center>|
 |:-----------|:--------|
@@ -614,6 +615,7 @@ OC请求开屏广告代码示例：
 | userId | NSString | 用户id （用户在App内的userID，用于激励视频服务器验证，如无需服务器验证可不传）  |
 | extra | NSString | 其他信息 （服务器端验证回调中包含的可选自定义奖励字符串，可选）  |
 | tolerateTimeout | NSInteger | 开屏请求总超时时间 |
+| disableMotion | BOOL | 屏蔽摇一摇、扭转手机 默认NO <br>支持平台：天目、优量汇(仅支持屏蔽摇一摇)、快手 |
 
 | <center>接口</center> | <center>说明</center>|
 |:-----------|:--------|
