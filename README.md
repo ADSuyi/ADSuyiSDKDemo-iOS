@@ -7,6 +7,7 @@ SDK名称: ADSuyi广告聚合SDK
 功能介绍: ADSuyi广告聚合SDK集成了多种广告类型和主流广告平台，提供广告数据统计功能，帮助开发者轻松实现应用内广告的接入和管理，提升应用盈利和用户体验。
 ```
 
+[SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_39608304_273f82d79e5f86342248b9e55c33d58b.zip)
 
 [查看更新日志](https://doc.admobile.top/ssp/4changelog/2-iOSchangelog.html)
 
@@ -92,7 +93,7 @@ pod 'ADSuyiSDK/ADSuyiSDKPlatforms/bu' # 穿山甲(头条)
 
 ## 2.2 手动导入SDK方式
 
-[点击进入SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_39608304_273f82d79e5f86342248b9e55c33d58b.zip)下载各SDK拖入到工程中
+在文档顶部下载各SDK拖入到工程中
 
 若要集成gromore，需删除bu文件
 
