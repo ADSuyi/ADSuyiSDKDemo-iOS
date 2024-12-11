@@ -199,7 +199,7 @@
 
 - (void)showAgreePrivacy {
     // 隐私合规化示例
-    UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"亲爱的开发者，非常感谢您选择并选用ADmobile 广告聚合SaaS服务！\n为了保证您的App顺利通过合规检测，本提示将向你演示ADSuyiSdk初始化合规方案。\n1. APP首次运行时请通过弹窗等明显方式提示用户阅读《用户协议》、《隐私政策》和《第三方SDK使用列表》，用户确认同意《用户协议》、《隐私政策》和《第三方SDK使用列表》后，再启用SDK进行个人信息的收集与处理。\n2. 本提示的内容及《用户协议》、《隐私政策》和《第三方SDK使用列表》需根据你的APP业务需求进行编写，可参考《网络安全标准实践指南—移动互联网应用程序（App）收集使用个人信息自评估指南》或咨询对接人员。\n你可以通过阅读完整版的ADmobile 《用户协议》、《隐私政策》和《第三方SDK使用列表》了解ADmobile详细隐私策略" preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertController *alertVc = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"亲爱的开发者，非常感谢您选择并选用Suyi聚合广告SDK！\n为了保证您的App顺利通过合规检测，本提示将向你演示Suyi聚合广告SDK初始化合规方案。\n1. APP首次运行时请通过弹窗等明显方式提示用户阅读《用户协议》、《隐私政策》和《第三方SDK使用列表》，用户确认同意《用户协议》、《隐私政策》和《第三方SDK使用列表》后，再启用SDK进行个人信息的收集与处理。\n2. 本提示的内容及《用户协议》、《隐私政策》和《第三方SDK使用列表》需根据你的APP业务需求进行编写，可参考《网络安全标准实践指南—移动互联网应用程序（App）收集使用个人信息自评估指南》或咨询对接人员。\n你可以通过阅读完整版的ADmobile 《用户协议》、《隐私政策》和《第三方SDK使用列表》了解ADmobile详细隐私策略" preferredStyle:(UIAlertControllerStyleAlert)];
     UIAlertAction *cancle = [UIAlertAction actionWithTitle:@"不同意" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:@"点击同意才能使用该App服务" preferredStyle:(UIAlertControllerStyleAlert)];
         UIAlertAction *sure = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
