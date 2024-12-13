@@ -90,8 +90,6 @@
     
 }
 - (void)loadNativeAd {
-    [self removeAllSubviewsWithView:self.adBgView];
-    [self removeAllSubviewsWithView:self.backgroundView];
     _nativeAd = nil;
     [self.nativeAd load:1];
 }
@@ -116,18 +114,11 @@
         // 如果单纯只配置了模版信息流，那么不需要实现，如果配置了自渲染信息流，那么需要实现
         if(adView.renderType == ADSuyiAdapterRenderTypeNative) {
             // 4.1、信息流绘制开屏广告样式
-            [self setUpUnifiedSplahAdView:adView];
-        }else{
-           
-            adView.frame = CGRectMake(0, 0, adView.frame.size.width, adView.frame.size.height);
-            self.adBgView.frame = CGRectMake((CGRectGetWidth(self.backgroundView.frame) - adView.frame.size.width)/2, (CGRectGetHeight(self.backgroundView.frame) - adView.frame.size.height)/2, adView.frame.size.width, adView.frame.size.height);
-            [self.adBgView addSubview:adView];
-            [self.backgroundView addSubview:self.adBgView];
+            [self setUpUnifiedInterstitialAdView:adView];
         }
         // 5、注册，自渲染：注册点击事件，模板：render，重要
         [adView adsy_registViews:@[adView]];
     }
-
 }
 
 - (void)adsy_nativeAdFailToLoad:(ADSuyiSDKNativeAd *)nativeAd
@@ -137,8 +128,14 @@
 }
 
 - (void)adsy_nativeAdViewRenderOrRegistSuccess:(UIView<ADSuyiAdapterNativeAdViewDelegate> *)adView {
-    // 6、注册或渲染成功，此时高度正常，可以展示
-  
+    if(adView.renderType == ADSuyiAdapterRenderTypeNative) {
+        
+    }else{
+        self.adBgView.frame = CGRectMake((CGRectGetWidth(self.backgroundView.frame) - adView.frame.size.width)/2, (CGRectGetHeight(self.backgroundView.frame) - adView.frame.size.height)/2, adView.frame.size.width, adView.frame.size.height);
+    }
+    [self.adBgView addSubview:adView];
+    [self.backgroundView addSubview:self.adBgView];
+    
     [_presendVc.view addSubview:self.backgroundView];
 //    [self presentViewController:_presendVc animated:YES completion:nil];
     [self presentViewController:_presendVc animated:YES completion:^{
@@ -160,6 +157,8 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [adView adsy_unRegistView];
     });
+    [self removeAllSubviewsWithView:self.adBgView];
+    [self removeAllSubviewsWithView:self.backgroundView];
     [self closeAdAction];
 }
 
@@ -167,7 +166,7 @@
                        adView:(__kindof UIView<ADSuyiAdapterNativeAdViewDelegate> *)adView {
     
 }
-- (void)setUpUnifiedSplahAdView:(UIView<ADSuyiAdapterNativeAdViewDelegate> *)adView {
+- (void)setUpUnifiedInterstitialAdView:(UIView<ADSuyiAdapterNativeAdViewDelegate> *)adView {
     // 设计的adView实际大小，其中宽度和高度可以自己根据自己的需求设置
     CGFloat adWidth = self.backgroundView.frame.size.width - 17 * 2;
     CGFloat adHeight = adWidth / 16.0 * 9;
@@ -223,8 +222,6 @@
    
     self.adBgView.frame = CGRectMake(17, (self.backgroundView.frame.size.height - adBgViewHeight)/2, adWidth, adBgViewHeight);
     
-    [self.adBgView addSubview:adView];
-    [self.backgroundView addSubview:self.adBgView];
     
     //设置关闭按钮
     CGFloat closeBtnWidth = 40;
