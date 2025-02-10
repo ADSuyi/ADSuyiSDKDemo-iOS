@@ -186,86 +186,60 @@ Privacy - Location Always Usage Description
 6. Info.plist推荐设置白名单，可提高广告收益。注意：iOS系统只对白名单前50个生效，广告白名单建议放在最后
 
 ```obj-c
-<key>LSApplicationQueriesSchemes</key>
-    <array>
-        <!--  电商及生活   -->
-        <string>com.suning.SuningEBuy</string> <!--  苏宁  -->
-        <string>openapp.jdmobile</string> <!--  京东  -->  
-        <string>openjd</string> <!--  京东  --> 
-        <string>jdmobile</string> <!--  京东  --> 
-        <string>vmall</string>
-        <string>vipshop</string>  <!--  维品汇  -->  
-        <string>suning</string> <!--  苏宁  --> 
-        <string>yohobuy</string> <!--  有货  --> 
-        <string>kaola</string> <!--  网易考拉  --> 
-        <string>yanxuan</string> <!--  网易严选  --> 
-        <string>wbmain</string>  <!--  58同城  --> 
-        <string>dianping</string>  <!--  大众点评  --> 
-        <string>imeituan</string>  <!--  美团  --> 
-        <string>beibeiapp</string> <!--  贝贝  --> 
-        <string>taobao</string> <!--  淘宝  --> 
-        <string>tmall</string>  <!--  天猫  --> 
-        <string>wireless1688</string> <!--  阿里巴巴1688  --> 
-        <string>tbopen</string> <!--  淘宝  --> 
-        <string>taobaolite</string> <!-- 淘特   --> 
-        <string>taobaoliveshare</string> <!--  淘宝直播  --> 
-        <string>koubei</string> <!--  口碑  --> 
-        <string>eleme</string> <!--  饿了么  --> 
-        <string>alipays</string> <!--  支付宝  --> 
-        <string>kfcapplinkurl</string> <!--  KFC  --> 
-        <string>pddopen</string> <!--  拼多多  --> 
-        <string>pinduoduo</string> <!--  拼多多  --> 
-        <string>mogujie</string> <!--  蘑菇街  --> 
-        <string>lianjiabeike</string> <!--  链家贝壳  --> 
-        <string>lianjia</string> <!--  链家  --> 
-        <string>openanjuke</string> <!--  安居客  --> 
-        <string>zhuanzhuan</string> <!--  转转  --> 
-        <string>farfetchCN</string> <!--  发发奇全球时尚购物  --> 
-        <!--  社交社区  --> 
-        <string>weibo</string> <!--  微博  --> 
-        <string>xhsdiscover</string> <!--  小红书  --> 
-        <string>uclink</string> <!--  uc浏览器  --> 
-        <string>momochat</string> <!--  陌陌  --> 
-        <string>blued</string> <!--  Blued  --> 
-        <string>zhihu</string> <!--  知乎  --> 
-        <string>baiduboxapp</string> <!--  手机百度  --> 
-        <string>yidui</string> <!--  伊对  --> 
-        <!--  资讯及阅读  -->    
-        <string>sinanews</string> <!--  新浪新闻  --> 
-        <string>snssdk141</string> <!--  今日头条  --> 
-        <string>newsapp</string> <!--  网易新闻  --> 
-        <string>igetApp</string> <!--  得到  -->  
-        <string>kuaikan</string> <!--  快看漫画  --> 
-        <!--  短视频及音乐  -->         
-        <string>youku</string> <!--  优酷  --> 
-        <string>snssdk1128</string> <!--  抖音  --> 
-        <string>gifshow</string> <!--  快手  --> 
-        <string>snssdk1112</string> <!--  火山  --> 
-        <string>miguvideo</string> <!--  咪咕视频  --> 
-        <string>iqiyi</string> <!--  爱奇艺  --> 
-        <string>bilibili</string> <!--  B站  -->   
-        <string>tenvideo</string> <!--  腾讯视频  --> 
-        <string>baiduhaokan</string> <!--  百度好看  --> 
-        <string>yykiwi</string> <!--  虎牙直播  --> 
-        <string>qqmusic</string> <!--  qq音乐  -->  
-        <string>orpheus</string> <!--  网易云音乐  --> 
-        <string>kugouURL</string> <!--  酷狗  -->   
-        <string>qmkege</string> <!--  全民K歌  -->  
-        <string>changba</string> <!--  唱吧  --> 
-        <string>iting</string> <!--  喜马拉雅  --> 
-        <!--  出行  -->                 
-        <string>ctrip</string> <!--  携程  --> 
-        <string>QunarAlipay</string> <!--  去哪儿旅行  --> 
-        <string>diditaxi</string> <!--  滴滴出行  --> 
-        <string>didicommon</string> <!--  滴滴出行  --> 
-        <string>taobaotravel</string> <!--  飞猪  --> 
-        <string>OneTravel</string> <!--  海南航空  --> 
-        <string>kfhxztravel</string> <!--  花小猪  --> 
-        <!--  医美  -->             
-        <string>gengmei</string> <!--  更美  --> 
-        <string>app.soyoung</string> <!--  新氧医美  --> 
-    </array>
-```
+    <key>LSApplicationQueriesSchemes</key>
+        <array>
+            <string>tbopen</string>
+            <string>pinduoduo</string>
+            <string>openapp.jdmobile</string>
+            <string>tmall</string>
+            <string>imeituan</string>
+            <string>meituanwaimai</string>
+            <string>fleamarket</string>
+            <string>kwai</string>
+            <string>taobaolive</string>
+            <string>snssdk1128</string>
+            <string>taobaolite</string>
+            <string>alipay</string>
+            <string>eleme</string>
+            <string>vipshop</string>
+            <string>iosamap</string>
+            <string>quark</string>
+            <string>iyouxuan</string>
+            <string>ksnebula</string>
+            <string>snssdk2329</string>
+            <string>dypay8663</string>
+            <string>wireless1688</string>
+            <string>taobaotravel</string>
+            <string>diditaxi</string>
+            <string>shuqireader</string>
+            <string>ucbrowser</string>
+            <string>xhsdiscover</string>
+            <string>qiyi-iphone</string>
+            <string>sinaweibo</string>
+            <string>wbmain</string>
+            <string>dingdongneighborhood</string>
+            <string>dianping</string>
+            <string>wdkhema</string>
+            <string>youku</string>
+            <string>kaola</string>
+            <string>QunariPhone</string>
+            <string>ctrip</string>
+            <string>lianjia</string>
+            <string>tbmovie</string>
+            <string>dingtalk</string>
+            <string>cainiao</string>
+            <string>bilibili</string>
+            <string>zhihu</string>
+            <string>yanxuan</string>
+            <string>soul</string>
+            <string>app.soyoung</string>
+            <string>yidui</string>
+            <string>momochat</string>
+            <string>tantanapp</string>
+            <string>dragon1967</string>
+            <string>sohunews</string>
+        </array>
+    ```
 
 
 
