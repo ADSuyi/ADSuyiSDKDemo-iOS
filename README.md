@@ -501,7 +501,6 @@ OC请求开屏广告代码示例：
  @param splashAd 广告实例
  */
 - (void)adsy_splashAdSuccessToLoadAd:(ADSuyiSDKSplashAd *)splashAd{
-    _isReady = YES;
     ADSuyiSDKExtInfo *extInfo = [splashAd adsy_extInfo];
     NSLog(@"ecpm=%@, ecpmType=%ld", extInfo.ecpm, extInfo.ecpmType);
 }
@@ -691,7 +690,6 @@ OC请求开屏广告代码示例：
  @param splashAd 广告实例
  */
 - (void)adsy_splashAdSuccessToLoadAd:(ADSuyiSDKSplashProAd *)splashAd{
-    _isReady = YES;
     ADSuyiSDKExtInfo *extInfo = [splashAd adsy_extInfo];
     NSLog(@"ecpm=%@, ecpmType=%ld", extInfo.ecpm, extInfo.ecpmType);
 }
@@ -772,7 +770,6 @@ Banner广告(横幅广告)位于app顶部、中部、底部任意一处，横向
 | <center>属性</center> | <center>类型</center>  | <center>说明</center>|
 |:-----------|:--|:--------|
 | delegate | id\<ADSuyiSDKBannerAdViewDelegate> | 委托对象  |
-| controller | UIViewController | [必选]开发者需传入用来弹出目标页的ViewController，一般为当前ViewController  |
 | posId | NSString | 广告位id  |
 | scenesId | NSString | 场景id（可选）  |
 | tolerateTimeout | NSInteger | 请求超时时间,默认为4s,需要设置3s及以上  |
@@ -1371,7 +1368,7 @@ OC请求全屏视频广告代码示例：
 |:-----------|:--------|
 | load: | 加载沉浸式广告；建议区间 1~4, 超过可能无法拉取到 |
 
-**ADSuyiSDKDrawvodAdDelegate**：插屏代理方法
+**ADSuyiSDKDrawvodAdDelegate**：沉浸式广告代理方法
 
 | <center>回调函数</center> | <center>回调说明</center>|
 |:-----------|:--------|
