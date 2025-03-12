@@ -1,4 +1,4 @@
-# Suyi聚合广告SDK iOS接入文档 v3.9.10.01021
+# Suyi聚合广告SDK iOS接入文档 v3.9.10.01022
 
 ```
 SDK名称: Suyi聚合广告SDK 
@@ -39,8 +39,8 @@ SDK名称: Suyi聚合广告SDK
 
 | Name         | 版本号      |  
 |--------------|-------------|           
-| ADSuyiSDK | 3.9.10.01021 |    
-| tianmu | 2.3.0.1.12031 | 
+| ADSuyiSDK | 3.9.10.01022 |    
+| tianmu | 2.3.0.3.12031 | 
 | baidu | 5.371.08301 |    
 | gdt | 4.15.10.07221 |    
 | ksad | 3.3.72.07221 |    
@@ -55,7 +55,7 @@ SDK名称: Suyi聚合广告SDK
 
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
-pod 'ADSuyiSDK','~> 3.9.10.01021' # 主SDK 必选
+pod 'ADSuyiSDK','~> 3.9.10.01022' # 主SDK 必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/tianmu' # 天目  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt' # 优量汇(广点通）
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu' # 百度
