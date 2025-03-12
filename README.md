@@ -7,7 +7,7 @@ SDK名称: Suyi聚合广告SDK
 功能介绍: Suyi聚合广告SDK 集成了多种广告类型和主流广告平台，提供广告数据统计功能，帮助开发者轻松实现应用内广告的接入和管理，提升应用盈利和用户体验。
 ```
 
-[SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_391001021_cc2b639ed2a0f18cf643d511c1350395.zip)
+[SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_391001022_75118a82fa09e2aa9842f19040fd4a8a.zip)
 
 [查看更新日志](https://doc.admobile.top/ssp/4changelog/2-iOSchangelog.html)
 
