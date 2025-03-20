@@ -8,13 +8,13 @@ target 'ADSuyiSDKDemo-iOS' do
   # Comment the next line if you don't want to use dynamic frameworks
 
   # Pods for ADSuyiSDKDemo-iOS
-  pod 'ADSuyiSDK', '~> 3.9.10.01022'
-  pod 'ADSuyiSDK', '~> 3.9.10.01022', :subspecs => [
+  pod 'ADSuyiSDK', '~> 3.9.11.02251'
+  pod 'ADSuyiSDK', '~> 3.9.11.02251', :subspecs => [
     'ADSuyiSDKPlatforms/tianmu', # 天目  #必选
 #    'ADSuyiSDKPlatforms/gdt', # 优量汇(广点通）
 #    'ADSuyiSDKPlatforms/baidu', # 百度
 #    'ADSuyiSDKPlatforms/ks', # 快手(非内容版本，内容与非内容版本不可同时导入)
-#    'ADSuyiSDKPlatforms/jad',     # 京媒
+#    'ADSuyiSDKPlatforms/jad',     # 京媒，白名单需添加京东
     
  # ab二选一
  # a.不需要gromore
