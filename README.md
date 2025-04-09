@@ -1,4 +1,4 @@
-# Suyi聚合广告SDK iOS接入文档 v3.9.11.02251
+# Suyi聚合广告SDK iOS接入文档 v3.9.11.02254
 
 ```
 SDK名称: Suyi聚合广告SDK 
@@ -7,7 +7,7 @@ SDK名称: Suyi聚合广告SDK
 功能介绍: Suyi聚合广告SDK 集成了多种广告类型和主流广告平台，提供广告数据统计功能，帮助开发者轻松实现应用内广告的接入和管理，提升应用盈利和用户体验。
 ```
 
-[SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_391102251_1aa82199b2c0e36371611414e8f69819.zip)
+[SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_391102254_2779f690e4dfbd64cbd21c97ac51b898.zip)
 
 [查看更新日志](https://doc.admobile.top/ssp/4changelog/2-iOSchangelog.html)
 
@@ -39,11 +39,11 @@ SDK名称: Suyi聚合广告SDK
 
 | Name         | 版本号      |  
 |--------------|-------------|           
-| ADSuyiSDK | 3.9.11.02251 |    
+| ADSuyiSDK | 3.9.11.02254 |    
 | tianmu | 2.3.1.1.02251 | 
 | baidu | 5.373.02251 |    
 | gdt | 4.15.22.02251 |    
-| ksad | 3.3.74.07221 |    
+| ksad | 3.3.74.02251 |    
 | toutiao | 6.6.1.5.07221 | 
 | gromore | 6.7.0.3.02251 | 
 | jadyun | 2.6.8.01021 | 
@@ -55,7 +55,7 @@ SDK名称: Suyi聚合广告SDK
 
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
-pod 'ADSuyiSDK','~> 3.9.11.02251' # 主SDK 必选
+pod 'ADSuyiSDK','~> 3.9.11.02254' # 主SDK 必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/tianmu' # 天目  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt' # 优量汇(广点通）
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu' # 百度
