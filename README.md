@@ -1,4 +1,4 @@
-# Suyi聚合广告SDK iOS接入文档 v3.9.11.02254
+# Suyi聚合广告SDK iOS接入文档 v3.9.11.02255
 
 ```
 SDK名称: Suyi聚合广告SDK 
@@ -7,7 +7,7 @@ SDK名称: Suyi聚合广告SDK
 功能介绍: Suyi聚合广告SDK 集成了多种广告类型和主流广告平台，提供广告数据统计功能，帮助开发者轻松实现应用内广告的接入和管理，提升应用盈利和用户体验。
 ```
 
-[SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_391102254_2779f690e4dfbd64cbd21c97ac51b898.zip)
+[SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_391102255_6ab83185deab39ed2062dbc54479689d.zip)
 
 [查看更新日志](https://doc.admobile.top/ssp/4changelog/2-iOSchangelog.html)
 
@@ -39,7 +39,7 @@ SDK名称: Suyi聚合广告SDK
 
 | Name         | 版本号      |  
 |--------------|-------------|           
-| ADSuyiSDK | 3.9.11.02254 |    
+| ADSuyiSDK | 3.9.11.02255 |    
 | tianmu | 2.3.1.1.02251 | 
 | baidu | 5.373.02251 |    
 | gdt | 4.15.22.02251 |    
@@ -47,6 +47,7 @@ SDK名称: Suyi聚合广告SDK
 | toutiao | 6.6.1.5.07221 | 
 | gromore | 6.7.0.3.02251 | 
 | jadyun | 2.6.8.01021 | 
+| iqy | 1.13.014.02251 | 
                   
 
 ## 2.1 采用cocoapods进行SDK的导入
@@ -55,12 +56,13 @@ SDK名称: Suyi聚合广告SDK
 
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
-pod 'ADSuyiSDK','~> 3.9.11.02254' # 主SDK 必选
+pod 'ADSuyiSDK','~> 3.9.11.02255' # 主SDK 必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/tianmu' # 天目  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt' # 优量汇(广点通）
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu' # 百度
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/ks' # 快手
-pod 'ADSuyiSDK/ADSuyiSDKPlatforms/jad' # 京媒，白名单需添加京东
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/jad' # 京媒，白名单需添加京东openapp.jdmobile
+pod 'ADSuyiSDK/ADSuyiSDKPlatforms/iqy' # 爱奇艺
 
 # ab二选一
 # a.不需要gromore
@@ -323,6 +325,11 @@ SKAdNetwork 是接收iOS端营销推广活动归因数据的一种方法。
       <key>SKAdNetworkIdentifier</key>
       <string>x2jnk7ly8j.skadnetwork</string>
     </dict>
+    // 爱奇艺广告（ADSuyiQY）
+    <dict>
+      <key>SKAdNetworkIdentifier</key>
+      <string>27a282f54n.skadnetwork</string>
+    </dict>
   </array>
 ```
 
@@ -364,7 +371,7 @@ NSString *sdkVersion = [ADSuyiSDK getSDKVersion];
 
 ## 4.2 个性化开关
 
-ADSuyi的个性化开关可统一控制第三方广告SDK的个性化开关接口，目前支持天目、穿山甲、优量汇、百度、快手、Gromore;
+ADSuyi的个性化开关可统一控制第三方广告SDK的个性化开关接口，目前支持天目、穿山甲、优量汇、百度、快手、Gromore、爱奇艺;
 
 ```obj-c
 // 是否开启个性化广告；默认YES，建议初始化SDK之前设置
@@ -891,7 +898,7 @@ OC请求横幅广告请求示例：
 | posId | NSString | 广告位id  |
 | scenesId | NSString | 场景id  |
 | tolerateTimeout | NSTimeInterval | 请求超时时间,默认为4s,需要设置3s及以上  |
-| muted | BOOL | 是否静音播放视频 默认YES <br>支持平台：天目、优量汇、百度、快手、Gromore<br/> 特殊平台：穿山甲（需在穿山甲后台广告位配置处设置） |
+| muted | BOOL | 是否静音播放视频 默认YES <br>支持平台：天目、优量汇、百度、快手、Gromore、爱奇艺<br/> 特殊平台：穿山甲（需在穿山甲后台广告位配置处设置） |
 | detailPageVideoMuted | BOOL | 是否静音播放详情页视频 默认YES <br>支持平台：优量汇 |
 | autoPlay | BOOL | 信息流自动播放，默认WiFi自动播放 开启后WiFi/4G自动播放  |
 | status | ADSuyiSDKNativeAdStatus | 开发者可通过状态值来判断当前广告对象是否正在加载广告  |
@@ -1007,7 +1014,7 @@ if(!_nativeAd) {
 | rewardAmount | NSString | 奖励数量 （用于激励视频服务器验证参数，可选）  |
 | extraInfo | NSString | 其他信息 （服务器端验证回调中包含的可选自定义奖励字符串，可选）|
 | tolerateTimeout | NSInteger | 请求超时时间,默认为4s,需要设置3s及以上  |
-| isMuted | BOOL | 是否静音，默认静音 <br>支持平台：天目，优量汇，快手，Gromore  |
+| isMuted | BOOL | 是否静音，默认静音 <br>支持平台：天目，优量汇，快手，Gromore、爱奇艺  |
 
 | <center>接口</center> | <center>说明</center>|
 |:-----------|:--------|
