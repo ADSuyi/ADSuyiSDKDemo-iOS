@@ -1,13 +1,13 @@
-# Suyi聚合广告SDK iOS接入文档 v3.9.11.02255
+# Suyi聚合广告SDK iOS接入文档 v4.0.0.04221
 
 ```
 SDK名称: Suyi聚合广告SDK 
 开发者: 杭州艾狄墨搏信息服务有限公司
-更新日期: 2025-03-20
+更新日期: 2025-05-19
 功能介绍: Suyi聚合广告SDK 集成了多种广告类型和主流广告平台，提供广告数据统计功能，帮助开发者轻松实现应用内广告的接入和管理，提升应用盈利和用户体验。
 ```
 
-[SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_391102255_6ab83185deab39ed2062dbc54479689d.zip)
+[SDK下载地址](https://doc.admobile.top/iOSSDK/ADSuyi_iOS_40004221_06a4166a4cb6aa0c25f5c9d7088d1afa.zip)
 
 [查看更新日志](https://doc.admobile.top/ssp/4changelog/2-iOSchangelog.html)
 
@@ -39,15 +39,15 @@ SDK名称: Suyi聚合广告SDK
 
 | Name         | 版本号      |  
 |--------------|-------------|           
-| ADSuyiSDK | 3.9.11.02255 |    
-| tianmu | 2.3.1.1.02251 | 
-| baidu | 5.373.02251 |    
-| gdt | 4.15.22.02251 |    
-| ksad | 3.3.74.02251 |    
-| toutiao | 6.6.1.5.07221 | 
-| gromore | 6.7.0.3.02251 | 
-| jadyun | 2.6.8.01021 | 
-| iqy | 1.13.014.02251 | 
+| ADSuyiSDK | 4.0.0.04221 |    
+| tianmu | 3.0.0.1.04221 | 
+| baidu | 5.391.04221 |    
+| gdt | 4.15.40.02251 |    
+| ksad | 3.3.76.5.02251 |    
+| toutiao | 6.8.1.1.04221 | 
+| gromore | 6.9.0.3.04221 | 
+| jadyun | 2.6.8.04221 | 
+| iqy | 1.18.001.02251 | 
                   
 
 ## 2.1 采用cocoapods进行SDK的导入
@@ -56,7 +56,7 @@ SDK名称: Suyi聚合广告SDK
 
 ```ruby
 // 挑选在苏伊士托管的平台导入项目，请不要导入全部，如果不清楚需要哪些平台可以咨询媒介
-pod 'ADSuyiSDK','~> 3.9.11.02255' # 主SDK 必选
+pod 'ADSuyiSDK','~> 4.0.0.04221' # 主SDK 必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/tianmu' # 天目  #必选
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/gdt' # 优量汇(广点通）
 pod 'ADSuyiSDK/ADSuyiSDKPlatforms/baidu' # 百度
@@ -129,6 +129,7 @@ DeviceCheck.framework
 Accelerate.framework
 AudioToolbox.framework
 CoreGraphics.framework
+CoreHaptics.framework
 CoreImage.framework
 CoreML.framework
 CoreMotion.framework
