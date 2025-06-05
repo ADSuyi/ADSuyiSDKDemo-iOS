@@ -1,0 +1,793 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		032EE28D27B34D3700BF58BE /* ADSuyiNativeSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 032EE28B27B34D3700BF58BE /* ADSuyiNativeSplashViewController.m */; };
+		03ED19272637A7C200089CF2 /* SetConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 03ED19172637A7C200089CF2 /* SetConfigManager.m */; };
+		03ED19282637A7C200089CF2 /* NativeAdSetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03ED19182637A7C200089CF2 /* NativeAdSetTableViewController.m */; };
+		03ED19292637A7C200089CF2 /* DrawAdSetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03ED191C2637A7C200089CF2 /* DrawAdSetTableViewController.m */; };
+		03ED192A2637A7C200089CF2 /* FullScreenAdSetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03ED191D2637A7C200089CF2 /* FullScreenAdSetTableViewController.m */; };
+		03ED192B2637A7C200089CF2 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03ED19202637A7C200089CF2 /* NavigationViewController.m */; };
+		03ED192C2637A7C200089CF2 /* SetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03ED19212637A7C200089CF2 /* SetTableViewController.m */; };
+		03ED192D2637A7C200089CF2 /* SplashSetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03ED19222637A7C200089CF2 /* SplashSetTableViewController.m */; };
+		03ED192E2637A7C200089CF2 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 03ED19232637A7C200089CF2 /* UIView+Toast.m */; };
+		03ED192F2637A7C200089CF2 /* BannerAdSetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03ED19242637A7C200089CF2 /* BannerAdSetTableViewController.m */; };
+		03ED19302637A7C200089CF2 /* PlatformTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03ED19252637A7C200089CF2 /* PlatformTableViewController.m */; };
+		03ED19312637A7C200089CF2 /* NotificationAdSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03ED19262637A7C200089CF2 /* NotificationAdSetViewController.m */; };
+		03ED19512637C21100089CF2 /* AdSuyiContainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03ED19502637C21100089CF2 /* AdSuyiContainViewController.m */; };
+		03FC883A26461C660059037E /* ADSuyiSplashSkipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FC883826461C660059037E /* ADSuyiSplashSkipView.m */; };
+		03FC883B26461C660059037E /* ADSuyiRingProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FC883926461C660059037E /* ADSuyiRingProgressView.m */; };
+		13CC793425DE542800D77DE5 /* AdSuyiBaseContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CC793025DE542800D77DE5 /* AdSuyiBaseContentViewController.m */; };
+		13CC793525DE542800D77DE5 /* AdSuyiContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13CC793125DE542800D77DE5 /* AdSuyiContentViewController.m */; };
+		36557A982C2AD8260079D415 /* AdSuyiSplashProViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36557A972C2AD8260079D415 /* AdSuyiSplashProViewController.m */; };
+		6012F9759F8BCC5230C3F3D1 /* libPods-ADSuyiSDKDemo-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 422C7AE40E8567B741DE7A2F /* libPods-ADSuyiSDKDemo-iOS.a */; };
+		82085D7825E8937500FCE89F /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82085D7725E8937500FCE89F /* AppTrackingTransparency.framework */; };
+		82085D7A25E8937C00FCE89F /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82085D7925E8937C00FCE89F /* AdSupport.framework */; };
+		820EC7E6254A9F77001C7C88 /* BlankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 820EC7E3254A9F77001C7C88 /* BlankViewController.m */; };
+		820EC7E7254A9F77001C7C88 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 820EC7E4254A9F77001C7C88 /* TableViewController.m */; };
+		824AD25525C11A5200BD1105 /* ADSuyiGroupAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 824AD25425C11A5200BD1105 /* ADSuyiGroupAdViewController.m */; };
+		BAB1331227B5FBA80099BCED /* AdSuyiNativeInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB1331127B5FBA80099BCED /* AdSuyiNativeInterstitialViewController.m */; };
+		BAB1331927B665AA0099BCED /* AdSuyiNativeMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB1331827B665AA0099BCED /* AdSuyiNativeMainViewController.m */; };
+		BAEEB97C27D216020027685B /* UIViewController+TYTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAEEB97A27D216020027685B /* UIViewController+TYTopView.m */; };
+		BF279CDA249B134700C38704 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF279CD9249B134700C38704 /* LaunchScreen.storyboard */; };
+		BFEA086D247E4CCC001815E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA086C247E4CCC001815E3 /* AppDelegate.m */; };
+		BFEA0873247E4CCC001815E3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA0872247E4CCC001815E3 /* ViewController.m */; };
+		BFEA0876247E4CCC001815E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFEA0874247E4CCC001815E3 /* Main.storyboard */; };
+		BFEA0878247E4CCF001815E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFEA0877247E4CCF001815E3 /* Assets.xcassets */; };
+		BFEA087E247E4CCF001815E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA087D247E4CCF001815E3 /* main.m */; };
+		BFEA0886247E5383001815E3 /* ADMob_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BFEA0884247E5383001815E3 /* ADMob_Logo.png */; };
+		BFEA0887247E5383001815E3 /* 750x1334.png in Resources */ = {isa = PBXBuildFile; fileRef = BFEA0885247E5383001815E3 /* 750x1334.png */; };
+		BFEA08A2247E5430001815E3 /* AdSuyiNativeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA088B247E5430001815E3 /* AdSuyiNativeViewController.m */; };
+		BFEA08A3247E5430001815E3 /* AdSuyiNativeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA088C247E5430001815E3 /* AdSuyiNativeViewCell.m */; };
+		BFEA08A4247E5430001815E3 /* AdSuyiBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA0890247E5430001815E3 /* AdSuyiBannerViewController.m */; };
+		BFEA08A5247E5430001815E3 /* AdSuyiSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA0892247E5430001815E3 /* AdSuyiSplashViewController.m */; };
+		BFEA08A6247E5430001815E3 /* AdSuyiDrawvodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA0895247E5430001815E3 /* AdSuyiDrawvodViewController.m */; };
+		BFEA08A7247E5430001815E3 /* AdSuyiDrawvodAdTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA0896247E5430001815E3 /* AdSuyiDrawvodAdTableViewCell.m */; };
+		BFEA08A8247E5430001815E3 /* AdSuyiFullScreenvodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA089A247E5430001815E3 /* AdSuyiFullScreenvodViewController.m */; };
+		BFEA08A9247E5430001815E3 /* AdSuyiInterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA089D247E5430001815E3 /* AdSuyiInterstitialViewController.m */; };
+		BFEA08AA247E5430001815E3 /* AdSuyiRewardvodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA08A0247E5430001815E3 /* AdSuyiRewardvodViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		032EE28B27B34D3700BF58BE /* ADSuyiNativeSplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADSuyiNativeSplashViewController.m; sourceTree = "<group>"; };
+		032EE28C27B34D3700BF58BE /* ADSuyiNativeSplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADSuyiNativeSplashViewController.h; sourceTree = "<group>"; };
+		03ED19112637A7C200089CF2 /* FullScreenAdSetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullScreenAdSetTableViewController.h; sourceTree = "<group>"; };
+		03ED19122637A7C200089CF2 /* DrawAdSetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawAdSetTableViewController.h; sourceTree = "<group>"; };
+		03ED19132637A7C200089CF2 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		03ED19142637A7C200089CF2 /* SplashSetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashSetTableViewController.h; sourceTree = "<group>"; };
+		03ED19152637A7C200089CF2 /* SetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetTableViewController.h; sourceTree = "<group>"; };
+		03ED19162637A7C200089CF2 /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
+		03ED19172637A7C200089CF2 /* SetConfigManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetConfigManager.m; sourceTree = "<group>"; };
+		03ED19182637A7C200089CF2 /* NativeAdSetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NativeAdSetTableViewController.m; sourceTree = "<group>"; };
+		03ED19192637A7C200089CF2 /* NotificationAdSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationAdSetViewController.h; sourceTree = "<group>"; };
+		03ED191A2637A7C200089CF2 /* PlatformTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlatformTableViewController.h; sourceTree = "<group>"; };
+		03ED191B2637A7C200089CF2 /* BannerAdSetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerAdSetTableViewController.h; sourceTree = "<group>"; };
+		03ED191C2637A7C200089CF2 /* DrawAdSetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawAdSetTableViewController.m; sourceTree = "<group>"; };
+		03ED191D2637A7C200089CF2 /* FullScreenAdSetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullScreenAdSetTableViewController.m; sourceTree = "<group>"; };
+		03ED191E2637A7C200089CF2 /* NativeAdSetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NativeAdSetTableViewController.h; sourceTree = "<group>"; };
+		03ED191F2637A7C200089CF2 /* SetConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetConfigManager.h; sourceTree = "<group>"; };
+		03ED19202637A7C200089CF2 /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
+		03ED19212637A7C200089CF2 /* SetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetTableViewController.m; sourceTree = "<group>"; };
+		03ED19222637A7C200089CF2 /* SplashSetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashSetTableViewController.m; sourceTree = "<group>"; };
+		03ED19232637A7C200089CF2 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		03ED19242637A7C200089CF2 /* BannerAdSetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerAdSetTableViewController.m; sourceTree = "<group>"; };
+		03ED19252637A7C200089CF2 /* PlatformTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlatformTableViewController.m; sourceTree = "<group>"; };
+		03ED19262637A7C200089CF2 /* NotificationAdSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationAdSetViewController.m; sourceTree = "<group>"; };
+		03ED194F2637C21100089CF2 /* AdSuyiContainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdSuyiContainViewController.h; sourceTree = "<group>"; };
+		03ED19502637C21100089CF2 /* AdSuyiContainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdSuyiContainViewController.m; sourceTree = "<group>"; };
+		03F0CF62264E6DCF00B0DF18 /* ADSuyiSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ADSuyiSDK.xcframework; path = Pods/ADSuyiSDK/ADSuyiSDK/Classes/core/ADSuyiSDK.xcframework; sourceTree = "<group>"; };
+		03FC883626461C660059037E /* ADSuyiSplashSkipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADSuyiSplashSkipView.h; sourceTree = "<group>"; };
+		03FC883726461C660059037E /* ADSuyiRingProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADSuyiRingProgressView.h; sourceTree = "<group>"; };
+		03FC883826461C660059037E /* ADSuyiSplashSkipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADSuyiSplashSkipView.m; sourceTree = "<group>"; };
+		03FC883926461C660059037E /* ADSuyiRingProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADSuyiRingProgressView.m; sourceTree = "<group>"; };
+		13CC793025DE542800D77DE5 /* AdSuyiBaseContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdSuyiBaseContentViewController.m; sourceTree = "<group>"; };
+		13CC793125DE542800D77DE5 /* AdSuyiContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdSuyiContentViewController.m; sourceTree = "<group>"; };
+		13CC793225DE542800D77DE5 /* AdSuyiContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdSuyiContentViewController.h; sourceTree = "<group>"; };
+		13CC793325DE542800D77DE5 /* AdSuyiBaseContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdSuyiBaseContentViewController.h; sourceTree = "<group>"; };
+		2F224B5F4E4E0DCAE1105072 /* Pods-ADSuyiSDKDemo-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADSuyiSDKDemo-iOS.release.xcconfig"; path = "Target Support Files/Pods-ADSuyiSDKDemo-iOS/Pods-ADSuyiSDKDemo-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		36557A962C2AD8260079D415 /* AdSuyiSplashProViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdSuyiSplashProViewController.h; sourceTree = "<group>"; };
+		36557A972C2AD8260079D415 /* AdSuyiSplashProViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdSuyiSplashProViewController.m; sourceTree = "<group>"; };
+		422C7AE40E8567B741DE7A2F /* libPods-ADSuyiSDKDemo-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ADSuyiSDKDemo-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		82085D7725E8937500FCE89F /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
+		82085D7925E8937C00FCE89F /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		820EC7E2254A9F77001C7C88 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		820EC7E3254A9F77001C7C88 /* BlankViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlankViewController.m; sourceTree = "<group>"; };
+		820EC7E4254A9F77001C7C88 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		820EC7E5254A9F77001C7C88 /* BlankViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlankViewController.h; sourceTree = "<group>"; };
+		824AD25325C11A5200BD1105 /* ADSuyiGroupAdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADSuyiGroupAdViewController.h; sourceTree = "<group>"; };
+		824AD25425C11A5200BD1105 /* ADSuyiGroupAdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADSuyiGroupAdViewController.m; sourceTree = "<group>"; };
+		BAB1331027B5FBA80099BCED /* AdSuyiNativeInterstitialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdSuyiNativeInterstitialViewController.h; sourceTree = "<group>"; };
+		BAB1331127B5FBA80099BCED /* AdSuyiNativeInterstitialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdSuyiNativeInterstitialViewController.m; sourceTree = "<group>"; };
+		BAB1331727B665AA0099BCED /* AdSuyiNativeMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdSuyiNativeMainViewController.h; sourceTree = "<group>"; };
+		BAB1331827B665AA0099BCED /* AdSuyiNativeMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdSuyiNativeMainViewController.m; sourceTree = "<group>"; };
+		BAEEB97A27D216020027685B /* UIViewController+TYTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TYTopView.m"; sourceTree = "<group>"; };
+		BAEEB97B27D216020027685B /* UIViewController+TYTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TYTopView.h"; sourceTree = "<group>"; };
+		BF279CD9249B134700C38704 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BFEA0868247E4CCC001815E3 /* ADSuyiSDKDemo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ADSuyiSDKDemo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFEA086B247E4CCC001815E3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BFEA086C247E4CCC001815E3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BFEA0871247E4CCC001815E3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BFEA0872247E4CCC001815E3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BFEA0875247E4CCC001815E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BFEA0877247E4CCF001815E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BFEA087C247E4CCF001815E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFEA087D247E4CCF001815E3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BFEA0884247E5383001815E3 /* ADMob_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ADMob_Logo.png; sourceTree = "<group>"; };
+		BFEA0885247E5383001815E3 /* 750x1334.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 750x1334.png; sourceTree = "<group>"; };
+		BFEA088A247E5430001815E3 /* AdSuyiNativeViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdSuyiNativeViewCell.h; sourceTree = "<group>"; };
+		BFEA088B247E5430001815E3 /* AdSuyiNativeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdSuyiNativeViewController.m; sourceTree = "<group>"; };
+		BFEA088C247E5430001815E3 /* AdSuyiNativeViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdSuyiNativeViewCell.m; sourceTree = "<group>"; };
+		BFEA088D247E5430001815E3 /* AdSuyiNativeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdSuyiNativeViewController.h; sourceTree = "<group>"; };
+		BFEA088F247E5430001815E3 /* AdSuyiBannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdSuyiBannerViewController.h; sourceTree = "<group>"; };
+		BFEA0890247E5430001815E3 /* AdSuyiBannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdSuyiBannerViewController.m; sourceTree = "<group>"; };
+		BFEA0892247E5430001815E3 /* AdSuyiSplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdSuyiSplashViewController.m; sourceTree = "<group>"; };
+		BFEA0893247E5430001815E3 /* AdSuyiSplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdSuyiSplashViewController.h; sourceTree = "<group>"; };
+		BFEA0895247E5430001815E3 /* AdSuyiDrawvodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdSuyiDrawvodViewController.m; sourceTree = "<group>"; };
+		BFEA0896247E5430001815E3 /* AdSuyiDrawvodAdTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdSuyiDrawvodAdTableViewCell.m; sourceTree = "<group>"; };
+		BFEA0897247E5430001815E3 /* AdSuyiDrawvodAdTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdSuyiDrawvodAdTableViewCell.h; sourceTree = "<group>"; };
+		BFEA0898247E5430001815E3 /* AdSuyiDrawvodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdSuyiDrawvodViewController.h; sourceTree = "<group>"; };
+		BFEA089A247E5430001815E3 /* AdSuyiFullScreenvodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdSuyiFullScreenvodViewController.m; sourceTree = "<group>"; };
+		BFEA089B247E5430001815E3 /* AdSuyiFullScreenvodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdSuyiFullScreenvodViewController.h; sourceTree = "<group>"; };
+		BFEA089D247E5430001815E3 /* AdSuyiInterstitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdSuyiInterstitialViewController.m; sourceTree = "<group>"; };
+		BFEA089E247E5430001815E3 /* AdSuyiInterstitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdSuyiInterstitialViewController.h; sourceTree = "<group>"; };
+		BFEA08A0247E5430001815E3 /* AdSuyiRewardvodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdSuyiRewardvodViewController.m; sourceTree = "<group>"; };
+		BFEA08A1247E5430001815E3 /* AdSuyiRewardvodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdSuyiRewardvodViewController.h; sourceTree = "<group>"; };
+		E9D0A8A4477F8E6405A1F4EC /* Pods-ADSuyiSDKDemo-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADSuyiSDKDemo-iOS.debug.xcconfig"; path = "Target Support Files/Pods-ADSuyiSDKDemo-iOS/Pods-ADSuyiSDKDemo-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		FACF6DFB28AE28D4002A83F3 /* AdMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdMacros.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BFEA0865247E4CCC001815E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6012F9759F8BCC5230C3F3D1 /* libPods-ADSuyiSDKDemo-iOS.a in Frameworks */,
+				82085D7825E8937500FCE89F /* AppTrackingTransparency.framework in Frameworks */,
+				82085D7A25E8937C00FCE89F /* AdSupport.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		032EE28A27B34D3700BF58BE /* NativeSplash */ = {
+			isa = PBXGroup;
+			children = (
+				032EE28C27B34D3700BF58BE /* ADSuyiNativeSplashViewController.h */,
+				032EE28B27B34D3700BF58BE /* ADSuyiNativeSplashViewController.m */,
+			);
+			path = NativeSplash;
+			sourceTree = "<group>";
+		};
+		03ED19102637A7C200089CF2 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				03ED19162637A7C200089CF2 /* NavigationViewController.h */,
+				03ED19202637A7C200089CF2 /* NavigationViewController.m */,
+				03ED191F2637A7C200089CF2 /* SetConfigManager.h */,
+				03ED19172637A7C200089CF2 /* SetConfigManager.m */,
+				03ED19152637A7C200089CF2 /* SetTableViewController.h */,
+				03ED19212637A7C200089CF2 /* SetTableViewController.m */,
+				03ED191A2637A7C200089CF2 /* PlatformTableViewController.h */,
+				03ED19252637A7C200089CF2 /* PlatformTableViewController.m */,
+				03ED19142637A7C200089CF2 /* SplashSetTableViewController.h */,
+				03ED19222637A7C200089CF2 /* SplashSetTableViewController.m */,
+				03ED191E2637A7C200089CF2 /* NativeAdSetTableViewController.h */,
+				03ED19182637A7C200089CF2 /* NativeAdSetTableViewController.m */,
+				03ED191B2637A7C200089CF2 /* BannerAdSetTableViewController.h */,
+				03ED19242637A7C200089CF2 /* BannerAdSetTableViewController.m */,
+				03ED19122637A7C200089CF2 /* DrawAdSetTableViewController.h */,
+				03ED191C2637A7C200089CF2 /* DrawAdSetTableViewController.m */,
+				03ED19112637A7C200089CF2 /* FullScreenAdSetTableViewController.h */,
+				03ED191D2637A7C200089CF2 /* FullScreenAdSetTableViewController.m */,
+				03ED19192637A7C200089CF2 /* NotificationAdSetViewController.h */,
+				03ED19262637A7C200089CF2 /* NotificationAdSetViewController.m */,
+				03ED19132637A7C200089CF2 /* UIView+Toast.h */,
+				03ED19232637A7C200089CF2 /* UIView+Toast.m */,
+				BAEEB97B27D216020027685B /* UIViewController+TYTopView.h */,
+				BAEEB97A27D216020027685B /* UIViewController+TYTopView.m */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		03FC883526461C4D0059037E /* skipView */ = {
+			isa = PBXGroup;
+			children = (
+				03FC883726461C660059037E /* ADSuyiRingProgressView.h */,
+				03FC883926461C660059037E /* ADSuyiRingProgressView.m */,
+				03FC883626461C660059037E /* ADSuyiSplashSkipView.h */,
+				03FC883826461C660059037E /* ADSuyiSplashSkipView.m */,
+			);
+			path = skipView;
+			sourceTree = "<group>";
+		};
+		13CC792F25DE541D00D77DE5 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				13CC793325DE542800D77DE5 /* AdSuyiBaseContentViewController.h */,
+				13CC793025DE542800D77DE5 /* AdSuyiBaseContentViewController.m */,
+				13CC793225DE542800D77DE5 /* AdSuyiContentViewController.h */,
+				13CC793125DE542800D77DE5 /* AdSuyiContentViewController.m */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		36557A952C2AD7EE0079D415 /* SplashProAd */ = {
+			isa = PBXGroup;
+			children = (
+				36557A962C2AD8260079D415 /* AdSuyiSplashProViewController.h */,
+				36557A972C2AD8260079D415 /* AdSuyiSplashProViewController.m */,
+			);
+			path = SplashProAd;
+			sourceTree = "<group>";
+		};
+		66890375DE678EA9A920BD13 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				03F0CF62264E6DCF00B0DF18 /* ADSuyiSDK.xcframework */,
+				82085D7925E8937C00FCE89F /* AdSupport.framework */,
+				82085D7725E8937500FCE89F /* AppTrackingTransparency.framework */,
+				422C7AE40E8567B741DE7A2F /* libPods-ADSuyiSDKDemo-iOS.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6EEA50121E5BDE769A9200F4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E9D0A8A4477F8E6405A1F4EC /* Pods-ADSuyiSDKDemo-iOS.debug.xcconfig */,
+				2F224B5F4E4E0DCAE1105072 /* Pods-ADSuyiSDKDemo-iOS.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		820EC7E1254A9F77001C7C88 /* Contain */ = {
+			isa = PBXGroup;
+			children = (
+				820EC7E2254A9F77001C7C88 /* TableViewController.h */,
+				820EC7E4254A9F77001C7C88 /* TableViewController.m */,
+				820EC7E3254A9F77001C7C88 /* BlankViewController.m */,
+				820EC7E5254A9F77001C7C88 /* BlankViewController.h */,
+				03ED194F2637C21100089CF2 /* AdSuyiContainViewController.h */,
+				03ED19502637C21100089CF2 /* AdSuyiContainViewController.m */,
+			);
+			path = Contain;
+			sourceTree = "<group>";
+		};
+		824AD25225C119F200BD1105 /* GroupAd */ = {
+			isa = PBXGroup;
+			children = (
+				824AD25325C11A5200BD1105 /* ADSuyiGroupAdViewController.h */,
+				824AD25425C11A5200BD1105 /* ADSuyiGroupAdViewController.m */,
+			);
+			path = GroupAd;
+			sourceTree = "<group>";
+		};
+		BAB1331327B61CF40099BCED /* NativeInterstitialAd */ = {
+			isa = PBXGroup;
+			children = (
+				BAB1331027B5FBA80099BCED /* AdSuyiNativeInterstitialViewController.h */,
+				BAB1331127B5FBA80099BCED /* AdSuyiNativeInterstitialViewController.m */,
+			);
+			path = NativeInterstitialAd;
+			sourceTree = "<group>";
+		};
+		BFEA085F247E4CCC001815E3 = {
+			isa = PBXGroup;
+			children = (
+				BFEA086A247E4CCC001815E3 /* ADSuyiSDKDemo-iOS */,
+				BFEA0869247E4CCC001815E3 /* Products */,
+				6EEA50121E5BDE769A9200F4 /* Pods */,
+				66890375DE678EA9A920BD13 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BFEA0869247E4CCC001815E3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BFEA0868247E4CCC001815E3 /* ADSuyiSDKDemo-iOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BFEA086A247E4CCC001815E3 /* ADSuyiSDKDemo-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				03ED19102637A7C200089CF2 /* Config */,
+				BFEA0888247E5430001815E3 /* SuyiAds */,
+				BFEA0884247E5383001815E3 /* ADMob_Logo.png */,
+				BFEA0885247E5383001815E3 /* 750x1334.png */,
+				BFEA086B247E4CCC001815E3 /* AppDelegate.h */,
+				BFEA086C247E4CCC001815E3 /* AppDelegate.m */,
+				BFEA0871247E4CCC001815E3 /* ViewController.h */,
+				BFEA0872247E4CCC001815E3 /* ViewController.m */,
+				BFEA0874247E4CCC001815E3 /* Main.storyboard */,
+				BF279CD9249B134700C38704 /* LaunchScreen.storyboard */,
+				BFEA0877247E4CCF001815E3 /* Assets.xcassets */,
+				BFEA087C247E4CCF001815E3 /* Info.plist */,
+				BFEA087D247E4CCF001815E3 /* main.m */,
+				FACF6DFB28AE28D4002A83F3 /* AdMacros.h */,
+			);
+			path = "ADSuyiSDKDemo-iOS";
+			sourceTree = "<group>";
+		};
+		BFEA0888247E5430001815E3 /* SuyiAds */ = {
+			isa = PBXGroup;
+			children = (
+				BAB1331327B61CF40099BCED /* NativeInterstitialAd */,
+				032EE28A27B34D3700BF58BE /* NativeSplash */,
+				13CC792F25DE541D00D77DE5 /* Content */,
+				824AD25225C119F200BD1105 /* GroupAd */,
+				820EC7E1254A9F77001C7C88 /* Contain */,
+				BFEA0889247E5430001815E3 /* NativeAd */,
+				BFEA088E247E5430001815E3 /* BannerAd */,
+				BFEA0891247E5430001815E3 /* SplashAd */,
+				36557A952C2AD7EE0079D415 /* SplashProAd */,
+				BFEA0894247E5430001815E3 /* DrawVodAd */,
+				BFEA0899247E5430001815E3 /* FullScreenVodAd */,
+				BFEA089C247E5430001815E3 /* InterstitialAd */,
+				BFEA089F247E5430001815E3 /* RewardVodAd */,
+			);
+			path = SuyiAds;
+			sourceTree = "<group>";
+		};
+		BFEA0889247E5430001815E3 /* NativeAd */ = {
+			isa = PBXGroup;
+			children = (
+				BFEA088A247E5430001815E3 /* AdSuyiNativeViewCell.h */,
+				BFEA088C247E5430001815E3 /* AdSuyiNativeViewCell.m */,
+				BFEA088D247E5430001815E3 /* AdSuyiNativeViewController.h */,
+				BFEA088B247E5430001815E3 /* AdSuyiNativeViewController.m */,
+				BAB1331727B665AA0099BCED /* AdSuyiNativeMainViewController.h */,
+				BAB1331827B665AA0099BCED /* AdSuyiNativeMainViewController.m */,
+			);
+			path = NativeAd;
+			sourceTree = "<group>";
+		};
+		BFEA088E247E5430001815E3 /* BannerAd */ = {
+			isa = PBXGroup;
+			children = (
+				BFEA088F247E5430001815E3 /* AdSuyiBannerViewController.h */,
+				BFEA0890247E5430001815E3 /* AdSuyiBannerViewController.m */,
+			);
+			path = BannerAd;
+			sourceTree = "<group>";
+		};
+		BFEA0891247E5430001815E3 /* SplashAd */ = {
+			isa = PBXGroup;
+			children = (
+				BFEA0893247E5430001815E3 /* AdSuyiSplashViewController.h */,
+				BFEA0892247E5430001815E3 /* AdSuyiSplashViewController.m */,
+				03FC883526461C4D0059037E /* skipView */,
+			);
+			path = SplashAd;
+			sourceTree = "<group>";
+		};
+		BFEA0894247E5430001815E3 /* DrawVodAd */ = {
+			isa = PBXGroup;
+			children = (
+				BFEA0897247E5430001815E3 /* AdSuyiDrawvodAdTableViewCell.h */,
+				BFEA0896247E5430001815E3 /* AdSuyiDrawvodAdTableViewCell.m */,
+				BFEA0898247E5430001815E3 /* AdSuyiDrawvodViewController.h */,
+				BFEA0895247E5430001815E3 /* AdSuyiDrawvodViewController.m */,
+			);
+			path = DrawVodAd;
+			sourceTree = "<group>";
+		};
+		BFEA0899247E5430001815E3 /* FullScreenVodAd */ = {
+			isa = PBXGroup;
+			children = (
+				BFEA089B247E5430001815E3 /* AdSuyiFullScreenvodViewController.h */,
+				BFEA089A247E5430001815E3 /* AdSuyiFullScreenvodViewController.m */,
+			);
+			path = FullScreenVodAd;
+			sourceTree = "<group>";
+		};
+		BFEA089C247E5430001815E3 /* InterstitialAd */ = {
+			isa = PBXGroup;
+			children = (
+				BFEA089E247E5430001815E3 /* AdSuyiInterstitialViewController.h */,
+				BFEA089D247E5430001815E3 /* AdSuyiInterstitialViewController.m */,
+			);
+			path = InterstitialAd;
+			sourceTree = "<group>";
+		};
+		BFEA089F247E5430001815E3 /* RewardVodAd */ = {
+			isa = PBXGroup;
+			children = (
+				BFEA08A1247E5430001815E3 /* AdSuyiRewardvodViewController.h */,
+				BFEA08A0247E5430001815E3 /* AdSuyiRewardvodViewController.m */,
+			);
+			path = RewardVodAd;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BFEA0867247E4CCC001815E3 /* ADSuyiSDKDemo-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFEA0881247E4CCF001815E3 /* Build configuration list for PBXNativeTarget "ADSuyiSDKDemo-iOS" */;
+			buildPhases = (
+				CC29F516AC798B4CB11B25ED /* [CP] Check Pods Manifest.lock */,
+				BFEA0864247E4CCC001815E3 /* Sources */,
+				BFEA0865247E4CCC001815E3 /* Frameworks */,
+				BFEA0866247E4CCC001815E3 /* Resources */,
+				0B4D9D61C3A881CAE8155552 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ADSuyiSDKDemo-iOS";
+			productName = "ADSuyiSDKDemo-iOS";
+			productReference = BFEA0868247E4CCC001815E3 /* ADSuyiSDKDemo-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFEA0860247E4CCC001815E3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "陈坤";
+				TargetAttributes = {
+					BFEA0867247E4CCC001815E3 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+				};
+			};
+			buildConfigurationList = BFEA0863247E4CCC001815E3 /* Build configuration list for PBXProject "ADSuyiSDKDemo-iOS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BFEA085F247E4CCC001815E3;
+			productRefGroup = BFEA0869247E4CCC001815E3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BFEA0867247E4CCC001815E3 /* ADSuyiSDKDemo-iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BFEA0866247E4CCC001815E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFEA0886247E5383001815E3 /* ADMob_Logo.png in Resources */,
+				BFEA0878247E4CCF001815E3 /* Assets.xcassets in Resources */,
+				BFEA0876247E4CCC001815E3 /* Main.storyboard in Resources */,
+				BF279CDA249B134700C38704 /* LaunchScreen.storyboard in Resources */,
+				BFEA0887247E5383001815E3 /* 750x1334.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B4D9D61C3A881CAE8155552 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ADSuyiSDKDemo-iOS/Pods-ADSuyiSDKDemo-iOS-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ADSuyiSDKDemo-iOS/Pods-ADSuyiSDKDemo-iOS-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ADSuyiSDKDemo-iOS/Pods-ADSuyiSDKDemo-iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC29F516AC798B4CB11B25ED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ADSuyiSDKDemo-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BFEA0864247E4CCC001815E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13CC793425DE542800D77DE5 /* AdSuyiBaseContentViewController.m in Sources */,
+				03FC883B26461C660059037E /* ADSuyiRingProgressView.m in Sources */,
+				BFEA08A5247E5430001815E3 /* AdSuyiSplashViewController.m in Sources */,
+				BFEA08A8247E5430001815E3 /* AdSuyiFullScreenvodViewController.m in Sources */,
+				03ED192E2637A7C200089CF2 /* UIView+Toast.m in Sources */,
+				BFEA0873247E4CCC001815E3 /* ViewController.m in Sources */,
+				BFEA08A9247E5430001815E3 /* AdSuyiInterstitialViewController.m in Sources */,
+				BFEA086D247E4CCC001815E3 /* AppDelegate.m in Sources */,
+				BAB1331927B665AA0099BCED /* AdSuyiNativeMainViewController.m in Sources */,
+				824AD25525C11A5200BD1105 /* ADSuyiGroupAdViewController.m in Sources */,
+				820EC7E7254A9F77001C7C88 /* TableViewController.m in Sources */,
+				03FC883A26461C660059037E /* ADSuyiSplashSkipView.m in Sources */,
+				BFEA08AA247E5430001815E3 /* AdSuyiRewardvodViewController.m in Sources */,
+				BFEA08A4247E5430001815E3 /* AdSuyiBannerViewController.m in Sources */,
+				03ED192B2637A7C200089CF2 /* NavigationViewController.m in Sources */,
+				BAEEB97C27D216020027685B /* UIViewController+TYTopView.m in Sources */,
+				36557A982C2AD8260079D415 /* AdSuyiSplashProViewController.m in Sources */,
+				BAB1331227B5FBA80099BCED /* AdSuyiNativeInterstitialViewController.m in Sources */,
+				BFEA08A2247E5430001815E3 /* AdSuyiNativeViewController.m in Sources */,
+				03ED19312637A7C200089CF2 /* NotificationAdSetViewController.m in Sources */,
+				03ED19292637A7C200089CF2 /* DrawAdSetTableViewController.m in Sources */,
+				032EE28D27B34D3700BF58BE /* ADSuyiNativeSplashViewController.m in Sources */,
+				03ED19302637A7C200089CF2 /* PlatformTableViewController.m in Sources */,
+				03ED19282637A7C200089CF2 /* NativeAdSetTableViewController.m in Sources */,
+				BFEA087E247E4CCF001815E3 /* main.m in Sources */,
+				03ED192D2637A7C200089CF2 /* SplashSetTableViewController.m in Sources */,
+				03ED19512637C21100089CF2 /* AdSuyiContainViewController.m in Sources */,
+				03ED19272637A7C200089CF2 /* SetConfigManager.m in Sources */,
+				03ED192A2637A7C200089CF2 /* FullScreenAdSetTableViewController.m in Sources */,
+				BFEA08A3247E5430001815E3 /* AdSuyiNativeViewCell.m in Sources */,
+				BFEA08A6247E5430001815E3 /* AdSuyiDrawvodViewController.m in Sources */,
+				13CC793525DE542800D77DE5 /* AdSuyiContentViewController.m in Sources */,
+				03ED192F2637A7C200089CF2 /* BannerAdSetTableViewController.m in Sources */,
+				820EC7E6254A9F77001C7C88 /* BlankViewController.m in Sources */,
+				03ED192C2637A7C200089CF2 /* SetTableViewController.m in Sources */,
+				BFEA08A7247E5430001815E3 /* AdSuyiDrawvodAdTableViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BFEA0874247E4CCC001815E3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BFEA0875247E4CCC001815E3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BFEA087F247E4CCF001815E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BFEA0880247E4CCF001815E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BFEA0882247E4CCF001815E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9D0A8A4477F8E6405A1F4EC /* Pods-ADSuyiSDKDemo-iOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5R8264RPHR;
+				ENABLE_BITCODE = NO;
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = "i386 x86_64";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/ADMobGenBaiDuSDK/ADMobGenBaiDuSDK/Classes\"",
+					"\"${PODS_ROOT}/ADMobGenDeviceInfo/ADMobGenDeviceInfo/Classes\"",
+					"\"${PODS_ROOT}/ADMobileAdSDK/ADMobileAdSDK/Classes\"",
+					"\"${PODS_ROOT}/ADSuyiKSSDK\"",
+					"\"${PODS_ROOT}/ADSuyiKit/ADSuyiKit/Classes\"",
+					"\"${PODS_ROOT}/ADSuyiLocationManager/ADSuyiLocationManager/Classes\"",
+					"\"${PODS_ROOT}/ADSuyiNetwork/ADSuyiNetwork/Classes\"",
+					"\"${PODS_ROOT}/ADSuyiSDK/ADSuyiSDK/Classes/admobile\"",
+					"\"${PODS_ROOT}/ADSuyiSDK/ADSuyiSDK/Classes/baidu\"",
+					"\"${PODS_ROOT}/ADSuyiSDK/ADSuyiSDK/Classes/bu\"",
+					"\"${PODS_ROOT}/ADSuyiSDK/ADSuyiSDK/Classes/core\"",
+					"\"${PODS_ROOT}/ADSuyiSDK/ADSuyiSDK/Classes/inmobi\"",
+					"\"${PODS_ROOT}/ADSuyiSDK/ADSuyiSDK/Classes/unity\"",
+					"\"${PODS_ROOT}/ADSuyiStarRd/ADSuyiStarRd/Classes\"",
+					"\"${PODS_ROOT}/Ads-CN/PangleSDK\"",
+					"\"${PODS_ROOT}/InMobiSDK-China\"",
+					"\"${PODS_ROOT}/StarRdSdk/Framework\"",
+					"\"${PODS_ROOT}/UnityAds\"",
+					"\"${PODS_ROOT}/XCSADBridge/ios\"",
+					"\"${PODS_ROOT}/XCSADCore/ios\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/ADMobGenDeviceInfo\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/ADMobileAdSDK\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/ADSuyiAdMobile\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/ADSuyiBU\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/ADSuyiBaidu\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/ADSuyiGDT\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/ADSuyiInmobi\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/ADSuyiKS\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/ADSuyiKit\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/ADSuyiSDK\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/ADSuyiStarRd\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/ADSuyiUnity\"",
+				);
+				INFOPLIST_FILE = "ADSuyiSDKDemo-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sangshen.ADSuyiSDKDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BFEA0883247E4CCF001815E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F224B5F4E4E0DCAE1105072 /* Pods-ADSuyiSDKDemo-iOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5R8264RPHR;
+				ENABLE_BITCODE = NO;
+				"EXCLUDED_ARCHS[sdk=iphoneos*]" = "i386 x86_64";
+				INFOPLIST_FILE = "ADSuyiSDKDemo-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sangshen.ADSuyiSDKDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BFEA0863247E4CCC001815E3 /* Build configuration list for PBXProject "ADSuyiSDKDemo-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFEA087F247E4CCF001815E3 /* Debug */,
+				BFEA0880247E4CCF001815E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFEA0881247E4CCF001815E3 /* Build configuration list for PBXNativeTarget "ADSuyiSDKDemo-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFEA0882247E4CCF001815E3 /* Debug */,
+				BFEA0883247E4CCF001815E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFEA0860247E4CCC001815E3 /* Project object */;
+}
