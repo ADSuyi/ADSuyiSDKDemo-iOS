@@ -172,8 +172,6 @@ libc++abi.tbd
 
 ```obj-c
 Privacy - Location When In Use Usage Description
-Privacy - Location Always and When In Use Usage Description
-Privacy - Location Always Usage Description
 ```
 
 5. Info.plist 添加获取本地网络权限字段
